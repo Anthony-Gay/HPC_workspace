@@ -1,0 +1,74 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  dev                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.4;
+    format      ascii;
+    class       dictionary;
+    object      dsmcProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+ // General Properties
+ // ~~~~~~~~~~~~~~~~~~
+
+
+ nEquivalentParticles 6.48e9;
+
+ // Axisymmetric Properties
+ // ~~~~~~~~~~~~~~~~~~
+
+ axisymmetricSimulation false;
+ radialExtentOfDomain 0.03;
+ maxRadialWeightingFactor 1000.0;
+
+
+ // Binary Collision Model
+ // ~~~~~~~~~~~~~~~~~~~~~~
+
+ BinaryCollisionModel LarsenBorgnakkeVariableHardSphere;
+
+ LarsenBorgnakkeVariableHardSphereCoeffs
+ {
+    Tref 273;
+    rotationalRelaxationCollisionNumber 5.0;
+    electronicRelaxationCollisionNumber 500.0;
+ }
+
+ // Collision Partner Selection Model
+ // ~~~~~~~~~~~~~~~~~~~~~~
+
+ collisionPartnerSelectionModel noTimeCounter;
+
+
+ // Molecular species
+ // ~~~~~~~~~~~~~~~~~
+
+ typeIdList (Ar);
+
+ moleculeProperties
+ {
+    Ar
+    {
+        mass                                    66.3e-27;
+        diameter                                4.17e-10;
+        rotationalDegreesOfFreedom              0;
+        vibrationalModes                        0;
+        omega                                   0.81;
+        alpha                                   1.0;
+        characteristicVibrationalTemperature    (0);
+        dissociationTemperature                 (0);
+        ionisationTemperature                   0;
+        charDissQuantumLevel                    (0);
+        Zref                                    (0);
+        referenceTempForZref                    (0);
+        numberOfElectronicLevels                1;
+        degeneracyList                          (1);
+        electronicEnergyList                    (0);
+    }
+ }

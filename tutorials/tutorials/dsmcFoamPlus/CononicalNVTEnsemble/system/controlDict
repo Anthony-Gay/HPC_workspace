@@ -1,0 +1,48 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  dev                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.4;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+ // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+ application dsmcFoam;
+
+ startFrom       startTime; //Start simulation at startTime (available: latestTime)
+
+ startTime          0.0; //Start from 0 time (can be changed to any time)
+
+ stopAt             endTime; //End at endTime (other options available)
+
+ endTime            0.001; //Stops simulation when time has reached this value
+
+ deltaT             1e-06; //Size of DSMC time-step
+
+ writeControl       runTime;
+
+ writeInterval      1e-03; //File write interval
+
+ purgeWrite         3; //Only last 3 times are stored (0: no deletion)
+
+ writeFormat        ascii; //Format can be ASCII or Binary
+
+ writePrecision     10; //Floating point precision to write
+
+ writeCompression   uncompressed; //Files can be compressed upon write
+
+ timeFormat         general;
+
+ timePrecision      6;
+
+ runTimeModifiable  yes;
+
+ adjustTimeStep     no;
+
+ nTerminalOutputs   10;

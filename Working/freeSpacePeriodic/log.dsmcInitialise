@@ -1,0 +1,40 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-6ef561967074
+Exec   : dsmcInitialise
+Date   : Jan 07 2020
+Time   : 15:53:57
+Host   : "DESKTOP-KF81SG4"
+PID    : 8970
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/Working/freeSpacePeriodic
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Initialising dsmc for Time = 0
+
+
+Constructing constant properties for
+    N2
+
+Initialising particles
+
+Total number of molecules added: 3043
+
+
+ClockTime = 1 s
+
+End
+

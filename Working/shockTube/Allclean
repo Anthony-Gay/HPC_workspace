@@ -1,0 +1,5 @@
+foamListTimes -rm
+rm log.blockMesh
+rm log.postProcess.sample
+rm log.rhoCentralFoam
+rm log.setFields
