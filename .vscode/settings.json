@@ -1,3 +1,16 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "dsmcFoamV1.C": "cpp",
+        "DSMCCloud.C": "cpp",
+        "MaxwellianThermal.C": "cpp",
+        "rhoCentralFoam.C": "cpp",
+        "dsmcInitialise.C": "cpp",
+        "particle.C": "cpp",
+        "UPstream.C": "cpp",
+        "volFieldValue.C": "cpp",
+        "Scalar.C": "cpp",
+        "dictionary.C": "cpp",
+        "dsmcInitialiseV1.C": "cpp"
+    }
 }

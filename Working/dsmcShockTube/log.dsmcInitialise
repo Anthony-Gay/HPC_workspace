@@ -7,12 +7,12 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-6ef561967074
 Exec   : dsmcInitialise
-Date   : Jan 07 2020
-Time   : 15:53:57
+Date   : Jan 13 2020
+Time   : 20:52:41
 Host   : "DESKTOP-KF81SG4"
-PID    : 8970
+PID    : 14723
 I/O    : uncollated
-Case   : /home/anthonygay1812/OpenFOAM/Working/freeSpacePeriodic
+Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
@@ -34,7 +34,7 @@ Initialising particles
 Total number of molecules added: 3043
 
 
-ClockTime = 1 s
+ClockTime = 0 s
 
 End
 
