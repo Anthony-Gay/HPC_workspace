@@ -22,19 +22,19 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::DSMCCloud
+    Foam::DSMCCloudV1
 
 Description
     Templated base class for dsmc cloud
 
 SourceFiles
-    DSMCCloudI.H
-    DSMCCloud.C
+    DSMCCloudV1I.H
+    DSMCCloudV1.C
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef DSMCCloud_H
-#define DSMCCloud_H
+#ifndef DSMCCloudV1_H
+#define DSMCCloudV1_H
 
 #include "Cloud.H"
 #include "DSMCBaseCloud.H"
@@ -63,11 +63,11 @@ template<class CloudType>
 class InflowBoundaryModel;
 
 /*---------------------------------------------------------------------------*\
-                         Class DSMCCloud Declaration
+                         Class DSMCCloudV1 Declaration
 \*---------------------------------------------------------------------------*/
 
 template<class ParcelType>
-class DSMCCloud
+class DSMCCloudV1
 :
     public Cloud<ParcelType>,
     public DSMCBaseCloud
@@ -150,15 +150,15 @@ class DSMCCloud
         // References to the cloud sub-models
 
             //- Binary collision model
-            autoPtr<BinaryCollisionModel<DSMCCloud<ParcelType>>>
+            autoPtr<BinaryCollisionModel<DSMCCloudV1<ParcelType>>>
                 binaryCollisionModel_;
 
             //- Wall interaction model
-            autoPtr<WallInteractionModel<DSMCCloud<ParcelType>>>
+            autoPtr<WallInteractionModel<DSMCCloudV1<ParcelType>>>
                 wallInteractionModel_;
 
             //- Inflow boundary model
-            autoPtr<InflowBoundaryModel<DSMCCloud<ParcelType>>>
+            autoPtr<InflowBoundaryModel<DSMCCloudV1<ParcelType>>>
                 inflowBoundaryModel_;
 
 
@@ -189,7 +189,7 @@ public:
 
         //- Construct given name and mesh, will read Parcels and fields from
         //  file
-        DSMCCloud
+        DSMCCloudV1
         (
             const word& cloudName,
             const fvMesh& mesh,
@@ -197,7 +197,7 @@ public:
         );
 
         //- Construct given name, mesh and initialisation dictionary.
-        DSMCCloud
+        DSMCCloudV1
         (
             const word& cloudName,
             const fvMesh& mesh,
@@ -205,11 +205,11 @@ public:
         );
 
         //- Disallow default bitwise copy construction
-        DSMCCloud(const DSMCCloud&) = delete;
+        DSMCCloudV1(const DSMCCloudV1&) = delete;
 
 
     //- Destructor
-    virtual ~DSMCCloud();
+    virtual ~DSMCCloudV1();
 
 
     //- Type of parcel the cloud was instantiated for
@@ -396,27 +396,27 @@ public:
             // Sub-models
 
                 //- Return reference to binary elastic collision model
-                inline const BinaryCollisionModel<DSMCCloud<ParcelType>>&
+                inline const BinaryCollisionModel<DSMCCloudV1<ParcelType>>&
                     binaryCollision() const;
 
                 //- Return non-const reference to binary elastic collision model
-                inline BinaryCollisionModel<DSMCCloud<ParcelType>>&
+                inline BinaryCollisionModel<DSMCCloudV1<ParcelType>>&
                     binaryCollision();
 
                 //- Return reference to wall interaction model
-                inline const WallInteractionModel<DSMCCloud<ParcelType>>&
+                inline const WallInteractionModel<DSMCCloudV1<ParcelType>>&
                     wallInteraction() const;
 
                 //- Return non-const reference to wall interaction model
-                inline WallInteractionModel<DSMCCloud<ParcelType>>&
+                inline WallInteractionModel<DSMCCloudV1<ParcelType>>&
                     wallInteraction();
 
                 //- Return reference to wall interaction model
-                inline const InflowBoundaryModel<DSMCCloud<ParcelType>>&
+                inline const InflowBoundaryModel<DSMCCloudV1<ParcelType>>&
                     inflowBoundary() const;
 
                 //- Return non-const reference to wall interaction model
-                inline InflowBoundaryModel<DSMCCloud<ParcelType>>&
+                inline InflowBoundaryModel<DSMCCloudV1<ParcelType>>&
                     inflowBoundary();
 
 
@@ -471,7 +471,7 @@ public:
     // Member Operators
 
         //- Disallow default bitwise assignment
-        void operator=(const DSMCCloud&) = delete;
+        void operator=(const DSMCCloudV1&) = delete;
 };
 
 
@@ -481,12 +481,12 @@ public:
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-#include "DSMCCloudI.H"
+#include "DSMCCloudV1I.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 #ifdef NoRepository
-    #include "DSMCCloud.C"
+    #include "DSMCCloudV1.C"
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

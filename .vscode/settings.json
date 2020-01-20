@@ -11,6 +11,10 @@
         "volFieldValue.C": "cpp",
         "Scalar.C": "cpp",
         "dictionary.C": "cpp",
-        "dsmcInitialiseV1.C": "cpp"
+        "dsmcInitialiseV1.C": "cpp",
+        "setFields.C": "cpp",
+        "DSMCCloudV1.C": "cpp",
+        "fvMesh.C": "cpp",
+        "regIOobjectWrite.C": "cpp"
     }
 }
