@@ -88,7 +88,7 @@ void Foam::DSMCCloudV1<ParcelType>::initialise
         readScalar(dsmcInitialiseDict.lookup("temperature"))
     );
 
-    Info<< nl << "Reading Temperature: " << temperature << endl;
+    Info<< nl << "Reading Temperature: " << dsmcInitialiseDict.lookup("temperature") << endl;
 
     const vector velocity(dsmcInitialiseDict.lookup("velocity"));
 

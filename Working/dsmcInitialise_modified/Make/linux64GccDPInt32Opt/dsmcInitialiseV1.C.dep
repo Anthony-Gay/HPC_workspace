@@ -1,7 +1,7 @@
 $(OBJECTS_DIR)/dsmcInitialiseV1.C.dep: \
 dsmcInitialiseV1.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvCFD.H \
-$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/dsmcCloud.H \
+/home/anthonygay1812/OpenFOAM/Working/dsmcCloud_derived/dsmcCloudV1.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/setRootCase.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/createTime.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/createMesh.H \
@@ -27,7 +27,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/constants.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/OSspecific.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/argList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/timeSelector.H \
-$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloud.H \
+/home/anthonygay1812/OpenFOAM/Working/DSMCCloud_modified/DSMCCloudV1.H \
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/dsmcParcel.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Pstream.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstreams.H \
@@ -129,8 +129,8 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarIOField.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentric.H \
-$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloudI.H \
-$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloud.C \
+/home/anthonygay1812/OpenFOAM/Working/DSMCCloud_modified/DSMCCloudV1I.H \
+/home/anthonygay1812/OpenFOAM/Working/DSMCCloud_modified/DSMCCloudV1.C \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H \
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCParcel.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/UPstream.H \
@@ -282,6 +282,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vectorTensorTransform.H \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleI.H \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleTemplates.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstream.H \
+$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloud.H \
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCParcelI.H \
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCParcel.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ListOps.H \
@@ -454,6 +455,8 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/symmetryPlanePolyPatch.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/symmetryPolyPatch.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/wedgePolyPatch.H \
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/meshTools.H \
+$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloudI.H \
+$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloud.C \
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCParcelIO.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ops.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ListOpsTemplates.C \
@@ -793,7 +796,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IFstream.H \
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/surfaceLocation.H \
 
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvCFD.H :
-$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/dsmcCloud.H :
+/home/anthonygay1812/OpenFOAM/Working/dsmcCloud_derived/dsmcCloudV1.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/setRootCase.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/createTime.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/createMesh.H :
@@ -819,7 +822,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/constants.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/OSspecific.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/argList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/timeSelector.H :
-$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloud.H :
+/home/anthonygay1812/OpenFOAM/Working/DSMCCloud_modified/DSMCCloudV1.H :
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/dsmcParcel.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Pstream.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstreams.H :
@@ -921,8 +924,8 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarIOField.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentric.H :
-$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloudI.H :
-$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloud.C :
+/home/anthonygay1812/OpenFOAM/Working/DSMCCloud_modified/DSMCCloudV1I.H :
+/home/anthonygay1812/OpenFOAM/Working/DSMCCloud_modified/DSMCCloudV1.C :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H :
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCParcel.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/UPstream.H :
@@ -1074,6 +1077,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vectorTensorTransform.H :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleI.H :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleTemplates.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstream.H :
+$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloud.H :
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCParcelI.H :
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCParcel.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ListOps.H :
@@ -1246,6 +1250,8 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/symmetryPlanePolyPatch.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/symmetryPolyPatch.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/wedgePolyPatch.H :
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/meshTools.H :
+$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloudI.H :
+$(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCCloud.C :
 $(WM_PROJECT_DIR)/src/lagrangian/DSMC/lnInclude/DSMCParcelIO.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ops.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ListOpsTemplates.C :
