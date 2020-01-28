@@ -7,12 +7,12 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-6ef561967074
 Exec   : blockMesh
-Date   : Jan 27 2020
-Time   : 18:33:46
+Date   : Jan 24 2020
+Time   : 19:07:37
 Host   : "DESKTOP-KF81SG4"
-PID    : 13862
+PID    : 2057
 I/O    : uncollated
-Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
+Case   : /home/anthonygay1812/OpenFOAM/Working/shockTube
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
@@ -21,9 +21,11 @@ allowSystemOperations : Allowing user-supplied system call operations
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
+Deleting polyMesh directory
+    "/home/anthonygay1812/OpenFOAM/Working/shockTube/constant/polyMesh"
 Creating block mesh from
-    "/home/anthonygay1812/OpenFOAM/Working/dsmcShockTube/system/blockMeshDict"
-No non-linear block edges defined
+    "/home/anthonygay1812/OpenFOAM/Working/shockTube/system/blockMeshDict"
+Creating block edges
 No non-planar block faces defined
 Creating topology blocks
 Creating topology patches

@@ -15,6 +15,8 @@
         "setFields.C": "cpp",
         "DSMCCloudV1.C": "cpp",
         "fvMesh.C": "cpp",
-        "regIOobjectWrite.C": "cpp"
+        "regIOobjectWrite.C": "cpp",
+        "DictionaryBase.C": "cpp",
+        "MRFZoneList.C": "cpp"
     }
 }

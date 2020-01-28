@@ -6,13 +6,13 @@
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 Build  : 7-6ef561967074
-Exec   : dsmcFoam
-Date   : Jan 27 2020
-Time   : 18:33:46
+Exec   : setFields
+Date   : Jan 24 2020
+Time   : 19:07:38
 Host   : "DESKTOP-KF81SG4"
-PID    : 13866
+PID    : 2058
 I/O    : uncollated
-Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
+Case   : /home/anthonygay1812/OpenFOAM/Working/shockTube
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
@@ -23,15 +23,17 @@ Create time
 
 Create mesh for time = 0
 
+Reading setFieldsDict
 
-Constructing dsmcCloud 
+Setting field default values
+    Setting internal values of volVectorField U
+    Setting internal values of volScalarField T
+    Setting internal values of volScalarField p
 
+Setting field region values
+    Adding cells with center within boxes 1((0 -1 -1) (5 1 1))
+    Setting internal values of volScalarField T
+    Setting internal values of volScalarField p
 
---> FOAM FATAL ERROR: 
-cannot find file "/home/anthonygay1812/OpenFOAM/Working/dsmcShockTube/0/dsmcSigmaTcRMax"
-
-    From function virtual Foam::autoPtr<Foam::ISstream> Foam::fileOperations::uncollatedFileOperation::readStream(Foam::regIOobject&, const Foam::fileName&, const Foam::word&, bool) const
-    in file global/fileOperations/uncollatedFileOperation/uncollatedFileOperation.C at line 538.
-
-FOAM exiting
+End
 
