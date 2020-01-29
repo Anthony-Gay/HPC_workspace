@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-6ef561967074
 Exec   : dsmcInitialiseV1
-Date   : Jan 27 2020
-Time   : 18:33:46
+Date   : Jan 28 2020
+Time   : 16:48:07
 Host   : "DESKTOP-KF81SG4"
-PID    : 13863
+PID    : 4127
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
 nProcs : 1
@@ -43,14 +43,12 @@ Defining Word lists
 
 All scalar fields defined
 
+wordlist species defined
 
---> FOAM FATAL IO ERROR: 
-incorrect first token, expected <int> or '(', found on line 20 the word 'N2'
+Total number of molecules added: 3337
 
-file: /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube/system/dsmcInitialiseDictV1.species.species1 at line 20.
 
-    From function Foam::Istream& Foam::operator>>(Foam::Istream&, Foam::List<T>&) [with T = Foam::word]
-    in file /opt/openfoam7/src/OpenFOAM/lnInclude/ListIO.C at line 148.
+ClockTime = 0 s
 
-FOAM exiting
+End
 

@@ -152,7 +152,8 @@ void Foam::DSMCCloudV1<ParcelType>::initialise
     }
     Info<< nl << "All scalar fields defined" << endl;
     // Changed to non multi species format
-    wordList species=speciesDict.lookup("species1");
+    //List<word> species(speciesDict.lookup("species1"));
+    word species = word(speciesDict.lookup("species1"));
     Info<< nl << "wordlist species defined" << endl;
 
     /*Field<word> species(speciesList.size());
@@ -211,9 +212,9 @@ void Foam::DSMCCloudV1<ParcelType>::initialise
                         tetPointRef tet = cellTetIs.tet(mesh_);
                         scalar tetVolume = tet.mag();
 
-                        forAll(species, i)
-                        {
-                            const word& speciesName(species[i]);
+                        //forAll(species, i)
+                        //{
+                            const word& speciesName(species);
 
                             label typeId(findIndex(typeIdList_, speciesName));
 
@@ -266,7 +267,7 @@ void Foam::DSMCCloudV1<ParcelType>::initialise
 
                                 addNewParcel(p, celli, U, Ei, typeId);
                             }
-                        }
+                        //}
                     }
                 }
             }
