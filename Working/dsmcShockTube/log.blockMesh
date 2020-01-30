@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-6ef561967074
 Exec   : blockMesh
-Date   : Jan 28 2020
-Time   : 16:48:07
+Date   : Jan 29 2020
+Time   : 16:05:51
 Host   : "DESKTOP-KF81SG4"
-PID    : 4126
+PID    : 15501
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
 nProcs : 1
@@ -47,7 +47,7 @@ Creating patches
 Creating cells
 Creating points with scale 1
     Block 0 cell size :
-        i : 0.01
+        i : 0.02
         j : 2
         k : 2
 
@@ -56,15 +56,15 @@ Writing polyMesh
 Mesh Information
 ----------------
   boundingBox: (-5 -1 -1) (5 1 1)
-  nPoints: 4004
-  nCells: 1000
-  nFaces: 5001
-  nInternalFaces: 999
+  nPoints: 2004
+  nCells: 500
+  nFaces: 2501
+  nInternalFaces: 499
 ----------------
 Patches
 ----------------
-  patch 0 (start: 999 size: 2) name: sides
-  patch 1 (start: 1001 size: 4000) name: empty
+  patch 0 (start: 499 size: 2) name: sides
+  patch 1 (start: 501 size: 2000) name: empty
 
 End
 

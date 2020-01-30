@@ -17,6 +17,22 @@
         "fvMesh.C": "cpp",
         "regIOobjectWrite.C": "cpp",
         "DictionaryBase.C": "cpp",
-        "MRFZoneList.C": "cpp"
+        "MRFZoneList.C": "cpp",
+        "DimensionedFieldFunctions.C": "cpp",
+        "List.C": "cpp",
+        "DSMCBaseCloud.C": "cpp",
+        "*.ipp": "cpp",
+        "*.tcc": "cpp",
+        "numeric": "cpp",
+        "fstream": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "system_error": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "ListOpsTemplates.C": "cpp",
+        "NoInflow.C": "cpp",
+        "dsmcFoam.C": "cpp"
     }
 }

@@ -1,2 +1,2 @@
 Info<< nl << "Constructing dsmcCloud " << endl;
-dsmcCloud dsmc("dsmc", mesh);
+dsmcCloudV1 dsmc("dsmc", mesh);

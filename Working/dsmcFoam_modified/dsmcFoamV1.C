@@ -31,15 +31,14 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "fvCFD.H"
-#include "dsmcCloud.H"
-
+#include "dsmcCloudV1.H"
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 int main(int argc, char *argv[])
 {
     #define NO_CONTROL
     #include "postProcess.H"
-
+    
     #include "setRootCaseLists.H"
     #include "createTime.H"
     #include "createMesh.H"

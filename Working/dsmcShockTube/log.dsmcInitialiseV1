@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-6ef561967074
 Exec   : dsmcInitialiseV1
-Date   : Jan 28 2020
-Time   : 16:48:07
+Date   : Jan 29 2020
+Time   : 16:05:51
 Host   : "DESKTOP-KF81SG4"
-PID    : 4127
+PID    : 15502
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
 nProcs : 1
@@ -31,24 +31,22 @@ Constructing constant properties for
 
 Initialising particles
 
-Reading in species dict
+Input number density: 7770
 
-Reading in rhoN dict
+Input temperature: 348.432
 
-Reading in distributions dict
+mostAbundantType: 0
 
-Reading in temperatures dict
+Input number density: 77.7
 
-Defining Word lists
+Input temperature: 278.746
 
-All scalar fields defined
+mostAbundantType: 0
 
-wordlist species defined
-
-Total number of molecules added: 3337
+Total number of molecules added: 313293
 
 
-ClockTime = 0 s
+ClockTime = 3 s
 
 End
 
