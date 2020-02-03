@@ -171,7 +171,7 @@ class DSMCCloudV1
         void buildCellOccupancy();
 
         //- Initialise the system
-        void initialise(const IOdictionary& dsmcInitialiseDict);
+        void initialise(const IOdictionary& dsmcInitialiseDictV1);
 
         //- Calculate collisions between molecules
         void collisions();
@@ -201,7 +201,7 @@ public:
         (
             const word& cloudName,
             const fvMesh& mesh,
-            const IOdictionary& dsmcInitialiseDict
+            const IOdictionary& dsmcInitialiseDictV1
         );
 
         //- Disallow default bitwise copy construction

@@ -33,6 +33,7 @@
         "typeinfo": "cpp",
         "ListOpsTemplates.C": "cpp",
         "NoInflow.C": "cpp",
-        "dsmcFoam.C": "cpp"
+        "dsmcFoam.C": "cpp",
+        "sizeDistribution.C": "cpp"
     }
 }

@@ -59,7 +59,6 @@ moleculeProperties
         internalDegreesOfFreedom        2;
         omega                           0.74;
     }
-
 }
 
 

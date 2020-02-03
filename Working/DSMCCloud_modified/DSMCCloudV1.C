@@ -142,7 +142,6 @@ void Foam::DSMCCloudV1<ParcelType>::initialise
         );
     }
     // Changed to non multi species format
-    //List<word> species(speciesDict.lookup("species1"));
     word species = word(speciesDict.lookup("species1"));
 
     /*Field<word> species(speciesList.size());
