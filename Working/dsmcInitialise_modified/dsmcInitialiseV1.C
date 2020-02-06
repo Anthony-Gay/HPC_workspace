@@ -31,7 +31,7 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "fvCFD.H"
-#include "dsmcCloudV1.H"
+#include "dsmcCloud.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -43,11 +43,11 @@ int main(int argc, char *argv[])
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-    IOdictionary dsmcInitialiseDictV1
+    IOdictionary dsmcInitialiseDict
     (
         IOobject
         (
-            "dsmcInitialiseDictV1",
+            "dsmcInitialiseDict",
             mesh.time().system(),
             mesh,
             IOobject::MUST_READ_IF_MODIFIED,
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 
     Info<< "Initialising dsmc for Time = " << runTime.timeName() << nl << endl;
 
-    dsmcCloudV1 dsmc("dsmc", mesh, dsmcInitialiseDictV1);
+    dsmcCloud dsmc("dsmc", mesh, dsmcInitialiseDict);
 
     label totalMolecules = dsmc.size();
 
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
     if (!mesh.write())
     {
         FatalErrorInFunction
-            << "Failed writing DsmcCloud."
+            << "Failed writing dsmcCloud."
             << nl << exit(FatalError);
     }
 

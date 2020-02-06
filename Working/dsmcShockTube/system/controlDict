@@ -126,6 +126,10 @@ functions
 
         #includeFunc mag(U)
 
+libs
+    (
+        "/home/anthonygay1812/OpenFOAM/root-7/platforms/linux64GccDPInt32Opt/lib/libDSMC_mod.so"
+    );
 }
 
 // ************************************************************************* //

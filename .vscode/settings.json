@@ -34,6 +34,11 @@
         "ListOpsTemplates.C": "cpp",
         "NoInflow.C": "cpp",
         "dsmcFoam.C": "cpp",
-        "sizeDistribution.C": "cpp"
+        "sizeDistribution.C": "cpp",
+        "BinaryCollisionModel.C": "cpp",
+        "BinaryCollisionModelNew.C": "cpp",
+        "dsmcParcel.C": "cpp",
+        "DSMCParcelIO.C": "cpp",
+        "defineDSMCParcel.C": "cpp"
     }
 }
