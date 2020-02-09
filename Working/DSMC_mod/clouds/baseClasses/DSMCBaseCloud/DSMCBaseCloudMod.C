@@ -23,25 +23,25 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "DSMCBaseCloud.H"
+#include "DSMCBaseCloudMod.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
 namespace Foam
 {
-    defineTypeNameAndDebug(DSMCBaseCloud, 0);
+    defineTypeNameAndDebug(DSMCBaseCloudMod, 0);
 }
 
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
-Foam::DSMCBaseCloud::DSMCBaseCloud()
+Foam::DSMCBaseCloudMod::DSMCBaseCloudMod()
 {}
 
 
 // * * * * * * * * * * * * * * * *  Destructors  * * * * * * * * * * * * * * //
 
-Foam::DSMCBaseCloud::~DSMCBaseCloud()
+Foam::DSMCBaseCloudMod::~DSMCBaseCloudMod()
 {}
 
 

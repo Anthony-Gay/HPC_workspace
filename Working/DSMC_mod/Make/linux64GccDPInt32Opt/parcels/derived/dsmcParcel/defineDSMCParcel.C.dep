@@ -2,7 +2,7 @@ $(OBJECTS_DIR)/parcels/derived/dsmcParcel/defineDSMCParcel.C.dep: \
 parcels/derived/dsmcParcel/defineDSMCParcel.C \
 lnInclude/dsmcParcel.H \
 lnInclude/DSMCParcel.H \
-lnInclude/DSMCCloud.H \
+lnInclude/DSMCCloudMod.H \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstream.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H \
@@ -10,15 +10,15 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/contiguous.H \
 lnInclude/DSMCParcelI.H \
 lnInclude/DSMCParcel.C \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H \
-lnInclude/DSMCBaseCloud.H \
+lnInclude/DSMCBaseCloudMod.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarIOField.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentric.H \
-lnInclude/DSMCCloudI.H \
-lnInclude/DSMCCloud.C \
+lnInclude/DSMCCloudIMod.H \
+lnInclude/DSMCCloudMod.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vector.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentricTensor.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H \
@@ -623,7 +623,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/MatrixBlock.C \
 
 lnInclude/dsmcParcel.H :
 lnInclude/DSMCParcel.H :
-lnInclude/DSMCCloud.H :
+lnInclude/DSMCCloudMod.H :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstream.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H :
@@ -631,15 +631,15 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/contiguous.H :
 lnInclude/DSMCParcelI.H :
 lnInclude/DSMCParcel.C :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H :
-lnInclude/DSMCBaseCloud.H :
+lnInclude/DSMCBaseCloudMod.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarIOField.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentric.H :
-lnInclude/DSMCCloudI.H :
-lnInclude/DSMCCloud.C :
+lnInclude/DSMCCloudIMod.H :
+lnInclude/DSMCCloudMod.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vector.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentricTensor.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H :

@@ -35,14 +35,14 @@ SourceFiles
 #ifndef dsmcCloud_H
 #define dsmcCloud_H
 
-#include "DSMCCloud.H"
+#include "DSMCCloudMod.H"
 #include "dsmcParcel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 namespace Foam
 {
-    typedef DSMCCloud<dsmcParcel> dsmcCloud;
+    typedef DSMCCloudMod<dsmcParcel> dsmcCloud;
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

@@ -1,14 +1,14 @@
 $(OBJECTS_DIR)/parcels/derived/dsmcParcel/makeDSMCParcelWallInteractionModels.C.dep: \
 parcels/derived/dsmcParcel/makeDSMCParcelWallInteractionModels.C \
 lnInclude/dsmcParcel.H \
-lnInclude/DSMCCloud.H \
+lnInclude/DSMCCloudMod.H \
 lnInclude/MaxwellianThermal.H \
 lnInclude/SpecularReflection.H \
 lnInclude/MixedDiffuseSpecular.H \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H \
 lnInclude/DSMCParcel.H \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H \
-lnInclude/DSMCBaseCloud.H \
+lnInclude/DSMCBaseCloudMod.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H \
@@ -16,8 +16,8 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarIOField.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentric.H \
-lnInclude/DSMCCloudI.H \
-lnInclude/DSMCCloud.C \
+lnInclude/DSMCCloudIMod.H \
+lnInclude/DSMCCloudMod.C \
 lnInclude/WallInteractionModel.H \
 lnInclude/MaxwellianThermal.C \
 lnInclude/SpecularReflection.C \
@@ -628,14 +628,14 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/MatrixBlockI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/MatrixBlock.C \
 
 lnInclude/dsmcParcel.H :
-lnInclude/DSMCCloud.H :
+lnInclude/DSMCCloudMod.H :
 lnInclude/MaxwellianThermal.H :
 lnInclude/SpecularReflection.H :
 lnInclude/MixedDiffuseSpecular.H :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H :
 lnInclude/DSMCParcel.H :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H :
-lnInclude/DSMCBaseCloud.H :
+lnInclude/DSMCBaseCloudMod.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H :
@@ -643,8 +643,8 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarIOField.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentric.H :
-lnInclude/DSMCCloudI.H :
-lnInclude/DSMCCloud.C :
+lnInclude/DSMCCloudIMod.H :
+lnInclude/DSMCCloudMod.C :
 lnInclude/WallInteractionModel.H :
 lnInclude/MaxwellianThermal.C :
 lnInclude/SpecularReflection.C :

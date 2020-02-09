@@ -23,7 +23,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "DSMCCloud.H"
+#include "DSMCCloudMod.H"
 #include "BinaryCollisionModel.H"
 #include "WallInteractionModel.H"
 #include "InflowBoundaryModel.H"
@@ -36,7 +36,7 @@ using namespace Foam::constant;
 // * * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * //
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::buildConstProps()
+void Foam::DSMCCloudMod<ParcelType>::buildConstProps()
 {
     Info<< nl << "Constructing constant properties for" << endl;
     constProps_.setSize(typeIdList_.size());
@@ -61,14 +61,14 @@ void Foam::DSMCCloud<ParcelType>::buildConstProps()
 
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::buildCellOccupancy()
+void Foam::DSMCCloudMod<ParcelType>::buildCellOccupancy()
 {
     forAll(cellOccupancy_, cO)
     {
         cellOccupancy_[cO].clear();
     }
 
-    forAllIter(typename DSMCCloud<ParcelType>, *this, iter)
+    forAllIter(typename DSMCCloudMod<ParcelType>, *this, iter)
     {
         cellOccupancy_[iter().cell()].append(&iter());
     }
@@ -76,7 +76,7 @@ void Foam::DSMCCloud<ParcelType>::buildCellOccupancy()
 
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::initialise
+void Foam::DSMCCloudMod<ParcelType>::initialise
 (
     const IOdictionary& dsmcInitialiseDict
 )
@@ -156,8 +156,8 @@ void Foam::DSMCCloud<ParcelType>::initialise
         (
             numberDensitiesDict.lookup(molecules[i])
         );
-    }
-    */
+    }*/
+    
 
     //numberDensities /= nParticle_;
     forAll(numberDensitiesList, i)
@@ -172,7 +172,7 @@ void Foam::DSMCCloud<ParcelType>::initialise
         Info<< nl << "Input number density: "<< numberDensity<< endl;
 
         //forAll(temperaturesList, j)
-        //{
+        
         scalar temperature=temperatures[i];
         
         Info<< nl << "Input temperature: "<< temperature<< endl;
@@ -206,8 +206,7 @@ void Foam::DSMCCloud<ParcelType>::initialise
                     tetPointRef tet = cellTetIs.tet(mesh_);
                     scalar tetVolume = tet.mag();
 
-                    //forAll(species, i)
-                    //{
+                    
                         const word& speciesName(species);
 
                         label typeId(findIndex(typeIdList_, speciesName));
@@ -222,7 +221,7 @@ void Foam::DSMCCloud<ParcelType>::initialise
                         const typename ParcelType::constantProperties& cP =
                         constProps(typeId);
 
-                        //scalar numberDensity = numberDensities[i];
+                        scalar numberDensity = numberDensities[i];
 
                         // Calculate the number of particles required
                         scalar particlesRequired = numberDensity*tetVolume;
@@ -230,10 +229,10 @@ void Foam::DSMCCloud<ParcelType>::initialise
 
                         // Only integer numbers of particles can be inserted
                         label nParticlesToInsert = label(particlesRequired);
-                        /*if (nParticlesToInsert!=0)
+                        if (nParticlesToInsert!=0)
                         {
                         Info<< nl << "Particles to insert: "<< nParticlesToInsert<< endl;
-                        }*/
+                        }
 
                         // Add another particle with a probability proportional to the
                         // remainder of taking the integer part of particlesRequired
@@ -274,7 +273,7 @@ void Foam::DSMCCloud<ParcelType>::initialise
                             }*/
 
                         }
-                    //}
+                    
                 }
             }
         }
@@ -298,13 +297,13 @@ void Foam::DSMCCloud<ParcelType>::initialise
         );
 
         sigmaTcRMax_.correctBoundaryConditions();
-        //}
+        
     }
 }
 
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::collisions()
+void Foam::DSMCCloudMod<ParcelType>::collisions()
 {
     if (!binaryCollision().active())
     {
@@ -475,7 +474,7 @@ void Foam::DSMCCloud<ParcelType>::collisions()
 
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::resetFields()
+void Foam::DSMCCloudMod<ParcelType>::resetFields()
 {
     q_ = dimensionedScalar( dimensionSet(1, 0, -3, 0, 0), 0);
 
@@ -503,7 +502,7 @@ void Foam::DSMCCloud<ParcelType>::resetFields()
 
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::calculateFields()
+void Foam::DSMCCloudMod<ParcelType>::calculateFields()
 {
     scalarField& rhoN = rhoN_.primitiveFieldRef();
     scalarField& rhoM = rhoM_.primitiveFieldRef();
@@ -513,7 +512,7 @@ void Foam::DSMCCloud<ParcelType>::calculateFields()
     scalarField& iDof = iDof_.primitiveFieldRef();
     vectorField& momentum = momentum_.primitiveFieldRef();
 
-    forAllConstIter(typename DSMCCloud<ParcelType>, *this, iter)
+    forAllConstIter(typename DSMCCloudMod<ParcelType>, *this, iter)
     {
         const ParcelType& p = iter();
         const label celli = p.cell();
@@ -552,7 +551,7 @@ void Foam::DSMCCloud<ParcelType>::calculateFields()
 // * * * * * * * * * * * Protected Member Functions  * * * * * * * * * * * * //
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::addNewParcel
+void Foam::DSMCCloudMod<ParcelType>::addNewParcel
 (
     const vector& position,
     const label celli,
@@ -568,7 +567,7 @@ void Foam::DSMCCloud<ParcelType>::addNewParcel
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
 template<class ParcelType>
-Foam::DSMCCloud<ParcelType>::DSMCCloud
+Foam::DSMCCloudMod<ParcelType>::DSMCCloudMod
 (
     const word& cloudName,
     const fvMesh& mesh,
@@ -576,7 +575,7 @@ Foam::DSMCCloud<ParcelType>::DSMCCloud
 )
 :
     Cloud<ParcelType>(mesh, cloudName, false),
-    DSMCBaseCloud(),
+    DSMCBaseCloudMod(),
     cloudName_(cloudName),
     mesh_(mesh),
     particleProperties_
@@ -758,7 +757,7 @@ Foam::DSMCCloud<ParcelType>::DSMCCloud
     ),
     binaryCollisionModel_
     (
-        BinaryCollisionModel<DSMCCloud<ParcelType>>::New
+        BinaryCollisionModel<DSMCCloudMod<ParcelType>>::New
         (
             particleProperties_,
             *this
@@ -766,7 +765,7 @@ Foam::DSMCCloud<ParcelType>::DSMCCloud
     ),
     wallInteractionModel_
     (
-        WallInteractionModel<DSMCCloud<ParcelType>>::New
+        WallInteractionModel<DSMCCloudMod<ParcelType>>::New
         (
             particleProperties_,
             *this
@@ -774,7 +773,7 @@ Foam::DSMCCloud<ParcelType>::DSMCCloud
     ),
     inflowBoundaryModel_
     (
-        InflowBoundaryModel<DSMCCloud<ParcelType>>::New
+        InflowBoundaryModel<DSMCCloudMod<ParcelType>>::New
         (
             particleProperties_,
             *this
@@ -799,7 +798,7 @@ Foam::DSMCCloud<ParcelType>::DSMCCloud
 
 
 template<class ParcelType>
-Foam::DSMCCloud<ParcelType>::DSMCCloud
+Foam::DSMCCloudMod<ParcelType>::DSMCCloudMod
 (
     const word& cloudName,
     const fvMesh& mesh,
@@ -807,7 +806,7 @@ Foam::DSMCCloud<ParcelType>::DSMCCloud
 )
     :
     Cloud<ParcelType>(mesh, cloudName, false),
-    DSMCBaseCloud(),
+    DSMCBaseCloudMod(),
     cloudName_(cloudName),
     mesh_(mesh),
     particleProperties_
@@ -1028,14 +1027,14 @@ Foam::DSMCCloud<ParcelType>::DSMCCloud
 // * * * * * * * * * * * * * * * * Destructor  * * * * * * * * * * * * * * * //
 
 template<class ParcelType>
-Foam::DSMCCloud<ParcelType>::~DSMCCloud()
+Foam::DSMCCloudMod<ParcelType>::~DSMCCloudMod()
 {}
 
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::evolve()
+void Foam::DSMCCloudMod<ParcelType>::evolve()
 {
     typename ParcelType::trackingData td(*this);
 
@@ -1065,7 +1064,7 @@ void Foam::DSMCCloud<ParcelType>::evolve()
 
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::info() const
+void Foam::DSMCCloudMod<ParcelType>::info() const
 {
     label nDSMCParticles = this->size();
     reduce(nDSMCParticles, sumOp<label>());
@@ -1108,7 +1107,7 @@ void Foam::DSMCCloud<ParcelType>::info() const
 
 
 template<class ParcelType>
-Foam::vector Foam::DSMCCloud<ParcelType>::equipartitionLinearVelocity
+Foam::vector Foam::DSMCCloudMod<ParcelType>::equipartitionLinearVelocity
 (
     scalar temperature,
     scalar mass
@@ -1121,7 +1120,7 @@ Foam::vector Foam::DSMCCloud<ParcelType>::equipartitionLinearVelocity
 
 
 template<class ParcelType>
-Foam::scalar Foam::DSMCCloud<ParcelType>::equipartitionInternalEnergy
+Foam::scalar Foam::DSMCCloudMod<ParcelType>::equipartitionInternalEnergy
 (
     scalar temperature,
     direction iDof
@@ -1158,7 +1157,7 @@ Foam::scalar Foam::DSMCCloud<ParcelType>::equipartitionInternalEnergy
 
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::dumpParticlePositions() const
+void Foam::DSMCCloudMod<ParcelType>::dumpParticlePositions() const
 {
     OFstream pObj
     (
@@ -1167,7 +1166,7 @@ void Foam::DSMCCloud<ParcelType>::dumpParticlePositions() const
       + this->db().time().timeName() + ".obj"
     );
 
-    forAllConstIter(typename DSMCCloud<ParcelType>, *this, iter)
+    forAllConstIter(typename DSMCCloudMod<ParcelType>, *this, iter)
     {
         const ParcelType& p = iter();
 
@@ -1182,7 +1181,7 @@ void Foam::DSMCCloud<ParcelType>::dumpParticlePositions() const
 
 
 template<class ParcelType>
-void Foam::DSMCCloud<ParcelType>::autoMap(const mapPolyMesh& mapper)
+void Foam::DSMCCloudMod<ParcelType>::autoMap(const mapPolyMesh& mapper)
 {
     Cloud<ParcelType>::autoMap(mapper);
 

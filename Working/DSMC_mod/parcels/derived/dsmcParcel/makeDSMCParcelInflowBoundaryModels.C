@@ -24,7 +24,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "dsmcParcel.H"
-#include "DSMCCloud.H"
+#include "DSMCCloudMod.H"
 #include "FreeStream.H"
 #include "NoInflow.H"
 
@@ -32,7 +32,7 @@ License
 
 namespace Foam
 {
-    typedef DSMCCloud<dsmcParcel> CloudType;
+    typedef DSMCCloudMod<dsmcParcel> CloudType;
 
     makeInflowBoundaryModel(CloudType);
 

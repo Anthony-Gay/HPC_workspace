@@ -1,6 +1,6 @@
-$(OBJECTS_DIR)/clouds/baseClasses/DSMCBaseCloud/DSMCBaseCloud.C.dep: \
-clouds/baseClasses/DSMCBaseCloud/DSMCBaseCloud.C \
-lnInclude/DSMCBaseCloud.H \
+$(OBJECTS_DIR)/clouds/baseClasses/DSMCBaseCloud/DSMCBaseCloudMod.C.dep: \
+clouds/baseClasses/DSMCBaseCloud/DSMCBaseCloudMod.C \
+lnInclude/DSMCBaseCloudMod.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/GeometricFields.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volMesh.H \
@@ -508,7 +508,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/SpatialTensor.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/SpatialVectorI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/SpatialTensorI.H \
 
-lnInclude/DSMCBaseCloud.H :
+lnInclude/DSMCBaseCloudMod.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/GeometricFields.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volMesh.H :

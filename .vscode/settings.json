@@ -39,6 +39,12 @@
         "BinaryCollisionModelNew.C": "cpp",
         "dsmcParcel.C": "cpp",
         "DSMCParcelIO.C": "cpp",
-        "defineDSMCParcel.C": "cpp"
+        "defineDSMCParcel.C": "cpp",
+        "DSMCCloudMod.C": "cpp",
+        "makeDSMCParcelBinaryCollisionModels.C": "cpp",
+        "makeDSMCParcelWallInteractionModels.C": "cpp",
+        "makeDSMCParcelInflowBoundaryModels.C": "cpp",
+        "DSMCBaseCloudMod.C": "cpp",
+        "dsmcFields.C": "cpp"
     }
 }

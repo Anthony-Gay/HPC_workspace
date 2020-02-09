@@ -1,6 +1,6 @@
 SOURCE = \
 parcels/derived/dsmcParcel/dsmcParcel.C \
-clouds/baseClasses/DSMCBaseCloud/DSMCBaseCloud.C \
+clouds/baseClasses/DSMCBaseCloud/DSMCBaseCloudMod.C \
 parcels/derived/dsmcParcel/defineDSMCParcel.C \
 parcels/derived/dsmcParcel/makeDSMCParcelBinaryCollisionModels.C \
 parcels/derived/dsmcParcel/makeDSMCParcelWallInteractionModels.C \

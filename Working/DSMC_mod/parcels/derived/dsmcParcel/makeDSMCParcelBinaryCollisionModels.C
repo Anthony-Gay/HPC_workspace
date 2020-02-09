@@ -24,7 +24,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "dsmcParcel.H"
-#include "DSMCCloud.H"
+#include "DSMCCloudMod.H"
 #include "NoBinaryCollision.H"
 #include "VariableHardSphere.H"
 #include "LarsenBorgnakkeVariableHardSphere.H"
@@ -33,9 +33,9 @@ License
 
 namespace Foam
 {
-    typedef DSMCCloud<dsmcParcel> CloudType;
+    typedef DSMCCloudMod<dsmcParcel> CloudType;
 
-    makeBinaryCollisionModel(DSMCCloud<dsmcParcel>);
+    makeBinaryCollisionModel(DSMCCloudMod<dsmcParcel>);
 
     // Add instances of collision model to the table
     makeBinaryCollisionModelType(NoBinaryCollision, CloudType);

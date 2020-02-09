@@ -1,13 +1,13 @@
 $(OBJECTS_DIR)/parcels/derived/dsmcParcel/makeDSMCParcelInflowBoundaryModels.C.dep: \
 parcels/derived/dsmcParcel/makeDSMCParcelInflowBoundaryModels.C \
 lnInclude/dsmcParcel.H \
-lnInclude/DSMCCloud.H \
+lnInclude/DSMCCloudMod.H \
 lnInclude/FreeStream.H \
 lnInclude/NoInflow.H \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H \
 lnInclude/DSMCParcel.H \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H \
-lnInclude/DSMCBaseCloud.H \
+lnInclude/DSMCBaseCloudMod.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H \
@@ -15,8 +15,8 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarIOField.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentric.H \
-lnInclude/DSMCCloudI.H \
-lnInclude/DSMCCloud.C \
+lnInclude/DSMCCloudIMod.H \
+lnInclude/DSMCCloudMod.C \
 lnInclude/InflowBoundaryModel.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/polyMesh.H \
 lnInclude/FreeStream.C \
@@ -626,13 +626,13 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/MatrixBlockI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/MatrixBlock.C \
 
 lnInclude/dsmcParcel.H :
-lnInclude/DSMCCloud.H :
+lnInclude/DSMCCloudMod.H :
 lnInclude/FreeStream.H :
 lnInclude/NoInflow.H :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H :
 lnInclude/DSMCParcel.H :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H :
-lnInclude/DSMCBaseCloud.H :
+lnInclude/DSMCBaseCloudMod.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H :
@@ -640,8 +640,8 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarIOField.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentric.H :
-lnInclude/DSMCCloudI.H :
-lnInclude/DSMCCloud.C :
+lnInclude/DSMCCloudIMod.H :
+lnInclude/DSMCCloudMod.C :
 lnInclude/InflowBoundaryModel.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/polyMesh.H :
 lnInclude/FreeStream.C :

@@ -24,7 +24,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "dsmcParcel.H"
-#include "DSMCCloud.H"
+#include "DSMCCloudMod.H"
 #include "MaxwellianThermal.H"
 #include "SpecularReflection.H"
 #include "MixedDiffuseSpecular.H"
@@ -33,7 +33,7 @@ License
 
 namespace Foam
 {
-    typedef DSMCCloud<dsmcParcel> CloudType;
+    typedef DSMCCloudMod<dsmcParcel> CloudType;
 
     makeWallInteractionModel(CloudType);
 
