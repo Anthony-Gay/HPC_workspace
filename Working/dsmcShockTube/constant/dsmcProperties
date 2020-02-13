@@ -48,7 +48,7 @@ InflowBoundaryModel             none;
 // Molecular species
 // ~~~~~~~~~~~~~~~~~
 
-typeIdList                      (N2);
+typeIdList                     (N2);
 
 moleculeProperties
 {

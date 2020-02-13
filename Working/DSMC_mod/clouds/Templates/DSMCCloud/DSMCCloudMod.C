@@ -56,6 +56,8 @@ void Foam::DSMCCloudMod<ParcelType>::buildConstProps()
 
         constProps_[i] =
         typename ParcelType::constantProperties(molDict);
+        //Info<< "Build constant props has triggered without error" << endl;
+
     }
 }
 
@@ -169,101 +171,93 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
     forAll(numberDensitiesList, i)
     {
         scalar numberDensity=numberDensities[i];
-        Info<< nl << "Input number density: "<< numberDensity<< endl;
+        scalar temperature=temperatures[i];                
+        label idxStart=distributions[2*i];
+        label idxStop=distributions[2*i+1];
 
-        //forAll(temperaturesList, j)
+        if (distributions.size()%2 != 0 )
+        {
+            FatalErrorInFunction
+            << "Distribution dict must have even pairs." << nl
+            << abort(FatalError);
+        }
         
-        scalar temperature=temperatures[i];
-        
-        Info<< nl << "Input temperature: "<< temperature<< endl;
+        Info<< nl << "Range Start: "<< idxStart<< endl;
+        Info<< nl << "Range Stop: "<< idxStop<< endl;
+        Info<< "This should be final Range: "<< (mesh_.cells()).size() <<endl;
 
-            for (int k=0;k<distributions.size()-1;k=k+2)
-            {             
-                label idxStart=distributions[k];
-                label idxStop=distributions[k+1];
+        for (Foam::label celli=idxStart; celli<idxStop; celli++)        
+        {
+            List<tetIndices> cellTets = polyMeshTetDecomposition::cellTetIndices
+            (
+                mesh_,
+                celli
+            );
+            //Info<< nl << "Tetrahedron indices: "<< cellTets.size()<< endl;
+            //Info<<  celli<< endl;
 
-                if (distributions.size()%2 != 0 )
+            forAll(cellTets, tetI)
+            {
+                const tetIndices& cellTetIs = cellTets[tetI];
+                tetPointRef tet = cellTetIs.tet(mesh_);
+                scalar tetVolume = tet.mag();
+                const word& speciesName(species);
+
+                label typeId(findIndex(typeIdList_, speciesName));
+    
+                if (typeId == -1)
+                {
+                    FatalErrorInFunction
+                        << "typeId " << speciesName << "not defined." << nl
+                        << abort(FatalError);
+                }
+
+                    const typename ParcelType::constantProperties& cP =
+                    constProps(typeId);
+
+                    //scalar numberDensity = numberDensities[i];
+
+                    // Calculate the number of particles required
+                    scalar particlesRequired = numberDensity*tetVolume;
+                    //Info<< nl << "Tetrahedral volume: "<< tetVolume<< endl;
+
+                    // Only integer numbers of particles can be inserted
+                    label nParticlesToInsert = label(particlesRequired);
+                    /* if (nParticlesToInsert!=0)
                     {
-                        FatalErrorInFunction
-                            << "Distribution dict must have even pairs." << nl
-                            << abort(FatalError);
-                    }
-                            
-                for (Foam::label celli=idxStart; celli<idxStop; celli++)        
-                {
-                List<tetIndices> cellTets = polyMeshTetDecomposition::cellTetIndices
-                (
-                    mesh_,
-                    celli
-                );
-                       // Info<< nl << "Tetrahedron indices: "<< cellTets.size()<< endl;
-                        //Info<< nl << "Meshcells: "<< (mesh_.cells()).size()<< endl;
+                    Info<< nl << "Particles to insert: "<< nParticlesToInsert<< endl;
+                    }*/
 
-
-                forAll(cellTets, tetI)
-                {
-                    const tetIndices& cellTetIs = cellTets[tetI];
-                    tetPointRef tet = cellTetIs.tet(mesh_);
-                    scalar tetVolume = tet.mag();
-
-                    
-                        const word& speciesName(species);
-
-                        label typeId(findIndex(typeIdList_, speciesName));
-
-                        if (typeId == -1)
-                        {
-                            FatalErrorInFunction
-                                << "typeId " << speciesName << "not defined." << nl
-                                << abort(FatalError);
-                        }
-
-                        const typename ParcelType::constantProperties& cP =
-                        constProps(typeId);
-
-                        scalar numberDensity = numberDensities[i];
-
-                        // Calculate the number of particles required
-                        scalar particlesRequired = numberDensity*tetVolume;
-                        //Info<< nl << "Tetrahedral volume: "<< tetVolume<< endl;
-
-                        // Only integer numbers of particles can be inserted
-                        label nParticlesToInsert = label(particlesRequired);
-                        if (nParticlesToInsert!=0)
-                        {
-                        Info<< nl << "Particles to insert: "<< nParticlesToInsert<< endl;
-                        }
-
-                        // Add another particle with a probability proportional to the
-                        // remainder of taking the integer part of particlesRequired
-                        if
-                        (
+                    // Add another particle with a probability proportional to the
+                    // remainder of taking the integer part of particlesRequired
+                    if
+                    (
                         (particlesRequired - nParticlesToInsert)
                         > rndGen_.scalar01()
-                        )
-                        {
-                            nParticlesToInsert++;
-                        }
+                    )
+                    {
+                        nParticlesToInsert++;
+                    }
 
-                        for (label pI = 0; pI < nParticlesToInsert; pI++)
-                        {
-                            point p = tet.randomPoint(rndGen_);
+                    for (label pI = 0; pI < nParticlesToInsert; pI++)
+                    {
+                        point p = tet.randomPoint(rndGen_);
 
-                            vector U = equipartitionLinearVelocity
-                            (
-                                temperature,
-                                cP.mass()
-                            );
+                        vector U = equipartitionLinearVelocity
+                        (
+                            temperature,
+                            cP.mass()
+                        );
 
-                            scalar Ei = equipartitionInternalEnergy
-                            (
-                                temperature,
-                                cP.internalDegreesOfFreedom()
-                            );
+                        scalar Ei = equipartitionInternalEnergy
+                        (
+                            temperature,
+                            cP.internalDegreesOfFreedom()
+                        );
 
-                            U += velocity;
+                        U += velocity;
 
-                            addNewParcel(p, celli, U, Ei, typeId);
+                        addNewParcel(p, celli, U, Ei, typeId);
                             
                             /*if (tetI == 3)
                             {
@@ -272,23 +266,23 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
                                 << abort(FatalError);
                             }*/
 
-                        }
+                        
                     
+                        }
+                    }
                 }
-            }
-        }
 
         // Initialise the sigmaTcRMax_ field to the product of the cross section of
         // the most abundant species and the most probable thermal speed (Bird,
         // p222-223)
 
-        label mostAbundantType(findMax(numberDensities));
+        label mostAbundantType=0;//Hardcoded nitrogen
 
         const typename ParcelType::constantProperties& cP = constProps
         (
             mostAbundantType
         );
-        Info<< nl << "mostAbundantType: "<< mostAbundantType<< endl;
+        //Info<< nl << "mostAbundantType: "<< mostAbundantType<< endl;
 
         sigmaTcRMax_.primitiveFieldRef() = cP.sigmaT()*maxwellianMostProbableSpeed
         (
@@ -1037,7 +1031,6 @@ template<class ParcelType>
 void Foam::DSMCCloudMod<ParcelType>::evolve()
 {
     typename ParcelType::trackingData td(*this);
-
     // Reset the data collection fields
     resetFields();
 

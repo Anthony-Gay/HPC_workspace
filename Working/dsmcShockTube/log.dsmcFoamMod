@@ -1,0 +1,41 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : /home/anthonygay1812/OpenFOAM/root-7/platforms/linux64GccDPInt32Opt/bin/dsmcFoamMod
+Date   : Feb 12 2020
+Time   : 22:38:06
+Host   : "DESKTOP-KF81SG4"
+PID    : 9762
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+Constructing dsmcCloud 
+Selecting BinaryCollisionModel LarsenBorgnakkeVariableHardSphere
+Selecting WallInteractionModel SpecularReflection
+Selecting InflowBoundaryModel none
+
+Constructing constant properties for
+    N2
+
+Starting time loop
+
+fieldAverage fieldAverage1:
+    Starting averaging at time 0
+
+Time = 1e-06
+

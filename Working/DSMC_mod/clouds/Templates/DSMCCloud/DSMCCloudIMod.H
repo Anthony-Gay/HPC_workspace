@@ -110,6 +110,7 @@ Foam::DSMCCloudMod<ParcelType>::constProps
         FatalErrorInFunction
             << "constantProperties for requested typeId index "
             << typeId << " do not exist" << nl
+            << "Size of Cost Prop: " << constProps_.size() << nl
             << abort(FatalError);
     }
 

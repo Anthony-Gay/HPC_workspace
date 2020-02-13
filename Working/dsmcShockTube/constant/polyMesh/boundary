@@ -21,14 +21,14 @@ FoamFile
     {
         type            patch;
         nFaces          2;
-        startFace       499;
+        startFace       999;
     }
     empty
     {
         type            empty;
         inGroups        List<word> 1(empty);
-        nFaces          2000;
-        startFace       501;
+        nFaces          4000;
+        startFace       1001;
     }
 )
 

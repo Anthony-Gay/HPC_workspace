@@ -1,0 +1,12 @@
+#!/bin/sh
+cd /home/anthonygay1812/OpenFOAM/Working/DSMC_mod
+wclean
+wmake libso
+sudo chown anthonygay1812:anthonygay1812 /home/anthonygay1812/OpenFOAM/root-7/platforms/linux64GccDPInt32Opt/lib/libDSMC_mod.so
+cd /home/anthonygay1812/OpenFOAM/Working/dsmcInitialise_modified
+wclean
+wmake
+cd /home/anthonygay1812/OpenFOAM/Working/dsmcFoam_modified
+wclean
+wmake
+cd /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube

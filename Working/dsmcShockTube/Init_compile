@@ -1,5 +1,4 @@
 #!/bin/sh
 cd /home/anthonygay1812/OpenFOAM/Working/dsmcInitialise_modified
-wclean
-wmake
+./Compile
 cd /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube

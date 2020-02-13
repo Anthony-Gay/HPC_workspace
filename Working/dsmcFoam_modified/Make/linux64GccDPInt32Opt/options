@@ -53,14 +53,11 @@
 
 # 8 "<command-line>" 2
 # 1 "Make/options"
-EXE_INC = -I$(LIB_SRC)/finiteVolume/lnInclude -I$(LIB_SRC)/lagrangian/basic/lnInclude -I$(LIB_SRC)/lagrangian/DSMC/lnInclude -I$(LIB_SRC)/meshTools/lnInclude -I/home/anthonygay1812/OpenFOAM/Working/dsmcCloud_derived -I/home/anthonygay1812/OpenFOAM/Working/DSMCCloud_modified -I/home/anthonygay1812/OpenFOAM/Working/dsmcFoam_modified
+EXE_INC = -I$(LIB_SRC)/finiteVolume/lnInclude -I$(LIB_SRC)/lagrangian/basic/lnInclude -I$(LIB_SRC)/meshTools/lnInclude -I/home/anthonygay1812/OpenFOAM/Working/DSMC_mod/lnInclude 
 
 
 
 
 
 
-
-
-
-EXE_LIBS = -lmeshTools -lfiniteVolume -llagrangian -lDSMC
+EXE_LIBS = -lmeshTools -lfiniteVolume -llagrangian -L$(FOAM_USER_LIBBIN) -lDSMC_mod

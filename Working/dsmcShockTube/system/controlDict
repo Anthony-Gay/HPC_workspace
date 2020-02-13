@@ -15,7 +15,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     dsmcFoamV1;
+application     dsmcFoamMod;
 
 startFrom       startTime;
 
@@ -23,13 +23,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         0.007;
+endTime         0.0036;
 
 deltaT          1e-6;
 
 writeControl    adjustableRunTime;
 
-writeInterval   0.001;
+writeInterval   0.0006;
 
 purgeWrite      0;
 
@@ -126,9 +126,9 @@ functions
 
         #includeFunc mag(U)
 
-libs
+    libs
     (
-        "/home/anthonygay1812/OpenFOAM/root-7/platforms/linux64GccDPInt32Opt/lib/libDSMC_mod.so"
+        "libDSMC_mod.so"
     );
 }
 

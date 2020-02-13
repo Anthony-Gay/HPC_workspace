@@ -45,6 +45,17 @@
         "makeDSMCParcelWallInteractionModels.C": "cpp",
         "makeDSMCParcelInflowBoundaryModels.C": "cpp",
         "DSMCBaseCloudMod.C": "cpp",
-        "dsmcFields.C": "cpp"
+        "dsmcFields.C": "cpp",
+        "dsmcInitialiseMod.C": "cpp",
+        "dsmcFoamMod.C": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp"
     }
 }

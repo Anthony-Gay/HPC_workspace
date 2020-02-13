@@ -5,7 +5,7 @@ cd ${0%/*} || exit 1    # Run from this directory
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
 runApplication blockMesh
-runApplication dsmcInitialiseV1
-runApplication $(getApplication) #returns dsmcV1
-
+/home/anthonygay1812/OpenFOAM/root-7/platforms/linux64GccDPInt32Opt/bin/dsmcInitialiseMod > log.dsmcInitialiseMod
+/home/anthonygay1812/OpenFOAM/root-7/platforms/linux64GccDPInt32Opt/bin/dsmcFoamMod > log.dsmcFoamMod
+#runApplication $(getApplication)
 #------------------------------------------------------------------------------
