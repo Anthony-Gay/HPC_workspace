@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : /home/anthonygay1812/OpenFOAM/root-7/platforms/linux64GccDPInt32Opt/bin/dsmcInitialiseMod
-Date   : Feb 12 2020
-Time   : 22:38:04
+Date   : Feb 15 2020
+Time   : 00:04:08
 Host   : "DESKTOP-KF81SG4"
-PID    : 9761
+PID    : 29768
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
 nProcs : 1
@@ -31,24 +31,10 @@ Constructing constant properties for
 
 Initialising particles
 
-Range Start: 0
-
-Range Stop: 500
-This should be final Range: 1000
-
-mostAbundantType: 0
-
-Range Start: 501
-
-Range Stop: 1000
-This should be final Range: 1000
-
-mostAbundantType: 0
-
-Total number of molecules added: 108875
+Total number of molecules added: 109044
 
 
-ClockTime = 1 s
+ClockTime = 2 s
 
 End
 

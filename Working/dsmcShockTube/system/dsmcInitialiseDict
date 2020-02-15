@@ -14,7 +14,6 @@ FoamFile
     object      dsmcInitialiseDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-
 species
 {
     species1        N2;
@@ -30,7 +29,7 @@ distributions
 {
     start1          0;
     stop1           500;
-    start2          501;
+    start2          500;
     stop2           1000;
 };
 

@@ -166,15 +166,16 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
     {
         numberDensities[i] /= nParticle_;
     }
+    //Hardcoded temp for most probable maxwellian speed lines 282-296
+        scalar temperature=temperatures[0];                
+        label i=0;
 
     // Begin meshgrid population
     forAll(numberDensitiesList, i)
     {
         scalar numberDensity=numberDensities[i];
-        scalar temperature=temperatures[i];                
         label idxStart=distributions[2*i];
         label idxStop=distributions[2*i+1];
-
         if (distributions.size()%2 != 0 )
         {
             FatalErrorInFunction
@@ -182,18 +183,18 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
             << abort(FatalError);
         }
         
-        Info<< nl << "Range Start: "<< idxStart<< endl;
-        Info<< nl << "Range Stop: "<< idxStop<< endl;
-        Info<< "This should be final Range: "<< (mesh_.cells()).size() <<endl;
-
-        for (Foam::label celli=idxStart; celli<idxStop; celli++)        
+        //Info << "Range Start: "<< idxStart<< endl;
+        //Info << "Range Stop: "<< idxStop<< endl;
+       // Info<< "This should be final Range: "<< (mesh_.cells()).size() <<endl;
+        for (Foam::label celli=idxStart; celli<idxStop; celli++) 
         {
             List<tetIndices> cellTets = polyMeshTetDecomposition::cellTetIndices
             (
                 mesh_,
                 celli
             );
-            //Info<< nl << "Tetrahedron indices: "<< cellTets.size()<< endl;
+            //Info<< nl << "Cell index: "<< celli << endl;
+            //Info<< nl << "Tetrahedron indices: "<< cellTets << endl;
             //Info<<  celli<< endl;
 
             forAll(cellTets, tetI)
@@ -202,6 +203,8 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
                 tetPointRef tet = cellTetIs.tet(mesh_);
                 scalar tetVolume = tet.mag();
                 const word& speciesName(species);
+
+                
 
                 label typeId(findIndex(typeIdList_, speciesName));
     
@@ -259,7 +262,7 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
 
                         addNewParcel(p, celli, U, Ei, typeId);
                             
-                            /*if (tetI == 3)
+                            /*if (sum(p) == -1 )
                             {
                             FatalErrorInFunction
                                 << "Debugging protocal " 
@@ -271,7 +274,7 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
                         }
                     }
                 }
-
+    }
         // Initialise the sigmaTcRMax_ field to the product of the cross section of
         // the most abundant species and the most probable thermal speed (Bird,
         // p222-223)
@@ -289,10 +292,10 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
             temperature,
             cP.mass()
         );
-
+    
         sigmaTcRMax_.correctBoundaryConditions();
         
-    }
+    
 }
 
 
