@@ -59,6 +59,7 @@
         "unordered_set": "cpp",
         "Cloud.C": "cpp",
         "polyMeshTetDecomposition.C": "cpp",
-        "GeometricField.C": "cpp"
+        "GeometricField.C": "cpp",
+        "SpecularReflection.C": "cpp"
     }
 }

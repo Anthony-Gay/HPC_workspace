@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : /home/anthonygay1812/OpenFOAM/root-7/platforms/linux64GccDPInt32Opt/bin/dsmcInitialiseMod
-Date   : Feb 15 2020
-Time   : 00:04:08
+Date   : Feb 18 2020
+Time   : 18:48:34
 Host   : "DESKTOP-KF81SG4"
-PID    : 29768
+PID    : 12883
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
 nProcs : 1
@@ -31,10 +31,10 @@ Constructing constant properties for
 
 Initialising particles
 
-Total number of molecules added: 109044
+Total number of molecules added: 109045
 
 
-ClockTime = 2 s
+ClockTime = 1 s
 
 End
 
