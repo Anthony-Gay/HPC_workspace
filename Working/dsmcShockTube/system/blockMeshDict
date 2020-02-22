@@ -38,7 +38,7 @@ boundary
 (
     sides
     {
-        type patch; // patch is generic type for inlet or outlet NOTE: the sides tags correspond to the boundaries specified in the 0 dict
+        type symmetry; // patch is generic type for inlet or outlet NOTE: the sides tags correspond to the boundaries specified in the 0 dict
         faces
         (
             (1 2 6 5)

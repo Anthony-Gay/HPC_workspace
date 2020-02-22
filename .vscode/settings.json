@@ -60,6 +60,9 @@
         "Cloud.C": "cpp",
         "polyMeshTetDecomposition.C": "cpp",
         "GeometricField.C": "cpp",
-        "SpecularReflection.C": "cpp"
+        "SpecularReflection.C": "cpp",
+        "FreeStream.C": "cpp",
+        "InflowBoundaryModel.C": "cpp",
+        "InflowBoundaryModelNew.C": "cpp"
     }
 }

@@ -19,7 +19,8 @@ FoamFile
 (
     sides
     {
-        type            patch;
+        type            symmetry;
+        inGroups        List<word> 1(symmetry);
         nFaces          2;
         startFace       999;
     }
