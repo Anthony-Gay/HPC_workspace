@@ -35,8 +35,8 @@ distributions
 
 temperature     
 {
-    temp1        400;
-    temp2        400;
+    temp1        900;
+    temp2        300;
 };
 
 velocity        (0 0 0);

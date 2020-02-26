@@ -6,11 +6,11 @@
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
-Exec   : /home/anthonygay1812/OpenFOAM/root-7/platforms/linux64GccDPInt32Opt/bin/dsmcInitialiseMod
-Date   : Feb 20 2020
-Time   : 17:02:34
+Exec   : /home/anthonygay1812/OpenFOAM/anthonygay1812-7/platforms/linux64GccDPInt32Opt/bin/dsmcInitialiseMod
+Date   : Feb 25 2020
+Time   : 21:33:24
 Host   : "DESKTOP-KF81SG4"
-PID    : 31587
+PID    : 24584
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
 nProcs : 1
@@ -29,12 +29,12 @@ Initialising dsmc for Time = 0
 Constructing constant properties for
     N2
 
-Initialising particles
+Initialising all particles
 
-Total number of molecules added: 10852
+Total number of molecules added: 218032
 
 
-ClockTime = 1 s
+ClockTime = 3 s
 
 End
 

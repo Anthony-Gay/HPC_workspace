@@ -167,15 +167,15 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
         numberDensities[i] /= nParticle_;
     }
     //Hardcoded temp for most probable maxwellian speed lines 282-296
-        scalar temperature=temperatures[0];                
-        label i=0;
 
     // Begin meshgrid population
     forAll(numberDensitiesList, i)
     {
         scalar numberDensity=numberDensities[i];
         label idxStart=distributions[2*i];
-        label idxStop=distributions[2*i+1];
+        label idxStop=distributions[2*i+1];        
+        scalar temperature=temperatures[i];                
+
         if (distributions.size()%2 != 0 )
         {
             FatalErrorInFunction
@@ -273,8 +273,7 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
                     
                         }
                     }
-                }
-    }
+               
         // Initialise the sigmaTcRMax_ field to the product of the cross section of
         // the most abundant species and the most probable thermal speed (Bird,
         // p222-223)
@@ -287,15 +286,22 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
         );
         //Info<< nl << "mostAbundantType: "<< mostAbundantType<< endl;
 
-        sigmaTcRMax_.primitiveFieldRef() = cP.sigmaT()*maxwellianMostProbableSpeed
+        /*sigmaTcRMax_.primitiveFieldRef() = cP.sigmaT()*maxwellianMostProbableSpeed
+        (
+            temperature,
+            cP.mass()
+        );*/
+        sigmaTcRMax_[celli]=cP.sigmaT()*maxwellianMostProbableSpeed
         (
             temperature,
             cP.mass()
         );
-    
-        sigmaTcRMax_.correctBoundaryConditions();
         
+        
+     }
+    }
     
+    sigmaTcRMax_.correctBoundaryConditions();  
 }
 
 

@@ -60,4 +60,4 @@ EXE_INC = -I$(LIB_SRC)/finiteVolume/lnInclude -I$(LIB_SRC)/lagrangian/basic/lnIn
 
 
 
-EXE_LIBS = -lmeshTools -lfiniteVolume -llagrangian -L$(FOAM_USER_LIBBIN) -lDSMC_mod 
+EXE_LIBS = -lmeshTools -lfiniteVolume -llagrangian -L$(FOAM_USER_LIBBIN) -lDSMC_mod
