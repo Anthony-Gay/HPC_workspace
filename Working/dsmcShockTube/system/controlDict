@@ -23,13 +23,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         0.007;
+endTime         4e-3;
 
 deltaT          1e-6;
 
 writeControl    adjustableRunTime;
 
-writeInterval   1e-3;
+writeInterval   5e-4;
 
 purgeWrite      0;
 
@@ -123,9 +123,7 @@ functions
         libs            ("liblagrangianFunctionObjects.so");
         writeControl    writeTime;
     }
-
-        #includeFunc mag(U)
-
+    
     libs
     (
         "libDSMC_mod.so"

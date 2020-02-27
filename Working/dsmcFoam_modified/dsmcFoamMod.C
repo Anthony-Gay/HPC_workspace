@@ -53,15 +53,23 @@ int main(int argc, char *argv[])
         Info<< "Time = " << runTime.timeName() << nl << endl;
 
         dsmc.evolve();
-        Info<< "Evolve function was successful."<<  endl;
+        //Info<< "Evolve function was successful."<<  endl;
         dsmc.info();
-        Info<< "Info function was successful."<<  endl;
+        //Info<< "Info function was successful."<<  endl;
 
         runTime.write();
 
+         dimensionedScalar simTime=runTime.time();
+         dimensionedScalar simDt=runTime.deltaT();
+         dimensionedScalar endTime=runTime.endTime();
+         scalar remainIts=(endTime.value()/simDt.value())-(simTime.value()/simDt.value());
+         scalar timePerIt=runTime.elapsedCpuTime()/(simTime.value()/simDt.value());
+
         Info<< nl << "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
             << "  ClockTime = " << runTime.elapsedClockTime() << " s"
-            << nl << endl;
+            << "  Iterations: " << (simTime.value()/simDt.value()) << "/" << (endTime.value()/simDt.value())
+            << "  Projected time to finish: " << (remainIts*timePerIt)/60 << " min"
+            << endl;
     }
 
     Info<< "End\n" << endl;

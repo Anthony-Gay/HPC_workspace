@@ -5,8 +5,12 @@ cd ${0%/*} || exit 1    # Run from this directory
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
 runApplication blockMesh
-/home/anthonygay1812/OpenFOAM/anthonygay1812-7/platforms/linux64GccDPInt32Opt/bin/dsmcInitialiseMod > log.dsmcInitialiseMod
-/home/anthonygay1812/OpenFOAM/anthonygay1812-7/platforms/linux64GccDPInt32Opt/bin/dsmcFoamMod > log.dsmcFoamMod
+runApplication dsmcInitialiseMod
+runApplication decomposePar
+#runApplication dsmcFoamMod
+runParallel dsmcFoamMod
+runApplication reconstructPar
+
 #runApplication dsmcInitialise
 #runApplication $(getApplication)
 #------------------------------------------------------------------------------

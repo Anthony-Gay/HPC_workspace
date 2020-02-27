@@ -63,6 +63,7 @@
         "SpecularReflection.C": "cpp",
         "FreeStream.C": "cpp",
         "InflowBoundaryModel.C": "cpp",
-        "InflowBoundaryModelNew.C": "cpp"
+        "InflowBoundaryModelNew.C": "cpp",
+        "LarsenBorgnakkeVariableHardSphere.C": "cpp"
     }
 }
