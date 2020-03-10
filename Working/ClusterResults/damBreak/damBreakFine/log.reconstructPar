@@ -1,0 +1,253 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-83cd285f0e3f
+Exec   : reconstructPar
+Date   : Mar 09 2020
+Time   : 20:54:05
+Host   : "node003"
+PID    : 13246
+I/O    : uncollated
+Case   : /home/ajgay/Working/damBreak/damBreakFine
+nProcs : 1
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Reconstructing fields for mesh region0
+
+Time = 0.05
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        nut
+        p_rgh
+        p
+        k
+        epsilon
+        alpha.water
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        alphaPhi0.water
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+Time = 0.1
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        nut
+        p_rgh
+        p
+        k
+        epsilon
+        alpha.water
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        alphaPhi0.water
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+Time = 0.15
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        nut
+        p_rgh
+        p
+        k
+        epsilon
+        alpha.water
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        alphaPhi0.water
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+Time = 0.2
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        nut
+        p_rgh
+        p
+        k
+        epsilon
+        alpha.water
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        alphaPhi0.water
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+Time = 0.25
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        nut
+        p_rgh
+        p
+        k
+        epsilon
+        alpha.water
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        alphaPhi0.water
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+Time = 0.3
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        nut
+        p_rgh
+        p
+        k
+        epsilon
+        alpha.water
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        alphaPhi0.water
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+Time = 0.35
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        nut
+        p_rgh
+        p
+        k
+        epsilon
+        alpha.water
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        alphaPhi0.water
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+Time = 0.4
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        nut
+        p_rgh
+        p
+        k
+        epsilon
+        alpha.water
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+        alphaPhi0.water
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+
+End
+

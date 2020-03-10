@@ -56,7 +56,6 @@ void Foam::DSMCCloudMod<ParcelType>::buildConstProps()
 
         constProps_[i] =
         typename ParcelType::constantProperties(molDict);
-        //Info<< "Build constant props has triggered without error" << endl;
 
     }
 }
@@ -83,6 +82,22 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
     const IOdictionary& dsmcInitialiseDict
 )
 {
+    //Find cell width for Knudsen Calc
+    const faceList & ff = mesh_.faces();
+    const pointField & pp = mesh_.points();
+    scalar xDim;
+    forAll ( mesh_.C(), celli)
+    {
+        const cell & cc = mesh_.cells()[celli];
+        labelList pLabels(cc.labels(ff));
+        pointField pLocal(pLabels.size(), vector::zero);
+
+        forAll (pLabels, pointi)
+            pLocal[pointi] = pp[pLabels[pointi]];
+
+        xDim = Foam::max(pLocal & vector(1,0,0)) - Foam::min(pLocal & vector(1,0,0));
+    }
+
     Info<< nl << "Initialising particles" << endl;
 
     // Read in Number species subdict
@@ -145,20 +160,6 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
     }
     // Changed to non multi species format
     word species = word(speciesDict.lookup("species1"));
-
-    /*Field<word> species(speciesList.size());
-    forAll(speciesList, i)
-    {
-        species[i] = speciesDict.lookup(speciesList[i]);
-    }*/
-    
-    /*forAll(molecules, i)
-    {
-        numberDensities[i] = readScalar
-        (
-            numberDensitiesDict.lookup(molecules[i])
-        );
-    }*/
     
 
     //numberDensities /= nParticle_;
@@ -183,9 +184,6 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
             << abort(FatalError);
         }
         
-        //Info << "Range Start: "<< idxStart<< endl;
-        //Info << "Range Stop: "<< idxStop<< endl;
-       // Info<< "This should be final Range: "<< (mesh_.cells()).size() <<endl;
         for (Foam::label celli=idxStart; celli<idxStop; celli++) 
         {
             List<tetIndices> cellTets = polyMeshTetDecomposition::cellTetIndices
@@ -193,9 +191,6 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
                 mesh_,
                 celli
             );
-            //Info<< nl << "Cell index: "<< celli << endl;
-            //Info<< nl << "Tetrahedron indices: "<< cellTets << endl;
-            //Info<<  celli<< endl;
 
             forAll(cellTets, tetI)
             {
@@ -218,18 +213,11 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
                     const typename ParcelType::constantProperties& cP =
                     constProps(typeId);
 
-                    //scalar numberDensity = numberDensities[i];
-
                     // Calculate the number of particles required
                     scalar particlesRequired = numberDensity*tetVolume;
-                    //Info<< nl << "Tetrahedral volume: "<< tetVolume<< endl;
 
                     // Only integer numbers of particles can be inserted
                     label nParticlesToInsert = label(particlesRequired);
-                    /* if (nParticlesToInsert!=0)
-                    {
-                    Info<< nl << "Particles to insert: "<< nParticlesToInsert<< endl;
-                    }*/
 
                     // Add another particle with a probability proportional to the
                     // remainder of taking the integer part of particlesRequired
@@ -261,47 +249,67 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
                         U += velocity;
 
                         addNewParcel(p, celli, U, Ei, typeId);
-                            
-                            /*if (sum(p) == -1 )
-                            {
-                            FatalErrorInFunction
-                                << "Debugging protocal " 
-                                << abort(FatalError);
-                            }*/
 
                         
                     
-                        }
                     }
+                }
+                
                
         // Initialise the sigmaTcRMax_ field to the product of the cross section of
         // the most abundant species and the most probable thermal speed (Bird,
         // p222-223)
 
-        label mostAbundantType=0;//Hardcoded nitrogen
+            label mostAbundantType=0;//Hardcoded nitrogen
 
-        const typename ParcelType::constantProperties& cP = constProps
-        (
-            mostAbundantType
-        );
-        //Info<< nl << "mostAbundantType: "<< mostAbundantType<< endl;
+            const typename ParcelType::constantProperties& cP = constProps
+            (
+                mostAbundantType
+            );
 
-        /*sigmaTcRMax_.primitiveFieldRef() = cP.sigmaT()*maxwellianMostProbableSpeed
+            //Assign a sigmaTcRMax to each cell
+            sigmaTcRMax_[celli]=cP.sigmaT()*maxwellianMostProbableSpeed
+            (
+                temperature,
+                cP.mass()
+            );
+        }
+        
+        // Calculate Knudsen number for each number density
+        dictionary moleculeProperties
         (
-            temperature,
-            cP.mass()
-        );*/
-        sigmaTcRMax_[celli]=cP.sigmaT()*maxwellianMostProbableSpeed
-        (
-            temperature,
-            cP.mass()
+            particleProperties_.subDict("moleculeProperties")
         );
+
+        const word& id(typeIdList_[0]);//Hardcoded N2
+        const dictionary& molDict(moleculeProperties.subDict(id));
+        scalar diameter = readScalar
+        (
+            molDict.lookup("diameter")        
+        );
+
+        scalar numCells=(mesh_.cells()).size();
+        scalar MFP=1.0/(diameter*numberDensity);
+        scalar KN=MFP/(xDim*numCells);
+        Info <<nl<< "Knudsen:"<<KN;
+
+        if ((KN)>5)
+        {
+            Info <<nl<< "Particle regime for cells "<< idxStart << " to "<< idxStop<<endl;
+        }
+        else if ((KN)<5)
+        {
+            Info <<nl<< "Fluid regime for cells "<< idxStart << " to "<< idxStop<<endl;
+        }
+        else
+        {
+            Info <<nl<< "Transitional regime for cells "<< idxStart << " to "<< idxStop<<endl;
+        }
         
-        
-     }
     }
     
     sigmaTcRMax_.correctBoundaryConditions();  
+
 }
 
 

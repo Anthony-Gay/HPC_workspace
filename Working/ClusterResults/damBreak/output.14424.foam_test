@@ -1,0 +1,9 @@
+Running blockMesh on /home/ajgay/Working/damBreak/damBreak
+Running setFields on /home/ajgay/Working/damBreak/damBreak
+Running interFoam on /home/ajgay/Working/damBreak/damBreak
+Cloning damBreakFine case from damBreak
+Running blockMesh on /home/ajgay/Working/damBreak/damBreakFine
+Running setFields on /home/ajgay/Working/damBreak/damBreakFine
+Running decomposePar on /home/ajgay/Working/damBreak/damBreakFine
+Running interFoam in parallel on /home/ajgay/Working/damBreak/damBreakFine using 4 processes
+Running reconstructPar on /home/ajgay/Working/damBreak/damBreakFine

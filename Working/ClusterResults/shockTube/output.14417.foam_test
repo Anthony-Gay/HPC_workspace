@@ -1,0 +1,4 @@
+Running blockMesh on /home/ajgay/Working/shockTube
+Running setFields on /home/ajgay/Working/shockTube
+Running rhoCentralFoam on /home/ajgay/Working/shockTube
+Running postProcess on /home/ajgay/Working/shockTube
