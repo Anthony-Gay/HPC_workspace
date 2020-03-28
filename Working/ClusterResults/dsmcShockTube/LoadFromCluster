@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#Pull current directory
+dirname=$(basename "$PWD")
+echo "Pulling: $dirname"
+
+#Remove old directory
+rm -r /home/anthonygay1812/OpenFOAM/Working/ClusterResults/$dirname
+
+#Download 
+scp -r -i ~/.ssh/id_rsa ajgay@129.65.158.141:/home/ajgay/OpenFOAM/Working/$dirname /home/anthonygay1812/OpenFOAM/Working/ClusterResults/$dirname 

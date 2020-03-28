@@ -7,12 +7,12 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-83cd285f0e3f
 Exec   : blockMesh
-Date   : Mar 09 2020
-Time   : 18:12:48
+Date   : Mar 11 2020
+Time   : 22:21:46
 Host   : "node003"
-PID    : 4987
+PID    : 2297
 I/O    : uncollated
-Case   : /home/ajgay/Working/dsmcShockTube
+Case   : /home/ajgay/OpenFOAM/Working/dsmcShockTube
 nProcs : 1
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
 allowSystemOperations : Allowing user-supplied system call operations
@@ -21,7 +21,7 @@ allowSystemOperations : Allowing user-supplied system call operations
 Create time
 
 Creating block mesh from
-    "/home/ajgay/Working/dsmcShockTube/system/blockMeshDict"
+    "/home/ajgay/OpenFOAM/Working/dsmcShockTube/system/blockMeshDict"
 No non-linear block edges defined
 No non-planar block faces defined
 Creating topology blocks

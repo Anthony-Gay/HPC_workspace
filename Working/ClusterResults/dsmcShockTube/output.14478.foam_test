@@ -1,0 +1,4 @@
+Cleaning /home/ajgay/OpenFOAM/Working/dsmcShockTube case
+Running blockMesh on /home/ajgay/OpenFOAM/Working/dsmcShockTube
+Running dsmcInitialiseMod on /home/ajgay/OpenFOAM/Working/dsmcShockTube
+Running dsmcFoamMod on /home/ajgay/OpenFOAM/Working/dsmcShockTube

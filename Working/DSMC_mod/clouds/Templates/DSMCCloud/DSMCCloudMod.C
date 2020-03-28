@@ -85,7 +85,7 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
     //Find cell width for Knudsen Calc
     const faceList & ff = mesh_.faces();
     const pointField & pp = mesh_.points();
-    scalar xDim;
+    scalar xDim=-1;
     forAll ( mesh_.C(), celli)
     {
         const cell & cc = mesh_.cells()[celli];

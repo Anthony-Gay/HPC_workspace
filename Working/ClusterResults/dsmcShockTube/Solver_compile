@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /home/anthonygay1812/OpenFOAM/Working/dsmcFoam_modified
+cd $HOME/OpenFOAM/Working/dsmcFoam_modified
 wclean
 wmake
-cd /home/anthonygay1812/OpenFOAM/Working/dsmcShockTube
+cd $HOME/OpenFOAM/Working/dsmcShockTube

@@ -64,6 +64,13 @@
         "FreeStream.C": "cpp",
         "InflowBoundaryModel.C": "cpp",
         "InflowBoundaryModelNew.C": "cpp",
-        "LarsenBorgnakkeVariableHardSphere.C": "cpp"
+        "LarsenBorgnakkeVariableHardSphere.C": "cpp",
+        "smoluchowskiJumpTFvPatchScalarField.C": "cpp",
+        "fixedRhoFvPatchScalarField.C": "cpp",
+        "maxwellSlipUFvPatchVectorField.C": "cpp",
+        "mixedFixedValueSlipFvPatchField.C": "cpp",
+        "rhoCentralFoamMod.C": "cpp",
+        "DSMCHybrid.C": "cpp",
+        "Hybrid.C": "cpp"
     }
 }

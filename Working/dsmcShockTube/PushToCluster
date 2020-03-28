@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#Pull current directory
+dirname=$(basename "$PWD")
+echo "Pushing: $dirname"
+
+#Remove mirror directory
+ssh ajgay@129.65.158.141 "rm -f -r /home/ajgay/OpenFOAM/Working/$dirname"
+
+#Upload 
+scp -r -i ~/.ssh/id_rsa /home/anthonygay1812/OpenFOAM/Working/$dirname ajgay@129.65.158.141:/home/ajgay/OpenFOAM/Working
+
+#Run on Cluster
+ssh ajgay@129.65.158.141 "cd /home/ajgay/OpenFOAM/Working/$dirname; sbatch foam.sbatch"
