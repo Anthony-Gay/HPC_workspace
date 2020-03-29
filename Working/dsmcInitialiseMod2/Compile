@@ -1,0 +1,7 @@
+#!/bin/sh
+cd /home/anthonygay1812/OpenFOAM/Working/dsmcMod2
+wclean
+wmake libso
+cd /home/anthonygay1812/OpenFOAM/Working/dsmcInitialiseMod2
+wclean
+wmake

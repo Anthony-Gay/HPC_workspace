@@ -1,0 +1,468 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : dsmcFoamMod
+Date   : Mar 29 2020
+Time   : 00:43:49
+Host   : "DESKTOP-KF81SG4"
+PID    : 7658
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/Working/oldDSMC/dsmcShockTube
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+Constructing dsmcCloud 
+Selecting BinaryCollisionModel LarsenBorgnakkeVariableHardSphere
+Selecting WallInteractionModel MaxwellianThermal
+Selecting InflowBoundaryModel none
+
+Constructing constant properties for
+    N2
+
+Starting time loop
+
+fieldAverage fieldAverage1:
+    Starting averaging at time 0
+
+Time = 6e-06
+
+    Collisions                      = 347261
+    Acceptance rate                 = 0.964116
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (7.68743e-26 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 1.13219e-25
+    Average linear kinetic energy   = 1.67305e-20
+    Average internal energy         = 9.74933e-21
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 0.55 s  ClockTime = 2 s  Iterations: 1/600  Projected time to finish: 5.49083 min
+    Reading/initialising field rhoNMean
+    Reading/initialising field rhoMMean
+    Reading/initialising field dsmcRhoNMean
+    Reading/initialising field momentumMean
+    Reading/initialising field linearKEMean
+    Reading/initialising field internalEMean
+    Reading/initialising field iDofMean
+    Reading/initialising field qMean
+    Reading/initialising field fDMean
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 1.2e-05
+
+    Collisions                      = 438726
+    Acceptance rate                 = 0.5908
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (8.99393e-26 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 1.22466e-25
+    Average linear kinetic energy   = 1.59412e-20
+    Average internal energy         = 1.05386e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 0.8 s  ClockTime = 2 s  Iterations: 2/600  Projected time to finish: 3.98667 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 1.8e-05
+
+    Collisions                      = 438400
+    Acceptance rate                 = 0.571913
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (1.07812e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 1.36133e-25
+    Average linear kinetic energy   = 1.59217e-20
+    Average internal energy         = 1.05581e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 1.08 s  ClockTime = 3 s  Iterations: 3/600  Projected time to finish: 3.582 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 2.4e-05
+
+    Collisions                      = 438262
+    Acceptance rate                 = 0.56487
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (1.21146e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 1.46919e-25
+    Average linear kinetic energy   = 1.5815e-20
+    Average internal energy         = 1.06648e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 1.36 s  ClockTime = 3 s  Iterations: 4/600  Projected time to finish: 3.37733 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 3e-05
+
+    Collisions                      = 439903
+    Acceptance rate                 = 0.562919
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (1.35447e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 1.58917e-25
+    Average linear kinetic energy   = 1.5842e-20
+    Average internal energy         = 1.06379e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 1.69 s  ClockTime = 3 s  Iterations: 5/600  Projected time to finish: 3.35183 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 3.6e-05
+
+    Collisions                      = 438785
+    Acceptance rate                 = 0.558674
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (1.55651e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 1.76455e-25
+    Average linear kinetic energy   = 1.59508e-20
+    Average internal energy         = 1.0529e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 1.97 s  ClockTime = 4 s  Iterations: 6/600  Projected time to finish: 3.2505 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 4.2e-05
+
+    Collisions                      = 439108
+    Acceptance rate                 = 0.555837
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (1.64327e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 1.84153e-25
+    Average linear kinetic energy   = 1.59146e-20
+    Average internal energy         = 1.05652e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 2.24 s  ClockTime = 4 s  Iterations: 7/600  Projected time to finish: 3.16267 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 4.8e-05
+
+    Collisions                      = 439104
+    Acceptance rate                 = 0.55321
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (1.81651e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 1.99765e-25
+    Average linear kinetic energy   = 1.59568e-20
+    Average internal energy         = 1.0523e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 2.5 s  ClockTime = 4 s  Iterations: 8/600  Projected time to finish: 3.08333 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 5.4e-05
+
+    Collisions                      = 440363
+    Acceptance rate                 = 0.55331
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (1.97567e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 2.1434e-25
+    Average linear kinetic energy   = 1.58648e-20
+    Average internal energy         = 1.0615e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 2.77 s  ClockTime = 4 s  Iterations: 9/600  Projected time to finish: 3.03161 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 6e-05
+
+    Collisions                      = 438940
+    Acceptance rate                 = 0.54947
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (2.07964e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 2.23959e-25
+    Average linear kinetic energy   = 1.5906e-20
+    Average internal energy         = 1.05738e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 3.03 s  ClockTime = 5 s  Iterations: 10/600  Projected time to finish: 2.9795 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 6.6e-05
+
+    Collisions                      = 439224
+    Acceptance rate                 = 0.548514
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (2.3206e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 2.46497e-25
+    Average linear kinetic energy   = 1.584e-20
+    Average internal energy         = 1.06398e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 3.3 s  ClockTime = 5 s  Iterations: 11/600  Projected time to finish: 2.945 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 7.2e-05
+
+    Collisions                      = 439848
+    Acceptance rate                 = 0.547463
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (2.42187e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 2.56053e-25
+    Average linear kinetic energy   = 1.59653e-20
+    Average internal energy         = 1.05145e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 3.56 s  ClockTime = 5 s  Iterations: 12/600  Projected time to finish: 2.90733 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 7.8e-05
+
+    Collisions                      = 440644
+    Acceptance rate                 = 0.546916
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (2.49069e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 2.62572e-25
+    Average linear kinetic energy   = 1.59246e-20
+    Average internal energy         = 1.05552e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 3.83 s  ClockTime = 6 s  Iterations: 13/600  Projected time to finish: 2.88232 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 8.4e-05
+
+    Collisions                      = 439345
+    Acceptance rate                 = 0.544627
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (2.62787e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 2.75619e-25
+    Average linear kinetic energy   = 1.59138e-20
+    Average internal energy         = 1.0566e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 4.1 s  ClockTime = 6 s  Iterations: 14/600  Projected time to finish: 2.86024 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 9e-05
+
+    Collisions                      = 439976
+    Acceptance rate                 = 0.544335
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (2.82908e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 2.94866e-25
+    Average linear kinetic energy   = 1.58294e-20
+    Average internal energy         = 1.06504e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 4.36 s  ClockTime = 6 s  Iterations: 15/600  Projected time to finish: 2.834 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 9.6e-05
+
+    Collisions                      = 439257
+    Acceptance rate                 = 0.542455
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (2.95711e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 3.07171e-25
+    Average linear kinetic energy   = 1.58808e-20
+    Average internal energy         = 1.0599e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 4.64 s  ClockTime = 6 s  Iterations: 16/600  Projected time to finish: 2.82267 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 0.000102
+
+    Collisions                      = 439426
+    Acceptance rate                 = 0.542175
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (3.07454e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 3.18491e-25
+    Average linear kinetic energy   = 1.59173e-20
+    Average internal energy         = 1.05625e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 4.92 s  ClockTime = 7 s  Iterations: 17/600  Projected time to finish: 2.81212 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 0.000108
+
+    Collisions                      = 439968
+    Acceptance rate                 = 0.541788
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (3.21031e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 3.31617e-25
+    Average linear kinetic energy   = 1.59527e-20
+    Average internal energy         = 1.05271e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 5.2 s  ClockTime = 7 s  Iterations: 18/600  Projected time to finish: 2.80222 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 0.000114
+
+    Collisions                      = 439505
+    Acceptance rate                 = 0.541261
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (3.25245e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 3.35698e-25
+    Average linear kinetic energy   = 1.59257e-20
+    Average internal energy         = 1.05541e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 5.49 s  ClockTime = 7 s  Iterations: 19/600  Projected time to finish: 2.79797 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 0.00012
+
+    Collisions                      = 438841
+    Acceptance rate                 = 0.539868
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (3.4084e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 3.50829e-25
+    Average linear kinetic energy   = 1.59661e-20
+    Average internal energy         = 1.05137e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 5.75 s  ClockTime = 7 s  Iterations: 20/600  Projected time to finish: 2.77917 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 0.000126
+
+    Collisions                      = 437857
+    Acceptance rate                 = 0.537899
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (3.5339e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 3.63033e-25
+    Average linear kinetic energy   = 1.59457e-20
+    Average internal energy         = 1.05341e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 6.02 s  ClockTime = 8 s  Iterations: 21/600  Projected time to finish: 2.76633 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 0.000132
+
+    Collisions                      = 438739
+    Acceptance rate                 = 0.538053
+
+Cloud name: dsmc
+    Number of dsmc particles        = 41019
+    Number of molecules             = 1.64076e+23
+    Mass in system                  = 0.00762953
+    Average linear momentum         = (3.73614e-25 -6.15601e-26 -5.58498e-26)
+   |Average linear momentum|        = 3.82749e-25
+    Average linear kinetic energy   = 1.58995e-20
+    Average internal energy         = 1.05804e-20
+    Average total energy            = 2.64798e-20
+
+ExecutionTime = 6.3 s  ClockTime = 8 s  Iterations: 22/600  Projected time to finish: 2.75864 min
+fieldAverage fieldAverage1 write:
+    Calculating averages
+
+Time = 0.000138
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+cd $HOME/OpenFOAM/Working/oldDSMC/DSMC_mod
+wclean
+wmake libso
+cd $HOME/OpenFOAM/Working/oldDSMC/dsmcInitialise_modified
+wclean
+wmake
+cd $HOME/OpenFOAM/Working/oldDSMC/dsmcFoam_modified
+wclean
+wmake
+cd $HOME/OpenFOAM/Working/oldDSMC/dsmcShockTube

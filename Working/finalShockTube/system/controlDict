@@ -15,7 +15,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     rhoCentralFoam;
+application     dsmcFoamMod;
 
 startFrom       startTime;
 
@@ -23,15 +23,15 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         0.007;
+endTime         3.6e-3;
 
-deltaT          1e-06;
+deltaT          6e-6;
 
 writeControl    adjustableRunTime;
 
-writeInterval   0.001;
+writeInterval   3.6e-4;
 
-cycleWrite      0;
+purgeWrite      0;
 
 writeFormat     ascii;
 
@@ -47,13 +47,87 @@ runTimeModifiable true;
 
 adjustTimeStep  yes;
 
-maxCo           0.2;
+maxCo           0.2; // max currant number
 
 maxDeltaT       1;
 
 functions
 {
-    #includeFunc mag(U)
+    fieldAverage1
+    {
+        type            fieldAverage;
+        libs            ("libfieldFunctionObjects.so");
+        writeControl    writeTime;
+
+        fields
+        (
+            rhoN
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+            rhoM
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+            dsmcRhoN
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+            momentum
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+            linearKE
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+            internalE
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+            iDof
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+            q
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+            fD
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+        );
+    }
+    dsmcFields1
+    {
+        type            dsmcFields;
+        libs            ("liblagrangianFunctionObjects.so");
+        writeControl    writeTime;
+    }
+    
+    libs
+    (
+        "libDSMC_mod.so"
+    );
 }
 
 // ************************************************************************* //

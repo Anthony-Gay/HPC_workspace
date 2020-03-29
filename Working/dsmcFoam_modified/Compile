@@ -1,7 +1,0 @@
-#!/bin/sh
-cd $HOME/OpenFOAM/Working/DSMC_mod
-wclean
-wmake libso
-cd $HOME/OpenFOAM/Working/dsmcFoam_modified
-wclean
-wmake

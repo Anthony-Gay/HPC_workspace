@@ -1,0 +1,45 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      dsmcInitialiseDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+species
+{
+    species1        N2;
+};   
+
+numberDensities
+{
+    density1          9.08471e21;
+    density2          2.63556e21;
+};
+
+distributions
+{
+    start1          0;
+    stop1           250;
+    start2          250;
+    stop2           500;
+};
+
+temperature     
+{
+    temp1        900;
+    temp2        300;
+};
+
+velocity        (0 0 0);
+
+
+// ************************************************************************* //

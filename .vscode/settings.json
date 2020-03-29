@@ -71,6 +71,10 @@
         "mixedFixedValueSlipFvPatchField.C": "cpp",
         "rhoCentralFoamMod.C": "cpp",
         "DSMCHybrid.C": "cpp",
-        "Hybrid.C": "cpp"
+        "Hybrid.C": "cpp",
+        "DSMCBaseCloudMod2.C": "cpp",
+        "DSMCCloudMod2.C": "cpp",
+        "dsmcInitialiseMod2.C": "cpp",
+        "dsmcFoamMod2.C": "cpp"
     }
 }
