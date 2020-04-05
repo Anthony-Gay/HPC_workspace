@@ -27,6 +27,7 @@ License
 #include "DSMCCloudMod2.H"
 #include "FreeStream.H"
 #include "NoInflow.H"
+#include "oneDirectionalHybrid.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -38,6 +39,7 @@ namespace Foam
 
     // Add instances of inflow boundary model to the table
     makeInflowBoundaryModelType(FreeStream, CloudType);
+    makeInflowBoundaryModelType(oneDirectionalHybrid, CloudType);
     makeInflowBoundaryModelType(NoInflow, CloudType);
 }
 

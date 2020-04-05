@@ -1,5 +1,0 @@
-#!/bin/sh
-cd $HOME/OpenFOAM/Working/dsmcFoam_modified
-wclean
-wmake
-cd $HOME/OpenFOAM/Working/dsmcShockTube

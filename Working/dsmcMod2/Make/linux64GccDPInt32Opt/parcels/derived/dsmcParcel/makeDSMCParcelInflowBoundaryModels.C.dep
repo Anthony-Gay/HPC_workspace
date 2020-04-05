@@ -4,6 +4,7 @@ lnInclude/dsmcParcel.H \
 lnInclude/DSMCCloudMod2.H \
 lnInclude/FreeStream.H \
 lnInclude/NoInflow.H \
+lnInclude/oneDirectionalHybrid.H \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H \
 lnInclude/DSMCParcel.H \
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H \
@@ -21,6 +22,7 @@ lnInclude/InflowBoundaryModel.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/polyMesh.H \
 lnInclude/FreeStream.C \
 lnInclude/NoInflow.C \
+lnInclude/oneDirectionalHybrid.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vector.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentricTensor.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H \
@@ -629,6 +631,7 @@ lnInclude/dsmcParcel.H :
 lnInclude/DSMCCloudMod2.H :
 lnInclude/FreeStream.H :
 lnInclude/NoInflow.H :
+lnInclude/oneDirectionalHybrid.H :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H :
 lnInclude/DSMCParcel.H :
 $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H :
@@ -646,6 +649,7 @@ lnInclude/InflowBoundaryModel.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/polyMesh.H :
 lnInclude/FreeStream.C :
 lnInclude/NoInflow.C :
+lnInclude/oneDirectionalHybrid.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vector.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/barycentricTensor.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H :

@@ -21,4 +21,4 @@ EXE_LIBS = \
     -ltopoChangerFvMesh \
     -lmeshTools \
     -L$(FOAM_USER_LIBBIN) \
-    -lrhoCentralFoamMod \
+    -lrhoCentralFoamMod 

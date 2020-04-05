@@ -60,8 +60,3 @@ EXE_INC = -I$(LIB_SRC)/finiteVolume/lnInclude -I$(LIB_SRC)/transportModels/compr
 
 
 LIB_LIBS = -lfiniteVolume -lcompressibleTransportModels -lfluidThermophysicalModels -lspecie
-
-
-
-
-

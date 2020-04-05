@@ -1,14 +1,6 @@
 #!/bin/sh
-cd $HOME/OpenFOAM/Working/dsmcMod2
+cd $HOME/OpenFOAM/Working/Hybrid
 wclean
-wmake libso
-cd $HOME/OpenFOAM/Working/dsmcInitialiseMod2
-wclean
-wmake
-cd $HOME/OpenFOAM/Working/dsmcFoamMod2
-wclean
-wmake
-cd $HOME/OpenFOAM/Working/rhoCentralFoamMod
-./Allwclean
-./Allwmake
+wmake 
 cd $HOME/OpenFOAM/Working/finalShockTube
+

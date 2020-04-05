@@ -75,6 +75,12 @@
         "DSMCBaseCloudMod2.C": "cpp",
         "DSMCCloudMod2.C": "cpp",
         "dsmcInitialiseMod2.C": "cpp",
-        "dsmcFoamMod2.C": "cpp"
+        "dsmcFoamMod2.C": "cpp",
+        "oneDirectionalHybrid.C": "cpp",
+        "bitset": "cpp",
+        "polyMesh.C": "cpp",
+        "chtMultiRegionFoam.C": "cpp",
+        "pimpleMultiRegionControl.C": "cpp",
+        "compressibleCourantNo.C": "cpp"
     }
 }

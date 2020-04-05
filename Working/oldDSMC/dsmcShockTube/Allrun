@@ -8,11 +8,11 @@ runApplication blockMesh
 runApplication dsmcInitialiseMod
 #/home/ajgay/OpenFOAM/ajgay-7/platforms/linux64GccDPInt32Opt/bin/dsmcInitialiseMod>log.dsmcInitialiseMod
 #$FOAM_USER_APPBIN/dsmcInitialiseMod>log.dsmcInitialiseMod
-#runApplication decomposePar
-runApplication dsmcFoamMod
+runApplication decomposePar
+#runApplication dsmcFoamMod
 #$FOAM_USER_APPBIN/dsmcFoamMod>log.dsmcFoamMod
-#runParallel dsmcFoamMod
-#runApplication reconstructPar
+runParallel dsmcFoamMod
+runApplication reconstructPar
 
 #runApplication dsmcInitialise
 #runApplication $(getApplication)

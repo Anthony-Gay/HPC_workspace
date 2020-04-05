@@ -1,4 +1,5 @@
 mixedFixedValueSlip/mixedFixedValueSlipFvPatchFields.C
+oneDirectionalHybrid/oneDirectionalHybrid.C
 U/maxwellSlipUFvPatchVectorField.C
 T/smoluchowskiJumpTFvPatchScalarField.C
 rho/fixedRhoFvPatchScalarField.C

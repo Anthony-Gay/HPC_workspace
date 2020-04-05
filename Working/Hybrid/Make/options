@@ -1,0 +1,19 @@
+EXE_INC = \
+    -I. \
+    -I./fluid \
+    -I./particle \
+    -I$(LIB_SRC)/regionModels/regionModel/lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/lagrangian/basic/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+
+
+
+
+
+EXE_LIBS = \
+    -lmeshTools \
+    -lfiniteVolume \
+    -llagrangian \
+    -lregionModels \
+

@@ -50,7 +50,7 @@ adjustTimeStep  yes;
 maxCo           0.2; // max currant number
 
 maxDeltaT       1;
-
+/*
 functions
 {
     fieldAverage1
@@ -117,6 +117,7 @@ functions
             }
         );
     }
+
     dsmcFields1
     {
         type            dsmcFields;
@@ -124,10 +125,10 @@ functions
         writeControl    writeTime;
     }
     
-    libs
+}
+*/
+libs
     (
         "libDSMC_mod.so"
     );
-}
-
 // ************************************************************************* //

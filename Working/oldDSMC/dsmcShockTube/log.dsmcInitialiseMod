@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : dsmcInitialiseMod
-Date   : Mar 29 2020
-Time   : 00:43:48
+Date   : Apr 04 2020
+Time   : 23:35:53
 Host   : "DESKTOP-KF81SG4"
-PID    : 7657
+PID    : 4616
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/oldDSMC/dsmcShockTube
 nProcs : 1
@@ -31,13 +31,13 @@ Constructing constant properties for
 
 Initialising particles
 
-Knudsen:150839
+Knudsen:75419.7
 Particle regime for cells 0 to 250
 
-Knudsen:519940
+Knudsen:259970
 Particle regime for cells 250 to 500
 
-Total number of molecules added: 41019
+Total number of molecules added: 81998
 
 
 ClockTime = 1 s
