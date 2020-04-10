@@ -9,53 +9,12 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       dictionary;
-    location    "system";
-    object      controlDict;
+    class       labelField;
+    location    "0/particle/lagrangian/dsmc";
+    object      origProcId;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     Hybrid;
-
-startFrom       startTime;
-
-startTime       0;
-
-stopAt          endTime;
-
-endTime         3.6e-3;
-
-deltaT          6e-6;
-
-writeControl    adjustableRunTime;
-
-writeInterval   3.6e-4;
-
-purgeWrite      0;
-
-writeFormat     ascii;
-
-writePrecision  6;
-
-writeCompression off;
-
-timeFormat      general;
-
-timePrecision   6;
-
-runTimeModifiable true;
-
-adjustTimeStep  yes;
-
-maxCo           0.2; // max currant number
-
-maxDeltaT       1;
-
-    
-    libs
-    (
-        "libDSMCMod2.so"
-    );
-}
+7342{0}
 
 // ************************************************************************* //

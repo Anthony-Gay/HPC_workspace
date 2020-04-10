@@ -31,35 +31,53 @@ Description
 
 #include "fvCFD.H"
 #include "regionProperties.H"
+#include "dsmcCloud.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 int main(int argc, char *argv[])
 {
+    #define NO_CONTROL
     #include "setRootCase.H"
     #include "createTime.H"//Why is this different than rhoCentral
     #include "createMeshes.H"
     Info<< "Meshes created" << nl;
-    Info<< runTime.endTime();
-    /* while (runTime.run())
+
+    //Initialise particle regions
+    #include "initialiseDSMC.H"
+
+    //Creating Particle Fields
+    //#include "createDSMCFields.H"
+    Info<< nl << "Constructing dsmcCloud " << endl;
+    dsmcCloud dsmcSolve("dsmc", particleRegions[0]);
+
+     while (runTime.loop())
     {
        
-       forAll(fluidRegions, i)
-            {
-                Info<< "\nSolving for fluid region "
-                    << fluidRegions[i].name() << endl;
-                #include "setRegionFluidFields.H"
-                #include "solveFluid.H"
-            }
+       
+                
+        Info<< "Time = " << runTime.timeName() << nl << endl;
 
-            forAll(solidRegions, i)
-            {
-                Info<< "\nSolving for solid region "
-                    << solidRegions[i].name() << endl;
-                #include "setRegionSolidFields.H"
-                #include "solveSolid.H"
-            }
-    }*/
+        dsmcSolve.evolve();
+        //Info<< "Evolve function was successful."<<  endl;
+        dsmcSolve.info();
+        runTime.write();    
+
+        //Output runtime
+        dimensionedScalar simTime=runTime.time();
+         dimensionedScalar simDt=runTime.deltaT();
+         dimensionedScalar endTime=runTime.endTime();
+         scalar remainIts=(endTime.value()/simDt.value())-(simTime.value()/simDt.value());
+         scalar timePerIt=runTime.elapsedCpuTime()/(simTime.value()/simDt.value());
+
+        Info<< nl << "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
+            << "  ClockTime = " << runTime.elapsedClockTime() << " s"
+            << "  Iterations: " << (simTime.value()/simDt.value()) << "/" << (endTime.value()/simDt.value())
+            << "  Projected time to finish: " << (remainIts*timePerIt)/60 << " min"
+            << endl;    
+            
+             
+    }
 
     return 0;
 }

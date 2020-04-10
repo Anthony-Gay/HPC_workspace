@@ -21,5 +21,4 @@
                 )
             )
         );
-        Info<< "Fluid mesh complete";
     }

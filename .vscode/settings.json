@@ -81,6 +81,7 @@
         "polyMesh.C": "cpp",
         "chtMultiRegionFoam.C": "cpp",
         "pimpleMultiRegionControl.C": "cpp",
-        "compressibleCourantNo.C": "cpp"
+        "compressibleCourantNo.C": "cpp",
+        "solidRegionDiffNo.C": "cpp"
     }
 }
