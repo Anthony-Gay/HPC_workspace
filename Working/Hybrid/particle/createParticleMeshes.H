@@ -1,24 +1,21 @@
+
     const wordList particleNames(rp["particle"]);
 
-    PtrList<fvMesh> particleRegions(particleNames.size());
+    Info<< "Create mesh for time = "
+    << runTime.timeName() << nl << endl;
 
-    forAll(particleNames, i)
-    {
-        Info<< "Create particle mesh for region " << particleNames[i]
-            << " for time = " << runTime.timeName() << nl << endl;
-
-        particleRegions.set
+autoPtr<fvMesh> partMeshPtr
+(
+    new fvMesh
+    (
+        IOobject
         (
-            i,
-            new fvMesh
-            (
-                IOobject
-                (
-                    particleNames[i],
-                    runTime.timeName(),
-                    runTime,
-                    IOobject::MUST_READ
-                )
-            )
-        );
-    }
+            particleNames[0],
+            runTime.timeName(),
+            runTime,
+            IOobject::MUST_READ
+        )
+    )
+);
+
+fvMesh& particleMesh = partMeshPtr();

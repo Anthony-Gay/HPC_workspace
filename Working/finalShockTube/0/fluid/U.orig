@@ -20,18 +20,14 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-    fluidBound
+   fluidBound
     {
         type            zeroGradient;
     }
 
     fluidSide
     {
-        type zeroGradient; 
-        faces
-        (
-            (0 4 7 3)
-        );
+        type            zeroGradient; 
     }
 
     nullDims

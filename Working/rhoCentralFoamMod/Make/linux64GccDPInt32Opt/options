@@ -56,4 +56,4 @@
 EXE_INC = -IBCs/lnInclude -I$(LIB_SRC)/finiteVolume/lnInclude -I$(LIB_SRC)/transportModels/compressible/lnInclude -I$(LIB_SRC)/thermophysicalModels/basic/lnInclude -I$(LIB_SRC)/thermophysicalModels/specie/lnInclude -I$(LIB_SRC)/TurbulenceModels/turbulenceModels/lnInclude -I$(LIB_SRC)/TurbulenceModels/compressible/lnInclude -I$(LIB_SRC)/dynamicFvMesh/lnInclude -I$(LIB_SRC)/meshTools/lnInclude
 # 11 "Make/options"
 
-EXE_LIBS = -lfiniteVolume -lfvOptions -lcompressibleTransportModels -lfluidThermophysicalModels -lspecie -lturbulenceModels -lcompressibleTurbulenceModels -ldynamicFvMesh -ltopoChangerFvMesh -lmeshTools -L$(FOAM_USER_LIBBIN) -lrhoCentralFoamMod 
+EXE_LIBS = -lfiniteVolume -lfvOptions -lcompressibleTransportModels -lfluidThermophysicalModels -lspecie -lturbulenceModels -lcompressibleTurbulenceModels -ldynamicFvMesh -ltopoChangerFvMesh -lmeshTools 

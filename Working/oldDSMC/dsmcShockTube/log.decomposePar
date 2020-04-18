@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : decomposePar
-Date   : Apr 04 2020
-Time   : 23:35:54
+Date   : Apr 17 2020
+Time   : 23:06:41
 Host   : "DESKTOP-KF81SG4"
-PID    : 4617
+PID    : 17619
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/oldDSMC/dsmcShockTube
 nProcs : 1

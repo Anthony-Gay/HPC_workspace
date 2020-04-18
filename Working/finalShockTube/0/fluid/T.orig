@@ -27,11 +27,7 @@ boundaryField
 
     fluidSide
     {
-        type zeroGradient; 
-        faces
-        (
-            (0 4 7 3)
-        );
+        type            zeroGradient; 
     }
 
     nullDims

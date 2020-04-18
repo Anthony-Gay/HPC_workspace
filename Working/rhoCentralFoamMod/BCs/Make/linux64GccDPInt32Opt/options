@@ -53,10 +53,9 @@
 
 # 8 "<command-line>" 2
 # 1 "Make/options"
-EXE_INC = -I$(LIB_SRC)/finiteVolume/lnInclude -I$(LIB_SRC)/transportModels/compressible/lnInclude -I$(LIB_SRC)/thermophysicalModels/basic/lnInclude -I$(LIB_SRC)/thermophysicalModels/specie/lnInclude
+EXE_INC = -I$(LIB_SRC)/transportModels/compressible/lnInclude -I$(LIB_SRC)/thermophysicalModels/basic/lnInclude -I$(LIB_SRC)/thermophysicalModels/specie/lnInclude
 
 
 
 
-
-LIB_LIBS = -lfiniteVolume -lcompressibleTransportModels -lfluidThermophysicalModels -lspecie
+LIB_LIBS = -lcompressibleTransportModels -lfluidThermophysicalModels -lspecie

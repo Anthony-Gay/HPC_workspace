@@ -30,40 +30,61 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "fvCFD.H"
+#include "dynamicFvMesh.H"
 #include "regionProperties.H"
 #include "dsmcCloud.H"
-
+#include "psiThermo.H"
+#include "turbulentFluidThermoModel.H"
+#include "directionInterpolateMod.H"
+#include "localEulerDdtScheme.H"
+#include "fvcSmooth.H"
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 int main(int argc, char *argv[])
 {
     #define NO_CONTROL
+    //#define CREATE_MESH createMeshesPostProcess.H
     #include "setRootCase.H"
-    #include "createTime.H"//Why is this different than rhoCentral
+    #include "createTime.H"
+    #include "createTimeControls.H"
+
     #include "createMeshes.H"
     Info<< "Meshes created" << nl;
 
-    //Initialise particle regions
+    // Create Fluid Fields
+    #include "createFluidFields.H"
+    #include "createFluidFieldsRefs.H"
+    turbulence->validate();
+    #include "readFluxSchemeMod.H"
+
+    dimensionedScalar v_zero("v_zero", dimVolume/dimTime, 0.0);
+    
+    // Initialise particle regions
     #include "initialiseDSMC.H"
 
-    //Creating Particle Fields
-    //#include "createDSMCFields.H"
-    Info<< nl << "Constructing dsmcCloud " << endl;
-    dsmcCloud dsmcSolve("dsmc", particleRegions[0]);
+    // Creating Particle Fields
+    #include "createDSMCFields.H"
+
+
+
+    // Courant numbers used to adjust the time-step
+    scalar CoNum = 0.0;
+    scalar meanCoNum = 0.0;
 
      while (runTime.loop())
     {
        
-       
-                
-        Info<< "Time = " << runTime.timeName() << nl << endl;
+       Info<< "Time = " << runTime.timeName() << nl << endl;
 
+        // Solve Fluid
+        #include "solveFluid.H"
+
+        // Solve Particle
         dsmcSolve.evolve();
-        //Info<< "Evolve function was successful."<<  endl;
         dsmcSolve.info();
         runTime.write();    
 
-        //Output runtime
+        // Output runtime
         dimensionedScalar simTime=runTime.time();
          dimensionedScalar simDt=runTime.deltaT();
          dimensionedScalar endTime=runTime.endTime();

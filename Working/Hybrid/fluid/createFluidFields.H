@@ -1,15 +1,13 @@
-#include "createRDeltaT.H"
+#include "createRDeltaTMod.H"
 
 Info<< "Reading thermophysical properties\n" << endl;
 
 autoPtr<psiThermo> pThermo
 (
-    psiThermo::New(mesh)
+    psiThermo::New(fluidMesh)
 );
 psiThermo& thermo = pThermo();
-
 volScalarField& e = thermo.he();
-
 Info<< "Reading field U\n" << endl;
 volVectorField U
 (
@@ -17,11 +15,11 @@ volVectorField U
     (
         "U",
         runTime.timeName(),
-        mesh,
+        fluidMesh,
         IOobject::MUST_READ,
         IOobject::AUTO_WRITE
     ),
-    mesh
+    fluidMesh
 );
 
 volScalarField rho
@@ -30,7 +28,7 @@ volScalarField rho
     (
         "rho",
         runTime.timeName(),
-        mesh,
+        fluidMesh,
         IOobject::NO_READ,
         IOobject::AUTO_WRITE
     ),
@@ -43,7 +41,7 @@ volVectorField rhoU
     (
         "rhoU",
         runTime.timeName(),
-        mesh,
+        fluidMesh,
         IOobject::NO_READ,
         IOobject::NO_WRITE
     ),
@@ -56,7 +54,7 @@ volScalarField rhoE
     (
         "rhoE",
         runTime.timeName(),
-        mesh,
+        fluidMesh,
         IOobject::NO_READ,
         IOobject::NO_WRITE
     ),
@@ -69,9 +67,9 @@ surfaceScalarField pos
     (
         "pos",
         runTime.timeName(),
-        mesh
+        fluidMesh
     ),
-    mesh,
+    fluidMesh,
     dimensionedScalar(dimless, 1.0)
 );
 
@@ -81,9 +79,9 @@ surfaceScalarField neg
     (
         "neg",
         runTime.timeName(),
-        mesh
+        fluidMesh
     ),
-    mesh,
+    fluidMesh,
     dimensionedScalar(dimless, -1.0)
 );
 

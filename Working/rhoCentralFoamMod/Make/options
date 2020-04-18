@@ -19,6 +19,4 @@ EXE_LIBS = \
     -lcompressibleTurbulenceModels \
     -ldynamicFvMesh \
     -ltopoChangerFvMesh \
-    -lmeshTools \
-    -L$(FOAM_USER_LIBBIN) \
-    -lrhoCentralFoamMod 
+    -lmeshTools 

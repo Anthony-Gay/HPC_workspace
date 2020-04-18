@@ -82,6 +82,13 @@
         "chtMultiRegionFoam.C": "cpp",
         "pimpleMultiRegionControl.C": "cpp",
         "compressibleCourantNo.C": "cpp",
-        "solidRegionDiffNo.C": "cpp"
+        "solidRegionDiffNo.C": "cpp",
+        "basicThermoTemplates.C": "cpp",
+        "psiThermos.C": "cpp",
+        "psiThermo.C": "cpp",
+        "basicThermo.C": "cpp",
+        "regionProperties.C": "cpp",
+        "setFieldsMod.C": "cpp",
+        "objectRegistry.C": "cpp"
     }
 }

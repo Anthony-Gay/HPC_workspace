@@ -9,8 +9,8 @@ IOdictionary dsmcInitialiseDict
     IOobject
     (
         "dsmcInitialiseDict",
-        particleRegions[0].time().system(),
-        particleRegions[0],
+        particleMesh.time().system(),
+        particleMesh,
         IOobject::MUST_READ_IF_MODIFIED,
         IOobject::NO_WRITE
     )
@@ -18,7 +18,7 @@ IOdictionary dsmcInitialiseDict
 
 Info<< "Initialising dsmc for Time = " << runTime.timeName() << nl << endl;
 
-dsmcCloud dsmcInit("dsmc", particleRegions[0], dsmcInitialiseDict);
+dsmcCloud dsmcInit("dsmc", particleMesh, dsmcInitialiseDict);
 
 label totalMolecules = dsmcInit.size();
 
@@ -32,7 +32,7 @@ Info<< nl << "Total number of molecules added: " << totalMolecules
 
 IOstream::defaultPrecision(15);
 
-if (!particleRegions[0].write())
+if (!particleMesh.write())
 {
     FatalErrorInFunction
         << "Failed writing dsmcCloud."
