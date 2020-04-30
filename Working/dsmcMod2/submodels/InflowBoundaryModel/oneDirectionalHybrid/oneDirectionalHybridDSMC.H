@@ -22,7 +22,7 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::oneDirectionalHybrid
+    Foam::oneDirectionalHybridDSMC
 
 Description
     Inserting new particles across the faces of a all patched of type
@@ -32,8 +32,8 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef oneDirectionalHybrid_H
-#define oneDirectionalHybrid_H
+#ifndef oneDirectionalHybridDSMC_H
+#define oneDirectionalHybridDSMC_H
 
 #include "InflowBoundaryModel.H"
 #include "polyMesh.H"
@@ -43,11 +43,11 @@ Description
 namespace Foam
 {
 /*---------------------------------------------------------------------------*\
-                        Class oneDirectionalHybrid Declaration
+                        Class oneDirectionalHybridDSMC Declaration
 \*---------------------------------------------------------------------------*/
 
 template<class CloudType>
-class oneDirectionalHybrid
+class oneDirectionalHybridDSMC
 :
     public InflowBoundaryModel<CloudType>
 {
@@ -74,13 +74,13 @@ class oneDirectionalHybrid
 public:
 
     //- Runtime type information
-    TypeName("oneDirectionalHybrid");
+    TypeName("oneDirectionalHybridDSMC");
 
 
     // Constructors
 
         //- Construct from dictionary
-        oneDirectionalHybrid
+        oneDirectionalHybridDSMC
         (
             const dictionary& dict,
             CloudType& cloud
@@ -88,7 +88,7 @@ public:
 
 
     //- Destructor
-    virtual ~oneDirectionalHybrid();
+    virtual ~oneDirectionalHybridDSMC();
 
 
     // Member Functions
@@ -110,7 +110,7 @@ public:
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 #ifdef NoRepository
-    #include "oneDirectionalHybrid.C"
+    #include "oneDirectionalHybridDSMC.C"
 #endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

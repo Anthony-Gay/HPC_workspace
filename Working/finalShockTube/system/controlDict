@@ -56,6 +56,92 @@ maxDeltaT       1;
     (
         "libDSMCMod2.so"
     );
+
+
+functions
+{    
+    fieldAverage1
+    {
+        type            fieldAverage;
+        libs            ("libfieldFunctionObjects.so");
+        writeControl    writeTime;
+        region          particle;
+        
+        fields
+        (
+            rhoN
+            {
+                mean        on;
+                prime2Mean  off;
+                base        iter;
+                window      1;
+            }
+            rhoM
+            {
+                mean        on;
+                prime2Mean  off;
+                base        iter;
+                window      1;
+            }
+            dsmcRhoN
+            {
+                mean        on;
+                prime2Mean  off;
+                base        iter;
+                window      1;
+            }
+            momentum
+            {
+                mean        on;
+                prime2Mean  off;
+                base        iter;
+                window      1;
+            }
+            linearKE
+            {
+                mean        on;
+                prime2Mean  off;
+                base        iter;
+                window      1;
+            }
+            internalE
+            {
+                mean        on;
+                prime2Mean  off;
+                base        iter;
+                window      1;
+            }
+            iDof
+            {
+                mean        on;
+                prime2Mean  off;
+                base        iter;
+                window      1;
+            }
+            q
+            {
+                mean        on;
+                prime2Mean  off;
+                base        iter;
+                window      1;
+            }
+            fD
+            {
+                mean        on;
+                prime2Mean  off;
+                base        iter;
+                window      1;
+            }
+        );
+    }
+dsmcFieldsMod1
+    {
+        type            dsmcFieldsMod;
+        libs            ("liblagrangianFunctionObjectsMod.so");
+        writeControl    writeTime;
+        region              particle;
+
+    }
 }
 
 // ************************************************************************* //

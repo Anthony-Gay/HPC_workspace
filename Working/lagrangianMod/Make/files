@@ -1,0 +1,4 @@
+
+dsmcFields/dsmcFieldsMod.C
+
+LIB = $(FOAM_USER_LIBBIN)/liblagrangianFunctionObjectsMod

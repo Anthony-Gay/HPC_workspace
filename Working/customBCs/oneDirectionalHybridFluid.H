@@ -1,0 +1,193 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Copyright (C) 2011-2019 OpenFOAM Foundation
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+License
+    This file is part of OpenFOAM.
+
+    OpenFOAM is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+    for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
+
+Class
+    Foam::oneDirectionalHybridFluid
+
+Description
+    This boundary condition provides a generic inflow condition, with
+    specified outflow for the case of reverse flow.
+
+Usage
+    \table
+        Property     | Description             | Required    | Default value
+        phi          | Flux field name         | no          | phi
+        outletValue  | Outlet value for reverse flow | yes   |
+    \endtable
+
+    Example of the boundary condition specification:
+    \verbatim
+    <patchName>
+    {
+        type            oneDirectionalHybridFluid;
+        phi             phi;
+        outletValue     uniform 0;
+        value           uniform 0;
+    }
+    \endverbatim
+
+    The mode of operation is determined by the sign of the flux across the
+    patch faces.
+
+Note
+    Sign conventions:
+    - Positive flux (out of domain): apply the "outletValue" fixed-value
+    - Negative flux (into of domain): apply zero-gradient condition
+
+See also
+    Foam::mixedFvPatchField
+    Foam::zeroGradientFvPatchField
+    Foam::inletOutletFvPatchField
+
+SourceFiles
+    oneDirectionalHybridFluid.C
+
+\*---------------------------------------------------------------------------*/
+
+#ifndef oneDirectionalHybridFluid_H
+#define oneDirectionalHybridFluid_H
+
+#include "mixedFvPatchField.H"
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+namespace Foam
+{
+
+/*---------------------------------------------------------------------------*\
+                     Class oneDirectionalHybridFluidFvPatch Declaration
+\*---------------------------------------------------------------------------*/
+
+template<class Type>
+class oneDirectionalHybridFluid
+:
+    public mixedFvPatchField<Type>
+{
+
+protected:
+
+    // Protected data
+
+        //- Name of flux field
+        word phiName_;
+        scalar w_;
+
+
+public:
+
+    //- Runtime type information
+    TypeName("oneDirectionalHybridFluid");
+
+
+    // Constructors
+
+        //- Construct from patch and internal field
+        oneDirectionalHybridFluid
+        (
+            const fvPatch&,
+            const DimensionedField<Type, volMesh>&
+        );
+
+        //- Construct from patch, internal field and dictionary
+        oneDirectionalHybridFluid
+        (
+            const fvPatch&,
+            const DimensionedField<Type, volMesh>&,
+            const dictionary&
+        );
+
+        //- Construct by mapping given oneDirectionalHybridFluid onto a new patch
+        oneDirectionalHybridFluid
+        (
+            const oneDirectionalHybridFluid<Type>&,
+            const fvPatch&,
+            const DimensionedField<Type, volMesh>&,
+            const fvPatchFieldMapper&
+        );
+
+        //- Copy constructor
+        oneDirectionalHybridFluid
+        (
+            const oneDirectionalHybridFluid<Type>&
+        );
+
+        //- Construct and return a clone
+        virtual tmp<fvPatchField<Type>> clone() const
+        {
+            return tmp<fvPatchField<Type>>
+            (
+                new oneDirectionalHybridFluid<Type>(*this)
+            );
+        }
+
+        //- Copy constructor setting internal field reference
+        oneDirectionalHybridFluid
+        (
+            const oneDirectionalHybridFluid<Type>&,
+            const DimensionedField<Type, volMesh>&
+        );
+
+        //- Construct and return a clone setting internal field reference
+        virtual tmp<fvPatchField<Type>> clone
+        (
+            const DimensionedField<Type, volMesh>& iF
+        ) const
+        {
+            return tmp<fvPatchField<Type>>
+            (
+                new oneDirectionalHybridFluid<Type>(*this, iF)
+            );
+        }
+
+
+    // Member Functions
+
+        //- Access omega
+        scalar omega() const
+        {
+            return w_;
+        }
+
+        //- Update the coefficients associated with the patch field
+        virtual void updateCoeffs();
+
+        //- Write
+        virtual void write(Ostream&) const;
+};
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+} // End namespace Foam
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#ifdef NoRepository
+    #include "oneDirectionalHybridFluid.C"
+#endif
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#endif
+
+// ************************************************************************* //

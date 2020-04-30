@@ -23,7 +23,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "oneDirectionalHybrid.H"
+#include "oneDirectionalHybridDSMC.H"
 #include "constants.H"
 #include "triPointRef.H"
 #include "tetIndices.H"
@@ -33,7 +33,7 @@ using namespace Foam::constant::mathematical;
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
 template<class CloudType>
-Foam::oneDirectionalHybrid<CloudType>::oneDirectionalHybrid
+Foam::oneDirectionalHybridDSMC<CloudType>::oneDirectionalHybridDSMC
 (
     const dictionary& dict,
     CloudType& cloud
@@ -111,14 +111,14 @@ Foam::oneDirectionalHybrid<CloudType>::oneDirectionalHybrid
 // * * * * * * * * * * * * * * * * Destructor  * * * * * * * * * * * * * * * //
 
 template<class CloudType>
-Foam::oneDirectionalHybrid<CloudType>::~oneDirectionalHybrid()
+Foam::oneDirectionalHybridDSMC<CloudType>::~oneDirectionalHybridDSMC()
 {}
 
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
 template<class CloudType>
-void Foam::oneDirectionalHybrid<CloudType>::autoMap(const mapPolyMesh& mapper)
+void Foam::oneDirectionalHybridDSMC<CloudType>::autoMap(const mapPolyMesh& mapper)
 {
     CloudType& cloud(this->owner());
     const polyMesh& mesh(cloud.mesh());
@@ -139,7 +139,7 @@ void Foam::oneDirectionalHybrid<CloudType>::autoMap(const mapPolyMesh& mapper)
 
 
 template<class CloudType>
-void Foam::oneDirectionalHybrid<CloudType>::inflow()
+void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
 {
     CloudType& cloud(this->owner());
 
@@ -213,7 +213,7 @@ void Foam::oneDirectionalHybrid<CloudType>::inflow()
             // From Bird eqn 4.22
 
             pFA[i] +=
-                mag(patch.faceAreas())*numberDensities_[i]*deltaT
+                mag(patch.faceAreas())*numberDensities_[i]*deltaT 
                *mostProbableSpeed
                *(
                    exp(-sqr(sCosTheta)) + sqrtPi*sCosTheta*(1 + erf(sCosTheta))

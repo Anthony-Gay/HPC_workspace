@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : Hybrid
-Date   : Apr 15 2020
-Time   : 21:05:56
+Date   : Apr 28 2020
+Time   : 01:31:00
 Host   : "DESKTOP-KF81SG4"
-PID    : 14793
+PID    : 17040
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/finalShockTube
 nProcs : 1
@@ -45,6 +45,7 @@ Creating turbulence model
 
 Selecting turbulence model type laminar
 Selecting laminar stress model Stokes
+fluxScheme: Kurganov
 Initialising dsmc for Time = 0
 
 
@@ -72,7 +73,23 @@ Selecting InflowBoundaryModel none
 
 Constructing constant properties for
     N2
-fluxScheme: Kurganov
+fieldAverage fieldAverage1:
+--> FOAM Warning : 
+    From function bool Foam::functionObjectList::read()
+    in file db/functionObjects/functionObjectList/functionObjectList.C at line 746
+    Caught FatalError 
+--> FOAM FATAL ERROR: 
+iter not found in table.  Valid entries: 
+2
+(
+iteration
+time
+)
+
+
+    From function const T& Foam::HashTable<T, Key, Hash>::operator[](const Key&) const [with T = unsigned int; Key = Foam::word; Hash = Foam::string::hash]
+    in file /home/ubuntu/OpenFOAM/OpenFOAM-7/src/OpenFOAM/lnInclude/HashTableI.H at line 126.
+
 Time = 6e-06
 
 deltaT = 7.08e-06
@@ -93,7 +110,7 @@ Cloud name: dsmc
     Average internal energy         = 9.74937e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 2.28 s  ClockTime = 3 s  Iterations: 0.847458/508.475  Projected time to finish: 22.762 min
+ExecutionTime = 2.36 s  ClockTime = 3 s  Iterations: 0.847458/508.475  Projected time to finish: 23.5607 min
 Time = 1.308e-05
 
 deltaT = 8.06791e-06
@@ -114,7 +131,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05308e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 3.74 s  ClockTime = 5 s  Iterations: 1.62124/446.212  Projected time to finish: 17.0936 min
+ExecutionTime = 3.85 s  ClockTime = 4 s  Iterations: 1.62124/446.212  Projected time to finish: 17.5964 min
 Time = 2.11479e-05
 
 deltaT = 8.91716e-06
@@ -135,7 +152,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05695e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 5.41 s  ClockTime = 6 s  Iterations: 2.3716/403.716  Projected time to finish: 15.2589 min
+ExecutionTime = 5.54 s  ClockTime = 6 s  Iterations: 2.3716/403.716  Projected time to finish: 15.6255 min
 Time = 3.00651e-05
 
 deltaT = 9.70397e-06
@@ -156,7 +173,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05492e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 7.25 s  ClockTime = 8 s  Iterations: 3.09822/370.982  Projected time to finish: 14.3478 min
+ExecutionTime = 7.41 s  ClockTime = 8 s  Iterations: 3.09822/370.982  Projected time to finish: 14.6644 min
 Time = 3.9769e-05
 
 deltaT = 1.033e-05
@@ -177,7 +194,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05669e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 9.22 s  ClockTime = 10 s  Iterations: 3.84985/348.498  Projected time to finish: 13.7567 min
+ExecutionTime = 9.46 s  ClockTime = 10 s  Iterations: 3.84985/348.498  Projected time to finish: 14.1147 min
 Time = 5.00991e-05
 
 deltaT = 1.033e-05
@@ -198,7 +215,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05468e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 11.23 s  ClockTime = 12 s  Iterations: 4.84985/348.498  Projected time to finish: 13.2622 min
+ExecutionTime = 11.46 s  ClockTime = 12 s  Iterations: 4.84985/348.498  Projected time to finish: 13.5338 min
 Time = 6.04291e-05
 
 deltaT = 1.033e-05
@@ -219,7 +236,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05095e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 13.23 s  ClockTime = 14 s  Iterations: 5.84985/348.498  Projected time to finish: 12.9156 min
+ExecutionTime = 13.55 s  ClockTime = 14 s  Iterations: 5.84985/348.498  Projected time to finish: 13.228 min
 Time = 7.07591e-05
 
 deltaT = 1.033e-05
@@ -240,7 +257,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05605e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 15.24 s  ClockTime = 16 s  Iterations: 6.84985/348.498  Projected time to finish: 12.6687 min
+ExecutionTime = 15.6 s  ClockTime = 16 s  Iterations: 6.84985/348.498  Projected time to finish: 12.968 min
 Time = 8.10892e-05
 
 deltaT = 1.033e-05
@@ -261,7 +278,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05906e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 17.32 s  ClockTime = 18 s  Iterations: 7.84985/348.498  Projected time to finish: 12.5269 min
+ExecutionTime = 17.61 s  ClockTime = 18 s  Iterations: 7.84985/348.498  Projected time to finish: 12.7366 min
 Time = 9.14192e-05
 
 deltaT = 1.033e-05
@@ -282,7 +299,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05653e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 19.35 s  ClockTime = 20 s  Iterations: 8.84985/348.498  Projected time to finish: 12.3772 min
+ExecutionTime = 19.75 s  ClockTime = 20 s  Iterations: 8.84985/348.498  Projected time to finish: 12.6331 min
 Time = 0.000101749
 
 deltaT = 1.033e-05
@@ -303,7 +320,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05499e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 21.41 s  ClockTime = 22 s  Iterations: 9.84985/348.498  Projected time to finish: 12.2683 min
+ExecutionTime = 21.79 s  ClockTime = 22 s  Iterations: 9.84985/348.498  Projected time to finish: 12.4861 min
 Time = 0.000112079
 
 deltaT = 1.033e-05
@@ -324,7 +341,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0555e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 23.55 s  ClockTime = 24 s  Iterations: 10.8498/348.498  Projected time to finish: 12.2147 min
+ExecutionTime = 23.86 s  ClockTime = 24 s  Iterations: 10.8498/348.498  Projected time to finish: 12.3754 min
 Time = 0.000122409
 
 deltaT = 1.033e-05
@@ -345,7 +362,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05761e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 25.6 s  ClockTime = 26 s  Iterations: 11.8498/348.498  Projected time to finish: 12.1214 min
+ExecutionTime = 26.05 s  ClockTime = 26 s  Iterations: 11.8498/348.498  Projected time to finish: 12.3345 min
 Time = 0.000132739
 
 deltaT = 1.033e-05
@@ -366,7 +383,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05649e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 27.65 s  ClockTime = 29 s  Iterations: 12.8498/348.498  Projected time to finish: 12.0373 min
+ExecutionTime = 28.1 s  ClockTime = 28 s  Iterations: 12.8498/348.498  Projected time to finish: 12.2333 min
 Time = 0.000143069
 
 deltaT = 1.033e-05
@@ -387,7 +404,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05268e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 29.79 s  ClockTime = 31 s  Iterations: 13.8498/348.498  Projected time to finish: 11.9967 min
+ExecutionTime = 30.21 s  ClockTime = 31 s  Iterations: 13.8498/348.498  Projected time to finish: 12.1659 min
 Time = 0.000153399
 
 deltaT = 1.033e-05
@@ -408,7 +425,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0475e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 31.87 s  ClockTime = 33 s  Iterations: 14.8498/348.498  Projected time to finish: 11.9343 min
+ExecutionTime = 32.29 s  ClockTime = 33 s  Iterations: 14.8498/348.498  Projected time to finish: 12.0916 min
 Time = 0.000163729
 
 deltaT = 1.033e-05
@@ -429,7 +446,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05085e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 34.05 s  ClockTime = 35 s  Iterations: 15.8498/348.498  Projected time to finish: 11.9104 min
+ExecutionTime = 34.36 s  ClockTime = 35 s  Iterations: 15.8498/348.498  Projected time to finish: 12.0188 min
 Time = 0.000174059
 
 deltaT = 1.033e-05
@@ -450,7 +467,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0463e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 36.32 s  ClockTime = 37 s  Iterations: 16.8498/348.498  Projected time to finish: 11.9145 min
+ExecutionTime = 36.5 s  ClockTime = 37 s  Iterations: 16.8498/348.498  Projected time to finish: 11.9736 min
 Time = 0.000184389
 
 deltaT = 1.033e-05
@@ -471,7 +488,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05537e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 38.4 s  ClockTime = 39 s  Iterations: 17.8498/348.498  Projected time to finish: 11.8553 min
+ExecutionTime = 38.57 s  ClockTime = 39 s  Iterations: 17.8498/348.498  Projected time to finish: 11.9078 min
 Time = 0.00019472
 
 deltaT = 1.033e-05
@@ -492,7 +509,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05139e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 40.53 s  ClockTime = 41 s  Iterations: 18.8498/348.498  Projected time to finish: 11.8132 min
+ExecutionTime = 40.64 s  ClockTime = 41 s  Iterations: 18.8498/348.498  Projected time to finish: 11.8453 min
 Time = 0.00020505
 
 deltaT = 1.033e-05
@@ -513,7 +530,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05418e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 42.57 s  ClockTime = 44 s  Iterations: 19.8498/348.498  Projected time to finish: 11.747 min
+ExecutionTime = 42.77 s  ClockTime = 43 s  Iterations: 19.8498/348.498  Projected time to finish: 11.8022 min
 Time = 0.00021538
 
 deltaT = 1.033e-05
@@ -534,7 +551,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04701e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 44.65 s  ClockTime = 46 s  Iterations: 20.8498/348.498  Projected time to finish: 11.6943 min
+ExecutionTime = 44.85 s  ClockTime = 45 s  Iterations: 20.8498/348.498  Projected time to finish: 11.7467 min
 Time = 0.00022571
 
 deltaT = 1.033e-05
@@ -555,7 +572,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05212e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 46.75 s  ClockTime = 48 s  Iterations: 21.8498/348.498  Projected time to finish: 11.6483 min
+ExecutionTime = 46.96 s  ClockTime = 47 s  Iterations: 21.8498/348.498  Projected time to finish: 11.7006 min
 Time = 0.00023604
 
 deltaT = 1.033e-05
@@ -576,7 +593,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05589e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 48.81 s  ClockTime = 50 s  Iterations: 22.8498/348.498  Projected time to finish: 11.5937 min
+ExecutionTime = 49.08 s  ClockTime = 49 s  Iterations: 22.8498/348.498  Projected time to finish: 11.6579 min
 Time = 0.00024637
 
 deltaT = 1.033e-05
@@ -597,7 +614,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05283e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 50.9 s  ClockTime = 52 s  Iterations: 23.8498/348.498  Projected time to finish: 11.5477 min
+ExecutionTime = 51.14 s  ClockTime = 52 s  Iterations: 23.8498/348.498  Projected time to finish: 11.6021 min
 Time = 0.0002567
 
 deltaT = 1.033e-05
@@ -618,7 +635,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05266e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 52.98 s  ClockTime = 54 s  Iterations: 24.8498/348.498  Projected time to finish: 11.5003 min
+ExecutionTime = 53.32 s  ClockTime = 54 s  Iterations: 24.8498/348.498  Projected time to finish: 11.5741 min
 Time = 0.00026703
 
 deltaT = 1.033e-05
@@ -639,7 +656,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05088e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 55.03 s  ClockTime = 56 s  Iterations: 25.8498/348.498  Projected time to finish: 11.4477 min
+ExecutionTime = 55.41 s  ClockTime = 56 s  Iterations: 25.8498/348.498  Projected time to finish: 11.5268 min
 Time = 0.00027736
 
 deltaT = 1.033e-05
@@ -660,7 +677,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05168e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 57.17 s  ClockTime = 58 s  Iterations: 26.8498/348.498  Projected time to finish: 11.4145 min
+ExecutionTime = 57.47 s  ClockTime = 58 s  Iterations: 26.8498/348.498  Projected time to finish: 11.4744 min
 Time = 0.00028769
 
 deltaT = 1.033e-05
@@ -681,7 +698,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04781e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 59.24 s  ClockTime = 60 s  Iterations: 27.8498/348.498  Projected time to finish: 11.3676 min
+ExecutionTime = 59.66 s  ClockTime = 60 s  Iterations: 27.8498/348.498  Projected time to finish: 11.4482 min
 Time = 0.00029802
 
 deltaT = 1.033e-05
@@ -702,7 +719,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0476e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 61.3 s  ClockTime = 62 s  Iterations: 28.8498/348.498  Projected time to finish: 11.3198 min
+ExecutionTime = 61.72 s  ClockTime = 62 s  Iterations: 28.8498/348.498  Projected time to finish: 11.3974 min
 Time = 0.00030835
 
 deltaT = 1.033e-05
@@ -723,7 +740,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04595e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 63.43 s  ClockTime = 64 s  Iterations: 29.8498/348.498  Projected time to finish: 11.2853 min
+ExecutionTime = 63.85 s  ClockTime = 64 s  Iterations: 29.8498/348.498  Projected time to finish: 11.36 min
 Time = 0.00031868
 
 deltaT = 1.033e-05
@@ -744,7 +761,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04616e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 65.46 s  ClockTime = 66 s  Iterations: 30.8498/348.498  Projected time to finish: 11.2336 min
+ExecutionTime = 65.99 s  ClockTime = 66 s  Iterations: 30.8498/348.498  Projected time to finish: 11.3245 min
 Time = 0.00032901
 
 deltaT = 1.033e-05
@@ -765,7 +782,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04549e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 67.55 s  ClockTime = 69 s  Iterations: 31.8498/348.498  Projected time to finish: 11.1929 min
+ExecutionTime = 68.07 s  ClockTime = 68 s  Iterations: 31.8498/348.498  Projected time to finish: 11.2791 min
 Time = 0.00033934
 
 deltaT = 1.033e-05
@@ -786,7 +803,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05466e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 69.63 s  ClockTime = 71 s  Iterations: 32.8498/348.498  Projected time to finish: 11.151 min
+ExecutionTime = 70.18 s  ClockTime = 71 s  Iterations: 32.8498/348.498  Projected time to finish: 11.2391 min
 Time = 0.00034967
 
 deltaT = 1.033e-05
@@ -807,7 +824,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05101e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 71.66 s  ClockTime = 73 s  Iterations: 33.8498/348.498  Projected time to finish: 11.1018 min
+ExecutionTime = 72.27 s  ClockTime = 73 s  Iterations: 33.8498/348.498  Projected time to finish: 11.1963 min
 Time = 0.00036
 
 deltaT = 1.05882e-05
@@ -828,7 +845,20 @@ Cloud name: dsmc
     Average internal energy         = 1.05026e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 74.49 s  ClockTime = 76 s  Iterations: 34/340  Projected time to finish: 11.1735 min
+ExecutionTime = 75.11 s  ClockTime = 76 s  Iterations: 34/340  Projected time to finish: 11.2665 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 461.637 3.06091
+    translationalT max/min : 1019.28 224.113
+    internalT max/min : 1126.85 209.229
+    overallT max/min : 1009.51 248.109
+    p max/min : 143.957 5.44913
+dsmcFieldsMod written.
+
 Time = 0.000370588
 
 deltaT = 1.05882e-05
@@ -849,7 +879,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04767e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 76.6 s  ClockTime = 78 s  Iterations: 35/340  Projected time to finish: 11.1252 min
+ExecutionTime = 77.4 s  ClockTime = 78 s  Iterations: 35/340  Projected time to finish: 11.2414 min
 Time = 0.000381176
 
 deltaT = 1.05882e-05
@@ -870,7 +900,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04657e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 78.77 s  ClockTime = 80 s  Iterations: 36/340  Projected time to finish: 11.0861 min
+ExecutionTime = 79.6 s  ClockTime = 80 s  Iterations: 36/340  Projected time to finish: 11.203 min
 Time = 0.000391765
 
 deltaT = 1.05882e-05
@@ -891,7 +921,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04938e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 80.93 s  ClockTime = 82 s  Iterations: 37/340  Projected time to finish: 11.0459 min
+ExecutionTime = 81.71 s  ClockTime = 82 s  Iterations: 37/340  Projected time to finish: 11.1523 min
 Time = 0.000402353
 
 deltaT = 1.05882e-05
@@ -912,7 +942,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04655e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 83.03 s  ClockTime = 84 s  Iterations: 38/340  Projected time to finish: 10.9978 min
+ExecutionTime = 83.93 s  ClockTime = 84 s  Iterations: 38/340  Projected time to finish: 11.117 min
 Time = 0.000412941
 
 deltaT = 1.05882e-05
@@ -933,7 +963,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0454e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 85.19 s  ClockTime = 86 s  Iterations: 39/340  Projected time to finish: 10.9582 min
+ExecutionTime = 86.05 s  ClockTime = 86 s  Iterations: 39/340  Projected time to finish: 11.0688 min
 Time = 0.000423529
 
 deltaT = 1.05882e-05
@@ -954,7 +984,7 @@ Cloud name: dsmc
     Average internal energy         = 1.05238e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 87.41 s  ClockTime = 89 s  Iterations: 40/340  Projected time to finish: 10.9262 min
+ExecutionTime = 88.21 s  ClockTime = 89 s  Iterations: 40/340  Projected time to finish: 11.0262 min
 Time = 0.000434118
 
 deltaT = 1.05882e-05
@@ -975,7 +1005,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04502e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 89.57 s  ClockTime = 91 s  Iterations: 41/340  Projected time to finish: 10.8868 min
+ExecutionTime = 90.4 s  ClockTime = 91 s  Iterations: 41/340  Projected time to finish: 10.9876 min
 Time = 0.000444706
 
 deltaT = 1.05882e-05
@@ -996,7 +1026,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04274e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 91.77 s  ClockTime = 93 s  Iterations: 42/340  Projected time to finish: 10.8522 min
+ExecutionTime = 92.52 s  ClockTime = 93 s  Iterations: 42/340  Projected time to finish: 10.9409 min
 Time = 0.000455294
 
 deltaT = 1.05882e-05
@@ -1017,7 +1047,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04848e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 93.89 s  ClockTime = 95 s  Iterations: 43/340  Projected time to finish: 10.8083 min
+ExecutionTime = 94.73 s  ClockTime = 95 s  Iterations: 43/340  Projected time to finish: 10.905 min
 Time = 0.000465882
 
 deltaT = 1.05882e-05
@@ -1038,7 +1068,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04391e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 96 s  ClockTime = 97 s  Iterations: 44/340  Projected time to finish: 10.7636 min
+ExecutionTime = 96.84 s  ClockTime = 97 s  Iterations: 44/340  Projected time to finish: 10.8578 min
 Time = 0.000476471
 
 deltaT = 1.05882e-05
@@ -1059,7 +1089,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04732e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 98.13 s  ClockTime = 99 s  Iterations: 45/340  Projected time to finish: 10.7216 min
+ExecutionTime = 98.95 s  ClockTime = 99 s  Iterations: 45/340  Projected time to finish: 10.8112 min
 Time = 0.000487059
 
 deltaT = 1.05882e-05
@@ -1080,7 +1110,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04786e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 100.22 s  ClockTime = 101 s  Iterations: 46/340  Projected time to finish: 10.6756 min
+ExecutionTime = 101.14 s  ClockTime = 102 s  Iterations: 46/340  Projected time to finish: 10.7736 min
 Time = 0.000497647
 
 deltaT = 1.05882e-05
@@ -1101,7 +1131,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04607e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 102.35 s  ClockTime = 104 s  Iterations: 47/340  Projected time to finish: 10.6342 min
+ExecutionTime = 103.24 s  ClockTime = 104 s  Iterations: 47/340  Projected time to finish: 10.7267 min
 Time = 0.000508235
 
 deltaT = 1.05882e-05
@@ -1122,7 +1152,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04093e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 104.46 s  ClockTime = 106 s  Iterations: 48/340  Projected time to finish: 10.5911 min
+ExecutionTime = 105.37 s  ClockTime = 106 s  Iterations: 48/340  Projected time to finish: 10.6833 min
 Time = 0.000518824
 
 deltaT = 1.05882e-05
@@ -1143,7 +1173,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04979e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 106.55 s  ClockTime = 108 s  Iterations: 49/340  Projected time to finish: 10.5463 min
+ExecutionTime = 107.59 s  ClockTime = 108 s  Iterations: 49/340  Projected time to finish: 10.6492 min
 Time = 0.000529412
 
 deltaT = 1.05882e-05
@@ -1164,7 +1194,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04292e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 108.74 s  ClockTime = 110 s  Iterations: 50/340  Projected time to finish: 10.5115 min
+ExecutionTime = 109.73 s  ClockTime = 110 s  Iterations: 50/340  Projected time to finish: 10.6072 min
 Time = 0.00054
 
 deltaT = 1.05882e-05
@@ -1185,7 +1215,7 @@ Cloud name: dsmc
     Average internal energy         = 1.051e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 110.82 s  ClockTime = 112 s  Iterations: 51/340  Projected time to finish: 10.4663 min
+ExecutionTime = 111.92 s  ClockTime = 112 s  Iterations: 51/340  Projected time to finish: 10.5702 min
 Time = 0.000550588
 
 deltaT = 1.05882e-05
@@ -1206,7 +1236,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04634e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 112.93 s  ClockTime = 114 s  Iterations: 52/340  Projected time to finish: 10.4243 min
+ExecutionTime = 114.04 s  ClockTime = 114 s  Iterations: 52/340  Projected time to finish: 10.5268 min
 Time = 0.000561176
 
 deltaT = 1.05882e-05
@@ -1227,7 +1257,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04312e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 115.02 s  ClockTime = 116 s  Iterations: 53/340  Projected time to finish: 10.3807 min
+ExecutionTime = 116.15 s  ClockTime = 117 s  Iterations: 53/340  Projected time to finish: 10.4827 min
 Time = 0.000571765
 
 deltaT = 1.05882e-05
@@ -1248,7 +1278,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04355e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 117.11 s  ClockTime = 118 s  Iterations: 54/340  Projected time to finish: 10.3375 min
+ExecutionTime = 118.33 s  ClockTime = 119 s  Iterations: 54/340  Projected time to finish: 10.4452 min
 Time = 0.000582353
 
 deltaT = 1.05882e-05
@@ -1269,7 +1299,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04647e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 119.24 s  ClockTime = 120 s  Iterations: 55/340  Projected time to finish: 10.298 min
+ExecutionTime = 120.47 s  ClockTime = 121 s  Iterations: 55/340  Projected time to finish: 10.4042 min
 Time = 0.000592941
 
 deltaT = 1.05882e-05
@@ -1290,7 +1320,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0429e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 121.32 s  ClockTime = 123 s  Iterations: 56/340  Projected time to finish: 10.2544 min
+ExecutionTime = 122.57 s  ClockTime = 123 s  Iterations: 56/340  Projected time to finish: 10.3601 min
 Time = 0.000603529
 
 deltaT = 1.05882e-05
@@ -1311,7 +1341,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04466e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 123.41 s  ClockTime = 125 s  Iterations: 57/340  Projected time to finish: 10.212 min
+ExecutionTime = 124.82 s  ClockTime = 125 s  Iterations: 57/340  Projected time to finish: 10.3287 min
 Time = 0.000614118
 
 deltaT = 1.05882e-05
@@ -1332,7 +1362,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04597e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 125.58 s  ClockTime = 127 s  Iterations: 58/340  Projected time to finish: 10.1763 min
+ExecutionTime = 126.91 s  ClockTime = 127 s  Iterations: 58/340  Projected time to finish: 10.2841 min
 Time = 0.000624706
 
 deltaT = 1.05882e-05
@@ -1353,7 +1383,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0438e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 127.69 s  ClockTime = 129 s  Iterations: 59/340  Projected time to finish: 10.1358 min
+ExecutionTime = 129.11 s  ClockTime = 130 s  Iterations: 59/340  Projected time to finish: 10.2486 min
 Time = 0.000635294
 
 deltaT = 1.05882e-05
@@ -1374,7 +1404,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0447e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 129.77 s  ClockTime = 131 s  Iterations: 60/340  Projected time to finish: 10.0932 min
+ExecutionTime = 131.24 s  ClockTime = 132 s  Iterations: 60/340  Projected time to finish: 10.2076 min
 Time = 0.000645882
 
 deltaT = 1.05882e-05
@@ -1395,7 +1425,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04126e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 131.91 s  ClockTime = 133 s  Iterations: 61/340  Projected time to finish: 10.0554 min
+ExecutionTime = 133.33 s  ClockTime = 134 s  Iterations: 61/340  Projected time to finish: 10.1637 min
 Time = 0.000656471
 
 deltaT = 1.05882e-05
@@ -1416,7 +1446,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04575e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 134.14 s  ClockTime = 135 s  Iterations: 62/340  Projected time to finish: 10.0244 min
+ExecutionTime = 135.57 s  ClockTime = 136 s  Iterations: 62/340  Projected time to finish: 10.1313 min
 Time = 0.000667059
 
 deltaT = 1.05882e-05
@@ -1437,7 +1467,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04195e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 136.28 s  ClockTime = 138 s  Iterations: 63/340  Projected time to finish: 9.98666 min
+ExecutionTime = 137.68 s  ClockTime = 138 s  Iterations: 63/340  Projected time to finish: 10.0892 min
 Time = 0.000677647
 
 deltaT = 1.05882e-05
@@ -1458,7 +1488,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04262e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 138.41 s  ClockTime = 140 s  Iterations: 64/340  Projected time to finish: 9.94822 min
+ExecutionTime = 139.8 s  ClockTime = 140 s  Iterations: 64/340  Projected time to finish: 10.0481 min
 Time = 0.000688235
 
 deltaT = 1.05882e-05
@@ -1479,7 +1509,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03759e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 140.52 s  ClockTime = 142 s  Iterations: 65/340  Projected time to finish: 9.90846 min
+ExecutionTime = 141.97 s  ClockTime = 142 s  Iterations: 65/340  Projected time to finish: 10.0107 min
 Time = 0.000698824
 
 deltaT = 1.05882e-05
@@ -1500,7 +1530,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04192e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 142.69 s  ClockTime = 144 s  Iterations: 66/340  Projected time to finish: 9.87299 min
+ExecutionTime = 144.1 s  ClockTime = 145 s  Iterations: 66/340  Projected time to finish: 9.97056 min
 Time = 0.000709412
 
 deltaT = 1.05882e-05
@@ -1521,7 +1551,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04257e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 144.82 s  ClockTime = 146 s  Iterations: 67/340  Projected time to finish: 9.83479 min
+ExecutionTime = 146.21 s  ClockTime = 147 s  Iterations: 67/340  Projected time to finish: 9.92919 min
 Time = 0.00072
 
 deltaT = 1.05882e-05
@@ -1542,7 +1572,20 @@ Cloud name: dsmc
     Average internal energy         = 1.03866e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 147.71 s  ClockTime = 149 s  Iterations: 68/340  Projected time to finish: 9.84733 min
+ExecutionTime = 149.07 s  ClockTime = 150 s  Iterations: 68/340  Projected time to finish: 9.938 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 511.578 8.90723
+    translationalT max/min : 1069.58 241.12
+    internalT max/min : 1061.66 211.116
+    overallT max/min : 1002.92 239.953
+    p max/min : 139.276 6.77976
+dsmcFieldsMod written.
+
 Time = 0.000730588
 
 deltaT = 1.05882e-05
@@ -1563,7 +1606,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03742e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 149.81 s  ClockTime = 151 s  Iterations: 69/340  Projected time to finish: 9.8064 min
+ExecutionTime = 151.18 s  ClockTime = 152 s  Iterations: 69/340  Projected time to finish: 9.89608 min
 Time = 0.000741176
 
 deltaT = 1.05882e-05
@@ -1584,7 +1627,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03802e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 151.87 s  ClockTime = 153 s  Iterations: 70/340  Projected time to finish: 9.76307 min
+ExecutionTime = 153.32 s  ClockTime = 154 s  Iterations: 70/340  Projected time to finish: 9.85629 min
 Time = 0.000751765
 
 deltaT = 1.05882e-05
@@ -1605,7 +1648,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04262e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 154.04 s  ClockTime = 155 s  Iterations: 71/340  Projected time to finish: 9.72694 min
+ExecutionTime = 155.46 s  ClockTime = 156 s  Iterations: 71/340  Projected time to finish: 9.81661 min
 Time = 0.000762353
 
 deltaT = 1.05882e-05
@@ -1626,7 +1669,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03945e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 156.13 s  ClockTime = 157 s  Iterations: 72/340  Projected time to finish: 9.68584 min
+ExecutionTime = 157.54 s  ClockTime = 158 s  Iterations: 72/340  Projected time to finish: 9.77331 min
 Time = 0.000772941
 
 deltaT = 1.05882e-05
@@ -1647,7 +1690,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04057e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 158.21 s  ClockTime = 160 s  Iterations: 73/340  Projected time to finish: 9.64431 min
+ExecutionTime = 159.65 s  ClockTime = 160 s  Iterations: 73/340  Projected time to finish: 9.73209 min
 Time = 0.000783529
 
 deltaT = 1.05882e-05
@@ -1668,7 +1711,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04003e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 160.35 s  ClockTime = 162 s  Iterations: 74/340  Projected time to finish: 9.60655 min
+ExecutionTime = 161.82 s  ClockTime = 162 s  Iterations: 74/340  Projected time to finish: 9.69462 min
 Time = 0.000794118
 
 deltaT = 1.05882e-05
@@ -1689,7 +1732,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03628e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 162.45 s  ClockTime = 164 s  Iterations: 75/340  Projected time to finish: 9.5665 min
+ExecutionTime = 163.91 s  ClockTime = 164 s  Iterations: 75/340  Projected time to finish: 9.65248 min
 Time = 0.000804706
 
 deltaT = 1.05882e-05
@@ -1710,7 +1753,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03898e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 164.62 s  ClockTime = 166 s  Iterations: 76/340  Projected time to finish: 9.53063 min
+ExecutionTime = 166.04 s  ClockTime = 167 s  Iterations: 76/340  Projected time to finish: 9.61284 min
 Time = 0.000815294
 
 deltaT = 1.05882e-05
@@ -1731,7 +1774,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03881e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 166.73 s  ClockTime = 168 s  Iterations: 77/340  Projected time to finish: 9.49134 min
+ExecutionTime = 168.18 s  ClockTime = 169 s  Iterations: 77/340  Projected time to finish: 9.57388 min
 Time = 0.000825882
 
 deltaT = 1.05882e-05
@@ -1752,7 +1795,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0434e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 168.82 s  ClockTime = 170 s  Iterations: 78/340  Projected time to finish: 9.45103 min
+ExecutionTime = 170.29 s  ClockTime = 171 s  Iterations: 78/340  Projected time to finish: 9.53333 min
 Time = 0.000836471
 
 deltaT = 1.05882e-05
@@ -1773,7 +1816,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04015e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 171.03 s  ClockTime = 173 s  Iterations: 79/340  Projected time to finish: 9.41747 min
+ExecutionTime = 172.52 s  ClockTime = 173 s  Iterations: 79/340  Projected time to finish: 9.49952 min
 Time = 0.000847059
 
 deltaT = 1.05882e-05
@@ -1794,7 +1837,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0388e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 173.21 s  ClockTime = 175 s  Iterations: 80/340  Projected time to finish: 9.38221 min
+ExecutionTime = 174.65 s  ClockTime = 175 s  Iterations: 80/340  Projected time to finish: 9.46021 min
 Time = 0.000857647
 
 deltaT = 1.05882e-05
@@ -1815,7 +1858,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03936e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 175.55 s  ClockTime = 177 s  Iterations: 81/340  Projected time to finish: 9.35544 min
+ExecutionTime = 176.71 s  ClockTime = 177 s  Iterations: 81/340  Projected time to finish: 9.41726 min
 Time = 0.000868235
 
 deltaT = 1.05882e-05
@@ -1836,7 +1879,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 177.83 s  ClockTime = 179 s  Iterations: 82/340  Projected time to finish: 9.32523 min
+ExecutionTime = 178.9 s  ClockTime = 179 s  Iterations: 82/340  Projected time to finish: 9.38134 min
 Time = 0.000878824
 
 deltaT = 1.05882e-05
@@ -1857,7 +1900,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03535e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 180.11 s  ClockTime = 182 s  Iterations: 83/340  Projected time to finish: 9.29483 min
+ExecutionTime = 181.01 s  ClockTime = 182 s  Iterations: 83/340  Projected time to finish: 9.34128 min
 Time = 0.000889412
 
 deltaT = 1.05882e-05
@@ -1878,7 +1921,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04333e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 182.39 s  ClockTime = 184 s  Iterations: 84/340  Projected time to finish: 9.26425 min
+ExecutionTime = 183.12 s  ClockTime = 184 s  Iterations: 84/340  Projected time to finish: 9.30133 min
 Time = 0.0009
 
 deltaT = 1.05882e-05
@@ -1899,7 +1942,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04165e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 184.49 s  ClockTime = 186 s  Iterations: 85/340  Projected time to finish: 9.2245 min
+ExecutionTime = 185.27 s  ClockTime = 186 s  Iterations: 85/340  Projected time to finish: 9.2635 min
 Time = 0.000910588
 
 deltaT = 1.05882e-05
@@ -1920,7 +1963,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04013e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 186.61 s  ClockTime = 188 s  Iterations: 86/340  Projected time to finish: 9.18584 min
+ExecutionTime = 187.33 s  ClockTime = 188 s  Iterations: 86/340  Projected time to finish: 9.22128 min
 Time = 0.000921176
 
 deltaT = 1.05882e-05
@@ -1941,7 +1984,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03682e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 188.71 s  ClockTime = 190 s  Iterations: 87/340  Projected time to finish: 9.14629 min
+ExecutionTime = 189.41 s  ClockTime = 190 s  Iterations: 87/340  Projected time to finish: 9.18022 min
 Time = 0.000931765
 
 deltaT = 1.05882e-05
@@ -1962,7 +2005,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04035e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 190.8 s  ClockTime = 193 s  Iterations: 88/340  Projected time to finish: 9.10636 min
+ExecutionTime = 191.54 s  ClockTime = 192 s  Iterations: 88/340  Projected time to finish: 9.14168 min
 Time = 0.000942353
 
 deltaT = 1.05882e-05
@@ -1983,7 +2026,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03901e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 192.91 s  ClockTime = 195 s  Iterations: 89/340  Projected time to finish: 9.06749 min
+ExecutionTime = 193.62 s  ClockTime = 194 s  Iterations: 89/340  Projected time to finish: 9.10087 min
 Time = 0.000952941
 
 deltaT = 1.05882e-05
@@ -2004,7 +2047,7 @@ Cloud name: dsmc
     Average internal energy         = 1.04012e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 194.96 s  ClockTime = 197 s  Iterations: 90/340  Projected time to finish: 9.02593 min
+ExecutionTime = 195.71 s  ClockTime = 196 s  Iterations: 90/340  Projected time to finish: 9.06065 min
 Time = 0.000963529
 
 deltaT = 1.05882e-05
@@ -2025,7 +2068,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03374e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 197.07 s  ClockTime = 199 s  Iterations: 91/340  Projected time to finish: 8.98726 min
+ExecutionTime = 197.83 s  ClockTime = 198 s  Iterations: 91/340  Projected time to finish: 9.02192 min
 Time = 0.000974118
 
 deltaT = 1.05882e-05
@@ -2046,7 +2089,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03099e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 199.21 s  ClockTime = 201 s  Iterations: 92/340  Projected time to finish: 8.95001 min
+ExecutionTime = 199.93 s  ClockTime = 200 s  Iterations: 92/340  Projected time to finish: 8.98236 min
 Time = 0.000984706
 
 deltaT = 1.05882e-05
@@ -2067,7 +2110,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03373e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 201.32 s  ClockTime = 203 s  Iterations: 93/340  Projected time to finish: 8.91148 min
+ExecutionTime = 202.07 s  ClockTime = 203 s  Iterations: 93/340  Projected time to finish: 8.94468 min
 Time = 0.000995294
 
 deltaT = 1.05882e-05
@@ -2088,7 +2131,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03845e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 203.43 s  ClockTime = 205 s  Iterations: 94/340  Projected time to finish: 8.87301 min
+ExecutionTime = 204.16 s  ClockTime = 205 s  Iterations: 94/340  Projected time to finish: 8.90485 min
 Time = 0.00100588
 
 deltaT = 1.05882e-05
@@ -2109,7 +2152,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03567e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 205.49 s  ClockTime = 207 s  Iterations: 95/340  Projected time to finish: 8.83246 min
+ExecutionTime = 206.23 s  ClockTime = 207 s  Iterations: 95/340  Projected time to finish: 8.86427 min
 Time = 0.00101647
 
 deltaT = 1.05882e-05
@@ -2130,7 +2173,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03341e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 207.63 s  ClockTime = 209 s  Iterations: 96/340  Projected time to finish: 8.79544 min
+ExecutionTime = 208.37 s  ClockTime = 209 s  Iterations: 96/340  Projected time to finish: 8.82678 min
 Time = 0.00102706
 
 deltaT = 1.05882e-05
@@ -2151,7 +2194,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03454e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 209.83 s  ClockTime = 212 s  Iterations: 97/340  Projected time to finish: 8.76094 min
+ExecutionTime = 210.46 s  ClockTime = 211 s  Iterations: 97/340  Projected time to finish: 8.78725 min
 Time = 0.00103765
 
 deltaT = 1.05882e-05
@@ -2172,7 +2215,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03106e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 212 s  ClockTime = 214 s  Iterations: 98/340  Projected time to finish: 8.72517 min
+ExecutionTime = 212.53 s  ClockTime = 213 s  Iterations: 98/340  Projected time to finish: 8.74698 min
 Time = 0.00104824
 
 deltaT = 1.05882e-05
@@ -2193,7 +2236,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03305e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 214.16 s  ClockTime = 216 s  Iterations: 99/340  Projected time to finish: 8.68898 min
+ExecutionTime = 214.73 s  ClockTime = 215 s  Iterations: 99/340  Projected time to finish: 8.71211 min
 Time = 0.00105882
 
 deltaT = 1.05882e-05
@@ -2214,7 +2257,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03839e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 216.21 s  ClockTime = 218 s  Iterations: 100/340  Projected time to finish: 8.6484 min
+ExecutionTime = 216.78 s  ClockTime = 217 s  Iterations: 100/340  Projected time to finish: 8.6712 min
 Time = 0.00106941
 
 deltaT = 1.05882e-05
@@ -2235,7 +2278,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03362e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 218.25 s  ClockTime = 220 s  Iterations: 101/340  Projected time to finish: 8.60755 min
+ExecutionTime = 218.89 s  ClockTime = 219 s  Iterations: 101/340  Projected time to finish: 8.63279 min
 Time = 0.00108
 
 deltaT = 1.05882e-05
@@ -2256,7 +2299,20 @@ Cloud name: dsmc
     Average internal energy         = 1.03136e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 221.04 s  ClockTime = 223 s  Iterations: 102/340  Projected time to finish: 8.596 min
+ExecutionTime = 221.63 s  ClockTime = 222 s  Iterations: 102/340  Projected time to finish: 8.61894 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 517.488 6.26874
+    translationalT max/min : 1050.98 222.496
+    internalT max/min : 1075.71 220.032
+    overallT max/min : 1011.94 239.072
+    p max/min : 137.101 6.9454
+dsmcFieldsMod written.
+
 Time = 0.00109059
 
 deltaT = 1.05882e-05
@@ -2277,7 +2333,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03414e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 223.16 s  ClockTime = 225 s  Iterations: 103/340  Projected time to finish: 8.55808 min
+ExecutionTime = 223.74 s  ClockTime = 224 s  Iterations: 103/340  Projected time to finish: 8.58032 min
 Time = 0.00110118
 
 deltaT = 1.05882e-05
@@ -2298,7 +2354,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03524e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 225.22 s  ClockTime = 227 s  Iterations: 104/340  Projected time to finish: 8.51794 min
+ExecutionTime = 225.96 s  ClockTime = 227 s  Iterations: 104/340  Projected time to finish: 8.54592 min
 Time = 0.00111176
 
 deltaT = 1.05882e-05
@@ -2319,7 +2375,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0333e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 227.27 s  ClockTime = 229 s  Iterations: 105/340  Projected time to finish: 8.47753 min
+ExecutionTime = 228.08 s  ClockTime = 229 s  Iterations: 105/340  Projected time to finish: 8.50775 min
 Time = 0.00112235
 
 deltaT = 1.05882e-05
@@ -2340,7 +2396,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03128e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 229.35 s  ClockTime = 231 s  Iterations: 106/340  Projected time to finish: 8.43835 min
+ExecutionTime = 230.18 s  ClockTime = 231 s  Iterations: 106/340  Projected time to finish: 8.46889 min
 Time = 0.00113294
 
 deltaT = 1.05882e-05
@@ -2361,7 +2417,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03151e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 231.37 s  ClockTime = 233 s  Iterations: 107/340  Projected time to finish: 8.39707 min
+ExecutionTime = 232.26 s  ClockTime = 233 s  Iterations: 107/340  Projected time to finish: 8.42937 min
 Time = 0.00114353
 
 deltaT = 1.05882e-05
@@ -2382,7 +2438,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0346e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 233.41 s  ClockTime = 235 s  Iterations: 108/340  Projected time to finish: 8.35665 min
+ExecutionTime = 234.4 s  ClockTime = 235 s  Iterations: 108/340  Projected time to finish: 8.3921 min
 Time = 0.00115412
 
 deltaT = 1.05882e-05
@@ -2403,7 +2459,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03203e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 235.49 s  ClockTime = 237 s  Iterations: 109/340  Projected time to finish: 8.31777 min
+ExecutionTime = 236.45 s  ClockTime = 237 s  Iterations: 109/340  Projected time to finish: 8.35167 min
 Time = 0.00116471
 
 deltaT = 1.05882e-05
@@ -2424,7 +2480,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03116e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 237.52 s  ClockTime = 239 s  Iterations: 110/340  Projected time to finish: 8.27721 min
+ExecutionTime = 238.59 s  ClockTime = 239 s  Iterations: 110/340  Projected time to finish: 8.3145 min
 Time = 0.00117529
 
 deltaT = 1.05882e-05
@@ -2445,7 +2501,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02946e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 239.54 s  ClockTime = 241 s  Iterations: 111/340  Projected time to finish: 8.23644 min
+ExecutionTime = 240.76 s  ClockTime = 241 s  Iterations: 111/340  Projected time to finish: 8.27838 min
 Time = 0.00118588
 
 deltaT = 1.05882e-05
@@ -2466,7 +2522,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02887e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 241.57 s  ClockTime = 243 s  Iterations: 112/340  Projected time to finish: 8.19612 min
+ExecutionTime = 242.99 s  ClockTime = 244 s  Iterations: 112/340  Projected time to finish: 8.2443 min
 Time = 0.00119647
 
 deltaT = 1.05882e-05
@@ -2487,7 +2543,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03116e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 243.6 s  ClockTime = 246 s  Iterations: 113/340  Projected time to finish: 8.15593 min
+ExecutionTime = 245.32 s  ClockTime = 246 s  Iterations: 113/340  Projected time to finish: 8.21352 min
 Time = 0.00120706
 
 deltaT = 1.05882e-05
@@ -2508,7 +2564,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02985e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 245.62 s  ClockTime = 248 s  Iterations: 114/340  Projected time to finish: 8.11551 min
+ExecutionTime = 247.73 s  ClockTime = 248 s  Iterations: 114/340  Projected time to finish: 8.18523 min
 Time = 0.00121765
 
 deltaT = 1.05882e-05
@@ -2529,7 +2585,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03233e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 247.65 s  ClockTime = 250 s  Iterations: 115/340  Projected time to finish: 8.07554 min
+ExecutionTime = 250.15 s  ClockTime = 251 s  Iterations: 115/340  Projected time to finish: 8.15707 min
 Time = 0.00122824
 
 deltaT = 1.05882e-05
@@ -2550,7 +2606,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0339e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 249.66 s  ClockTime = 252 s  Iterations: 116/340  Projected time to finish: 8.03503 min
+ExecutionTime = 252.62 s  ClockTime = 253 s  Iterations: 116/340  Projected time to finish: 8.1303 min
 Time = 0.00123882
 
 deltaT = 1.05882e-05
@@ -2571,7 +2627,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02784e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 251.69 s  ClockTime = 254 s  Iterations: 117/340  Projected time to finish: 7.99528 min
+ExecutionTime = 254.88 s  ClockTime = 256 s  Iterations: 117/340  Projected time to finish: 8.09662 min
 Time = 0.00124941
 
 deltaT = 1.05882e-05
@@ -2592,7 +2648,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03041e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 253.87 s  ClockTime = 256 s  Iterations: 118/340  Projected time to finish: 7.96033 min
+ExecutionTime = 257.26 s  ClockTime = 258 s  Iterations: 118/340  Projected time to finish: 8.06663 min
 Time = 0.00126
 
 deltaT = 1.05882e-05
@@ -2613,7 +2669,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02877e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 256.19 s  ClockTime = 258 s  Iterations: 119/340  Projected time to finish: 7.92969 min
+ExecutionTime = 259.63 s  ClockTime = 260 s  Iterations: 119/340  Projected time to finish: 8.03617 min
 Time = 0.00127059
 
 deltaT = 1.05882e-05
@@ -2634,7 +2690,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03084e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 258.24 s  ClockTime = 260 s  Iterations: 120/340  Projected time to finish: 7.89067 min
+ExecutionTime = 261.88 s  ClockTime = 263 s  Iterations: 120/340  Projected time to finish: 8.00189 min
 Time = 0.00128118
 
 deltaT = 1.05882e-05
@@ -2655,7 +2711,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02677e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 260.26 s  ClockTime = 262 s  Iterations: 121/340  Projected time to finish: 7.85082 min
+ExecutionTime = 264.29 s  ClockTime = 265 s  Iterations: 121/340  Projected time to finish: 7.97238 min
 Time = 0.00129176
 
 deltaT = 1.05882e-05
@@ -2676,7 +2732,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02682e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 262.46 s  ClockTime = 264 s  Iterations: 122/340  Projected time to finish: 7.81643 min
+ExecutionTime = 266.54 s  ClockTime = 267 s  Iterations: 122/340  Projected time to finish: 7.93794 min
 Time = 0.00130235
 
 deltaT = 1.05882e-05
@@ -2697,7 +2753,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 264.65 s  ClockTime = 267 s  Iterations: 123/340  Projected time to finish: 7.78171 min
+ExecutionTime = 268.88 s  ClockTime = 270 s  Iterations: 123/340  Projected time to finish: 7.90609 min
 Time = 0.00131294
 
 deltaT = 1.05882e-05
@@ -2718,7 +2774,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03173e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 266.79 s  ClockTime = 269 s  Iterations: 124/340  Projected time to finish: 7.74552 min
+ExecutionTime = 271.13 s  ClockTime = 272 s  Iterations: 124/340  Projected time to finish: 7.87152 min
 Time = 0.00132353
 
 deltaT = 1.05882e-05
@@ -2739,7 +2795,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02894e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 269.08 s  ClockTime = 271 s  Iterations: 125/340  Projected time to finish: 7.71363 min
+ExecutionTime = 273.23 s  ClockTime = 274 s  Iterations: 125/340  Projected time to finish: 7.83259 min
 Time = 0.00133412
 
 deltaT = 1.05882e-05
@@ -2760,7 +2816,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02787e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 271.12 s  ClockTime = 273 s  Iterations: 126/340  Projected time to finish: 7.67456 min
+ExecutionTime = 275.31 s  ClockTime = 276 s  Iterations: 126/340  Projected time to finish: 7.79317 min
 Time = 0.00134471
 
 deltaT = 1.05882e-05
@@ -2781,7 +2837,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0233e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 273.15 s  ClockTime = 275 s  Iterations: 127/340  Projected time to finish: 7.6353 min
+ExecutionTime = 277.52 s  ClockTime = 278 s  Iterations: 127/340  Projected time to finish: 7.75745 min
 Time = 0.00135529
 
 deltaT = 1.05882e-05
@@ -2802,7 +2858,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02719e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 275.18 s  ClockTime = 277 s  Iterations: 128/340  Projected time to finish: 7.59611 min
+ExecutionTime = 279.63 s  ClockTime = 280 s  Iterations: 128/340  Projected time to finish: 7.71895 min
 Time = 0.00136588
 
 deltaT = 1.05882e-05
@@ -2823,7 +2879,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03146e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 277.22 s  ClockTime = 279 s  Iterations: 129/340  Projected time to finish: 7.55729 min
+ExecutionTime = 281.66 s  ClockTime = 282 s  Iterations: 129/340  Projected time to finish: 7.67833 min
 Time = 0.00137647
 
 deltaT = 1.05882e-05
@@ -2844,7 +2900,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03345e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 279.27 s  ClockTime = 281 s  Iterations: 130/340  Projected time to finish: 7.51881 min
+ExecutionTime = 283.77 s  ClockTime = 285 s  Iterations: 130/340  Projected time to finish: 7.63996 min
 Time = 0.00138706
 
 deltaT = 1.05882e-05
@@ -2865,7 +2921,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02428e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 281.29 s  ClockTime = 283 s  Iterations: 131/340  Projected time to finish: 7.47959 min
+ExecutionTime = 285.79 s  ClockTime = 287 s  Iterations: 131/340  Projected time to finish: 7.59925 min
 Time = 0.00139765
 
 deltaT = 1.05882e-05
@@ -2886,7 +2942,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02809e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 283.3 s  ClockTime = 285 s  Iterations: 132/340  Projected time to finish: 7.4402 min
+ExecutionTime = 287.84 s  ClockTime = 289 s  Iterations: 132/340  Projected time to finish: 7.55943 min
 Time = 0.00140824
 
 deltaT = 1.05882e-05
@@ -2907,7 +2963,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02397e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 285.33 s  ClockTime = 288 s  Iterations: 133/340  Projected time to finish: 7.40142 min
+ExecutionTime = 289.93 s  ClockTime = 291 s  Iterations: 133/340  Projected time to finish: 7.52074 min
 Time = 0.00141882
 
 deltaT = 1.05882e-05
@@ -2928,7 +2984,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02892e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 287.33 s  ClockTime = 290 s  Iterations: 134/340  Projected time to finish: 7.36194 min
+ExecutionTime = 291.95 s  ClockTime = 293 s  Iterations: 134/340  Projected time to finish: 7.48031 min
 Time = 0.00142941
 
 deltaT = 1.05882e-05
@@ -2949,7 +3005,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02268e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 289.37 s  ClockTime = 292 s  Iterations: 135/340  Projected time to finish: 7.32356 min
+ExecutionTime = 294.13 s  ClockTime = 295 s  Iterations: 135/340  Projected time to finish: 7.44403 min
 Time = 0.00144
 
 deltaT = 1.05882e-05
@@ -2970,7 +3026,20 @@ Cloud name: dsmc
     Average internal energy         = 1.02931e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 292.1 s  ClockTime = 294 s  Iterations: 136/340  Projected time to finish: 7.3025 min
+ExecutionTime = 296.79 s  ClockTime = 298 s  Iterations: 136/340  Projected time to finish: 7.41975 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 491.752 8.29789
+    translationalT max/min : 1036.06 211.044
+    internalT max/min : 1062.37 197.83
+    overallT max/min : 992.783 222.96
+    p max/min : 147.178 6.35505
+dsmcFieldsMod written.
+
 Time = 0.00145059
 
 deltaT = 1.05882e-05
@@ -2991,7 +3060,7 @@ Cloud name: dsmc
     Average internal energy         = 1.03009e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 294.1 s  ClockTime = 296 s  Iterations: 137/340  Projected time to finish: 7.26305 min
+ExecutionTime = 298.84 s  ClockTime = 300 s  Iterations: 137/340  Projected time to finish: 7.38011 min
 Time = 0.00146118
 
 deltaT = 1.05882e-05
@@ -3012,7 +3081,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02814e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 296.12 s  ClockTime = 298 s  Iterations: 138/340  Projected time to finish: 7.22418 min
+ExecutionTime = 300.94 s  ClockTime = 302 s  Iterations: 138/340  Projected time to finish: 7.34177 min
 Time = 0.00147176
 
 deltaT = 1.05882e-05
@@ -3033,7 +3102,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02155e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 298.13 s  ClockTime = 300 s  Iterations: 139/340  Projected time to finish: 7.18515 min
+ExecutionTime = 303.01 s  ClockTime = 304 s  Iterations: 139/340  Projected time to finish: 7.30276 min
 Time = 0.00148235
 
 deltaT = 1.05882e-05
@@ -3054,7 +3123,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02721e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 300.14 s  ClockTime = 302 s  Iterations: 140/340  Projected time to finish: 7.14619 min
+ExecutionTime = 305.04 s  ClockTime = 306 s  Iterations: 140/340  Projected time to finish: 7.26286 min
 Time = 0.00149294
 
 deltaT = 1.05882e-05
@@ -3075,7 +3144,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02276e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 302.2 s  ClockTime = 304 s  Iterations: 141/340  Projected time to finish: 7.10849 min
+ExecutionTime = 307.09 s  ClockTime = 308 s  Iterations: 141/340  Projected time to finish: 7.22351 min
 Time = 0.00150353
 
 deltaT = 1.05882e-05
@@ -3096,7 +3165,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02655e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 304.18 s  ClockTime = 306 s  Iterations: 142/340  Projected time to finish: 7.06897 min
+ExecutionTime = 309.16 s  ClockTime = 310 s  Iterations: 142/340  Projected time to finish: 7.1847 min
 Time = 0.00151412
 
 deltaT = 1.05882e-05
@@ -3117,7 +3186,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02304e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 306.21 s  ClockTime = 308 s  Iterations: 143/340  Projected time to finish: 7.0307 min
+ExecutionTime = 311.18 s  ClockTime = 312 s  Iterations: 143/340  Projected time to finish: 7.14481 min
 Time = 0.00152471
 
 deltaT = 1.05882e-05
@@ -3138,7 +3207,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02536e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 308.29 s  ClockTime = 311 s  Iterations: 144/340  Projected time to finish: 6.99362 min
+ExecutionTime = 313.24 s  ClockTime = 314 s  Iterations: 144/340  Projected time to finish: 7.10591 min
 Time = 0.00153529
 
 deltaT = 1.05882e-05
@@ -3159,7 +3228,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02319e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 310.31 s  ClockTime = 313 s  Iterations: 145/340  Projected time to finish: 6.95522 min
+ExecutionTime = 315.32 s  ClockTime = 316 s  Iterations: 145/340  Projected time to finish: 7.06752 min
 Time = 0.00154588
 
 deltaT = 1.05882e-05
@@ -3180,7 +3249,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01964e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 312.43 s  ClockTime = 315 s  Iterations: 146/340  Projected time to finish: 6.91911 min
+ExecutionTime = 317.34 s  ClockTime = 318 s  Iterations: 146/340  Projected time to finish: 7.02785 min
 Time = 0.00155647
 
 deltaT = 1.05882e-05
@@ -3201,7 +3270,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02419e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 314.54 s  ClockTime = 317 s  Iterations: 147/340  Projected time to finish: 6.88279 min
+ExecutionTime = 319.35 s  ClockTime = 320 s  Iterations: 147/340  Projected time to finish: 6.98804 min
 Time = 0.00156706
 
 deltaT = 1.05882e-05
@@ -3222,7 +3291,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02702e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 316.62 s  ClockTime = 319 s  Iterations: 148/340  Projected time to finish: 6.84584 min
+ExecutionTime = 321.43 s  ClockTime = 322 s  Iterations: 148/340  Projected time to finish: 6.94984 min
 Time = 0.00157765
 
 deltaT = 1.05882e-05
@@ -3243,7 +3312,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02038e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 318.6 s  ClockTime = 321 s  Iterations: 149/340  Projected time to finish: 6.80678 min
+ExecutionTime = 323.46 s  ClockTime = 324 s  Iterations: 149/340  Projected time to finish: 6.91061 min
 Time = 0.00158824
 
 deltaT = 1.05882e-05
@@ -3264,7 +3333,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02464e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 320.65 s  ClockTime = 323 s  Iterations: 150/340  Projected time to finish: 6.76928 min
+ExecutionTime = 325.5 s  ClockTime = 326 s  Iterations: 150/340  Projected time to finish: 6.87167 min
 Time = 0.00159882
 
 deltaT = 1.05882e-05
@@ -3285,7 +3354,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02351e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 322.65 s  ClockTime = 325 s  Iterations: 151/340  Projected time to finish: 6.73078 min
+ExecutionTime = 327.61 s  ClockTime = 328 s  Iterations: 151/340  Projected time to finish: 6.83425 min
 Time = 0.00160941
 
 deltaT = 1.05882e-05
@@ -3306,7 +3375,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01911e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 324.67 s  ClockTime = 327 s  Iterations: 152/340  Projected time to finish: 6.69276 min
+ExecutionTime = 329.64 s  ClockTime = 330 s  Iterations: 152/340  Projected time to finish: 6.79521 min
 Time = 0.00162
 
 deltaT = 1.05882e-05
@@ -3327,7 +3396,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01662e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 326.7 s  ClockTime = 329 s  Iterations: 153/340  Projected time to finish: 6.655 min
+ExecutionTime = 331.64 s  ClockTime = 333 s  Iterations: 153/340  Projected time to finish: 6.75563 min
 Time = 0.00163059
 
 deltaT = 1.05882e-05
@@ -3348,7 +3417,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01949e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 328.72 s  ClockTime = 331 s  Iterations: 154/340  Projected time to finish: 6.61709 min
+ExecutionTime = 333.68 s  ClockTime = 335 s  Iterations: 154/340  Projected time to finish: 6.71694 min
 Time = 0.00164118
 
 deltaT = 1.05882e-05
@@ -3369,7 +3438,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02363e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 330.72 s  ClockTime = 333 s  Iterations: 155/340  Projected time to finish: 6.57884 min
+ExecutionTime = 335.66 s  ClockTime = 337 s  Iterations: 155/340  Projected time to finish: 6.67711 min
 Time = 0.00165176
 
 deltaT = 1.05882e-05
@@ -3390,7 +3459,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01973e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 332.86 s  ClockTime = 335 s  Iterations: 156/340  Projected time to finish: 6.5434 min
+ExecutionTime = 337.69 s  ClockTime = 339 s  Iterations: 156/340  Projected time to finish: 6.63835 min
 Time = 0.00166235
 
 deltaT = 1.05882e-05
@@ -3411,7 +3480,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02082e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 334.93 s  ClockTime = 337 s  Iterations: 157/340  Projected time to finish: 6.5066 min
+ExecutionTime = 339.77 s  ClockTime = 341 s  Iterations: 157/340  Projected time to finish: 6.60063 min
 Time = 0.00167294
 
 deltaT = 1.05882e-05
@@ -3432,7 +3501,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0235e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 337.15 s  ClockTime = 340 s  Iterations: 158/340  Projected time to finish: 6.47271 min
+ExecutionTime = 341.77 s  ClockTime = 343 s  Iterations: 158/340  Projected time to finish: 6.56141 min
 Time = 0.00168353
 
 deltaT = 1.05882e-05
@@ -3453,7 +3522,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02006e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 339.15 s  ClockTime = 342 s  Iterations: 159/340  Projected time to finish: 6.43461 min
+ExecutionTime = 343.83 s  ClockTime = 345 s  Iterations: 159/340  Projected time to finish: 6.5234 min
 Time = 0.00169412
 
 deltaT = 1.05882e-05
@@ -3474,7 +3543,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02213e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 341.12 s  ClockTime = 344 s  Iterations: 160/340  Projected time to finish: 6.396 min
+ExecutionTime = 345.88 s  ClockTime = 347 s  Iterations: 160/340  Projected time to finish: 6.48525 min
 Time = 0.00170471
 
 deltaT = 1.05882e-05
@@ -3495,7 +3564,7 @@ Cloud name: dsmc
     Average internal energy         = 1.013e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 343.21 s  ClockTime = 346 s  Iterations: 161/340  Projected time to finish: 6.35969 min
+ExecutionTime = 347.87 s  ClockTime = 349 s  Iterations: 161/340  Projected time to finish: 6.44604 min
 Time = 0.00171529
 
 deltaT = 1.05882e-05
@@ -3516,7 +3585,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01843e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 345.27 s  ClockTime = 348 s  Iterations: 162/340  Projected time to finish: 6.32285 min
+ExecutionTime = 349.91 s  ClockTime = 351 s  Iterations: 162/340  Projected time to finish: 6.40782 min
 Time = 0.00172588
 
 deltaT = 1.05882e-05
@@ -3537,7 +3606,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02149e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 347.29 s  ClockTime = 350 s  Iterations: 163/340  Projected time to finish: 6.28531 min
+ExecutionTime = 351.94 s  ClockTime = 353 s  Iterations: 163/340  Projected time to finish: 6.36947 min
 Time = 0.00173647
 
 deltaT = 1.05882e-05
@@ -3558,7 +3627,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02893e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 349.3 s  ClockTime = 352 s  Iterations: 164/340  Projected time to finish: 6.24764 min
+ExecutionTime = 353.94 s  ClockTime = 355 s  Iterations: 164/340  Projected time to finish: 6.33063 min
 Time = 0.00174706
 
 deltaT = 1.05882e-05
@@ -3579,7 +3648,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02088e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 351.33 s  ClockTime = 354 s  Iterations: 165/340  Projected time to finish: 6.21038 min
+ExecutionTime = 355.99 s  ClockTime = 357 s  Iterations: 165/340  Projected time to finish: 6.29275 min
 Time = 0.00175765
 
 deltaT = 1.05882e-05
@@ -3600,7 +3669,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01923e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 353.54 s  ClockTime = 356 s  Iterations: 166/340  Projected time to finish: 6.1763 min
+ExecutionTime = 358.02 s  ClockTime = 359 s  Iterations: 166/340  Projected time to finish: 6.25457 min
 Time = 0.00176824
 
 deltaT = 1.05882e-05
@@ -3621,7 +3690,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02209e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 355.79 s  ClockTime = 358 s  Iterations: 167/340  Projected time to finish: 6.14288 min
+ExecutionTime = 360.02 s  ClockTime = 361 s  Iterations: 167/340  Projected time to finish: 6.21591 min
 Time = 0.00177882
 
 deltaT = 1.05882e-05
@@ -3642,7 +3711,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01823e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 357.99 s  ClockTime = 361 s  Iterations: 168/340  Projected time to finish: 6.10856 min
+ExecutionTime = 362.07 s  ClockTime = 363 s  Iterations: 168/340  Projected time to finish: 6.17818 min
 Time = 0.00178941
 
 deltaT = 1.05882e-05
@@ -3663,7 +3732,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01762e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 360.14 s  ClockTime = 363 s  Iterations: 169/340  Projected time to finish: 6.07337 min
+ExecutionTime = 364.08 s  ClockTime = 365 s  Iterations: 169/340  Projected time to finish: 6.13981 min
 Time = 0.0018
 
 deltaT = 1.05882e-05
@@ -3684,7 +3753,20 @@ Cloud name: dsmc
     Average internal energy         = 1.01996e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 362.85 s  ClockTime = 366 s  Iterations: 170/340  Projected time to finish: 6.0475 min
+ExecutionTime = 366.74 s  ClockTime = 368 s  Iterations: 170/340  Projected time to finish: 6.11233 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 485.53 6.83783
+    translationalT max/min : 1058.13 220.185
+    internalT max/min : 1120.41 217.913
+    overallT max/min : 1060.69 242.661
+    p max/min : 139.079 6.92952
+dsmcFieldsMod written.
+
 Time = 0.00181059
 
 deltaT = 1.05882e-05
@@ -3705,7 +3787,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01812e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 364.85 s  ClockTime = 368 s  Iterations: 171/340  Projected time to finish: 6.00971 min
+ExecutionTime = 368.82 s  ClockTime = 370 s  Iterations: 171/340  Projected time to finish: 6.07511 min
 Time = 0.00182118
 
 deltaT = 1.05882e-05
@@ -3726,7 +3808,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01328e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 366.85 s  ClockTime = 370 s  Iterations: 172/340  Projected time to finish: 5.97198 min
+ExecutionTime = 370.91 s  ClockTime = 372 s  Iterations: 172/340  Projected time to finish: 6.03807 min
 Time = 0.00183176
 
 deltaT = 1.05882e-05
@@ -3747,7 +3829,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01968e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 368.82 s  ClockTime = 372 s  Iterations: 173/340  Projected time to finish: 5.93381 min
+ExecutionTime = 372.99 s  ClockTime = 374 s  Iterations: 173/340  Projected time to finish: 6.0009 min
 Time = 0.00184235
 
 deltaT = 1.05882e-05
@@ -3768,7 +3850,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01286e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 370.88 s  ClockTime = 374 s  Iterations: 174/340  Projected time to finish: 5.89713 min
+ExecutionTime = 375.15 s  ClockTime = 376 s  Iterations: 174/340  Projected time to finish: 5.96503 min
 Time = 0.00185294
 
 deltaT = 1.05882e-05
@@ -3789,7 +3871,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01735e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 372.9 s  ClockTime = 376 s  Iterations: 175/340  Projected time to finish: 5.85986 min
+ExecutionTime = 377.16 s  ClockTime = 378 s  Iterations: 175/340  Projected time to finish: 5.9268 min
 Time = 0.00186353
 
 deltaT = 1.05882e-05
@@ -3810,7 +3892,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01665e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 374.91 s  ClockTime = 378 s  Iterations: 176/340  Projected time to finish: 5.82247 min
+ExecutionTime = 379.24 s  ClockTime = 380 s  Iterations: 176/340  Projected time to finish: 5.88971 min
 Time = 0.00187412
 
 deltaT = 1.05882e-05
@@ -3831,7 +3913,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01825e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 376.9 s  ClockTime = 380 s  Iterations: 177/340  Projected time to finish: 5.78481 min
+ExecutionTime = 381.37 s  ClockTime = 382 s  Iterations: 177/340  Projected time to finish: 5.85342 min
 Time = 0.00188471
 
 deltaT = 1.05882e-05
@@ -3852,7 +3934,7 @@ Cloud name: dsmc
     Average internal energy         = 1.02044e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 378.85 s  ClockTime = 382 s  Iterations: 178/340  Projected time to finish: 5.7466 min
+ExecutionTime = 383.41 s  ClockTime = 384 s  Iterations: 178/340  Projected time to finish: 5.81577 min
 Time = 0.00189529
 
 deltaT = 1.05882e-05
@@ -3873,7 +3955,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01583e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 380.8 s  ClockTime = 384 s  Iterations: 179/340  Projected time to finish: 5.70845 min
+ExecutionTime = 385.41 s  ClockTime = 386 s  Iterations: 179/340  Projected time to finish: 5.77756 min
 Time = 0.00190588
 
 deltaT = 1.05882e-05
@@ -3894,7 +3976,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01837e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 382.79 s  ClockTime = 386 s  Iterations: 180/340  Projected time to finish: 5.67096 min
+ExecutionTime = 387.43 s  ClockTime = 388 s  Iterations: 180/340  Projected time to finish: 5.7397 min
 Time = 0.00191647
 
 deltaT = 1.05882e-05
@@ -3915,7 +3997,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01532e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 384.74 s  ClockTime = 388 s  Iterations: 181/340  Projected time to finish: 5.63293 min
+ExecutionTime = 389.46 s  ClockTime = 391 s  Iterations: 181/340  Projected time to finish: 5.70204 min
 Time = 0.00192706
 
 deltaT = 1.05882e-05
@@ -3936,7 +4018,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01035e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 386.69 s  ClockTime = 389 s  Iterations: 182/340  Projected time to finish: 5.59497 min
+ExecutionTime = 391.44 s  ClockTime = 392 s  Iterations: 182/340  Projected time to finish: 5.66369 min
 Time = 0.00193765
 
 deltaT = 1.05882e-05
@@ -3957,7 +4039,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01355e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 388.65 s  ClockTime = 391 s  Iterations: 183/340  Projected time to finish: 5.5572 min
+ExecutionTime = 393.46 s  ClockTime = 395 s  Iterations: 183/340  Projected time to finish: 5.62598 min
 Time = 0.00194824
 
 deltaT = 1.05882e-05
@@ -3978,7 +4060,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01249e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 390.68 s  ClockTime = 393 s  Iterations: 184/340  Projected time to finish: 5.52048 min
+ExecutionTime = 395.44 s  ClockTime = 397 s  Iterations: 184/340  Projected time to finish: 5.58774 min
 Time = 0.00195882
 
 deltaT = 1.05882e-05
@@ -3999,7 +4081,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01582e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 392.71 s  ClockTime = 396 s  Iterations: 185/340  Projected time to finish: 5.48379 min
+ExecutionTime = 397.4 s  ClockTime = 398 s  Iterations: 185/340  Projected time to finish: 5.54928 min
 Time = 0.00196941
 
 deltaT = 1.05882e-05
@@ -4020,7 +4102,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01597e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 394.69 s  ClockTime = 397 s  Iterations: 186/340  Projected time to finish: 5.44644 min
+ExecutionTime = 399.4 s  ClockTime = 400 s  Iterations: 186/340  Projected time to finish: 5.51143 min
 Time = 0.00198
 
 deltaT = 1.05882e-05
@@ -4041,7 +4123,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0142e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 396.69 s  ClockTime = 400 s  Iterations: 187/340  Projected time to finish: 5.40941 min
+ExecutionTime = 401.41 s  ClockTime = 403 s  Iterations: 187/340  Projected time to finish: 5.47377 min
 Time = 0.00199059
 
 deltaT = 1.05882e-05
@@ -4062,7 +4144,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01946e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 398.65 s  ClockTime = 401 s  Iterations: 188/340  Projected time to finish: 5.37188 min
+ExecutionTime = 403.4 s  ClockTime = 404 s  Iterations: 188/340  Projected time to finish: 5.43589 min
 Time = 0.00200118
 
 deltaT = 1.05882e-05
@@ -4083,7 +4165,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01087e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 400.59 s  ClockTime = 403 s  Iterations: 189/340  Projected time to finish: 5.33413 min
+ExecutionTime = 405.36 s  ClockTime = 406 s  Iterations: 189/340  Projected time to finish: 5.39765 min
 Time = 0.00201176
 
 deltaT = 1.05882e-05
@@ -4104,7 +4186,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01627e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 402.71 s  ClockTime = 406 s  Iterations: 190/340  Projected time to finish: 5.29882 min
+ExecutionTime = 407.38 s  ClockTime = 408 s  Iterations: 190/340  Projected time to finish: 5.36026 min
 Time = 0.00202235
 
 deltaT = 1.05882e-05
@@ -4125,7 +4207,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01258e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 404.73 s  ClockTime = 408 s  Iterations: 191/340  Projected time to finish: 5.2622 min
+ExecutionTime = 409.35 s  ClockTime = 410 s  Iterations: 191/340  Projected time to finish: 5.32226 min
 Time = 0.00203294
 
 deltaT = 1.05882e-05
@@ -4146,7 +4228,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01835e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 406.85 s  ClockTime = 410 s  Iterations: 192/340  Projected time to finish: 5.22689 min
+ExecutionTime = 411.33 s  ClockTime = 412 s  Iterations: 192/340  Projected time to finish: 5.28445 min
 Time = 0.00204353
 
 deltaT = 1.05882e-05
@@ -4167,7 +4249,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01156e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 409.09 s  ClockTime = 412 s  Iterations: 193/340  Projected time to finish: 5.19311 min
+ExecutionTime = 413.36 s  ClockTime = 414 s  Iterations: 193/340  Projected time to finish: 5.24732 min
 Time = 0.00205412
 
 deltaT = 1.05882e-05
@@ -4188,7 +4270,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01091e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 411.05 s  ClockTime = 414 s  Iterations: 194/340  Projected time to finish: 5.15578 min
+ExecutionTime = 415.32 s  ClockTime = 416 s  Iterations: 194/340  Projected time to finish: 5.20934 min
 Time = 0.00206471
 
 deltaT = 1.05882e-05
@@ -4209,7 +4291,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00872e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 412.98 s  ClockTime = 416 s  Iterations: 195/340  Projected time to finish: 5.11813 min
+ExecutionTime = 417.26 s  ClockTime = 418 s  Iterations: 195/340  Projected time to finish: 5.17117 min
 Time = 0.00207529
 
 deltaT = 1.05882e-05
@@ -4230,7 +4312,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01344e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 414.88 s  ClockTime = 418 s  Iterations: 196/340  Projected time to finish: 5.08016 min
+ExecutionTime = 419.32 s  ClockTime = 420 s  Iterations: 196/340  Projected time to finish: 5.13453 min
 Time = 0.00208588
 
 deltaT = 1.05882e-05
@@ -4251,7 +4333,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01378e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 416.82 s  ClockTime = 420 s  Iterations: 197/340  Projected time to finish: 5.04275 min
+ExecutionTime = 421.26 s  ClockTime = 422 s  Iterations: 197/340  Projected time to finish: 5.09646 min
 Time = 0.00209647
 
 deltaT = 1.05882e-05
@@ -4272,7 +4354,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01261e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 418.76 s  ClockTime = 422 s  Iterations: 198/340  Projected time to finish: 5.00538 min
+ExecutionTime = 423.21 s  ClockTime = 424 s  Iterations: 198/340  Projected time to finish: 5.05857 min
 Time = 0.00210706
 
 deltaT = 1.05882e-05
@@ -4293,7 +4375,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01081e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 420.68 s  ClockTime = 424 s  Iterations: 199/340  Projected time to finish: 4.96783 min
+ExecutionTime = 425.26 s  ClockTime = 426 s  Iterations: 199/340  Projected time to finish: 5.02191 min
 Time = 0.00211765
 
 deltaT = 1.05882e-05
@@ -4314,7 +4396,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0131e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 422.63 s  ClockTime = 426 s  Iterations: 200/340  Projected time to finish: 4.93068 min
+ExecutionTime = 427.19 s  ClockTime = 428 s  Iterations: 200/340  Projected time to finish: 4.98388 min
 Time = 0.00212824
 
 deltaT = 1.05882e-05
@@ -4335,7 +4417,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01334e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 424.54 s  ClockTime = 427 s  Iterations: 201/340  Projected time to finish: 4.89312 min
+ExecutionTime = 429.16 s  ClockTime = 430 s  Iterations: 201/340  Projected time to finish: 4.94637 min
 Time = 0.00213882
 
 deltaT = 1.05882e-05
@@ -4356,7 +4438,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00849e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 426.46 s  ClockTime = 429 s  Iterations: 202/340  Projected time to finish: 4.85573 min
+ExecutionTime = 431.21 s  ClockTime = 432 s  Iterations: 202/340  Projected time to finish: 4.90982 min
 Time = 0.00214941
 
 deltaT = 1.05882e-05
@@ -4377,7 +4459,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01022e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 428.37 s  ClockTime = 431 s  Iterations: 203/340  Projected time to finish: 4.81828 min
+ExecutionTime = 433.18 s  ClockTime = 434 s  Iterations: 203/340  Projected time to finish: 4.87239 min
 Time = 0.00216
 
 deltaT = 1.05882e-05
@@ -4398,7 +4480,20 @@ Cloud name: dsmc
     Average internal energy         = 1.01033e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 430.88 s  ClockTime = 434 s  Iterations: 204/340  Projected time to finish: 4.78756 min
+ExecutionTime = 435.78 s  ClockTime = 437 s  Iterations: 204/340  Projected time to finish: 4.842 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 504.421 11.796
+    translationalT max/min : 1053.15 228.029
+    internalT max/min : 1058.2 197.315
+    overallT max/min : 1004.31 249.005
+    p max/min : 141.149 7.17273
+dsmcFieldsMod written.
+
 Time = 0.00217059
 
 deltaT = 1.05882e-05
@@ -4419,7 +4514,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01429e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 432.85 s  ClockTime = 436 s  Iterations: 205/340  Projected time to finish: 4.75079 min
+ExecutionTime = 437.77 s  ClockTime = 439 s  Iterations: 205/340  Projected time to finish: 4.80479 min
 Time = 0.00218118
 
 deltaT = 1.05882e-05
@@ -4440,7 +4535,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01228e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 434.79 s  ClockTime = 438 s  Iterations: 206/340  Projected time to finish: 4.71374 min
+ExecutionTime = 439.84 s  ClockTime = 441 s  Iterations: 206/340  Projected time to finish: 4.76849 min
 Time = 0.00219176
 
 deltaT = 1.05882e-05
@@ -4461,7 +4556,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01016e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 436.72 s  ClockTime = 440 s  Iterations: 207/340  Projected time to finish: 4.67663 min
+ExecutionTime = 441.76 s  ClockTime = 443 s  Iterations: 207/340  Projected time to finish: 4.7306 min
 Time = 0.00220235
 
 deltaT = 1.05882e-05
@@ -4482,7 +4577,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01039e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 438.63 s  ClockTime = 442 s  Iterations: 208/340  Projected time to finish: 4.63936 min
+ExecutionTime = 443.71 s  ClockTime = 445 s  Iterations: 208/340  Projected time to finish: 4.69309 min
 Time = 0.00221294
 
 deltaT = 1.05882e-05
@@ -4503,7 +4598,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01124e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 440.52 s  ClockTime = 443 s  Iterations: 209/340  Projected time to finish: 4.60192 min
+ExecutionTime = 445.74 s  ClockTime = 447 s  Iterations: 209/340  Projected time to finish: 4.65645 min
 Time = 0.00222353
 
 deltaT = 1.05882e-05
@@ -4524,7 +4619,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0077e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 442.54 s  ClockTime = 446 s  Iterations: 210/340  Projected time to finish: 4.56589 min
+ExecutionTime = 447.68 s  ClockTime = 449 s  Iterations: 210/340  Projected time to finish: 4.61892 min
 Time = 0.00223412
 
 deltaT = 1.05882e-05
@@ -4545,7 +4640,7 @@ Cloud name: dsmc
     Average internal energy         = 1.01356e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 444.44 s  ClockTime = 447 s  Iterations: 211/340  Projected time to finish: 4.52865 min
+ExecutionTime = 449.62 s  ClockTime = 451 s  Iterations: 211/340  Projected time to finish: 4.58144 min
 Time = 0.00224471
 
 deltaT = 1.05882e-05
@@ -4566,7 +4661,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00847e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 446.36 s  ClockTime = 449 s  Iterations: 212/340  Projected time to finish: 4.49167 min
+ExecutionTime = 451.62 s  ClockTime = 453 s  Iterations: 212/340  Projected time to finish: 4.5446 min
 Time = 0.00225529
 
 deltaT = 1.05882e-05
@@ -4587,7 +4682,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00828e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 448.36 s  ClockTime = 451 s  Iterations: 213/340  Projected time to finish: 4.45553 min
+ExecutionTime = 453.55 s  ClockTime = 455 s  Iterations: 213/340  Projected time to finish: 4.50711 min
 Time = 0.00226588
 
 deltaT = 1.05882e-05
@@ -4608,7 +4703,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00794e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 450.24 s  ClockTime = 453 s  Iterations: 214/340  Projected time to finish: 4.41824 min
+ExecutionTime = 455.57 s  ClockTime = 457 s  Iterations: 214/340  Projected time to finish: 4.47055 min
 Time = 0.00227647
 
 deltaT = 1.05882e-05
@@ -4629,7 +4724,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00961e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 452.13 s  ClockTime = 455 s  Iterations: 215/340  Projected time to finish: 4.3811 min
+ExecutionTime = 457.82 s  ClockTime = 459 s  Iterations: 215/340  Projected time to finish: 4.43624 min
 Time = 0.00228706
 
 deltaT = 1.05882e-05
@@ -4650,7 +4745,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00864e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 454.11 s  ClockTime = 457 s  Iterations: 216/340  Projected time to finish: 4.34488 min
+ExecutionTime = 459.77 s  ClockTime = 461 s  Iterations: 216/340  Projected time to finish: 4.39903 min
 Time = 0.00229765
 
 deltaT = 1.05882e-05
@@ -4671,7 +4766,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00636e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 456.02 s  ClockTime = 459 s  Iterations: 217/340  Projected time to finish: 4.30802 min
+ExecutionTime = 461.68 s  ClockTime = 463 s  Iterations: 217/340  Projected time to finish: 4.36149 min
 Time = 0.00230824
 
 deltaT = 1.05882e-05
@@ -4692,7 +4787,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00911e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 457.9 s  ClockTime = 461 s  Iterations: 218/340  Projected time to finish: 4.27093 min
+ExecutionTime = 463.73 s  ClockTime = 465 s  Iterations: 218/340  Projected time to finish: 4.32531 min
 Time = 0.00231882
 
 deltaT = 1.05882e-05
@@ -4713,7 +4808,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00961e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 459.83 s  ClockTime = 463 s  Iterations: 219/340  Projected time to finish: 4.23436 min
+ExecutionTime = 465.65 s  ClockTime = 467 s  Iterations: 219/340  Projected time to finish: 4.28795 min
 Time = 0.00232941
 
 deltaT = 1.05882e-05
@@ -4734,7 +4829,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00616e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 461.75 s  ClockTime = 465 s  Iterations: 220/340  Projected time to finish: 4.19773 min
+ExecutionTime = 467.55 s  ClockTime = 469 s  Iterations: 220/340  Projected time to finish: 4.25045 min
 Time = 0.00234
 
 deltaT = 1.05882e-05
@@ -4755,7 +4850,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00695e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 463.63 s  ClockTime = 467 s  Iterations: 221/340  Projected time to finish: 4.16078 min
+ExecutionTime = 469.54 s  ClockTime = 471 s  Iterations: 221/340  Projected time to finish: 4.21382 min
 Time = 0.00235059
 
 deltaT = 1.05882e-05
@@ -4776,7 +4871,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00792e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 465.57 s  ClockTime = 469 s  Iterations: 222/340  Projected time to finish: 4.12442 min
+ExecutionTime = 471.52 s  ClockTime = 473 s  Iterations: 222/340  Projected time to finish: 4.17713 min
 Time = 0.00236118
 
 deltaT = 1.05882e-05
@@ -4797,7 +4892,7 @@ Cloud name: dsmc
     Average internal energy         = 1.0064e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 467.47 s  ClockTime = 470 s  Iterations: 223/340  Projected time to finish: 4.08774 min
+ExecutionTime = 473.44 s  ClockTime = 475 s  Iterations: 223/340  Projected time to finish: 4.13995 min
 Time = 0.00237176
 
 deltaT = 1.05882e-05
@@ -4818,7 +4913,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00704e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 469.35 s  ClockTime = 472 s  Iterations: 224/340  Projected time to finish: 4.05094 min
+ExecutionTime = 475.35 s  ClockTime = 477 s  Iterations: 224/340  Projected time to finish: 4.10272 min
 Time = 0.00238235
 
 deltaT = 1.05882e-05
@@ -4839,7 +4934,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00642e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 471.32 s  ClockTime = 474 s  Iterations: 225/340  Projected time to finish: 4.01495 min
+ExecutionTime = 477.32 s  ClockTime = 479 s  Iterations: 225/340  Projected time to finish: 4.06606 min
 Time = 0.00239294
 
 deltaT = 1.05882e-05
@@ -4860,7 +4955,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00847e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 473.21 s  ClockTime = 476 s  Iterations: 226/340  Projected time to finish: 3.97831 min
+ExecutionTime = 479.27 s  ClockTime = 481 s  Iterations: 226/340  Projected time to finish: 4.02926 min
 Time = 0.00240353
 
 deltaT = 1.05882e-05
@@ -4881,7 +4976,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00941e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 475.11 s  ClockTime = 478 s  Iterations: 227/340  Projected time to finish: 3.94181 min
+ExecutionTime = 481.18 s  ClockTime = 482 s  Iterations: 227/340  Projected time to finish: 3.99217 min
 Time = 0.00241412
 
 deltaT = 1.05882e-05
@@ -4902,7 +4997,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00399e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 477.08 s  ClockTime = 480 s  Iterations: 228/340  Projected time to finish: 3.90592 min
+ExecutionTime = 483.21 s  ClockTime = 485 s  Iterations: 228/340  Projected time to finish: 3.95611 min
 Time = 0.00242471
 
 deltaT = 1.05882e-05
@@ -4923,7 +5018,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00257e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 478.96 s  ClockTime = 482 s  Iterations: 229/340  Projected time to finish: 3.86933 min
+ExecutionTime = 485.13 s  ClockTime = 486 s  Iterations: 229/340  Projected time to finish: 3.91917 min
 Time = 0.00243529
 
 deltaT = 1.05882e-05
@@ -4944,7 +5039,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00502e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 480.82 s  ClockTime = 484 s  Iterations: 230/340  Projected time to finish: 3.83262 min
+ExecutionTime = 487.01 s  ClockTime = 488 s  Iterations: 230/340  Projected time to finish: 3.88196 min
 Time = 0.00244588
 
 deltaT = 1.05882e-05
@@ -4965,7 +5060,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00356e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 482.79 s  ClockTime = 486 s  Iterations: 231/340  Projected time to finish: 3.79683 min
+ExecutionTime = 489.07 s  ClockTime = 490 s  Iterations: 231/340  Projected time to finish: 3.84622 min
 Time = 0.00245647
 
 deltaT = 1.05882e-05
@@ -4986,7 +5081,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00455e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 484.66 s  ClockTime = 488 s  Iterations: 232/340  Projected time to finish: 3.76029 min
+ExecutionTime = 490.96 s  ClockTime = 492 s  Iterations: 232/340  Projected time to finish: 3.80917 min
 Time = 0.00246706
 
 deltaT = 1.05882e-05
@@ -5007,7 +5102,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00899e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 486.57 s  ClockTime = 490 s  Iterations: 233/340  Projected time to finish: 3.72411 min
+ExecutionTime = 492.9 s  ClockTime = 494 s  Iterations: 233/340  Projected time to finish: 3.77255 min
 Time = 0.00247765
 
 deltaT = 1.05882e-05
@@ -5028,7 +5123,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00363e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 488.5 s  ClockTime = 492 s  Iterations: 234/340  Projected time to finish: 3.68811 min
+ExecutionTime = 494.84 s  ClockTime = 496 s  Iterations: 234/340  Projected time to finish: 3.73597 min
 Time = 0.00248824
 
 deltaT = 1.05882e-05
@@ -5049,7 +5144,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00713e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 490.36 s  ClockTime = 493 s  Iterations: 235/340  Projected time to finish: 3.65162 min
+ExecutionTime = 496.76 s  ClockTime = 498 s  Iterations: 235/340  Projected time to finish: 3.69928 min
 Time = 0.00249882
 
 deltaT = 1.05882e-05
@@ -5070,7 +5165,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00769e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 492.24 s  ClockTime = 495 s  Iterations: 236/340  Projected time to finish: 3.61532 min
+ExecutionTime = 498.67 s  ClockTime = 500 s  Iterations: 236/340  Projected time to finish: 3.66255 min
 Time = 0.00250941
 
 deltaT = 1.05882e-05
@@ -5091,7 +5186,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00429e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 494.15 s  ClockTime = 497 s  Iterations: 237/340  Projected time to finish: 3.57929 min
+ExecutionTime = 500.61 s  ClockTime = 502 s  Iterations: 237/340  Projected time to finish: 3.62608 min
 Time = 0.00252
 
 deltaT = 1.05882e-05
@@ -5112,7 +5207,20 @@ Cloud name: dsmc
     Average internal energy         = 1.00704e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 496.65 s  ClockTime = 500 s  Iterations: 238/340  Projected time to finish: 3.5475 min
+ExecutionTime = 503.28 s  ClockTime = 505 s  Iterations: 238/340  Projected time to finish: 3.59486 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 537.791 11.3678
+    translationalT max/min : 1030.87 204.959
+    internalT max/min : 1103.29 220.402
+    overallT max/min : 998.144 245.715
+    p max/min : 136.642 6.11229
+dsmcFieldsMod written.
+
 Time = 0.00253059
 
 deltaT = 1.05882e-05
@@ -5133,7 +5241,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00356e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 498.56 s  ClockTime = 502 s  Iterations: 239/340  Projected time to finish: 3.51148 min
+ExecutionTime = 505.2 s  ClockTime = 507 s  Iterations: 239/340  Projected time to finish: 3.55824 min
 Time = 0.00254118
 
 deltaT = 1.05882e-05
@@ -5154,7 +5262,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00298e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 500.42 s  ClockTime = 504 s  Iterations: 240/340  Projected time to finish: 3.47514 min
+ExecutionTime = 507.18 s  ClockTime = 509 s  Iterations: 240/340  Projected time to finish: 3.52208 min
 Time = 0.00255176
 
 deltaT = 1.05882e-05
@@ -5175,7 +5283,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00115e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 502.29 s  ClockTime = 505 s  Iterations: 241/340  Projected time to finish: 3.43891 min
+ExecutionTime = 509.34 s  ClockTime = 511 s  Iterations: 241/340  Projected time to finish: 3.48718 min
 Time = 0.00256235
 
 deltaT = 1.05882e-05
@@ -5196,7 +5304,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00224e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 504.18 s  ClockTime = 507 s  Iterations: 242/340  Projected time to finish: 3.40287 min
+ExecutionTime = 511.26 s  ClockTime = 513 s  Iterations: 242/340  Projected time to finish: 3.45065 min
 Time = 0.00257294
 
 deltaT = 1.05882e-05
@@ -5217,7 +5325,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00371e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 506.09 s  ClockTime = 509 s  Iterations: 243/340  Projected time to finish: 3.36699 min
+ExecutionTime = 513.43 s  ClockTime = 515 s  Iterations: 243/340  Projected time to finish: 3.41582 min
 Time = 0.00258353
 
 deltaT = 1.05882e-05
@@ -5238,7 +5346,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00057e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 507.93 s  ClockTime = 511 s  Iterations: 244/340  Projected time to finish: 3.33069 min
+ExecutionTime = 515.59 s  ClockTime = 517 s  Iterations: 244/340  Projected time to finish: 3.38092 min
 Time = 0.00259412
 
 deltaT = 1.05882e-05
@@ -5259,7 +5367,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00147e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 509.84 s  ClockTime = 513 s  Iterations: 245/340  Projected time to finish: 3.29488 min
+ExecutionTime = 517.6 s  ClockTime = 519 s  Iterations: 245/340  Projected time to finish: 3.34503 min
 Time = 0.00260471
 
 deltaT = 1.05882e-05
@@ -5280,7 +5388,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00189e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 511.75 s  ClockTime = 515 s  Iterations: 246/340  Projected time to finish: 3.25911 min
+ExecutionTime = 519.56 s  ClockTime = 521 s  Iterations: 246/340  Projected time to finish: 3.30885 min
 Time = 0.00261529
 
 deltaT = 1.05882e-05
@@ -5301,7 +5409,7 @@ Cloud name: dsmc
     Average internal energy         = 9.95814e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 513.59 s  ClockTime = 517 s  Iterations: 247/340  Projected time to finish: 3.22293 min
+ExecutionTime = 521.45 s  ClockTime = 523 s  Iterations: 247/340  Projected time to finish: 3.27226 min
 Time = 0.00262588
 
 deltaT = 1.05882e-05
@@ -5322,7 +5430,7 @@ Cloud name: dsmc
     Average internal energy         = 9.99227e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 515.48 s  ClockTime = 519 s  Iterations: 248/340  Projected time to finish: 3.18711 min
+ExecutionTime = 523.42 s  ClockTime = 525 s  Iterations: 248/340  Projected time to finish: 3.2362 min
 Time = 0.00263647
 
 deltaT = 1.05882e-05
@@ -5343,7 +5451,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00226e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 517.35 s  ClockTime = 521 s  Iterations: 249/340  Projected time to finish: 3.15119 min
+ExecutionTime = 525.32 s  ClockTime = 527 s  Iterations: 249/340  Projected time to finish: 3.19974 min
 Time = 0.00264706
 
 deltaT = 1.05882e-05
@@ -5364,7 +5472,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00133e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 519.21 s  ClockTime = 522 s  Iterations: 250/340  Projected time to finish: 3.11526 min
+ExecutionTime = 527.23 s  ClockTime = 529 s  Iterations: 250/340  Projected time to finish: 3.16338 min
 Time = 0.00265765
 
 deltaT = 1.05882e-05
@@ -5385,7 +5493,7 @@ Cloud name: dsmc
     Average internal energy         = 9.97999e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 521.2 s  ClockTime = 524 s  Iterations: 251/340  Projected time to finish: 3.08013 min
+ExecutionTime = 529.17 s  ClockTime = 531 s  Iterations: 251/340  Projected time to finish: 3.12723 min
 Time = 0.00266824
 
 deltaT = 1.05882e-05
@@ -5406,7 +5514,7 @@ Cloud name: dsmc
     Average internal energy         = 9.96864e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 523.04 s  ClockTime = 526 s  Iterations: 252/340  Projected time to finish: 3.04415 min
+ExecutionTime = 531.03 s  ClockTime = 532 s  Iterations: 252/340  Projected time to finish: 3.09065 min
 Time = 0.00267882
 
 deltaT = 1.05882e-05
@@ -5427,7 +5535,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00256e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 524.87 s  ClockTime = 528 s  Iterations: 253/340  Projected time to finish: 3.00815 min
+ExecutionTime = 533.09 s  ClockTime = 535 s  Iterations: 253/340  Projected time to finish: 3.05526 min
 Time = 0.00268941
 
 deltaT = 1.05882e-05
@@ -5448,7 +5556,7 @@ Cloud name: dsmc
     Average internal energy         = 9.95406e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 526.73 s  ClockTime = 530 s  Iterations: 254/340  Projected time to finish: 2.97236 min
+ExecutionTime = 535.21 s  ClockTime = 537 s  Iterations: 254/340  Projected time to finish: 3.02021 min
 Time = 0.0027
 
 deltaT = 1.05882e-05
@@ -5469,7 +5577,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00313e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 528.64 s  ClockTime = 532 s  Iterations: 255/340  Projected time to finish: 2.93689 min
+ExecutionTime = 537.1 s  ClockTime = 539 s  Iterations: 255/340  Projected time to finish: 2.98389 min
 Time = 0.00271059
 
 deltaT = 1.05882e-05
@@ -5490,7 +5598,7 @@ Cloud name: dsmc
     Average internal energy         = 9.95363e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 530.5 s  ClockTime = 534 s  Iterations: 256/340  Projected time to finish: 2.90117 min
+ExecutionTime = 539.04 s  ClockTime = 541 s  Iterations: 256/340  Projected time to finish: 2.94787 min
 Time = 0.00272118
 
 deltaT = 1.05882e-05
@@ -5511,7 +5619,7 @@ Cloud name: dsmc
     Average internal energy         = 9.98139e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 532.35 s  ClockTime = 536 s  Iterations: 257/340  Projected time to finish: 2.86544 min
+ExecutionTime = 540.95 s  ClockTime = 542 s  Iterations: 257/340  Projected time to finish: 2.91173 min
 Time = 0.00273176
 
 deltaT = 1.05882e-05
@@ -5532,7 +5640,7 @@ Cloud name: dsmc
     Average internal energy         = 9.97385e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 534.23 s  ClockTime = 538 s  Iterations: 258/340  Projected time to finish: 2.8299 min
+ExecutionTime = 542.9 s  ClockTime = 544 s  Iterations: 258/340  Projected time to finish: 2.87583 min
 Time = 0.00274235
 
 deltaT = 1.05882e-05
@@ -5553,7 +5661,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00038e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 536.07 s  ClockTime = 539 s  Iterations: 259/340  Projected time to finish: 2.79419 min
+ExecutionTime = 544.76 s  ClockTime = 546 s  Iterations: 259/340  Projected time to finish: 2.83948 min
 Time = 0.00275294
 
 deltaT = 1.05882e-05
@@ -5574,7 +5682,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00037e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 537.92 s  ClockTime = 541 s  Iterations: 260/340  Projected time to finish: 2.75856 min
+ExecutionTime = 546.62 s  ClockTime = 548 s  Iterations: 260/340  Projected time to finish: 2.80318 min
 Time = 0.00276353
 
 deltaT = 1.05882e-05
@@ -5595,7 +5703,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00149e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 539.81 s  ClockTime = 543 s  Iterations: 261/340  Projected time to finish: 2.72318 min
+ExecutionTime = 548.57 s  ClockTime = 550 s  Iterations: 261/340  Projected time to finish: 2.76737 min
 Time = 0.00277412
 
 deltaT = 1.05882e-05
@@ -5616,7 +5724,7 @@ Cloud name: dsmc
     Average internal energy         = 9.99559e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 541.65 s  ClockTime = 545 s  Iterations: 262/340  Projected time to finish: 2.68758 min
+ExecutionTime = 550.43 s  ClockTime = 552 s  Iterations: 262/340  Projected time to finish: 2.73114 min
 Time = 0.00278471
 
 deltaT = 1.05882e-05
@@ -5637,7 +5745,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00042e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 543.46 s  ClockTime = 547 s  Iterations: 263/340  Projected time to finish: 2.65186 min
+ExecutionTime = 552.29 s  ClockTime = 554 s  Iterations: 263/340  Projected time to finish: 2.69495 min
 Time = 0.00279529
 
 deltaT = 1.05882e-05
@@ -5658,7 +5766,7 @@ Cloud name: dsmc
     Average internal energy         = 9.96891e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 545.37 s  ClockTime = 549 s  Iterations: 264/340  Projected time to finish: 2.61667 min
+ExecutionTime = 554.28 s  ClockTime = 556 s  Iterations: 264/340  Projected time to finish: 2.65942 min
 Time = 0.00280588
 
 deltaT = 1.05882e-05
@@ -5679,7 +5787,7 @@ Cloud name: dsmc
     Average internal energy         = 9.95168e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 547.2 s  ClockTime = 551 s  Iterations: 265/340  Projected time to finish: 2.58113 min
+ExecutionTime = 556.41 s  ClockTime = 558 s  Iterations: 265/340  Projected time to finish: 2.62458 min
 Time = 0.00281647
 
 deltaT = 1.05882e-05
@@ -5700,7 +5808,7 @@ Cloud name: dsmc
     Average internal energy         = 1.00351e-20
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 549.01 s  ClockTime = 552 s  Iterations: 266/340  Projected time to finish: 2.54554 min
+ExecutionTime = 558.29 s  ClockTime = 560 s  Iterations: 266/340  Projected time to finish: 2.58856 min
 Time = 0.00282706
 
 deltaT = 1.05882e-05
@@ -5721,7 +5829,7 @@ Cloud name: dsmc
     Average internal energy         = 9.9346e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 550.92 s  ClockTime = 554 s  Iterations: 267/340  Projected time to finish: 2.51043 min
+ExecutionTime = 560.22 s  ClockTime = 562 s  Iterations: 267/340  Projected time to finish: 2.55281 min
 Time = 0.00283765
 
 deltaT = 1.05882e-05
@@ -5742,7 +5850,7 @@ Cloud name: dsmc
     Average internal energy         = 9.95805e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 552.73 s  ClockTime = 556 s  Iterations: 268/340  Projected time to finish: 2.47491 min
+ExecutionTime = 562.07 s  ClockTime = 564 s  Iterations: 268/340  Projected time to finish: 2.51673 min
 Time = 0.00284824
 
 deltaT = 1.05882e-05
@@ -5763,7 +5871,7 @@ Cloud name: dsmc
     Average internal energy         = 9.95365e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 554.57 s  ClockTime = 558 s  Iterations: 269/340  Projected time to finish: 2.43956 min
+ExecutionTime = 564.1 s  ClockTime = 566 s  Iterations: 269/340  Projected time to finish: 2.48148 min
 Time = 0.00285882
 
 deltaT = 1.05882e-05
@@ -5784,7 +5892,7 @@ Cloud name: dsmc
     Average internal energy         = 9.92505e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 556.45 s  ClockTime = 560 s  Iterations: 270/340  Projected time to finish: 2.40441 min
+ExecutionTime = 566.43 s  ClockTime = 568 s  Iterations: 270/340  Projected time to finish: 2.44754 min
 Time = 0.00286941
 
 deltaT = 1.05882e-05
@@ -5805,7 +5913,7 @@ Cloud name: dsmc
     Average internal energy         = 9.90476e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 558.26 s  ClockTime = 562 s  Iterations: 271/340  Projected time to finish: 2.369 min
+ExecutionTime = 568.3 s  ClockTime = 570 s  Iterations: 271/340  Projected time to finish: 2.41161 min
 Time = 0.00288
 
 deltaT = 1.05882e-05
@@ -5826,7 +5934,20 @@ Cloud name: dsmc
     Average internal energy         = 9.96397e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 560.8 s  ClockTime = 564 s  Iterations: 272/340  Projected time to finish: 2.33667 min
+ExecutionTime = 570.81 s  ClockTime = 573 s  Iterations: 272/340  Projected time to finish: 2.37837 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 507.32 14.5394
+    translationalT max/min : 1036.82 228.221
+    internalT max/min : 1056.62 206.88
+    overallT max/min : 1022.62 233.298
+    p max/min : 132.597 6.5682
+dsmcFieldsMod written.
+
 Time = 0.00289059
 
 deltaT = 1.05882e-05
@@ -5847,7 +5968,7 @@ Cloud name: dsmc
     Average internal energy         = 9.97614e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 562.68 s  ClockTime = 566 s  Iterations: 273/340  Projected time to finish: 2.30156 min
+ExecutionTime = 572.79 s  ClockTime = 575 s  Iterations: 273/340  Projected time to finish: 2.34291 min
 Time = 0.00290118
 
 deltaT = 1.05882e-05
@@ -5868,7 +5989,7 @@ Cloud name: dsmc
     Average internal energy         = 9.97393e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 564.47 s  ClockTime = 568 s  Iterations: 274/340  Projected time to finish: 2.26612 min
+ExecutionTime = 574.79 s  ClockTime = 577 s  Iterations: 274/340  Projected time to finish: 2.30755 min
 Time = 0.00291176
 
 deltaT = 1.05882e-05
@@ -5889,7 +6010,7 @@ Cloud name: dsmc
     Average internal energy         = 9.9262e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 566.3 s  ClockTime = 570 s  Iterations: 275/340  Projected time to finish: 2.23088 min
+ExecutionTime = 576.65 s  ClockTime = 578 s  Iterations: 275/340  Projected time to finish: 2.27165 min
 Time = 0.00292235
 
 deltaT = 1.05882e-05
@@ -5910,7 +6031,7 @@ Cloud name: dsmc
     Average internal energy         = 9.92148e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 568.16 s  ClockTime = 572 s  Iterations: 276/340  Projected time to finish: 2.19579 min
+ExecutionTime = 578.51 s  ClockTime = 580 s  Iterations: 276/340  Projected time to finish: 2.23579 min
 Time = 0.00293294
 
 deltaT = 1.05882e-05
@@ -5931,7 +6052,7 @@ Cloud name: dsmc
     Average internal energy         = 9.91179e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 569.96 s  ClockTime = 573 s  Iterations: 277/340  Projected time to finish: 2.1605 min
+ExecutionTime = 580.46 s  ClockTime = 582 s  Iterations: 277/340  Projected time to finish: 2.2003 min
 Time = 0.00294353
 
 deltaT = 1.05882e-05
@@ -5952,7 +6073,7 @@ Cloud name: dsmc
     Average internal energy         = 9.93316e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 571.77 s  ClockTime = 575 s  Iterations: 278/340  Projected time to finish: 2.12528 min
+ExecutionTime = 582.31 s  ClockTime = 584 s  Iterations: 278/340  Projected time to finish: 2.16446 min
 Time = 0.00295412
 
 deltaT = 1.05882e-05
@@ -5973,7 +6094,7 @@ Cloud name: dsmc
     Average internal energy         = 9.97045e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 573.64 s  ClockTime = 577 s  Iterations: 279/340  Projected time to finish: 2.09032 min
+ExecutionTime = 584.18 s  ClockTime = 586 s  Iterations: 279/340  Projected time to finish: 2.12873 min
 Time = 0.00296471
 
 deltaT = 1.05882e-05
@@ -5994,7 +6115,7 @@ Cloud name: dsmc
     Average internal energy         = 9.92083e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 575.44 s  ClockTime = 579 s  Iterations: 280/340  Projected time to finish: 2.05514 min
+ExecutionTime = 586.06 s  ClockTime = 588 s  Iterations: 280/340  Projected time to finish: 2.09307 min
 Time = 0.00297529
 
 deltaT = 1.05882e-05
@@ -6015,7 +6136,7 @@ Cloud name: dsmc
     Average internal energy         = 9.90152e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 577.27 s  ClockTime = 581 s  Iterations: 281/340  Projected time to finish: 2.0201 min
+ExecutionTime = 587.98 s  ClockTime = 590 s  Iterations: 281/340  Projected time to finish: 2.05758 min
 Time = 0.00298588
 
 deltaT = 1.05882e-05
@@ -6036,7 +6157,7 @@ Cloud name: dsmc
     Average internal energy         = 9.95393e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 579.1 s  ClockTime = 583 s  Iterations: 282/340  Projected time to finish: 1.98509 min
+ExecutionTime = 589.81 s  ClockTime = 592 s  Iterations: 282/340  Projected time to finish: 2.02181 min
 Time = 0.00299647
 
 deltaT = 1.05882e-05
@@ -6057,7 +6178,7 @@ Cloud name: dsmc
     Average internal energy         = 9.9245e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 580.91 s  ClockTime = 584 s  Iterations: 283/340  Projected time to finish: 1.95005 min
+ExecutionTime = 591.67 s  ClockTime = 594 s  Iterations: 283/340  Projected time to finish: 1.98617 min
 Time = 0.00300706
 
 deltaT = 1.05882e-05
@@ -6078,7 +6199,7 @@ Cloud name: dsmc
     Average internal energy         = 9.94161e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 582.71 s  ClockTime = 586 s  Iterations: 284/340  Projected time to finish: 1.91501 min
+ExecutionTime = 593.65 s  ClockTime = 596 s  Iterations: 284/340  Projected time to finish: 1.95096 min
 Time = 0.00301765
 
 deltaT = 1.05882e-05
@@ -6099,7 +6220,7 @@ Cloud name: dsmc
     Average internal energy         = 9.92448e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 584.54 s  ClockTime = 588 s  Iterations: 285/340  Projected time to finish: 1.8801 min
+ExecutionTime = 595.5 s  ClockTime = 597 s  Iterations: 285/340  Projected time to finish: 1.91535 min
 Time = 0.00302824
 
 deltaT = 1.05882e-05
@@ -6120,7 +6241,7 @@ Cloud name: dsmc
     Average internal energy         = 9.92374e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 586.35 s  ClockTime = 590 s  Iterations: 286/340  Projected time to finish: 1.84516 min
+ExecutionTime = 597.32 s  ClockTime = 599 s  Iterations: 286/340  Projected time to finish: 1.87968 min
 Time = 0.00303882
 
 deltaT = 1.05882e-05
@@ -6141,7 +6262,7 @@ Cloud name: dsmc
     Average internal energy         = 9.96408e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 588.13 s  ClockTime = 592 s  Iterations: 287/340  Projected time to finish: 1.81016 min
+ExecutionTime = 599.23 s  ClockTime = 601 s  Iterations: 287/340  Projected time to finish: 1.84432 min
 Time = 0.00304941
 
 deltaT = 1.05882e-05
@@ -6162,7 +6283,7 @@ Cloud name: dsmc
     Average internal energy         = 9.95246e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 590 s  ClockTime = 593 s  Iterations: 288/340  Projected time to finish: 1.77546 min
+ExecutionTime = 601.1 s  ClockTime = 603 s  Iterations: 288/340  Projected time to finish: 1.80887 min
 Time = 0.00306
 
 deltaT = 1.05882e-05
@@ -6183,7 +6304,7 @@ Cloud name: dsmc
     Average internal energy         = 9.90721e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 591.8 s  ClockTime = 595 s  Iterations: 289/340  Projected time to finish: 1.74059 min
+ExecutionTime = 602.95 s  ClockTime = 605 s  Iterations: 289/340  Projected time to finish: 1.77338 min
 Time = 0.00307059
 
 deltaT = 1.05882e-05
@@ -6204,7 +6325,7 @@ Cloud name: dsmc
     Average internal energy         = 9.8771e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 593.58 s  ClockTime = 597 s  Iterations: 290/340  Projected time to finish: 1.70569 min
+ExecutionTime = 604.78 s  ClockTime = 607 s  Iterations: 290/340  Projected time to finish: 1.73787 min
 Time = 0.00308118
 
 deltaT = 1.05882e-05
@@ -6225,7 +6346,7 @@ Cloud name: dsmc
     Average internal energy         = 9.92143e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 595.44 s  ClockTime = 599 s  Iterations: 291/340  Projected time to finish: 1.67105 min
+ExecutionTime = 606.67 s  ClockTime = 609 s  Iterations: 291/340  Projected time to finish: 1.70257 min
 Time = 0.00309176
 
 deltaT = 1.05882e-05
@@ -6246,7 +6367,7 @@ Cloud name: dsmc
     Average internal energy         = 9.88167e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 597.25 s  ClockTime = 601 s  Iterations: 292/340  Projected time to finish: 1.6363 min
+ExecutionTime = 608.51 s  ClockTime = 610 s  Iterations: 292/340  Projected time to finish: 1.66715 min
 Time = 0.00310235
 
 deltaT = 1.05882e-05
@@ -6267,7 +6388,7 @@ Cloud name: dsmc
     Average internal energy         = 9.90176e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 599.02 s  ClockTime = 602 s  Iterations: 293/340  Projected time to finish: 1.60148 min
+ExecutionTime = 610.32 s  ClockTime = 612 s  Iterations: 293/340  Projected time to finish: 1.63169 min
 Time = 0.00311294
 
 deltaT = 1.05882e-05
@@ -6288,7 +6409,7 @@ Cloud name: dsmc
     Average internal energy         = 9.86572e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 600.86 s  ClockTime = 604 s  Iterations: 294/340  Projected time to finish: 1.56687 min
+ExecutionTime = 612.25 s  ClockTime = 614 s  Iterations: 294/340  Projected time to finish: 1.59657 min
 Time = 0.00312353
 
 deltaT = 1.05882e-05
@@ -6309,7 +6430,7 @@ Cloud name: dsmc
     Average internal energy         = 9.90138e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 602.64 s  ClockTime = 606 s  Iterations: 295/340  Projected time to finish: 1.53214 min
+ExecutionTime = 614.1 s  ClockTime = 616 s  Iterations: 295/340  Projected time to finish: 1.56127 min
 Time = 0.00313412
 
 deltaT = 1.05882e-05
@@ -6330,7 +6451,7 @@ Cloud name: dsmc
     Average internal energy         = 9.91617e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 604.42 s  ClockTime = 608 s  Iterations: 296/340  Projected time to finish: 1.49744 min
+ExecutionTime = 615.92 s  ClockTime = 618 s  Iterations: 296/340  Projected time to finish: 1.52593 min
 Time = 0.00314471
 
 deltaT = 1.05882e-05
@@ -6351,7 +6472,7 @@ Cloud name: dsmc
     Average internal energy         = 9.94149e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 606.21 s  ClockTime = 610 s  Iterations: 297/340  Projected time to finish: 1.4628 min
+ExecutionTime = 617.79 s  ClockTime = 620 s  Iterations: 297/340  Projected time to finish: 1.49074 min
 Time = 0.00315529
 
 deltaT = 1.05882e-05
@@ -6372,7 +6493,7 @@ Cloud name: dsmc
     Average internal energy         = 9.86733e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 608.05 s  ClockTime = 612 s  Iterations: 298/340  Projected time to finish: 1.42831 min
+ExecutionTime = 619.68 s  ClockTime = 622 s  Iterations: 298/340  Projected time to finish: 1.45562 min
 Time = 0.00316588
 
 deltaT = 1.05882e-05
@@ -6393,7 +6514,7 @@ Cloud name: dsmc
     Average internal energy         = 9.86955e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 609.8 s  ClockTime = 613 s  Iterations: 299/340  Projected time to finish: 1.39363 min
+ExecutionTime = 621.48 s  ClockTime = 623 s  Iterations: 299/340  Projected time to finish: 1.42033 min
 Time = 0.00317647
 
 deltaT = 1.05882e-05
@@ -6414,7 +6535,7 @@ Cloud name: dsmc
     Average internal energy         = 9.95669e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 611.58 s  ClockTime = 615 s  Iterations: 300/340  Projected time to finish: 1.35907 min
+ExecutionTime = 623.31 s  ClockTime = 625 s  Iterations: 300/340  Projected time to finish: 1.38513 min
 Time = 0.00318706
 
 deltaT = 1.05882e-05
@@ -6435,7 +6556,7 @@ Cloud name: dsmc
     Average internal energy         = 9.90176e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 613.44 s  ClockTime = 617 s  Iterations: 301/340  Projected time to finish: 1.3247 min
+ExecutionTime = 625.18 s  ClockTime = 627 s  Iterations: 301/340  Projected time to finish: 1.35006 min
 Time = 0.00319765
 
 deltaT = 1.05882e-05
@@ -6456,7 +6577,7 @@ Cloud name: dsmc
     Average internal energy         = 9.92704e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 615.21 s  ClockTime = 619 s  Iterations: 302/340  Projected time to finish: 1.29018 min
+ExecutionTime = 627 s  ClockTime = 629 s  Iterations: 302/340  Projected time to finish: 1.3149 min
 Time = 0.00320824
 
 deltaT = 1.05882e-05
@@ -6477,7 +6598,7 @@ Cloud name: dsmc
     Average internal energy         = 9.90387e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 617.02 s  ClockTime = 621 s  Iterations: 303/340  Projected time to finish: 1.25576 min
+ExecutionTime = 628.79 s  ClockTime = 631 s  Iterations: 303/340  Projected time to finish: 1.27972 min
 Time = 0.00321882
 
 deltaT = 1.05882e-05
@@ -6498,7 +6619,7 @@ Cloud name: dsmc
     Average internal energy         = 9.88315e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 618.83 s  ClockTime = 622 s  Iterations: 304/340  Projected time to finish: 1.22137 min
+ExecutionTime = 630.62 s  ClockTime = 633 s  Iterations: 304/340  Projected time to finish: 1.24464 min
 Time = 0.00322941
 
 deltaT = 1.05882e-05
@@ -6519,7 +6640,7 @@ Cloud name: dsmc
     Average internal energy         = 9.88227e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 620.61 s  ClockTime = 624 s  Iterations: 305/340  Projected time to finish: 1.18696 min
+ExecutionTime = 632.48 s  ClockTime = 634 s  Iterations: 305/340  Projected time to finish: 1.20966 min
 Time = 0.00324
 
 deltaT = 1.05882e-05
@@ -6540,7 +6661,20 @@ Cloud name: dsmc
     Average internal energy         = 9.8313e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 623.04 s  ClockTime = 627 s  Iterations: 306/340  Projected time to finish: 1.15378 min
+ExecutionTime = 634.96 s  ClockTime = 637 s  Iterations: 306/340  Projected time to finish: 1.17585 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 503.446 9.20152
+    translationalT max/min : 1042.55 214.976
+    internalT max/min : 1041.11 224.772
+    overallT max/min : 981.987 247.914
+    p max/min : 137.724 7.10457
+dsmcFieldsMod written.
+
 Time = 0.00325059
 
 deltaT = 1.05882e-05
@@ -6561,7 +6695,7 @@ Cloud name: dsmc
     Average internal energy         = 9.91525e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 624.87 s  ClockTime = 628 s  Iterations: 307/340  Projected time to finish: 1.11947 min
+ExecutionTime = 636.88 s  ClockTime = 639 s  Iterations: 307/340  Projected time to finish: 1.14099 min
 Time = 0.00326118
 
 deltaT = 1.05882e-05
@@ -6582,7 +6716,7 @@ Cloud name: dsmc
     Average internal energy         = 9.89855e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 626.67 s  ClockTime = 630 s  Iterations: 308/340  Projected time to finish: 1.08514 min
+ExecutionTime = 638.85 s  ClockTime = 641 s  Iterations: 308/340  Projected time to finish: 1.10623 min
 Time = 0.00327176
 
 deltaT = 1.05882e-05
@@ -6603,7 +6737,7 @@ Cloud name: dsmc
     Average internal energy         = 9.82619e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 628.43 s  ClockTime = 632 s  Iterations: 309/340  Projected time to finish: 1.05077 min
+ExecutionTime = 640.64 s  ClockTime = 643 s  Iterations: 309/340  Projected time to finish: 1.07119 min
 Time = 0.00328235
 
 deltaT = 1.05882e-05
@@ -6624,7 +6758,7 @@ Cloud name: dsmc
     Average internal energy         = 9.83605e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 630.23 s  ClockTime = 634 s  Iterations: 310/340  Projected time to finish: 1.0165 min
+ExecutionTime = 642.47 s  ClockTime = 645 s  Iterations: 310/340  Projected time to finish: 1.03624 min
 Time = 0.00329294
 
 deltaT = 1.05882e-05
@@ -6645,7 +6779,7 @@ Cloud name: dsmc
     Average internal energy         = 9.89528e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 632.01 s  ClockTime = 636 s  Iterations: 311/340  Projected time to finish: 0.982223 min
+ExecutionTime = 644.3 s  ClockTime = 646 s  Iterations: 311/340  Projected time to finish: 1.00132 min
 Time = 0.00330353
 
 deltaT = 1.05882e-05
@@ -6666,7 +6800,7 @@ Cloud name: dsmc
     Average internal energy         = 9.79864e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 633.77 s  ClockTime = 637 s  Iterations: 312/340  Projected time to finish: 0.947947 min
+ExecutionTime = 646.21 s  ClockTime = 648 s  Iterations: 312/340  Projected time to finish: 0.966553 min
 Time = 0.00331412
 
 deltaT = 1.05882e-05
@@ -6687,7 +6821,7 @@ Cloud name: dsmc
     Average internal energy         = 9.87633e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 635.63 s  ClockTime = 639 s  Iterations: 313/340  Projected time to finish: 0.913845 min
+ExecutionTime = 648.02 s  ClockTime = 650 s  Iterations: 313/340  Projected time to finish: 0.931658 min
 Time = 0.00332471
 
 deltaT = 1.05882e-05
@@ -6708,7 +6842,7 @@ Cloud name: dsmc
     Average internal energy         = 9.87764e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 637.38 s  ClockTime = 641 s  Iterations: 314/340  Projected time to finish: 0.879611 min
+ExecutionTime = 649.8 s  ClockTime = 652 s  Iterations: 314/340  Projected time to finish: 0.896752 min
 Time = 0.00333529
 
 deltaT = 1.05882e-05
@@ -6729,7 +6863,7 @@ Cloud name: dsmc
     Average internal energy         = 9.8215e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 639.13 s  ClockTime = 643 s  Iterations: 315/340  Projected time to finish: 0.84541 min
+ExecutionTime = 651.69 s  ClockTime = 654 s  Iterations: 315/340  Projected time to finish: 0.862024 min
 Time = 0.00334588
 
 deltaT = 1.05882e-05
@@ -6750,7 +6884,7 @@ Cloud name: dsmc
     Average internal energy         = 9.82259e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 640.98 s  ClockTime = 645 s  Iterations: 316/340  Projected time to finish: 0.811367 min
+ExecutionTime = 653.5 s  ClockTime = 656 s  Iterations: 316/340  Projected time to finish: 0.827215 min
 Time = 0.00335647
 
 deltaT = 1.05882e-05
@@ -6771,7 +6905,7 @@ Cloud name: dsmc
     Average internal energy         = 9.86711e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 642.73 s  ClockTime = 646 s  Iterations: 317/340  Projected time to finish: 0.777223 min
+ExecutionTime = 655.3 s  ClockTime = 657 s  Iterations: 317/340  Projected time to finish: 0.792424 min
 Time = 0.00336706
 
 deltaT = 1.05882e-05
@@ -6792,7 +6926,7 @@ Cloud name: dsmc
     Average internal energy         = 9.85458e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 644.48 s  ClockTime = 648 s  Iterations: 318/340  Projected time to finish: 0.743111 min
+ExecutionTime = 657.14 s  ClockTime = 659 s  Iterations: 318/340  Projected time to finish: 0.757709 min
 Time = 0.00337765
 
 deltaT = 1.05882e-05
@@ -6813,7 +6947,7 @@ Cloud name: dsmc
     Average internal energy         = 9.84932e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 646.26 s  ClockTime = 650 s  Iterations: 319/340  Projected time to finish: 0.709063 min
+ExecutionTime = 659.03 s  ClockTime = 661 s  Iterations: 319/340  Projected time to finish: 0.723074 min
 Time = 0.00338824
 
 deltaT = 1.05882e-05
@@ -6834,7 +6968,7 @@ Cloud name: dsmc
     Average internal energy         = 9.8626e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 648.04 s  ClockTime = 652 s  Iterations: 320/340  Projected time to finish: 0.675042 min
+ExecutionTime = 660.82 s  ClockTime = 663 s  Iterations: 320/340  Projected time to finish: 0.688354 min
 Time = 0.00339882
 
 deltaT = 1.05882e-05
@@ -6855,7 +6989,7 @@ Cloud name: dsmc
     Average internal energy         = 9.87228e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 649.77 s  ClockTime = 653 s  Iterations: 321/340  Projected time to finish: 0.640998 min
+ExecutionTime = 662.63 s  ClockTime = 665 s  Iterations: 321/340  Projected time to finish: 0.653685 min
 Time = 0.00340941
 
 deltaT = 1.05882e-05
@@ -6876,7 +7010,7 @@ Cloud name: dsmc
     Average internal energy         = 9.83199e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 651.54 s  ClockTime = 655 s  Iterations: 322/340  Projected time to finish: 0.607025 min
+ExecutionTime = 664.63 s  ClockTime = 667 s  Iterations: 322/340  Projected time to finish: 0.61922 min
 Time = 0.00342
 
 deltaT = 1.05882e-05
@@ -6897,7 +7031,7 @@ Cloud name: dsmc
     Average internal energy         = 9.84419e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 653.34 s  ClockTime = 657 s  Iterations: 323/340  Projected time to finish: 0.573105 min
+ExecutionTime = 666.42 s  ClockTime = 668 s  Iterations: 323/340  Projected time to finish: 0.584579 min
 Time = 0.00343059
 
 deltaT = 1.05882e-05
@@ -6918,7 +7052,7 @@ Cloud name: dsmc
     Average internal energy         = 9.86433e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 655.07 s  ClockTime = 659 s  Iterations: 324/340  Projected time to finish: 0.539152 min
+ExecutionTime = 668.22 s  ClockTime = 670 s  Iterations: 324/340  Projected time to finish: 0.549975 min
 Time = 0.00344118
 
 deltaT = 1.05882e-05
@@ -6939,7 +7073,7 @@ Cloud name: dsmc
     Average internal energy         = 9.83747e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 656.84 s  ClockTime = 660 s  Iterations: 325/340  Projected time to finish: 0.505262 min
+ExecutionTime = 670.02 s  ClockTime = 672 s  Iterations: 325/340  Projected time to finish: 0.5154 min
 Time = 0.00345176
 
 deltaT = 1.05882e-05
@@ -6960,7 +7094,7 @@ Cloud name: dsmc
     Average internal energy         = 9.83013e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 658.65 s  ClockTime = 662 s  Iterations: 326/340  Projected time to finish: 0.471426 min
+ExecutionTime = 671.92 s  ClockTime = 674 s  Iterations: 326/340  Projected time to finish: 0.480924 min
 Time = 0.00346235
 
 deltaT = 1.05882e-05
@@ -6981,7 +7115,7 @@ Cloud name: dsmc
     Average internal energy         = 9.78881e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 660.4 s  ClockTime = 664 s  Iterations: 327/340  Projected time to finish: 0.437574 min
+ExecutionTime = 673.71 s  ClockTime = 676 s  Iterations: 327/340  Projected time to finish: 0.446393 min
 Time = 0.00347294
 
 deltaT = 1.05882e-05
@@ -7002,7 +7136,7 @@ Cloud name: dsmc
     Average internal energy         = 9.83222e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 662.15 s  ClockTime = 666 s  Iterations: 328/340  Projected time to finish: 0.40375 min
+ExecutionTime = 675.49 s  ClockTime = 678 s  Iterations: 328/340  Projected time to finish: 0.411884 min
 Time = 0.00348353
 
 deltaT = 1.05882e-05
@@ -7023,7 +7157,7 @@ Cloud name: dsmc
     Average internal energy         = 9.81244e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 663.92 s  ClockTime = 668 s  Iterations: 329/340  Projected time to finish: 0.369966 min
+ExecutionTime = 677.38 s  ClockTime = 679 s  Iterations: 329/340  Projected time to finish: 0.377466 min
 Time = 0.00349412
 
 deltaT = 1.05882e-05
@@ -7044,7 +7178,7 @@ Cloud name: dsmc
     Average internal energy         = 9.85746e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 665.67 s  ClockTime = 669 s  Iterations: 330/340  Projected time to finish: 0.336197 min
+ExecutionTime = 679.19 s  ClockTime = 681 s  Iterations: 330/340  Projected time to finish: 0.343025 min
 Time = 0.00350471
 
 deltaT = 1.05882e-05
@@ -7065,7 +7199,7 @@ Cloud name: dsmc
     Average internal energy         = 9.78256e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 667.38 s  ClockTime = 671 s  Iterations: 331/340  Projected time to finish: 0.302438 min
+ExecutionTime = 680.94 s  ClockTime = 683 s  Iterations: 331/340  Projected time to finish: 0.308583 min
 Time = 0.00351529
 
 deltaT = 1.05882e-05
@@ -7086,7 +7220,7 @@ Cloud name: dsmc
     Average internal energy         = 9.87098e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 669.13 s  ClockTime = 673 s  Iterations: 332/340  Projected time to finish: 0.268727 min
+ExecutionTime = 682.74 s  ClockTime = 685 s  Iterations: 332/340  Projected time to finish: 0.274193 min
 Time = 0.00352588
 
 deltaT = 1.05882e-05
@@ -7107,7 +7241,7 @@ Cloud name: dsmc
     Average internal energy         = 9.83177e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 670.9 s  ClockTime = 675 s  Iterations: 333/340  Projected time to finish: 0.23505 min
+ExecutionTime = 684.63 s  ClockTime = 687 s  Iterations: 333/340  Projected time to finish: 0.23986 min
 Time = 0.00353647
 
 deltaT = 1.05882e-05
@@ -7128,7 +7262,7 @@ Cloud name: dsmc
     Average internal energy         = 9.84662e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 672.63 s  ClockTime = 676 s  Iterations: 334/340  Projected time to finish: 0.201386 min
+ExecutionTime = 686.4 s  ClockTime = 688 s  Iterations: 334/340  Projected time to finish: 0.205509 min
 Time = 0.00354706
 
 deltaT = 1.05882e-05
@@ -7149,7 +7283,7 @@ Cloud name: dsmc
     Average internal energy         = 9.79813e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 674.34 s  ClockTime = 678 s  Iterations: 335/340  Projected time to finish: 0.167746 min
+ExecutionTime = 688.19 s  ClockTime = 690 s  Iterations: 335/340  Projected time to finish: 0.171192 min
 Time = 0.00355765
 
 deltaT = 1.05882e-05
@@ -7170,7 +7304,7 @@ Cloud name: dsmc
     Average internal energy         = 9.80555e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 676.17 s  ClockTime = 680 s  Iterations: 336/340  Projected time to finish: 0.134161 min
+ExecutionTime = 689.98 s  ClockTime = 692 s  Iterations: 336/340  Projected time to finish: 0.136901 min
 Time = 0.00356824
 
 deltaT = 1.05882e-05
@@ -7191,7 +7325,7 @@ Cloud name: dsmc
     Average internal energy         = 9.76569e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 677.92 s  ClockTime = 682 s  Iterations: 337/340  Projected time to finish: 0.100582 min
+ExecutionTime = 691.9 s  ClockTime = 694 s  Iterations: 337/340  Projected time to finish: 0.102656 min
 Time = 0.00357882
 
 deltaT = 1.05882e-05
@@ -7212,7 +7346,7 @@ Cloud name: dsmc
     Average internal energy         = 9.79261e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 679.65 s  ClockTime = 683 s  Iterations: 338/340  Projected time to finish: 0.0670266 min
+ExecutionTime = 693.68 s  ClockTime = 696 s  Iterations: 338/340  Projected time to finish: 0.0684103 min
 Time = 0.00358941
 
 deltaT = 1.05882e-05
@@ -7233,7 +7367,7 @@ Cloud name: dsmc
     Average internal energy         = 9.78837e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 681.43 s  ClockTime = 685 s  Iterations: 339/340  Projected time to finish: 0.033502 min
+ExecutionTime = 695.48 s  ClockTime = 697 s  Iterations: 339/340  Projected time to finish: 0.0341927 min
 Time = 0.0036
 
 deltaT = 1.05882e-05
@@ -7254,4 +7388,17 @@ Cloud name: dsmc
     Average internal energy         = 9.77836e-21
     Average total energy            = 2.63918e-20
 
-ExecutionTime = 683.83 s  ClockTime = 688 s  Iterations: 340/340  Projected time to finish: -1.90545e-15 min
+ExecutionTime = 698.07 s  ClockTime = 700 s  Iterations: 340/340  Projected time to finish: -1.94513e-15 min
+Calculating dsmcFieldsMod.
+    Calculating UMean field.
+    Calculating translationalT field.
+    Calculating internalT field.
+    Calculating overallT field.
+    Calculating pressure field.
+    mag(UMean) max/min : 513.816 10.8862
+    translationalT max/min : 1000.08 245.074
+    internalT max/min : 1042.47 217.513
+    overallT max/min : 959.029 253.22
+    p max/min : 133.657 7.61916
+dsmcFieldsMod written.
+

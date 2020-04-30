@@ -15,9 +15,9 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/createTimeControls.H \
 createMeshes.H \
 ./fluid/createFluidFields.H \
 ./fluid/createFluidFieldsRefs.H \
+./fluid/readFluxSchemeMod.H \
 ./particle/initialiseDSMC.H \
 ./particle/createDSMCFields.H \
-./fluid/readFluxSchemeMod.H \
 ./fluid/solveFluid.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/parRun.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Time.H \
@@ -856,9 +856,9 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/createTimeControls.H :
 createMeshes.H :
 ./fluid/createFluidFields.H :
 ./fluid/createFluidFieldsRefs.H :
+./fluid/readFluxSchemeMod.H :
 ./particle/initialiseDSMC.H :
 ./particle/createDSMCFields.H :
-./fluid/readFluxSchemeMod.H :
 ./fluid/solveFluid.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/parRun.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Time.H :

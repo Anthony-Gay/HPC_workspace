@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
     // Courant numbers used to adjust the time-step
     scalar CoNum = 0.0;
     scalar meanCoNum = 0.0;
-
+    
      while (runTime.loop())
     {
        

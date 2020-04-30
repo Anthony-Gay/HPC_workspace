@@ -89,6 +89,19 @@
         "basicThermo.C": "cpp",
         "regionProperties.C": "cpp",
         "setFieldsMod.C": "cpp",
-        "objectRegistry.C": "cpp"
+        "objectRegistry.C": "cpp",
+        "oneDirectionalHybridDSMC.C": "cpp",
+        "oneDirectionalHybridFluid.C": "cpp",
+        "inletOutletFvPatchField.C": "cpp",
+        "mixedFvPatchField.C": "cpp",
+        "inletOutletFvPatchFields.C": "cpp",
+        "outletInletFvPatchField.C": "cpp",
+        "outletInletFvPatchFields.C": "cpp",
+        "oneDirectionalHybridFluids.C": "cpp",
+        "cloudInfo.C": "cpp",
+        "dsmcFieldsMod.C": "cpp",
+        "regionFunctionObjectTemplates.C": "cpp",
+        "fvMeshFunctionObject.C": "cpp",
+        "objectRegistryTemplates.C": "cpp"
     }
 }

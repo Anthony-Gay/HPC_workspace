@@ -1,4 +1,7 @@
 #!/bin/sh
+cd $HOME/OpenFOAM/Working/lagrangianMod
+wclean
+wmake libso
 cd $HOME/OpenFOAM/Working/Hybrid
 wclean
 wmake 
