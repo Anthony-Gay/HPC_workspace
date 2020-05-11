@@ -27,7 +27,7 @@ boundaryField
     }
     DSMCBound
     {
-        type            symmetry;
+        type            zeroGradient;
     }
     nullDims
     {

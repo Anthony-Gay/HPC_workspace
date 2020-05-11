@@ -22,7 +22,15 @@ boundaryField
 {
     sides
     {
-        type            zeroGradient;
+        type            codedFixedValue;
+        value           $internalField;
+        redirectType    HPCFluid;
+        code
+  #{
+                operator==(0.5*sin(3.14*this->db().time().value())/2);
+
+  #};
+
     }
 
     empty

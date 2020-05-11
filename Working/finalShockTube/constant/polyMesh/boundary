@@ -26,22 +26,19 @@ FoamFile
     }
     fluidSide
     {
-        type            zeroGradient;
-        inGroups        List<word> 1(zeroGradient);
+        type            patch;
         nFaces          1;
         startFace       699;
     }
     DSMCBound
     {
-        type            symmetry;
-        inGroups        List<word> 1(symmetry);
+        type            balls;
         nFaces          1;
         startFace       700;
     }
     fluidBound
     {
-        type            zeroGradient;
-        inGroups        List<word> 1(zeroGradient);
+        type            balls;
         nFaces          1;
         startFace       701;
     }

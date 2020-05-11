@@ -19,15 +19,13 @@ FoamFile
 (
     fluidSide
     {
-        type            zeroGradient;
-        inGroups        List<word> 1(zeroGradient);
+        type            patch;
         nFaces          1;
         startFace       99;
     }
     fluidBound
     {
-        type            zeroGradient;
-        inGroups        List<word> 1(zeroGradient);
+        type            balls;
         nFaces          1;
         startFace       100;
     }

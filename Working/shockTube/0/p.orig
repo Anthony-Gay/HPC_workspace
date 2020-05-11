@@ -22,7 +22,17 @@ boundaryField
 {
     sides
     {
-        type            zeroGradient;
+        type            codedFixedValue;
+        value           $internalField;
+        redirectType    HPCFluid;
+        code
+  #{
+        operator==(min(10, 0.1));
+  #};
+
+    //type            fixedValue;
+    //value           uniform 1;
+        
     }
 
     empty

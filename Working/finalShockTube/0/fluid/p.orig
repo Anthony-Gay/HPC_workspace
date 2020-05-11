@@ -20,20 +20,30 @@ internalField   uniform 0;
 
 boundaryField
 {
-   fluidBound
+    fluidBound
+    {
+        type            codedFixedValue;
+        value           $internalField;
+        redirectType    HPCFluid;
+    }
+    
+    fluidSide
     {
         type            zeroGradient;
     }
-
-    fluidSide
+    /*fluidBound
     {
-        type            zeroGradient; 
-    }
+        type               oneDirectionalHybridFluid; 
+        fluidIndex         99;
+        particleIndex      0;
+        w                  0.75;
+        value              0;
+    }*/
+
+    
 
     nullDims
     {
         type            empty;
     }
 }
-
-// ************************************************************************* //

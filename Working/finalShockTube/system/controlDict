@@ -55,6 +55,7 @@ maxDeltaT       1;
     libs
     (
         "libDSMCMod2.so"
+        "libcustomBCs.so"
     );
 
 

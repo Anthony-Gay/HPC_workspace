@@ -51,6 +51,11 @@ maxCo           0.2;
 
 maxDeltaT       1;
 
+libs
+    (
+        "libfiniteVolume.so"
+    );
+    
 functions
 {
     #includeFunc mag(U)

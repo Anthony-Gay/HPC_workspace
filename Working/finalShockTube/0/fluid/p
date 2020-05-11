@@ -27,7 +27,9 @@ boundaryField
     }
     fluidBound
     {
-        type            zeroGradient;
+        type            codedFixedValue;
+        value           uniform 0;
+        name            HPCFluid;
     }
     nullDims
     {

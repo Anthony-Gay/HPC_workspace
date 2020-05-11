@@ -26,8 +26,7 @@ FoamFile
     }
     DSMCBound
     {
-        type            symmetry;
-        inGroups        List<word> 1(symmetry);
+        type            balls;
         nFaces          1;
         startFace       600;
     }

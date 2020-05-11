@@ -1,2 +1,2 @@
 SOURCE = \
-oneDirectionalHybridFluid.C 
+oneDirectionalHybridFluidFvPatchScalarField.C 

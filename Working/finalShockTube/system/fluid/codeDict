@@ -1,0 +1,33 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      codeDict;
+} 
+
+HPCFluid
+{
+  code
+  #{
+    const fvMesh& fluidMeshRef = patch().boundaryMesh().mesh();
+    const volScalarField& pFluid = db().lookupObject<volScalarField>("p"); 
+    const volScalarField& pParticle = db().lookupObject<volScalarField>("p_Mean");
+    
+    const volScalarField& pFluidOld=pFluid.oldTime();
+
+    const label fluidIdx=fluidMeshRef.nCells();
+    const label particleIdx=1;
+    const scalar w=0.75; 
+
+    operator==((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx])); 
+  #};
+}
+      

@@ -59,7 +59,7 @@ boundary
 
     fluidSide
     {
-        type zeroGradient; 
+        type patch; 
         faces
         (
             (0 4 7 3)
@@ -68,7 +68,7 @@ boundary
 
      DSMCBound
     {
-        type symmetry; 
+        type balls; 
         faces
         (
             (8 12 15 11)
@@ -77,7 +77,7 @@ boundary
 
     fluidBound
     {
-        type zeroGradient; // patch is generic type for inlet or outlet NOTE: the sides tags correspond to the boundaries specified in the 0 dict
+        type balls; 
         faces
         (
             (1 2 6 5)

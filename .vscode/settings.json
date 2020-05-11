@@ -102,6 +102,10 @@
         "dsmcFieldsMod.C": "cpp",
         "regionFunctionObjectTemplates.C": "cpp",
         "fvMeshFunctionObject.C": "cpp",
-        "objectRegistryTemplates.C": "cpp"
+        "objectRegistryTemplates.C": "cpp",
+        "fixedValueFvPatchFieldTemplate.C": "cpp",
+        "regionFunctionObject.C": "cpp",
+        "totalTemperatureFvPatchScalarField.C": "cpp",
+        "oneDirectionalHybridFluidFvPatchScalarField.C": "cpp"
     }
 }

@@ -1,0 +1,39 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : rhoCentralFoam
+Date   : May 08 2020
+Time   : 01:43:25
+Host   : "DESKTOP-KF81SG4"
+PID    : 17153
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+Using dynamicCode for patch sides on field p at line 1030 in "/home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube/0/p.boundaryField.sides"

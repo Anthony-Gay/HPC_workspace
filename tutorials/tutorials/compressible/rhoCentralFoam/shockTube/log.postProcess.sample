@@ -1,0 +1,42 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : postProcess -func sample
+Date   : May 08 2020
+Time   : 01:43:25
+Host   : "DESKTOP-KF81SG4"
+PID    : 17154
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading set description:
+    data
+
+Time = 0
+
+Reading fields:
+    volScalarFields: T pUsing dynamicCode for patch sides on field p at line 1030 in "/home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube/0/p.boundaryField.sides"
+
+
+Executing functionObjects
+--> FOAM Warning : 
+    From function Foam::label Foam::sampledSets::classifyFields()
+    in file sampledSet/sampledSets/sampledSetsGrouping.C at line 140
+    Cannot find registered field matching mag(U)
+
+End
+
