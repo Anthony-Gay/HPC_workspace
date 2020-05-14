@@ -106,6 +106,7 @@
         "fixedValueFvPatchFieldTemplate.C": "cpp",
         "regionFunctionObject.C": "cpp",
         "totalTemperatureFvPatchScalarField.C": "cpp",
-        "oneDirectionalHybridFluidFvPatchScalarField.C": "cpp"
+        "oneDirectionalHybridFluidFvPatchScalarField.C": "cpp",
+        "sampledPatch.C": "cpp"
     }
 }

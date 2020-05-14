@@ -58,7 +58,7 @@ maxDeltaT       1;
         "libcustomBCs.so"
     );
 
-
+/*
 functions
 {    
     fieldAverage1
@@ -74,63 +74,63 @@ functions
             {
                 mean        on;
                 prime2Mean  off;
-                base        iter;
+                base        iteration;
                 window      1;
             }
             rhoM
             {
                 mean        on;
                 prime2Mean  off;
-                base        iter;
+                base        iteration;
                 window      1;
             }
             dsmcRhoN
             {
                 mean        on;
                 prime2Mean  off;
-                base        iter;
+                base        iteration;
                 window      1;
             }
             momentum
             {
                 mean        on;
                 prime2Mean  off;
-                base        iter;
+                base        iteration;
                 window      1;
             }
             linearKE
             {
                 mean        on;
                 prime2Mean  off;
-                base        iter;
+                base        iteration;
                 window      1;
             }
             internalE
             {
                 mean        on;
                 prime2Mean  off;
-                base        iter;
+                base        iteration;
                 window      1;
             }
             iDof
             {
                 mean        on;
                 prime2Mean  off;
-                base        iter;
+                base        iteration;
                 window      1;
             }
             q
             {
                 mean        on;
                 prime2Mean  off;
-                base        iter;
+                base        iteration;
                 window      1;
             }
             fD
             {
                 mean        on;
                 prime2Mean  off;
-                base        iter;
+                base        iteration;
                 window      1;
             }
         );
@@ -143,6 +143,6 @@ dsmcFieldsMod1
         region              particle;
 
     }
-}
+}*/
 
 // ************************************************************************* //

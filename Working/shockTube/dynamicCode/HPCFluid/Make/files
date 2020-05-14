@@ -1,0 +1,6 @@
+/* dynamicCode:
+ * SHA1 = a19a1316a060604518404bb812dfc0911297e802
+ */
+fixedValueFvPatchFieldTemplate.C
+
+LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libHPCFluid_a19a1316a060604518404bb812dfc0911297e802

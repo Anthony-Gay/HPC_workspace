@@ -735,7 +735,7 @@ boundaryField
     }
     DSMCBound
     {
-        type            zeroGradient;
+        type            symmetry;
     }
     fluidBound
     {

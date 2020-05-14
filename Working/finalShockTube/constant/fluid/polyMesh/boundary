@@ -25,7 +25,7 @@ FoamFile
     }
     fluidBound
     {
-        type            balls;
+        type            patch;
         nFaces          1;
         startFace       100;
     }

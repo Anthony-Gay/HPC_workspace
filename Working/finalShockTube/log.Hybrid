@@ -1,0 +1,83 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : Hybrid
+Date   : May 13 2020
+Time   : 23:20:56
+Host   : "DESKTOP-KF81SG4"
+PID    : 10694
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/Working/finalShockTube
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Create mesh for time = 0
+
+Meshes created
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+Using dynamicCode for patch fluidBound on field p at line 19 in "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluid"
+Reading field U
+
+Creating turbulence model
+
+Selecting turbulence model type laminar
+Selecting laminar stress model Stokes
+fluxScheme: Kurganov
+Initialising dsmc for Time = 0
+
+
+Constructing constant properties for
+    N2
+
+Initialising particles
+
+Knudsen:17597.9
+Particle regime for cells 0 to 300
+
+Knudsen:60659.6
+Particle regime for cells 300 to 600
+
+Total number of molecules added: 87951
+
+
+ClockTime = 1 s
+
+
+Constructing dsmcCloud 
+Selecting BinaryCollisionModel LarsenBorgnakkeVariableHardSphere
+Selecting WallInteractionModel MaxwellianThermal
+Selecting InflowBoundaryModel none
+
+Constructing constant properties for
+    N2
+Time = 6e-06
+
+deltaT = 7.08e-06
+Mean and max Courant Numbers = 0.133196 0.133196
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0

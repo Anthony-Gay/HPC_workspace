@@ -6,6 +6,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvPatchFieldMapper.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/surfaceFields.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/unitConversion.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/constants.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fixedValueFvPatchFields.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/generalFieldMapper.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/GeometricFields.H \
@@ -20,6 +21,12 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvsPatchFields.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/surfaceFieldsFwd.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/calculatedFvsPatchFields.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/mathematicalConstants.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fundamentalConstants.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/universalConstants.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/electromagneticConstants.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/atomicConstants.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/physicoChemicalConstants.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/thermodynamicConstants.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fixedValueFvPatchField.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fieldTypes.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fieldMapper.H \
@@ -50,6 +57,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvsPatchField.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvsPatchFieldsFwd.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/calculatedFvsPatchField.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalar.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedScalar.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fixedValueFvPatchField.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/label.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vector.H \
@@ -121,6 +129,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/calculatedFvsPatchField.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/floatScalar.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/doubleScalar.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/longDoubleScalar.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedScalarFwd.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/int.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/labelSpecific.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Vector.H \
@@ -240,7 +249,6 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/FieldM.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/mapDistributeBase.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/flipOp.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/FieldFunctions.C \
-$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedScalar.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedVector.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedSphericalTensor.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedSymmTensor.H \
@@ -307,7 +315,6 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/wordI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fileNameList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/stringList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/NamedEnum.C \
-$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedScalarFwd.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionSets.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstreams.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/DimensionedFieldReuseFunctions.H \
@@ -529,6 +536,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvPatchFieldMapper.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/surfaceFields.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/unitConversion.H :
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/constants.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fixedValueFvPatchFields.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/generalFieldMapper.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/GeometricFields.H :
@@ -543,6 +551,12 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvsPatchFields.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/surfaceFieldsFwd.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/calculatedFvsPatchFields.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/mathematicalConstants.H :
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fundamentalConstants.H :
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/universalConstants.H :
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/electromagneticConstants.H :
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/atomicConstants.H :
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/physicoChemicalConstants.H :
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/thermodynamicConstants.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fixedValueFvPatchField.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fieldTypes.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fieldMapper.H :
@@ -573,6 +587,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvsPatchField.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvsPatchFieldsFwd.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/calculatedFvsPatchField.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalar.H :
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedScalar.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fixedValueFvPatchField.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/label.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vector.H :
@@ -644,6 +659,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/calculatedFvsPatchField.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/floatScalar.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/doubleScalar.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/longDoubleScalar.H :
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedScalarFwd.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/int.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/labelSpecific.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Vector.H :
@@ -763,7 +779,6 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/FieldM.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/mapDistributeBase.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/flipOp.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/FieldFunctions.C :
-$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedScalar.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedVector.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedSphericalTensor.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedSymmTensor.H :
@@ -830,7 +845,6 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/wordI.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fileNameList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/stringList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/NamedEnum.C :
-$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionedScalarFwd.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dimensionSets.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstreams.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/DimensionedFieldReuseFunctions.H :

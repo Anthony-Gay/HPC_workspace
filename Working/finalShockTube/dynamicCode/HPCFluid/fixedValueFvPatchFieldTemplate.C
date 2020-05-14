@@ -30,7 +30,9 @@ License
 #include "surfaceFields.H"
 #include "unitConversion.H"
 //{{{ begin codeInclude
-
+#line 44 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluid"
+#include "constants.H"
+using namespace Foam::constant;
 //}}} end codeInclude
 
 
@@ -51,11 +53,11 @@ namespace Foam
 extern "C"
 {
     // dynamicCode:
-    // SHA1 = 93099d80645ef4d7757f2ddd7f868ca3539b80a1
+    // SHA1 = 8d30cc42143a9ac4c7234314992f1c53ebf76f83
     //
     // unique function name that can be checked if the correct library version
     // has been loaded
-    void HPCFluid_93099d80645ef4d7757f2ddd7f868ca3539b80a1(bool load)
+    void HPCFluid_8d30cc42143a9ac4c7234314992f1c53ebf76f83(bool load)
     {
         if (load)
         {
@@ -78,7 +80,7 @@ makeRemovablePatchTypeField
 
 
 const char* const HPCFluidFixedValueFvPatchScalarField::SHA1sum =
-    "93099d80645ef4d7757f2ddd7f868ca3539b80a1";
+    "8d30cc42143a9ac4c7234314992f1c53ebf76f83";
 
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
@@ -94,7 +96,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 93099d80645ef4d7757f2ddd7f868ca3539b80a1"
+        Info<<"construct HPCFluid sha1: 8d30cc42143a9ac4c7234314992f1c53ebf76f83"
             " from patch/DimensionedField\n";
     }
 }
@@ -113,7 +115,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 93099d80645ef4d7757f2ddd7f868ca3539b80a1"
+        Info<<"construct HPCFluid sha1: 8d30cc42143a9ac4c7234314992f1c53ebf76f83"
             " from patch/DimensionedField/mapper\n";
     }
 }
@@ -131,7 +133,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 93099d80645ef4d7757f2ddd7f868ca3539b80a1"
+        Info<<"construct HPCFluid sha1: 8d30cc42143a9ac4c7234314992f1c53ebf76f83"
             " from patch/dictionary\n";
     }
 }
@@ -147,7 +149,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 93099d80645ef4d7757f2ddd7f868ca3539b80a1"
+        Info<<"construct HPCFluid sha1: 8d30cc42143a9ac4c7234314992f1c53ebf76f83"
             " as copy\n";
     }
 }
@@ -164,7 +166,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 93099d80645ef4d7757f2ddd7f868ca3539b80a1 "
+        Info<<"construct HPCFluid sha1: 8d30cc42143a9ac4c7234314992f1c53ebf76f83 "
             "as copy/DimensionedField\n";
     }
 }
@@ -177,7 +179,7 @@ HPCFluidFixedValueFvPatchScalarField::
 {
     if (false)
     {
-        Info<<"destroy HPCFluid sha1: 93099d80645ef4d7757f2ddd7f868ca3539b80a1\n";
+        Info<<"destroy HPCFluid sha1: 8d30cc42143a9ac4c7234314992f1c53ebf76f83\n";
     }
 }
 
@@ -193,16 +195,25 @@ void HPCFluidFixedValueFvPatchScalarField::updateCoeffs()
 
     if (false)
     {
-        Info<<"updateCoeffs HPCFluid sha1: 93099d80645ef4d7757f2ddd7f868ca3539b80a1\n";
+        Info<<"updateCoeffs HPCFluid sha1: 8d30cc42143a9ac4c7234314992f1c53ebf76f83\n";
     }
 
 //{{{ begin code
     #line 20 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluid"
 const fvMesh& fluidMeshRef = patch().boundaryMesh().mesh();
-    const volScalarField& pFluid = db().lookupObject<volScalarField>("p"); 
-    const volScalarField& pParticle = db().lookupObject<volScalarField>("p_Mean");
-    
+    const fvMesh& partMeshRef = db().parent().lookupObject<fvMesh>("particle");
+
+    const volScalarField& pFluid = db().lookupObject<volScalarField>("p");     
     const volScalarField& pFluidOld=pFluid.oldTime();
+
+    const volVectorField& momentumRef = partMeshRef.lookupObject<volVectorField>("momentum");
+    const volScalarField& rhoNRef = partMeshRef.lookupObject<volScalarField>("rhoN");
+    const volScalarField& rhoMRef = partMeshRef.lookupObject<volScalarField>("rhoM");
+    const volScalarField& linearKERef = partMeshRef.lookupObject<volScalarField>("linearKE");
+
+    const volVectorField& U_=momentumRef/rhoMRef;
+    const volScalarField& translationalT_=2.0/(3.0*physicoChemical::k.value()*rhoNRef)*(linearKERef - 0.5*rhoMRef*(U_ & U_));
+    const volScalarField& pParticle=physicoChemical::k.value()*rhoNRef*translationalT_;    
 
     const label fluidIdx=fluidMeshRef.nCells();
     const label particleIdx=1;
