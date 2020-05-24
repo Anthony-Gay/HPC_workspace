@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : Hybrid
-Date   : May 13 2020
-Time   : 23:20:56
+Date   : May 23 2020
+Time   : 20:42:03
 Host   : "DESKTOP-KF81SG4"
-PID    : 10694
+PID    : 25126
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/finalShockTube
 nProcs : 1
@@ -40,6 +40,13 @@ Selecting thermodynamics package
 }
 
 Using dynamicCode for patch fluidBound on field p at line 19 in "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluid"
+Creating new library in "dynamicCode/HPCFluid/platforms/linux64GccDPInt32Opt/lib/libHPCFluid_1fa769f6eac03e9ae4d05c6680b6889c46fbe409.so"
+Invoking "wmake -s libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCFluid"
+wmake libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCFluid
+    ln: ./lnInclude
+    wmkdep: fixedValueFvPatchFieldTemplate.C
+    Ctoo: fixedValueFvPatchFieldTemplate.C
+    ld: /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCFluid/../platforms/linux64GccDPInt32Opt/lib/libHPCFluid_1fa769f6eac03e9ae4d05c6680b6889c46fbe409.so
 Reading field U
 
 Creating turbulence model
@@ -64,20 +71,47 @@ Particle regime for cells 300 to 600
 Total number of molecules added: 87951
 
 
-ClockTime = 1 s
+ClockTime = 14 s
 
 
 Constructing dsmcCloud 
+Using dynamicCode for patch DSMCBound on field boundaryT at line 19 in "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/particle/codeDict.HPCParticleT"
+Creating new library in "dynamicCode/HPCParticleT/platforms/linux64GccDPInt32Opt/lib/libHPCParticleT_a2570c262a7ca3cc64dc83e4a59773ff3314141d.so"
+Invoking "wmake -s libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleT"
+wmake libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleT
+    ln: ./lnInclude
+    wmkdep: fixedValueFvPatchFieldTemplate.C
+    Ctoo: fixedValueFvPatchFieldTemplate.C
+    ld: /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleT/../platforms/linux64GccDPInt32Opt/lib/libHPCParticleT_a2570c262a7ca3cc64dc83e4a59773ff3314141d.so
+Using dynamicCode for patch DSMCBound on field boundaryU at line 33 in "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/particle/codeDict.HPCParticleU"
+Creating new library in "dynamicCode/HPCParticleU/platforms/linux64GccDPInt32Opt/lib/libHPCParticleU_c0c1df44077aa953c6492f7b754ad635ca036720.so"
+Invoking "wmake -s libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleU"
+wmake libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleU
+    ln: ./lnInclude
+    wmkdep: fixedValueFvPatchFieldTemplate.C
+    Ctoo: fixedValueFvPatchFieldTemplate.C
+    ld: /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleU/../platforms/linux64GccDPInt32Opt/lib/libHPCParticleU_c0c1df44077aa953c6492f7b754ad635ca036720.so
 Selecting BinaryCollisionModel LarsenBorgnakkeVariableHardSphere
 Selecting WallInteractionModel MaxwellianThermal
-Selecting InflowBoundaryModel none
+Selecting InflowBoundaryModel oneDirectionalHybridDSMC
 
 Constructing constant properties for
     N2
 Time = 6e-06
 
-deltaT = 7.08e-06
-Mean and max Courant Numbers = 0.133196 0.133196
-diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
-diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
-diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+Its fluid Temp900
+
+Its fluid press113
+
+Its fluid N 9.09744e+21
+
+Its fluid N #0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::sigSegv::sigHandler(int) at ??:?
+#2  ? in "/lib/x86_64-linux-gnu/libc.so.6"
+#3  Foam::oneDirectionalHybridDSMC<Foam::DSMCCloudMod<Foam::DSMCParcel<Foam::particle> > >::inflow() at ??:?
+#4  ? in "/home/anthonygay1812/OpenFOAM/anthonygay1812-7/platforms/linux64GccDPInt32Opt/bin/Hybrid"
+#5  ? in "/home/anthonygay1812/OpenFOAM/anthonygay1812-7/platforms/linux64GccDPInt32Opt/bin/Hybrid"
+#6  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
+#7  ? in "/home/anthonygay1812/OpenFOAM/anthonygay1812-7/platforms/linux64GccDPInt32Opt/bin/Hybrid"
+Segmentation fault (core dumped)

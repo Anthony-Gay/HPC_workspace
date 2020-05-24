@@ -73,16 +73,18 @@ int main(int argc, char *argv[])
     
      while (runTime.loop())
     {
-       
+       //objectRegistry().lookupObject()
        Info<< "Time = " << runTime.timeName() << nl << endl;
-
-        // Solve Fluid
-        #include "solveFluid.H"
 
         // Solve Particle
         dsmcSolve.evolve();
         dsmcSolve.info();
-        runTime.write();    
+        runTime.write();  
+
+        // Solve Fluid
+        #include "solveFluid.H"
+
+          
 
         // Output runtime
         dimensionedScalar simTime=runTime.time();
@@ -95,8 +97,7 @@ int main(int argc, char *argv[])
             << "  ClockTime = " << runTime.elapsedClockTime() << " s"
             << "  Iterations: " << (simTime.value()/simDt.value()) << "/" << (endTime.value()/simDt.value())
             << "  Projected time to finish: " << (remainIts*timePerIt)/60 << " min"
-            << endl;    
-            
+            << endl;       
              
     }
 

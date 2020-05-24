@@ -1,0 +1,43 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      codeDict;
+} 
+
+HPCParticleT
+{
+  code
+  #{    
+    const fvMesh& fluidMeshRef = db().parent().lookupObject<fvMesh>("fluid");
+
+    const volScalarField& TFluid = fluidMeshRef.lookupObject<volScalarField>("T");     
+    Info << nl<< "Its Temp Fluid "<< TFluid[99]  << endl;
+    
+    operator==(TFluid[99]); 
+
+  #};
+}
+
+HPCParticleU
+{
+  code
+  #{    
+    const fvMesh& fluidMeshRef = db().parent().lookupObject<fvMesh>("fluid");
+
+    const volVectorField& UFluid = fluidMeshRef.lookupObject<volVectorField>("U");     
+    Info << nl << "Its UFluid " << UFluid << endl;
+    
+    operator==(UFluid[99]); 
+
+  #};
+}
+      

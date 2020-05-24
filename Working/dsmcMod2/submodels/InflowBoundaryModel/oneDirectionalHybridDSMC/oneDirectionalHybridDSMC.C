@@ -27,6 +27,7 @@ License
 #include "constants.H"
 #include "triPointRef.H"
 #include "tetIndices.H"
+#include "fvMesh.H"
 
 using namespace Foam::constant::mathematical;
 
@@ -61,13 +62,8 @@ Foam::oneDirectionalHybridDSMC<CloudType>::oneDirectionalHybridDSMC
 
     patches_.transfer(patches);
 
-    const dictionary& numberDensitiesDict
-    (
-        this->coeffDict().subDict("numberDensities")
-    );
-
-    List<word> molecules(numberDensitiesDict.toc());
-
+    List<word> molecules(1);
+    molecules[0]="N2";
     // Initialise the particleFluxAccumulators_
     particleFluxAccumulators_.setSize(patches_.size());
 
@@ -84,15 +80,8 @@ Foam::oneDirectionalHybridDSMC<CloudType>::oneDirectionalHybridDSMC
 
     moleculeTypeIds_.setSize(molecules.size());
 
-    numberDensities_.setSize(molecules.size());
-
     forAll(molecules, i)
     {
-        numberDensities_[i] = readScalar
-        (
-            numberDensitiesDict.lookup(molecules[i])
-        );
-
         moleculeTypeIds_[i] = findIndex(cloud.typeIdList(), molecules[i]);
 
         if (moleculeTypeIds_[i] == -1)
@@ -102,8 +91,6 @@ Foam::oneDirectionalHybridDSMC<CloudType>::oneDirectionalHybridDSMC
                 << abort(FatalError);
         }
     }
-
-    numberDensities_ /= cloud.nParticle();
 }
 
 
@@ -141,7 +128,25 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::autoMap(const mapPolyMesh& mappe
 template<class CloudType>
 void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
 {
+    label typeId = moleculeTypeIds_[0];
     CloudType& cloud(this->owner());
+
+    scalar mass = cloud.constProps(typeId).mass();
+    const fvMesh& fluidMeshRef_ = cloud.parent().parent().objectRegistry::lookupObject<fvMesh>("fluid");
+    const volScalarField& pFluid_ = fluidMeshRef_.lookupObject<volScalarField>("p");     
+    const volScalarField& TFluid_ = fluidMeshRef_.lookupObject<volScalarField>("T");     
+
+    Info << nl << "Its fluid Temp" << TFluid_[99] << endl;
+        Info << nl << "Its fluid press" << pFluid_[99] << endl;
+    Info << nl << "Its fluid N " << pFluid_[99]/(mass*TFluid_[99]*296.8) << endl;
+
+        //Info << nl << "Its fluid press" <<         cloud.boundaryT().boundaryField() << endl;
+
+    numberDensities_=pFluid_[99]/(mass*TFluid_[99]*296.8);
+            Info << nl << "Its fluid N " << numberDensities_[0] << endl;
+
+    numberDensities_ /= cloud.nParticle();
+    Info << nl << "Its line 146" << endl;
 
     const polyMesh& mesh(cloud.mesh());
 
@@ -162,7 +167,7 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
     (
         cloud.boundaryU().boundaryField()
     );
-
+    Info << nl << "Its line 167" << endl;
 
     forAll(patches_, p)
     {
@@ -175,12 +180,9 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
 
         // Take a reference to the particleFluxAccumulator for this patch
         List<Field<scalar>>& pFA = particleFluxAccumulators_[p];
-
+    Info << nl << "Its line 180" << endl;
         forAll(pFA, i)
         {
-            label typeId = moleculeTypeIds_[i];
-
-            scalar mass = cloud.constProps(typeId).mass();
 
             if (min(boundaryT[patchi]) < small)
             {
@@ -203,7 +205,7 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
             // (which points out of the domain, so it must be
             // negated), dividing by the most probable speed to form
             // molecularSpeedRatio * cosTheta
-
+    Info << nl << "Its line 205" << endl;
             scalarField sCosTheta
             (
                 (boundaryU[patchi] & -patch.faceAreas()/mag(patch.faceAreas()))
@@ -211,7 +213,13 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
             );
 
             // From Bird eqn 4.22
-
+    Info << nl << "Its line 213" << endl;
+        Info << nl << "Its numberDensities_ "<<numberDensities_[i] << endl;
+    Info << nl << "Its deltaT " <<deltaT<< endl;
+    Info << nl << "Its mostProbableSpeed "<<mostProbableSpeed << endl;
+    Info << nl << "sCosTheta " <<sCosTheta<< endl;
+    Info << nl << "Its pFA "<<pFA << endl;
+    Info << nl << "Its face areas " <<mag(patch.faceAreas())<< endl;
             pFA[i] +=
                 mag(patch.faceAreas())*numberDensities_[i]*deltaT 
                *mostProbableSpeed
@@ -220,6 +228,7 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
                 )
                /(2.0*sqrtPi);
         }
+    Info << nl << "Its line 222" << endl;
 
         forAll(patch, pFI)
         {
@@ -247,6 +256,7 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
             List<scalar> cTriAFracs(faceTets.size(), 0.0);
 
             scalar previousCummulativeSum = 0.0;
+    Info << nl << "Its line 250" << endl;
 
             forAll(faceTets, triI)
             {
@@ -277,7 +287,7 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
             // flat and n and t1 aren't perfectly orthogonal
             vector t2 = n^t1;
             t2 /= mag(t2);
-
+    Info << nl << "Its line 281" << endl;
             scalar faceTemperature = boundaryT[patchi][pFI];
 
             const vector& faceVelocity = boundaryU[patchi][pFI];
@@ -338,7 +348,7 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
                             mass
                         )
                     );
-
+    Info << nl << "Its line 342" << endl;
                     scalar sCosTheta = (faceVelocity & n)/mostProbableSpeed;
 
                     // Coefficients required for Bird eqn 12.5

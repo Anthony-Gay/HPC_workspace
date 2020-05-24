@@ -7,6 +7,7 @@ clouds/baseClasses/DSMCBaseCloud/DSMCBaseCloudMod2.C
 /* Sub-models */
 parcels/derived/dsmcParcel/defineDSMCParcel.C
 parcels/derived/dsmcParcel/makeDSMCParcelBinaryCollisionModels.C
+parcels/derived/dsmcParcel/makeDSMCParcelInflowBoundaryModels.C
 parcels/derived/dsmcParcel/makeDSMCParcelWallInteractionModels.C
 
 LIB = $(FOAM_USER_LIBBIN)/libDSMCMod2

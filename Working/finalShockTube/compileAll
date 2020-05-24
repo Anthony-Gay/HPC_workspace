@@ -1,5 +1,5 @@
 #!/bin/sh
-cd $HOME/OpenFOAM/Working/lagrangianMod
+cd $HOME/OpenFOAM/Working/dsmcMod2
 wclean
 wmake libso
 cd $HOME/OpenFOAM/Working/Hybrid

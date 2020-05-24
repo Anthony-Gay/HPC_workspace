@@ -68,7 +68,7 @@ boundary
 
      DSMCBound
     {
-        type symmetry; 
+        type patch; 
         faces
         (
             (8 12 15 11)

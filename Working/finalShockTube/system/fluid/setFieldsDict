@@ -19,7 +19,7 @@ FoamFile
 defaultFieldValues
 (
     volVectorFieldValue U (0 0 0)
-    volScalarFieldValue T 0
+    volScalarFieldValue T 900
     volScalarFieldValue p 0
 );
 
@@ -30,9 +30,9 @@ regions
         name "fluid";
             fieldValues
             (
-                volVectorFieldValue U (2 0 0)
-                volScalarFieldValue T 348.432
-                volScalarFieldValue p 100000
+                volVectorFieldValue U (0 0 0)
+                volScalarFieldValue T 900
+                volScalarFieldValue p 1.13e2
             );
     }
 );
