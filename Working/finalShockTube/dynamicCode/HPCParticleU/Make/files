@@ -1,6 +1,6 @@
 /* dynamicCode:
- * SHA1 = c0c1df44077aa953c6492f7b754ad635ca036720
+ * SHA1 = cb97bb81a9b2557ddbcbad5e4e7952fe79b923b6
  */
 fixedValueFvPatchFieldTemplate.C
 
-LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libHPCParticleU_c0c1df44077aa953c6492f7b754ad635ca036720
+LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libHPCParticleU_cb97bb81a9b2557ddbcbad5e4e7952fe79b923b6

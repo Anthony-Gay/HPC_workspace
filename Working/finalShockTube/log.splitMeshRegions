@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : splitMeshRegions -cellZonesOnly -overwrite
-Date   : May 23 2020
-Time   : 20:42:03
+Date   : May 25 2020
+Time   : 20:50:03
 Host   : "DESKTOP-KF81SG4"
-PID    : 25123
+PID    : 11267
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/finalShockTube
 nProcs : 1

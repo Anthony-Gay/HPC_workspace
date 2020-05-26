@@ -30,7 +30,7 @@ License
 #include "surfaceFields.H"
 #include "unitConversion.H"
 //{{{ begin codeInclude
-#line 76 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluid"
+#line 82 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluid"
 #include "constants.H"
   using namespace Foam::constant;
 //}}} end codeInclude
@@ -53,11 +53,11 @@ namespace Foam
 extern "C"
 {
     // dynamicCode:
-    // SHA1 = 1fa769f6eac03e9ae4d05c6680b6889c46fbe409
+    // SHA1 = 120a66b9aef436830054c2b9d97943264fd6a35a
     //
     // unique function name that can be checked if the correct library version
     // has been loaded
-    void HPCFluid_1fa769f6eac03e9ae4d05c6680b6889c46fbe409(bool load)
+    void HPCFluid_120a66b9aef436830054c2b9d97943264fd6a35a(bool load)
     {
         if (load)
         {
@@ -80,7 +80,7 @@ makeRemovablePatchTypeField
 
 
 const char* const HPCFluidFixedValueFvPatchScalarField::SHA1sum =
-    "1fa769f6eac03e9ae4d05c6680b6889c46fbe409";
+    "120a66b9aef436830054c2b9d97943264fd6a35a";
 
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
@@ -96,7 +96,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 1fa769f6eac03e9ae4d05c6680b6889c46fbe409"
+        Info<<"construct HPCFluid sha1: 120a66b9aef436830054c2b9d97943264fd6a35a"
             " from patch/DimensionedField\n";
     }
 }
@@ -115,7 +115,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 1fa769f6eac03e9ae4d05c6680b6889c46fbe409"
+        Info<<"construct HPCFluid sha1: 120a66b9aef436830054c2b9d97943264fd6a35a"
             " from patch/DimensionedField/mapper\n";
     }
 }
@@ -133,7 +133,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 1fa769f6eac03e9ae4d05c6680b6889c46fbe409"
+        Info<<"construct HPCFluid sha1: 120a66b9aef436830054c2b9d97943264fd6a35a"
             " from patch/dictionary\n";
     }
 }
@@ -149,7 +149,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 1fa769f6eac03e9ae4d05c6680b6889c46fbe409"
+        Info<<"construct HPCFluid sha1: 120a66b9aef436830054c2b9d97943264fd6a35a"
             " as copy\n";
     }
 }
@@ -166,7 +166,7 @@ HPCFluidFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluid sha1: 1fa769f6eac03e9ae4d05c6680b6889c46fbe409 "
+        Info<<"construct HPCFluid sha1: 120a66b9aef436830054c2b9d97943264fd6a35a "
             "as copy/DimensionedField\n";
     }
 }
@@ -179,7 +179,7 @@ HPCFluidFixedValueFvPatchScalarField::
 {
     if (false)
     {
-        Info<<"destroy HPCFluid sha1: 1fa769f6eac03e9ae4d05c6680b6889c46fbe409\n";
+        Info<<"destroy HPCFluid sha1: 120a66b9aef436830054c2b9d97943264fd6a35a\n";
     }
 }
 
@@ -195,12 +195,13 @@ void HPCFluidFixedValueFvPatchScalarField::updateCoeffs()
 
     if (false)
     {
-        Info<<"updateCoeffs HPCFluid sha1: 1fa769f6eac03e9ae4d05c6680b6889c46fbe409\n";
+        Info<<"updateCoeffs HPCFluid sha1: 120a66b9aef436830054c2b9d97943264fd6a35a\n";
     }
 
 //{{{ begin code
     #line 20 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluid"
-const fvMesh& partMeshRef = db().parent().lookupObject<fvMesh>("particle");
+const fvMesh& fluidMeshRef = db().parent().lookupObject<fvMesh>("fluid");
+    const fvMesh& partMeshRef = db().parent().lookupObject<fvMesh>("particle");
 
     const volScalarField& pFluid = db().lookupObject<volScalarField>("p");     
     const volScalarField& pFluidOld=pFluid.oldTime();
@@ -246,9 +247,14 @@ const fvMesh& partMeshRef = db().parent().lookupObject<fvMesh>("particle");
         physicoChemical::k.value()*rhoNRef*translationalTRef
     );
     
-    const label fluidIdx=99;
+    const label fluidIdx=fluidMeshRef.nCells()-1;;
     const label particleIdx=0;
-    const scalar w=0.75; 
+    const scalar w=0.2; 
+    
+    Info<< nl << "FLUID BC";
+    Info<< nl << "Expected Pressure: 1.13E2";
+    Info<< nl << "Calculated Pressure: "<< ((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx]));
+    Info<< nl << "Difference: "<< 1.13E2-((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx])) << endl;
 
     operator==((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx]));
 //}}} end code

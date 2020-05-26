@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : Hybrid
-Date   : May 23 2020
-Time   : 20:42:03
+Date   : May 25 2020
+Time   : 20:50:04
 Host   : "DESKTOP-KF81SG4"
-PID    : 25126
+PID    : 11270
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/finalShockTube
 nProcs : 1
@@ -40,13 +40,13 @@ Selecting thermodynamics package
 }
 
 Using dynamicCode for patch fluidBound on field p at line 19 in "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluid"
-Creating new library in "dynamicCode/HPCFluid/platforms/linux64GccDPInt32Opt/lib/libHPCFluid_1fa769f6eac03e9ae4d05c6680b6889c46fbe409.so"
+Creating new library in "dynamicCode/HPCFluid/platforms/linux64GccDPInt32Opt/lib/libHPCFluid_120a66b9aef436830054c2b9d97943264fd6a35a.so"
 Invoking "wmake -s libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCFluid"
 wmake libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCFluid
     ln: ./lnInclude
     wmkdep: fixedValueFvPatchFieldTemplate.C
     Ctoo: fixedValueFvPatchFieldTemplate.C
-    ld: /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCFluid/../platforms/linux64GccDPInt32Opt/lib/libHPCFluid_1fa769f6eac03e9ae4d05c6680b6889c46fbe409.so
+    ld: /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCFluid/../platforms/linux64GccDPInt32Opt/lib/libHPCFluid_120a66b9aef436830054c2b9d97943264fd6a35a.so
 Reading field U
 
 Creating turbulence model
@@ -76,21 +76,21 @@ ClockTime = 14 s
 
 Constructing dsmcCloud 
 Using dynamicCode for patch DSMCBound on field boundaryT at line 19 in "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/particle/codeDict.HPCParticleT"
-Creating new library in "dynamicCode/HPCParticleT/platforms/linux64GccDPInt32Opt/lib/libHPCParticleT_a2570c262a7ca3cc64dc83e4a59773ff3314141d.so"
+Creating new library in "dynamicCode/HPCParticleT/platforms/linux64GccDPInt32Opt/lib/libHPCParticleT_a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce.so"
 Invoking "wmake -s libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleT"
 wmake libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleT
     ln: ./lnInclude
     wmkdep: fixedValueFvPatchFieldTemplate.C
     Ctoo: fixedValueFvPatchFieldTemplate.C
-    ld: /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleT/../platforms/linux64GccDPInt32Opt/lib/libHPCParticleT_a2570c262a7ca3cc64dc83e4a59773ff3314141d.so
-Using dynamicCode for patch DSMCBound on field boundaryU at line 33 in "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/particle/codeDict.HPCParticleU"
-Creating new library in "dynamicCode/HPCParticleU/platforms/linux64GccDPInt32Opt/lib/libHPCParticleU_c0c1df44077aa953c6492f7b754ad635ca036720.so"
+    ld: /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleT/../platforms/linux64GccDPInt32Opt/lib/libHPCParticleT_a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce.so
+Using dynamicCode for patch DSMCBound on field boundaryU at line 38 in "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/particle/codeDict.HPCParticleU"
+Creating new library in "dynamicCode/HPCParticleU/platforms/linux64GccDPInt32Opt/lib/libHPCParticleU_cb97bb81a9b2557ddbcbad5e4e7952fe79b923b6.so"
 Invoking "wmake -s libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleU"
 wmake libso /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleU
     ln: ./lnInclude
     wmkdep: fixedValueFvPatchFieldTemplate.C
     Ctoo: fixedValueFvPatchFieldTemplate.C
-    ld: /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleU/../platforms/linux64GccDPInt32Opt/lib/libHPCParticleU_c0c1df44077aa953c6492f7b754ad635ca036720.so
+    ld: /home/anthonygay1812/OpenFOAM/Working/finalShockTube/dynamicCode/HPCParticleU/../platforms/linux64GccDPInt32Opt/lib/libHPCParticleU_cb97bb81a9b2557ddbcbad5e4e7952fe79b923b6.so
 Selecting BinaryCollisionModel LarsenBorgnakkeVariableHardSphere
 Selecting WallInteractionModel MaxwellianThermal
 Selecting InflowBoundaryModel oneDirectionalHybridDSMC
@@ -100,18 +100,365 @@ Constructing constant properties for
 Time = 6e-06
 
 
-Its fluid Temp900
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 9.08803e+21
+Difference: -8.8031e+19
+    Particles inserted              = 16
+    Collisions                      = 746519
+    Acceptance rate                 = 0.964075
 
-Its fluid press113
+Cloud name: dsmc
+    Number of dsmc particles        = 87933
+    Number of molecules             = 3.51732e+22
+    Mass in system                  = 0.00163555
+    Average linear momentum         = (1.61072e-25 2.25319e-27 -6.74761e-26)
+   |Average linear momentum|        = 1.74649e-25
+    Average linear kinetic energy   = 1.65804e-20
+    Average internal energy         = 9.80474e-21
+    Average total energy            = 2.63851e-20
+deltaT = 7.08e-06
+Mean and max Courant Numbers = 0.21293 0.21293
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
 
-Its fluid N 9.09744e+21
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 112.371
+Difference: 0.62911
 
-Its fluid N #0  Foam::error::printStack(Foam::Ostream&) at ??:?
-#1  Foam::sigSegv::sigHandler(int) at ??:?
-#2  ? in "/lib/x86_64-linux-gnu/libc.so.6"
-#3  Foam::oneDirectionalHybridDSMC<Foam::DSMCCloudMod<Foam::DSMCParcel<Foam::particle> > >::inflow() at ??:?
-#4  ? in "/home/anthonygay1812/OpenFOAM/anthonygay1812-7/platforms/linux64GccDPInt32Opt/bin/Hybrid"
-#5  ? in "/home/anthonygay1812/OpenFOAM/anthonygay1812-7/platforms/linux64GccDPInt32Opt/bin/Hybrid"
-#6  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
-#7  ? in "/home/anthonygay1812/OpenFOAM/anthonygay1812-7/platforms/linux64GccDPInt32Opt/bin/Hybrid"
-Segmentation fault (core dumped)
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 112.371
+Difference: 0.62911
+
+ExecutionTime = 2.23 s  ClockTime = 34 s  Iterations: 0.847458/508.475  Projected time to finish: 22.2628 min
+Time = 1.308e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 9.08803e+21
+Difference: -8.8031e+19
+    Particles inserted              = 19
+    Collisions                      = 1112474
+    Acceptance rate                 = 0.578979
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87925
+    Number of molecules             = 3.517e+22
+    Mass in system                  = 0.00163541
+    Average linear momentum         = (1.74223e-25 4.05713e-27 -7.04428e-26)
+   |Average linear momentum|        = 1.87968e-25
+    Average linear kinetic energy   = 1.58721e-20
+    Average internal energy         = 1.05076e-20
+    Average total energy            = 2.63797e-20
+deltaT = 6.54566e-06
+Mean and max Courant Numbers = 0.19686 0.19686
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 109.855
+Difference: 3.14534
+
+ExecutionTime = 3.57 s  ClockTime = 35 s  Iterations: 1.99827/549.983  Projected time to finish: 16.3166 min
+Time = 1.96257e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 9.08803e+21
+Difference: -8.8031e+19
+    Particles inserted              = 18
+    Collisions                      = 1027045
+    Acceptance rate                 = 0.5617
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87909
+    Number of molecules             = 3.51636e+22
+    Mass in system                  = 0.00163511
+    Average linear momentum         = (1.87131e-25 2.94915e-27 -7.04443e-26)
+   |Average linear momentum|        = 1.99972e-25
+    Average linear kinetic energy   = 1.58467e-20
+    Average internal energy         = 1.05273e-20
+    Average total energy            = 2.6374e-20
+deltaT = 6.54566e-06
+Mean and max Courant Numbers = 0.196863 0.197051
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 109.181
+Difference: 3.81856
+
+ExecutionTime = 4.82 s  ClockTime = 37 s  Iterations: 2.99827/549.983  Projected time to finish: 14.6555 min
+Time = 2.61713e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 9.08577e+21
+Difference: -8.57673e+19
+    Particles inserted              = 18
+    Collisions                      = 1026762
+    Acceptance rate                 = 0.554525
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87899
+    Number of molecules             = 3.51596e+22
+    Mass in system                  = 0.00163492
+    Average linear momentum         = (2.00667e-25 2.59442e-27 -6.93914e-26)
+   |Average linear momentum|        = 2.12342e-25
+    Average linear kinetic energy   = 1.58023e-20
+    Average internal energy         = 1.05682e-20
+    Average total energy            = 2.63704e-20
+deltaT = 6.54566e-06
+Mean and max Courant Numbers = 0.196877 0.198136
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 109.568
+Difference: 3.43235
+
+ExecutionTime = 6.11 s  ClockTime = 38 s  Iterations: 3.99827/549.983  Projected time to finish: 13.9059 min
+Time = 3.2717e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 9.07186e+21
+Difference: -7.1865e+19
+    Particles inserted              = 17
+    Collisions                      = 1025993
+    Acceptance rate                 = 0.549578
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87880
+    Number of molecules             = 3.5152e+22
+    Mass in system                  = 0.00163457
+    Average linear momentum         = (2.16724e-25 -6.43055e-29 -6.80864e-26)
+   |Average linear momentum|        = 2.27168e-25
+    Average linear kinetic energy   = 1.5806e-20
+    Average internal energy         = 1.05593e-20
+    Average total energy            = 2.63653e-20
+deltaT = 6.54566e-06
+Mean and max Courant Numbers = 0.196894 0.199287
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 108.884
+Difference: 4.1157
+
+ExecutionTime = 7.55 s  ClockTime = 39 s  Iterations: 4.99827/549.983  Projected time to finish: 13.7202 min
+Time = 3.92626e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 9.0496e+21
+Difference: -4.96e+19
+    Particles inserted              = 18
+    Collisions                      = 1024031
+    Acceptance rate                 = 0.546233
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87872
+    Number of molecules             = 3.51488e+22
+    Mass in system                  = 0.00163442
+    Average linear momentum         = (2.24783e-25 -4.35449e-28 -6.67689e-26)
+   |Average linear momentum|        = 2.34491e-25
+    Average linear kinetic energy   = 1.579e-20
+    Average internal energy         = 1.05719e-20
+    Average total energy            = 2.63619e-20
+deltaT = 6.54566e-06
+Mean and max Courant Numbers = 0.196908 0.200124
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 107.592
+Difference: 5.40762
+
+ExecutionTime = 8.85 s  ClockTime = 41 s  Iterations: 5.99827/549.983  Projected time to finish: 13.3768 min
+Time = 4.58083e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 9.02469e+21
+Difference: -2.4686e+19
+    Particles inserted              = 18
+    Collisions                      = 1024664
+    Acceptance rate                 = 0.544445
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87854
+    Number of molecules             = 3.51416e+22
+    Mass in system                  = 0.00163408
+    Average linear momentum         = (2.38452e-25 -1.65629e-27 -6.89013e-26)
+   |Average linear momentum|        = 2.48212e-25
+    Average linear kinetic energy   = 1.58109e-20
+    Average internal energy         = 1.05468e-20
+    Average total energy            = 2.63577e-20
+deltaT = 6.41208e-06
+Mean and max Courant Numbers = 0.192905 0.19691
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 107.247
+Difference: 5.75324
+
+ExecutionTime = 10.13 s  ClockTime = 42 s  Iterations: 7.14407/561.441  Projected time to finish: 13.0995 min
+Time = 5.22204e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 8.99686e+21
+Difference: 3.14106e+18
+    Particles inserted              = 17
+    Collisions                      = 1001710
+    Acceptance rate                 = 0.54127
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87835
+    Number of molecules             = 3.5134e+22
+    Mass in system                  = 0.00163373
+    Average linear momentum         = (2.512e-25 -1.65277e-27 -6.89346e-26)
+   |Average linear momentum|        = 2.60492e-25
+    Average linear kinetic energy   = 1.57782e-20
+    Average internal energy         = 1.05764e-20
+    Average total energy            = 2.63546e-20
+deltaT = 6.41208e-06
+Mean and max Courant Numbers = 0.192926 0.197944
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 106.58
+Difference: 6.41987
+
+ExecutionTime = 11.45 s  ClockTime = 43 s  Iterations: 8.14407/561.441  Projected time to finish: 12.965 min
+Time = 5.86325e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 8.96333e+21
+Difference: 3.66708e+19
+    Particles inserted              = 17
+    Collisions                      = 1002646
+    Acceptance rate                 = 0.539921
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87822
+    Number of molecules             = 3.51288e+22
+    Mass in system                  = 0.00163349
+    Average linear momentum         = (2.58746e-25 -1.34239e-27 -6.78456e-26)
+   |Average linear momentum|        = 2.67496e-25
+    Average linear kinetic energy   = 1.58402e-20
+    Average internal energy         = 1.05119e-20
+    Average total energy            = 2.63522e-20
+deltaT = 6.41208e-06
+Mean and max Courant Numbers = 0.192949 0.198843
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 105.78
+Difference: 7.21993
+
+ExecutionTime = 12.75 s  ClockTime = 45 s  Iterations: 9.14407/561.441  Projected time to finish: 12.8349 min
+Time = 6.50445e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 8.92593e+21
+Difference: 7.40748e+19
+    Particles inserted              = 17
+    Collisions                      = 1000813
+    Acceptance rate                 = 0.538278
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87807
+    Number of molecules             = 3.51228e+22
+    Mass in system                  = 0.00163321
+    Average linear momentum         = (2.70191e-25 2.56593e-27 -6.87983e-26)
+   |Average linear momentum|        = 2.78824e-25
+    Average linear kinetic energy   = 1.58476e-20
+    Average internal energy         = 1.0502e-20
+    Average total energy            = 2.63496e-20
+deltaT = 6.41208e-06
+Mean and max Courant Numbers = 0.192973 0.199676
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 106.241
+Difference: 6.75885
+
+ExecutionTime = 14.12 s  ClockTime = 46 s  Iterations: 10.1441/561.441  Projected time to finish: 12.7896 min
+Time = 7.14566e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 8.88548e+21
+Difference: 1.14519e+20
+    Particles inserted              = 17
+    Collisions                      = 1001081
+    Acceptance rate                 = 0.537835
+
+Cloud name: dsmc
+    Number of dsmc particles        = 87785
+    Number of molecules             = 3.5114e+22
+    Mass in system                  = 0.0016328
+    Average linear momentum         = (2.8502e-25 1.50742e-27 -6.73753e-26)
+   |Average linear momentum|        = 2.92879e-25
+    Average linear kinetic energy   = 1.58043e-20
+    Average internal energy         = 1.0543e-20
+    Average total energy            = 2.63474e-20
+deltaT = 6.41208e-06
+Mean and max Courant Numbers = 0.192999 0.20042
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoUx, Initial residual = 0, Final residual = 0, No Iterations 0
+diagonal:  Solving for rhoE, Initial residual = 0, Final residual = 0, No Iterations 0
+
+FLUID BC
+Expected Pressure: 1.13E2
+Calculated Pressure: 106.04
+Difference: 6.96002
+
+ExecutionTime = 15.47 s  ClockTime = 47 s  Iterations: 11.1441/561.441  Projected time to finish: 12.7319 min
+Time = 7.78687e-05
+
+
+DSMC BC
+Expected N: 9E21
+Calculated Temp: 8.84242e+21
+Difference: 1.57581e+20
+    Particles inserted              = 17
