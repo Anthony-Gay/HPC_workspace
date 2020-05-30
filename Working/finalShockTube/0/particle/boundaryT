@@ -21,6 +21,7 @@ internalField   uniform 300;
 
 boundaryField
 {
+    
     DSMCBound
     {
         type            codedFixedValue;

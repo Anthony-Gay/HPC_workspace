@@ -140,13 +140,13 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
     const volScalarField& TFluid_ = fluidMeshRef_.lookupObject<volScalarField>("T");     
     const scalar idx_=fluidMeshRef_.nCells()-1;
     Info<< nl << "DSMC BC";
-    Info<< nl << "Expected N: 9E21";
-    Info<< nl << "Calculated N: "<< pFluid_[idx_]/(mass*TFluid_[idx_]*296.8);
-    Info<< nl << "Difference: "<< 9E21-pFluid_[idx_]/(mass*TFluid_[idx_]*296.8) << endl;
+    //Info<< nl << "Expected N: 9E21";
+    //Info<< nl << "Calculated N: "<< pFluid_[idx_]/(mass*TFluid_[idx_]*296.8);
+    //Info<< nl << "Difference: "<< 9E21-pFluid_[idx_]/(mass*TFluid_[idx_]*296.8) << endl;
     numberDensities_=pFluid_[idx_]/(mass*TFluid_[idx_]*296.8);
     
     numberDensities_ /= cloud.nParticle();
-    
+        Info<< nl << "Number Density of inserted particles: "<<numberDensities_[0];
     const polyMesh& mesh(cloud.mesh());
 
     const scalar deltaT = mesh.time().deltaTValue();
@@ -211,7 +211,14 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
             );
 
             // From Bird eqn 4.22
-    
+                    Info<< nl << "Face Areas: "<<mag(patch.faceAreas());
+                    Info<< nl << "Delta T: "<<deltaT;
+                    Info<< nl << "MPS: "<<mostProbableSpeed;
+                    Info<< nl << "Exp term: "<<(
+                   exp(-sqr(sCosTheta)) + sqrtPi*sCosTheta*(1 + erf(sCosTheta))
+                )
+               /(2.0*sqrtPi);
+
             pFA[i] +=
                 mag(patch.faceAreas())*numberDensities_[i]*deltaT 
                *mostProbableSpeed
@@ -285,10 +292,8 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
             forAll(pFA, i)
             {
                 scalar& faceAccumulator = pFA[i][pFI];
-
                 // Number of whole particles to insert
                 label nI = max(label(faceAccumulator), 0);
-
                 // Add another particle with a probability proportional to the
                 // remainder of taking the integer part of faceAccumulator
                 if ((faceAccumulator - nI) > rndGen.scalar01())
