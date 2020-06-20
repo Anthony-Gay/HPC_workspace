@@ -17,13 +17,14 @@ FoamFile
 
 dimensions      [0 0 0 1 0 0 0];
 
-internalField   uniform 300;
+internalField   uniform 900;
 
 boundaryField
 {
     
     DSMCBound
     {
+       //type symmetry;
         type            codedFixedValue;
         value           $internalField;
         redirectType    HPCParticleT;

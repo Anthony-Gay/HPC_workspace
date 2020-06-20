@@ -53,8 +53,8 @@ class oneDirectionalHybridDSMC
 {
     // Private Data
 
-        //- The indices of patches to introduce molecules across
-        labelList patches_;
+        //- The indices of patch to introduce molecules across
+        label patches_;
 
         //- The molecule types to be introduced
         List<label> moleculeTypeIds_;

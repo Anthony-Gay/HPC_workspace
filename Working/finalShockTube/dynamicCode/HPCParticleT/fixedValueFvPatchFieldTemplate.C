@@ -51,11 +51,11 @@ namespace Foam
 extern "C"
 {
     // dynamicCode:
-    // SHA1 = a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce
+    // SHA1 = 20b915806a40ca86fbcd1ff056a9a8ac25b3fd27
     //
     // unique function name that can be checked if the correct library version
     // has been loaded
-    void HPCParticleT_a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce(bool load)
+    void HPCParticleT_20b915806a40ca86fbcd1ff056a9a8ac25b3fd27(bool load)
     {
         if (load)
         {
@@ -78,7 +78,7 @@ makeRemovablePatchTypeField
 
 
 const char* const HPCParticleTFixedValueFvPatchScalarField::SHA1sum =
-    "a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce";
+    "20b915806a40ca86fbcd1ff056a9a8ac25b3fd27";
 
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
@@ -94,7 +94,7 @@ HPCParticleTFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCParticleT sha1: a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce"
+        Info<<"construct HPCParticleT sha1: 20b915806a40ca86fbcd1ff056a9a8ac25b3fd27"
             " from patch/DimensionedField\n";
     }
 }
@@ -113,7 +113,7 @@ HPCParticleTFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCParticleT sha1: a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce"
+        Info<<"construct HPCParticleT sha1: 20b915806a40ca86fbcd1ff056a9a8ac25b3fd27"
             " from patch/DimensionedField/mapper\n";
     }
 }
@@ -131,7 +131,7 @@ HPCParticleTFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCParticleT sha1: a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce"
+        Info<<"construct HPCParticleT sha1: 20b915806a40ca86fbcd1ff056a9a8ac25b3fd27"
             " from patch/dictionary\n";
     }
 }
@@ -147,7 +147,7 @@ HPCParticleTFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCParticleT sha1: a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce"
+        Info<<"construct HPCParticleT sha1: 20b915806a40ca86fbcd1ff056a9a8ac25b3fd27"
             " as copy\n";
     }
 }
@@ -164,7 +164,7 @@ HPCParticleTFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCParticleT sha1: a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce "
+        Info<<"construct HPCParticleT sha1: 20b915806a40ca86fbcd1ff056a9a8ac25b3fd27 "
             "as copy/DimensionedField\n";
     }
 }
@@ -177,7 +177,7 @@ HPCParticleTFixedValueFvPatchScalarField::
 {
     if (false)
     {
-        Info<<"destroy HPCParticleT sha1: a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce\n";
+        Info<<"destroy HPCParticleT sha1: 20b915806a40ca86fbcd1ff056a9a8ac25b3fd27\n";
     }
 }
 
@@ -193,22 +193,17 @@ void HPCParticleTFixedValueFvPatchScalarField::updateCoeffs()
 
     if (false)
     {
-        Info<<"updateCoeffs HPCParticleT sha1: a5aa7ad21e0a65ce953ad1b996ebea21aa4a09ce\n";
+        Info<<"updateCoeffs HPCParticleT sha1: 20b915806a40ca86fbcd1ff056a9a8ac25b3fd27\n";
     }
 
 //{{{ begin code
     #line 20 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/particle/codeDict.HPCParticleT"
 const fvMesh& fluidMeshRef = db().parent().lookupObject<fvMesh>("fluid");
-    const scalar idx=fluidMeshRef.nCells()-1;
-
+    label fluidBoundPatchId=fluidMeshRef.boundaryMesh().findPatchID("fluidBound");
+    Info<<"HPCParticleT Has been accessed!!!!!!!!!!!!!!!" <<nl;
     const volScalarField& TFluid = fluidMeshRef.lookupObject<volScalarField>("T");     
-    
-    Info<< nl << "DSMC TEMP BC";
-    Info<< nl << "Expected Temp: 900";
-    Info<< nl << "Calculated Temp: "<< (TFluid[idx]);
-    Info<< nl << "Difference: "<< 900-(TFluid[idx]) << endl;
 
-    operator==(TFluid[idx]);
+    operator==(TFluid.boundaryField()[fluidBoundPatchId][0]);
 //}}} end code
 
     this->fixedValueFvPatchField<scalar>::updateCoeffs();

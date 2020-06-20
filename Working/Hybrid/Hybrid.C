@@ -99,6 +99,7 @@ int main(int argc, char *argv[])
             << "  Projected time to finish: " << (remainIts*timePerIt)/60 << " min"
             << endl;       
              
+             
     }
 
     return 0;

@@ -131,7 +131,9 @@ boundaryField
     }
     fluidBound
     {
-        type            zeroGradient;
+        type            codedFixedValue;
+        value           uniform 112.88316;
+        name            HPCFluidP;
     }
     nullDims
     {

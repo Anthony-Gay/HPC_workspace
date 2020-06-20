@@ -23,7 +23,7 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         1.44e-3;//3.6e-3;
+endTime         1.44e-3;//3.6e-3;//1.44e-3;
 
 deltaT          6e-6;
 
@@ -142,7 +142,7 @@ dsmcFieldsMod1
         writeControl    writeTime;
         region              particle;
 
-    }
-}*/
+    }*/
+}
 
 // ************************************************************************* //

@@ -46,39 +46,22 @@ Foam::oneDirectionalHybridDSMC<CloudType>::oneDirectionalHybridDSMC
     numberDensities_(),
     particleFluxAccumulators_()
 {
-    // Identify which patches to use
 
-    DynamicList<label> patches;
-
-    forAll(cloud.mesh().boundaryMesh(), p)
-    {
-        const polyPatch& patch = cloud.mesh().boundaryMesh()[p];
-
-        if (isType<polyPatch>(patch))
-        {
-            patches.append(p);
-        }
-    }
-
-    patches_.transfer(patches);
+    patches_=cloud.mesh().boundaryMesh().findPatchID("DSMCBound");
 
     List<word> molecules(1);
     molecules[0]="N2";
     numberDensities_.setSize(molecules.size());
 
     // Initialise the particleFluxAccumulators_
-    particleFluxAccumulators_.setSize(patches_.size());
-
-    forAll(patches_, p)
-    {
-        const polyPatch& patch = cloud.mesh().boundaryMesh()[patches_[p]];
-
-        particleFluxAccumulators_[p] = List<Field<scalar>>
-        (
-            molecules.size(),
-            Field<scalar>(patch.size(), 0.0)
-        );
-    }
+    particleFluxAccumulators_.setSize(1);
+    
+    particleFluxAccumulators_ = List<Field<scalar>>
+    (
+        molecules.size(),
+        Field<scalar>(1, 0.0)
+    );
+    
 
     moleculeTypeIds_.setSize(molecules.size());
 
@@ -112,64 +95,143 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::autoMap(const mapPolyMesh& mappe
     CloudType& cloud(this->owner());
     const polyMesh& mesh(cloud.mesh());
 
-    forAll(patches_, p)
-    {
-        label patchi = patches_[p];
+    
+        label patchi = patches_;
 
         const polyPatch& patch = mesh.boundaryMesh()[patchi];
-        List<Field<scalar>>& pFA = particleFluxAccumulators_[p];
+        List<Field<scalar>>& pFA = particleFluxAccumulators_[0];
 
         forAll(pFA, facei)
         {
             pFA[facei].setSize(patch.size(), 0);
         }
-    }
+    
 }
 
 
 template<class CloudType>
 void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
 {
+
     label typeId = moleculeTypeIds_[0];
     CloudType& cloud(this->owner());
-
-    //Calculate incoming number density
-    scalar mass = cloud.constProps(typeId).mass();
-    const fvMesh& fluidMeshRef_ = cloud.parent().parent().objectRegistry::lookupObject<fvMesh>("fluid");
-    const volScalarField& pFluid_ = fluidMeshRef_.lookupObject<volScalarField>("p");     
-    const volScalarField& TFluid_ = fluidMeshRef_.lookupObject<volScalarField>("T");     
-    const scalar idx_=fluidMeshRef_.nCells()-1;
-    Info<< nl << "DSMC BC";
-    //Info<< nl << "Expected N: 9E21";
-    //Info<< nl << "Calculated N: "<< pFluid_[idx_]/(mass*TFluid_[idx_]*296.8);
-    //Info<< nl << "Difference: "<< 9E21-pFluid_[idx_]/(mass*TFluid_[idx_]*296.8) << endl;
-    numberDensities_=pFluid_[idx_]/(mass*TFluid_[idx_]*296.8);
-    
-    numberDensities_ /= cloud.nParticle();
-        Info<< nl << "Number Density of inserted particles: "<<numberDensities_[0];
     const polyMesh& mesh(cloud.mesh());
 
-    const scalar deltaT = mesh.time().deltaTValue();
+    ///////////////Calculate incoming number density and U and T ////////////////////////////////////
+    /*scalar mass = cloud.constProps(typeId).mass();
+    const fvMesh& fluidMeshRef_ = cloud.parent().parent().objectRegistry::lookupObject<fvMesh>("fluid");
+    const volScalarField& pFluid_ = fluidMeshRef_.lookupObject<volScalarField>("p");     
+    const volScalarField& TFluid_ = fluidMeshRef_.lookupObject<volScalarField>("T");   
+    const volVectorField& UFluid_ = fluidMeshRef_.lookupObject<volVectorField>("U");     
+    
+    const fvMesh& partMeshRef_ = cloud.parent().parent().objectRegistry::lookupObject<fvMesh>("particle");
+    const volVectorField& momentum_ = cloud.momentum();
+    const volScalarField& rhoM_ = partMeshRef_.objectRegistry::lookupObject<volScalarField>("dsmcrhoM_");
+    const volScalarField& linearKE_ = mesh.objectRegistry::lookupObject<volScalarField>("linearKE");
+    const volScalarField& internalE_ = mesh.lookupObject<volScalarField>("internalE");
+    const volScalarField& iDof_ = mesh.lookupObject<volScalarField>("iDof");
+    const volScalarField& rhoN_ = mesh.lookupObject<volScalarField>("rhoN");
+
+    
+
+    const label fluidIdx=fluidMeshRef_.nCells()-1;
+    const label particleIdx=0;
+
+    volVectorField Upart_
+    (
+        IOobject
+        (
+            "U",
+            mesh.time().timeName(),
+            mesh,
+            IOobject::NO_READ,
+            IOobject::AUTO_WRITE,
+            true
+        ),
+        momentum_/rhoM_
+    );
+
+    volScalarField overallTPart_
+    (
+        IOobject
+        (
+            "overallT",
+            mesh.time().timeName(),
+            mesh,
+            IOobject::NO_READ,
+            IOobject::AUTO_WRITE,
+            true
+        ),
+        2.0/(1.38064852*pow(10,-23)*(3.0*rhoN_ + iDof_))*(linearKE_ - 0.5*rhoM_*(Upart_ & Upart_) + internalE_)
+    );
+
+    //numberDensities_=pFluid_.boundaryField()[fluidBoundPatchId][0]/(mass*TFluid_.boundaryField()[fluidBoundPatchId][0]*296.8);
+            //Info<< nl << "Number Density of inserted particles: "<<numberDensities_[0];
+            //Info<< nl << "CloudName: "<<cloud.cloudName();
+            //Info<< nl << "Cloud parent parent parent: "<<runTime.objectRegistry();
+            //Info<< nl << "Cloud momentum: "<<cloud.momentum();
+
+        
+        //Info<< nl << "OverallT Calculated rhoN: "<<rhoN_[0];
+    //Info<< nl << "OverallT iDof: "<<iDof_[0];
+    //Info<< nl << "OverallT Calculated linearKE_: "<<linearKE_;
+    //Info<< nl << "OverallT Calculated rhoM_: "<<rhoM_;
+    //Info<< nl << "OverallT Calculated internalE_: "<<internalE_[0];
+    //Info<< nl << "OverallT Calculated: "<<overallTPart_[0];
+    //Info<< nl << "Part Mesh Ref: "<<partMeshRef_;
+    //Info<< nl << "Fluid Mesh: "<<fluidMeshRef_;
+
+    Info<< nl << "OverallT Calculated: "<<overallTPart_[0];
+    Info<< nl << "Upart_ Calculated: "<<Upart_[0];
+    Info<< nl << "Upart_ crosp Calculated: "<<(Upart_ & Upart_);
+    Info<< nl << "FluidT Used: "<<TFluid_[fluidIdx];
+    Info<< nl << "FluidV Used: "<<UFluid_[fluidIdx];
+
+    numberDensities_=(pFluid_[fluidIdx]/(mass*TFluid_[fluidIdx]*296.8))+0.5*rhoN_[particleIdx];
+    const scalar boundaryT=0.5*TFluid_[fluidIdx]+0.5*overallTPart_[particleIdx]; 
+    const vector boundaryU=0.5*UFluid_[fluidIdx]+0.5*Upart_[particleIdx]; 
+*/
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+    const scalar deltaT = mesh.time().deltaTValue(); //This is not a temp term its a timestep term
 
     Random& rndGen(cloud.rndGen());
 
-    scalar sqrtPi = sqrt(pi);
-
     label particlesInserted = 0;
 
-    const volScalarField::Boundary& boundaryT
+    scalar sqrtPi = sqrt(pi);
+
+    //Inserting code for U and T matching BC's/////////////////////////////////////////////////
+    scalar mass = cloud.constProps(typeId).mass();
+    const fvMesh& fluidMeshRef_ = cloud.parent().parent().objectRegistry::lookupObject<fvMesh>("fluid");
+    label fluidBoundPatchId=fluidMeshRef_.boundaryMesh().findPatchID("fluidBound");
+    
+    const volScalarField& pFluid = fluidMeshRef_.lookupObject<volScalarField>("p");     
+    const scalar boundaryp
     (
-        cloud.boundaryT().boundaryField()
+        pFluid.boundaryField()[fluidBoundPatchId][0]
     );
 
-    const volVectorField::Boundary& boundaryU
+    const volScalarField& TFluid = fluidMeshRef_.lookupObject<volScalarField>("T");     
+    const scalar boundaryT
     (
-        cloud.boundaryU().boundaryField()
+        TFluid.boundaryField()[fluidBoundPatchId][0]
     );
 
-    forAll(patches_, p)
-    {
-        label patchi = patches_[p];
+    const volVectorField& UFluid = fluidMeshRef_.lookupObject<volVectorField>("U");     
+    const vector boundaryU
+    (
+        UFluid.boundaryField()[fluidBoundPatchId][0]
+    );
+    
+    numberDensities_=boundaryp/(mass*boundaryT*296.8);
+    numberDensities_ /= cloud.nParticle();
+    Info<< nl << "Virtual Number Density of inserted particles: "<<numberDensities_[0];
+
+//////////////////////////////////////////////////////////////////////
+        
+        label patchi = patches_;
 
         const polyPatch& patch = mesh.boundaryMesh()[patchi];
 
@@ -177,12 +239,12 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
         // velocity to point flux into the domain.
 
         // Take a reference to the particleFluxAccumulator for this patch
-        List<Field<scalar>>& pFA = particleFluxAccumulators_[p];
+        List<Field<scalar>>& pFA = particleFluxAccumulators_[0];
 
         forAll(pFA, i)
         {
 
-            if (min(boundaryT[patchi]) < small)
+            if (boundaryT < small)
             {
                 FatalErrorInFunction
                     << "Zero boundary temperature detected, check boundaryT "
@@ -190,14 +252,15 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
                     << nl << abort(FatalError);
             }
 
-            scalarField mostProbableSpeed
+            scalar mostProbableSpeed
             (
                 cloud.maxwellianMostProbableSpeed
                 (
-                    boundaryT[patchi],
+                    boundaryT,
                     mass
                 )
             );
+            Info<< nl << "Used Temp: "<<boundaryT;
 
             // Dotting boundary velocity with the face unit normal
             // (which points out of the domain, so it must be
@@ -206,26 +269,28 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
 
             scalarField sCosTheta
             (
-                (boundaryU[patchi] & -patch.faceAreas()/mag(patch.faceAreas()))
+                (boundaryU & -patch.faceAreas()/mag(patch.faceAreas()))
               / mostProbableSpeed
             );
+            Info<< nl << "Used Velocity: "<<boundaryU;
 
-            // From Bird eqn 4.22
-                    Info<< nl << "Face Areas: "<<mag(patch.faceAreas());
-                    Info<< nl << "Delta T: "<<deltaT;
-                    Info<< nl << "MPS: "<<mostProbableSpeed;
-                    Info<< nl << "Exp term: "<<(
-                   exp(-sqr(sCosTheta)) + sqrtPi*sCosTheta*(1 + erf(sCosTheta))
-                )
-               /(2.0*sqrtPi);
-
-            pFA[i] +=
-                mag(patch.faceAreas())*numberDensities_[i]*deltaT 
+            // From Bird eqn 4.22 -> gives equalibrium inflow we need non equalibrium
+            
+            // 
+            //numberDensities_[i]*mostProbableSpeed*deltaT;
+               pFA[i] +=mag(patch.faceAreas())*numberDensities_[i]*deltaT 
                *mostProbableSpeed
                *(
                    exp(-sqr(sCosTheta)) + sqrtPi*sCosTheta*(1 + erf(sCosTheta))
                 )
                /(2.0*sqrtPi);
+
+            Info<< nl << "Delta T: "<<deltaT;
+            Info<< nl << "mostProbableSpeed: "<<mostProbableSpeed;
+            Info<< nl << "PFA: "<<pFA[i];
+
+            Info<< nl << "sCosTheta term: "<<sCosTheta;
+
         }
 
         forAll(patch, pFI)
@@ -285,9 +350,9 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
             vector t2 = n^t1;
             t2 /= mag(t2);
 
-            scalar faceTemperature = boundaryT[patchi][pFI];
+            scalar faceTemperature = boundaryT;
 
-            const vector& faceVelocity = boundaryU[patchi][pFI];
+            const vector& faceVelocity = boundaryU;
 
             forAll(pFA, i)
             {
@@ -409,12 +474,12 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
                     );
 
                     cloud.addNewParcel(p, celli, U, Ei, typeId);
-
+                    //Info<<"This is the cell in which injected particles are placed" << celli <<nl;
                     particlesInserted++;
                 }
             }
         }
-    }
+    
 
     reduce(particlesInserted, sumOp<label>());
 

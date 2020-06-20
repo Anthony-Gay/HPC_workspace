@@ -18,16 +18,11 @@ HPCParticleT
   code
   #{    
     const fvMesh& fluidMeshRef = db().parent().lookupObject<fvMesh>("fluid");
-    const scalar idx=fluidMeshRef.nCells()-1;
-
+    label fluidBoundPatchId=fluidMeshRef.boundaryMesh().findPatchID("fluidBound");
+    Info<<"HPCParticleT Has been accessed!!!!!!!!!!!!!!!" <<nl;
     const volScalarField& TFluid = fluidMeshRef.lookupObject<volScalarField>("T");     
-    
-    Info<< nl << "DSMC TEMP BC";
-    Info<< nl << "Expected Temp: 900";
-    Info<< nl << "Calculated Temp: "<< (TFluid[idx]);
-    Info<< nl << "Difference: "<< 900-(TFluid[idx]) << endl;
 
-    operator==(TFluid[idx]); 
+    operator==(TFluid.boundaryField()[fluidBoundPatchId][0]); 
 
   #};
 }
@@ -37,12 +32,11 @@ HPCParticleU
   code
   #{    
     const fvMesh& fluidMeshRef = db().parent().lookupObject<fvMesh>("fluid");
-    const scalar idx=fluidMeshRef.nCells()-1;
+    label fluidBoundPatchId=fluidMeshRef.boundaryMesh().findPatchID("fluidBound");
 
     const volVectorField& UFluid = fluidMeshRef.lookupObject<volVectorField>("U");     
-    Info<< nl << "DSMC U BC";
-    Info<< nl << "Calculated U: "<< (UFluid[idx]);
-    operator==(UFluid[idx]); 
+
+    operator==(UFluid.boundaryField()[fluidBoundPatchId][0]);
 
   #};
 }

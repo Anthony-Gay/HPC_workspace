@@ -212,8 +212,7 @@ void Foam::FreeStream<CloudType>::inflow()
 
             // From Bird eqn 4.22
 
-            pFA[i] +=
-                mag(patch.faceAreas())*numberDensities_[i]*deltaT
+            pFA[i] += mag(patch.faceAreas())*numberDensities_[i]*deltaT
                *mostProbableSpeed
                *(
                    exp(-sqr(sCosTheta)) + sqrtPi*sCosTheta*(1 + erf(sCosTheta))

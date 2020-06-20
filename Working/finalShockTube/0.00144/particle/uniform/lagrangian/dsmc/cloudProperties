@@ -17,7 +17,7 @@ FoamFile
 
 processor0
 {
-    particleCount   11898221;
+    particleCount   20431454;
 }
 
 

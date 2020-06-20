@@ -23,7 +23,7 @@ boundaryField
 {
     DSMCBound
     {
-        type            zeroGradient;
+        type            zeroGradient;//symmetry;//zeroGradient;
     }
 
     DSMCSide

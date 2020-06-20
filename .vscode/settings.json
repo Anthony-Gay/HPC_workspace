@@ -107,6 +107,11 @@
         "regionFunctionObject.C": "cpp",
         "totalTemperatureFvPatchScalarField.C": "cpp",
         "oneDirectionalHybridFluidFvPatchScalarField.C": "cpp",
-        "sampledPatch.C": "cpp"
+        "sampledPatch.C": "cpp",
+        "atomic": "cpp",
+        "limits": "cpp",
+        "sstream": "cpp",
+        "physicoChemicalConstants.C": "cpp",
+        "fundamentalConstants.C": "cpp"
     }
 }

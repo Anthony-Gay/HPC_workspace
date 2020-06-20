@@ -13,43 +13,43 @@ FoamFile
     object      codeDict;
 } 
 
-HPCFluid
+HPCFluidP
 {
   code
   #{    
-    const fvMesh& fluidMeshRef = db().parent().lookupObject<fvMesh>("fluid");
-    const fvMesh& partMeshRef = db().parent().lookupObject<fvMesh>("particle");
+    const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
+    const fvMesh& partMesh = db().parent().lookupObject<fvMesh>("particle");
 
     const volScalarField& pFluid = db().lookupObject<volScalarField>("p");     
     const volScalarField& pFluidOld=pFluid.oldTime();
 
-    const volVectorField& momentumRef = partMeshRef.lookupObject<volVectorField>("momentum");
-    const volScalarField& rhoNRef = partMeshRef.lookupObject<volScalarField>("rhoN");
-    const volScalarField& rhoMRef = partMeshRef.lookupObject<volScalarField>("rhoM");
-    const volScalarField& linearKERef = partMeshRef.lookupObject<volScalarField>("linearKE");
+    const volVectorField& momentum = partMesh.lookupObject<volVectorField>("momentum");
+    const volScalarField& rhoN = partMesh.lookupObject<volScalarField>("rhoN");
+    const volScalarField& rhoM = partMesh.lookupObject<volScalarField>("rhoM");
+    const volScalarField& linearKE = partMesh.lookupObject<volScalarField>("linearKE");
 
-  volVectorField URef
+  volVectorField U
     (
         IOobject
         (
             "UPart",
-            partMeshRef.time().timeName(),
-            partMeshRef,
+            partMesh.time().timeName(),
+            partMesh,
             IOobject::NO_READ
         ),
-        momentumRef/rhoMRef
+        momentum/rhoM
     );
 
-  volScalarField translationalTRef
+  volScalarField translationalT
     (
         IOobject
         (
             "TTranslationalPart",
-            partMeshRef.time().timeName(),
-            partMeshRef,
+            partMesh.time().timeName(),
+            partMesh,
             IOobject::NO_READ
         ),
-        2.0/(3.0*physicoChemical::k.value()*rhoNRef)*(linearKERef - 0.5*rhoMRef*(URef & URef))
+        2.0/(3.0*physicoChemical::k.value()*rhoN)*(linearKE - 0.5*rhoM*(U & U))
     );
 
     volScalarField pParticle
@@ -57,30 +57,124 @@ HPCFluid
         IOobject
         (
             "pParticle",
-            partMeshRef.time().timeName(),
-            partMeshRef,
+            partMesh.time().timeName(),
+            partMesh,
             IOobject::NO_READ
         ),
-        physicoChemical::k.value()*rhoNRef*translationalTRef
+        physicoChemical::k.value()*rhoN*translationalT
     );
     
-    const label fluidIdx=fluidMeshRef.nCells()-1;;
+    const label fluidIdx=fluidMesh.nCells()-1;
     const label particleIdx=0;
-    const scalar w=0.2; 
+    const scalar w=0;//0.4; 
     
-    Info<< nl << "FLUID BC";
+    /*Info<< nl << "FLUID BC";
     Info<< nl << "Expected Pressure: 1.1288316e2";
-    Info<< nl << "Calculated Pressure: "<< ((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx]));
-    Info<< nl << "Difference: "<< 1.1288316e2-((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx])) << endl;
+    Info<< nl << "Particle pressure: " << pParticle[particleIdx];
+    Info<< nl << "Fluid pressure: " << pFluid[fluidIdx];
+    Info<< nl << "Fluid old pressure: " << pFluidOld[fluidIdx];*/
 
-    operator==((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx-1]+0.5*pParticle[particleIdx])); 
+    operator==((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx])); 
 
   #};
+  
+codeInclude
+#{
+  #include "constants.H"
+  using namespace Foam::constant;
+#};
+}
+   
 
+HPCFluidT
+{
+  code
+  #{    
+    const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
+    const fvMesh& partMesh = db().parent().lookupObject<fvMesh>("particle");
+
+    const volScalarField& TFluid = db().lookupObject<volScalarField>("T");     
+    const volScalarField& TFluidOld=TFluid.oldTime();
+
+    const volVectorField& momentum = partMesh.lookupObject<volVectorField>("momentum");
+    const volScalarField& rhoN = partMesh.lookupObject<volScalarField>("rhoN");
+    const volScalarField& rhoM = partMesh.lookupObject<volScalarField>("rhoM");
+    const volScalarField& linearKE = partMesh.lookupObject<volScalarField>("linearKE");
+    const volScalarField& internalE = partMesh.lookupObject<volScalarField>("internalE");
+    const volScalarField& iDof = partMesh.lookupObject<volScalarField>("iDof");
+
+    volVectorField U
+            (
+                IOobject
+                (
+                    "U",
+                    partMesh.time().timeName(),
+                    partMesh,
+                    IOobject::NO_READ
+                ),
+                momentum/rhoM
+            );
+
+    volScalarField overallT
+            (
+                IOobject
+                (
+                    "overallT",
+                    partMesh.time().timeName(),
+                    partMesh,
+                    IOobject::NO_READ
+                ),
+                2.0/(physicoChemical::k.value()*(3.0*rhoN + iDof))
+              *(linearKE - 0.5*rhoM*(U & U) + internalE)
+            );
+
+
+    const label fluidIdx=fluidMesh.nCells()-1;
+    const label particleIdx=0;
+    const scalar w=0;//0.4; 
+    
+    //Info<< nl << "FLUID TEMP BC";
+    operator==((1-w)*TFluidOld[fluidIdx]+w*(0.5*TFluid[fluidIdx]+0.5*overallT[particleIdx])); 
+
+  #};
   codeInclude
 #{
   #include "constants.H"
   using namespace Foam::constant;
 #};
 }
-      
+
+HPCFluidU
+{
+  code
+  #{    
+    const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
+    const fvMesh& partMesh = db().parent().lookupObject<fvMesh>("particle");
+
+    const volVectorField& UFluid = db().lookupObject<volVectorField>("U");     
+    const volVectorField& UFluidOld=UFluid.oldTime();
+   
+    const volVectorField& momentum = partMesh.lookupObject<volVectorField>("momentum");
+    const volScalarField& rhoM = partMesh.lookupObject<volScalarField>("rhoM");
+
+    volVectorField U
+            (
+                IOobject
+                (
+                    "U",
+                    partMesh.time().timeName(),
+                    partMesh,
+                    IOobject::NO_READ
+                ),
+                momentum/rhoM
+            );
+
+    const label fluidIdx=fluidMesh.nCells()-1;
+    const label particleIdx=0;
+    const scalar w=0;//0.4; 
+    
+    //Info<< nl << "FLUID TEMP BC";
+    operator==((1-w)*UFluidOld[fluidIdx]+w*(0.5*UFluid[fluidIdx]+0.5*U[particleIdx])); 
+
+  #};
+}
