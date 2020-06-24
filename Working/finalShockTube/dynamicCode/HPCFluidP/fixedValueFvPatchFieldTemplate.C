@@ -30,7 +30,7 @@ License
 #include "surfaceFields.H"
 #include "unitConversion.H"
 //{{{ begin codeInclude
-#line 83 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluidP"
+#line 104 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluidP"
 #include "constants.H"
   using namespace Foam::constant;
 //}}} end codeInclude
@@ -53,11 +53,11 @@ namespace Foam
 extern "C"
 {
     // dynamicCode:
-    // SHA1 = 63d5e54c36062ac8244c795ca35af836c0ec24e6
+    // SHA1 = a6d23aedfcb9d8349035819c70b7760d0e9994dd
     //
     // unique function name that can be checked if the correct library version
     // has been loaded
-    void HPCFluidP_63d5e54c36062ac8244c795ca35af836c0ec24e6(bool load)
+    void HPCFluidP_a6d23aedfcb9d8349035819c70b7760d0e9994dd(bool load)
     {
         if (load)
         {
@@ -80,7 +80,7 @@ makeRemovablePatchTypeField
 
 
 const char* const HPCFluidPFixedValueFvPatchScalarField::SHA1sum =
-    "63d5e54c36062ac8244c795ca35af836c0ec24e6";
+    "a6d23aedfcb9d8349035819c70b7760d0e9994dd";
 
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
@@ -96,7 +96,7 @@ HPCFluidPFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluidP sha1: 63d5e54c36062ac8244c795ca35af836c0ec24e6"
+        Info<<"construct HPCFluidP sha1: a6d23aedfcb9d8349035819c70b7760d0e9994dd"
             " from patch/DimensionedField\n";
     }
 }
@@ -115,7 +115,7 @@ HPCFluidPFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluidP sha1: 63d5e54c36062ac8244c795ca35af836c0ec24e6"
+        Info<<"construct HPCFluidP sha1: a6d23aedfcb9d8349035819c70b7760d0e9994dd"
             " from patch/DimensionedField/mapper\n";
     }
 }
@@ -133,7 +133,7 @@ HPCFluidPFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluidP sha1: 63d5e54c36062ac8244c795ca35af836c0ec24e6"
+        Info<<"construct HPCFluidP sha1: a6d23aedfcb9d8349035819c70b7760d0e9994dd"
             " from patch/dictionary\n";
     }
 }
@@ -149,7 +149,7 @@ HPCFluidPFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluidP sha1: 63d5e54c36062ac8244c795ca35af836c0ec24e6"
+        Info<<"construct HPCFluidP sha1: a6d23aedfcb9d8349035819c70b7760d0e9994dd"
             " as copy\n";
     }
 }
@@ -166,7 +166,7 @@ HPCFluidPFixedValueFvPatchScalarField
 {
     if (false)
     {
-        Info<<"construct HPCFluidP sha1: 63d5e54c36062ac8244c795ca35af836c0ec24e6 "
+        Info<<"construct HPCFluidP sha1: a6d23aedfcb9d8349035819c70b7760d0e9994dd "
             "as copy/DimensionedField\n";
     }
 }
@@ -179,7 +179,7 @@ HPCFluidPFixedValueFvPatchScalarField::
 {
     if (false)
     {
-        Info<<"destroy HPCFluidP sha1: 63d5e54c36062ac8244c795ca35af836c0ec24e6\n";
+        Info<<"destroy HPCFluidP sha1: a6d23aedfcb9d8349035819c70b7760d0e9994dd\n";
     }
 }
 
@@ -195,7 +195,7 @@ void HPCFluidPFixedValueFvPatchScalarField::updateCoeffs()
 
     if (false)
     {
-        Info<<"updateCoeffs HPCFluidP sha1: 63d5e54c36062ac8244c795ca35af836c0ec24e6\n";
+        Info<<"updateCoeffs HPCFluidP sha1: a6d23aedfcb9d8349035819c70b7760d0e9994dd\n";
     }
 
 //{{{ begin code
@@ -210,6 +210,11 @@ const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
     const volScalarField& rhoN = partMesh.lookupObject<volScalarField>("rhoN");
     const volScalarField& rhoM = partMesh.lookupObject<volScalarField>("rhoM");
     const volScalarField& linearKE = partMesh.lookupObject<volScalarField>("linearKE");
+    const volScalarField& internalE = partMesh.lookupObject<volScalarField>("internalE");
+    const volScalarField& iDof = partMesh.lookupObject<volScalarField>("iDof");
+
+ 
+            
 
   volVectorField U
     (
@@ -221,6 +226,19 @@ const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
             IOobject::NO_READ
         ),
         momentum/rhoM
+    );
+
+  volScalarField overallT
+    (
+        IOobject
+        (
+            "overallT",
+            partMesh.time().timeName(),
+            partMesh,
+            IOobject::NO_READ
+        ),
+        2.0/(physicoChemical::k.value()*(3.0*rhoN + iDof))
+      *(linearKE - 0.5*rhoM*(U & U) + internalE)
     );
 
   volScalarField translationalT
@@ -244,18 +262,21 @@ const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
             partMesh,
             IOobject::NO_READ
         ),
-        physicoChemical::k.value()*rhoN*translationalT
+        physicoChemical::k.value()*rhoN*translationalT //https://courses.lumenlearning.com/physics/chapter/13-3-the-ideal-gas-law/
     );
     
     const label fluidIdx=fluidMesh.nCells()-1;
     const label particleIdx=0;
-    const scalar w=0;//0.4; 
+    const scalar w=0.4; 
     
-    /*Info<< nl << "FLUID BC";
-    Info<< nl << "Expected Pressure: 1.1288316e2";
-    Info<< nl << "Particle pressure: " << pParticle[particleIdx];
-    Info<< nl << "Fluid pressure: " << pFluid[fluidIdx];
-    Info<< nl << "Fluid old pressure: " << pFluidOld[fluidIdx];*/
+    Info<< nl << "FLUID PRESSURE BC";
+    Info<< nl << "Particle pressure formula 1: " << pParticle[particleIdx];
+    Info<< nl << "Particle pressure formula 2: " << physicoChemical::k.value()*rhoN[particleIdx]*translationalT[particleIdx];
+    Info<< nl << "Particle pressure from rhoM: " << rhoM[particleIdx]*overallT[particleIdx]*296.8;
+        Info<< nl << "Particle pressure from rhoM T_trans: " << rhoM[particleIdx]*translationalT[particleIdx]*296.8;
+    Info<< nl << "Particle overallT: " << overallT[particleIdx];
+    Info<< nl << "Particle TRans T: " << translationalT[particleIdx] << nl;
+  
 
     operator==((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx]));
 //}}} end code

@@ -30,12 +30,12 @@ mixture
 {
     specie
     {
-        molWeight       28.96; // N2
+        molWeight       28.013; // N2
     }
     thermodynamics
     {
-        Cp              1004.5;
-        Hf              2.544e+06;
+        Cp              1146;
+        Hf              2.544e+06; //heat of fusion doesnt matter as we dont change phases
     }
     transport
     {

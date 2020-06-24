@@ -58,7 +58,7 @@ maxDeltaT       1;
         "libcustomBCs.so"
     );
 
-/*
+
 functions
 {    
     fieldAverage1
@@ -75,63 +75,63 @@ functions
                 mean        on;
                 prime2Mean  off;
                 base        iteration;
-                window      1;
+                window      5;
             }
             rhoM
             {
                 mean        on;
                 prime2Mean  off;
                 base        iteration;
-                window      1;
+                window      5;
             }
             dsmcRhoN
             {
                 mean        on;
                 prime2Mean  off;
                 base        iteration;
-                window      1;
+                window      5;
             }
             momentum
             {
                 mean        on;
                 prime2Mean  off;
                 base        iteration;
-                window      1;
+                window      5;
             }
             linearKE
             {
                 mean        on;
                 prime2Mean  off;
                 base        iteration;
-                window      1;
+                window      5;
             }
             internalE
             {
                 mean        on;
                 prime2Mean  off;
                 base        iteration;
-                window      1;
+                window      5;
             }
             iDof
             {
                 mean        on;
                 prime2Mean  off;
                 base        iteration;
-                window      1;
+                window      5;
             }
             q
             {
                 mean        on;
                 prime2Mean  off;
                 base        iteration;
-                window      1;
+                window      5;
             }
             fD
             {
                 mean        on;
                 prime2Mean  off;
                 base        iteration;
-                window      1;
+                window      5;
             }
         );
     }
@@ -142,7 +142,7 @@ dsmcFieldsMod1
         writeControl    writeTime;
         region              particle;
 
-    }*/
+    }
 }
 
 // ************************************************************************* //

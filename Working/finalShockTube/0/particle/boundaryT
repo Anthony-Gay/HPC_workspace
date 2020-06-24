@@ -24,7 +24,7 @@ boundaryField
     
     DSMCBound
     {
-       //type symmetry;
+      // type symmetry;
         type            codedFixedValue;
         value           $internalField;
         redirectType    HPCParticleT;

@@ -21,8 +21,8 @@ species
 
 numberDensities
 {
-    density1          9.08471e21;
-    density2          2.63556e21;
+    density1          9.08471e21;//1.0e22;
+    density2          2.63556e21;//1.0e20;
 };
 
 distributions

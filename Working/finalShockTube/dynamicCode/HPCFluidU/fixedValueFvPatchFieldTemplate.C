@@ -51,11 +51,11 @@ namespace Foam
 extern "C"
 {
     // dynamicCode:
-    // SHA1 = 111c7b3e4c3afb521e8f6f47a88dd49d130e37cc
+    // SHA1 = 9b8b4e26a42272db7722b37117fea651ec7f91c3
     //
     // unique function name that can be checked if the correct library version
     // has been loaded
-    void HPCFluidU_111c7b3e4c3afb521e8f6f47a88dd49d130e37cc(bool load)
+    void HPCFluidU_9b8b4e26a42272db7722b37117fea651ec7f91c3(bool load)
     {
         if (load)
         {
@@ -78,7 +78,7 @@ makeRemovablePatchTypeField
 
 
 const char* const HPCFluidUFixedValueFvPatchVectorField::SHA1sum =
-    "111c7b3e4c3afb521e8f6f47a88dd49d130e37cc";
+    "9b8b4e26a42272db7722b37117fea651ec7f91c3";
 
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
@@ -94,7 +94,7 @@ HPCFluidUFixedValueFvPatchVectorField
 {
     if (false)
     {
-        Info<<"construct HPCFluidU sha1: 111c7b3e4c3afb521e8f6f47a88dd49d130e37cc"
+        Info<<"construct HPCFluidU sha1: 9b8b4e26a42272db7722b37117fea651ec7f91c3"
             " from patch/DimensionedField\n";
     }
 }
@@ -113,7 +113,7 @@ HPCFluidUFixedValueFvPatchVectorField
 {
     if (false)
     {
-        Info<<"construct HPCFluidU sha1: 111c7b3e4c3afb521e8f6f47a88dd49d130e37cc"
+        Info<<"construct HPCFluidU sha1: 9b8b4e26a42272db7722b37117fea651ec7f91c3"
             " from patch/DimensionedField/mapper\n";
     }
 }
@@ -131,7 +131,7 @@ HPCFluidUFixedValueFvPatchVectorField
 {
     if (false)
     {
-        Info<<"construct HPCFluidU sha1: 111c7b3e4c3afb521e8f6f47a88dd49d130e37cc"
+        Info<<"construct HPCFluidU sha1: 9b8b4e26a42272db7722b37117fea651ec7f91c3"
             " from patch/dictionary\n";
     }
 }
@@ -147,7 +147,7 @@ HPCFluidUFixedValueFvPatchVectorField
 {
     if (false)
     {
-        Info<<"construct HPCFluidU sha1: 111c7b3e4c3afb521e8f6f47a88dd49d130e37cc"
+        Info<<"construct HPCFluidU sha1: 9b8b4e26a42272db7722b37117fea651ec7f91c3"
             " as copy\n";
     }
 }
@@ -164,7 +164,7 @@ HPCFluidUFixedValueFvPatchVectorField
 {
     if (false)
     {
-        Info<<"construct HPCFluidU sha1: 111c7b3e4c3afb521e8f6f47a88dd49d130e37cc "
+        Info<<"construct HPCFluidU sha1: 9b8b4e26a42272db7722b37117fea651ec7f91c3 "
             "as copy/DimensionedField\n";
     }
 }
@@ -177,7 +177,7 @@ HPCFluidUFixedValueFvPatchVectorField::
 {
     if (false)
     {
-        Info<<"destroy HPCFluidU sha1: 111c7b3e4c3afb521e8f6f47a88dd49d130e37cc\n";
+        Info<<"destroy HPCFluidU sha1: 9b8b4e26a42272db7722b37117fea651ec7f91c3\n";
     }
 }
 
@@ -193,11 +193,11 @@ void HPCFluidUFixedValueFvPatchVectorField::updateCoeffs()
 
     if (false)
     {
-        Info<<"updateCoeffs HPCFluidU sha1: 111c7b3e4c3afb521e8f6f47a88dd49d130e37cc\n";
+        Info<<"updateCoeffs HPCFluidU sha1: 9b8b4e26a42272db7722b37117fea651ec7f91c3\n";
     }
 
 //{{{ begin code
-    #line 151 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluidU"
+    #line 188 "/home/anthonygay1812/OpenFOAM/Working/finalShockTube/system/fluid/codeDict.HPCFluidU"
 const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
     const fvMesh& partMesh = db().parent().lookupObject<fvMesh>("particle");
 
@@ -221,9 +221,12 @@ const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
 
     const label fluidIdx=fluidMesh.nCells()-1;
     const label particleIdx=0;
-    const scalar w=0;//0.4; 
+    const scalar w=0.4; 
     
-    //Info<< nl << "FLUID TEMP BC";
+    Info<< nl << "FLUID VEL BC";
+    Info<< nl << "Particle velocity: " << U[particleIdx];
+        Info<< nl << "Fluid velocity : " << UFluid[fluidIdx];
+
     operator==((1-w)*UFluidOld[fluidIdx]+w*(0.5*UFluid[fluidIdx]+0.5*U[particleIdx]));
 //}}} end code
 

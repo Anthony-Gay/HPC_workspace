@@ -27,6 +27,11 @@ HPCFluidP
     const volScalarField& rhoN = partMesh.lookupObject<volScalarField>("rhoN");
     const volScalarField& rhoM = partMesh.lookupObject<volScalarField>("rhoM");
     const volScalarField& linearKE = partMesh.lookupObject<volScalarField>("linearKE");
+    const volScalarField& internalE = partMesh.lookupObject<volScalarField>("internalE");
+    const volScalarField& iDof = partMesh.lookupObject<volScalarField>("iDof");
+
+ 
+            
 
   volVectorField U
     (
@@ -38,6 +43,19 @@ HPCFluidP
             IOobject::NO_READ
         ),
         momentum/rhoM
+    );
+
+  volScalarField overallT
+    (
+        IOobject
+        (
+            "overallT",
+            partMesh.time().timeName(),
+            partMesh,
+            IOobject::NO_READ
+        ),
+        2.0/(physicoChemical::k.value()*(3.0*rhoN + iDof))
+      *(linearKE - 0.5*rhoM*(U & U) + internalE)
     );
 
   volScalarField translationalT
@@ -61,18 +79,21 @@ HPCFluidP
             partMesh,
             IOobject::NO_READ
         ),
-        physicoChemical::k.value()*rhoN*translationalT
+        physicoChemical::k.value()*rhoN*translationalT //https://courses.lumenlearning.com/physics/chapter/13-3-the-ideal-gas-law/
     );
     
     const label fluidIdx=fluidMesh.nCells()-1;
     const label particleIdx=0;
-    const scalar w=0;//0.4; 
+    const scalar w=0.4; 
     
-    /*Info<< nl << "FLUID BC";
-    Info<< nl << "Expected Pressure: 1.1288316e2";
-    Info<< nl << "Particle pressure: " << pParticle[particleIdx];
-    Info<< nl << "Fluid pressure: " << pFluid[fluidIdx];
-    Info<< nl << "Fluid old pressure: " << pFluidOld[fluidIdx];*/
+    Info<< nl << "FLUID PRESSURE BC";
+    Info<< nl << "Particle pressure formula 1: " << pParticle[particleIdx];
+    Info<< nl << "Particle pressure formula 2: " << physicoChemical::k.value()*rhoN[particleIdx]*translationalT[particleIdx];
+    Info<< nl << "Particle pressure from rhoM: " << rhoM[particleIdx]*overallT[particleIdx]*296.8;
+        Info<< nl << "Particle pressure from rhoM T_trans: " << rhoM[particleIdx]*translationalT[particleIdx]*296.8;
+    Info<< nl << "Particle overallT: " << overallT[particleIdx];
+    Info<< nl << "Particle TRans T: " << translationalT[particleIdx] << nl;
+  
 
     operator==((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx])); 
 
@@ -114,6 +135,18 @@ HPCFluidT
                 ),
                 momentum/rhoM
             );
+            
+volScalarField translationalT
+    (
+        IOobject
+        (
+            "TTranslationalPart",
+            partMesh.time().timeName(),
+            partMesh,
+            IOobject::NO_READ
+        ),
+        2.0/(3.0*physicoChemical::k.value()*rhoN)*(linearKE - 0.5*rhoM*(U & U))
+    );
 
     volScalarField overallT
             (
@@ -131,10 +164,14 @@ HPCFluidT
 
     const label fluidIdx=fluidMesh.nCells()-1;
     const label particleIdx=0;
-    const scalar w=0;//0.4; 
+    const scalar w=0.4; 
     
-    //Info<< nl << "FLUID TEMP BC";
-    operator==((1-w)*TFluidOld[fluidIdx]+w*(0.5*TFluid[fluidIdx]+0.5*overallT[particleIdx])); 
+     Info<< nl << "FLUID TEMP BC";
+    Info<< nl << "Particle overallT: " << overallT[particleIdx];
+    Info<< nl << "Particle TRans T: " << translationalT[particleIdx];
+    Info<< nl << "Fluid Temp: " << TFluid[fluidIdx] << nl;
+
+    operator==((1-w)*TFluidOld[fluidIdx]+w*(0.5*TFluid[fluidIdx]+0.5*translationalT[particleIdx])); 
 
   #};
   codeInclude
@@ -171,9 +208,12 @@ HPCFluidU
 
     const label fluidIdx=fluidMesh.nCells()-1;
     const label particleIdx=0;
-    const scalar w=0;//0.4; 
+    const scalar w=0.4; 
     
-    //Info<< nl << "FLUID TEMP BC";
+    Info<< nl << "FLUID VEL BC";
+    Info<< nl << "Particle velocity: " << U[particleIdx];
+        Info<< nl << "Fluid velocity : " << UFluid[fluidIdx];
+
     operator==((1-w)*UFluidOld[fluidIdx]+w*(0.5*UFluid[fluidIdx]+0.5*U[particleIdx])); 
 
   #};

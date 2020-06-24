@@ -42,7 +42,7 @@ LarsenBorgnakkeVariableHardSphereCoeffs
 
 // Inflow Boundary Model
 // ~~~~~~~~~~~~~~~~~~~~~
-InflowBoundaryModel             oneDirectionalHybridDSMC;
+InflowBoundaryModel             oneDirectionalHybridDSMC;//oneDirectionalHybridDSMC; none
 
 oneDirectionalHybridDSMCCoeffs
 {

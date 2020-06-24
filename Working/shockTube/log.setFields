@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : setFields
-Date   : May 11 2020
-Time   : 00:06:50
+Date   : Jun 24 2020
+Time   : 01:33:56
 Host   : "DESKTOP-KF81SG4"
-PID    : 27837
+PID    : 5225
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/Working/shockTube
 nProcs : 1

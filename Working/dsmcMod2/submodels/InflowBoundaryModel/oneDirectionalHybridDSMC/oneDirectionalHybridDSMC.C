@@ -207,10 +207,10 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
     const fvMesh& fluidMeshRef_ = cloud.parent().parent().objectRegistry::lookupObject<fvMesh>("fluid");
     label fluidBoundPatchId=fluidMeshRef_.boundaryMesh().findPatchID("fluidBound");
     
-    const volScalarField& pFluid = fluidMeshRef_.lookupObject<volScalarField>("p");     
-    const scalar boundaryp
+    const volScalarField& rhoFluid = fluidMeshRef_.lookupObject<volScalarField>("rho");     
+    const scalar boundaryRho
     (
-        pFluid.boundaryField()[fluidBoundPatchId][0]
+        rhoFluid.boundaryField()[fluidBoundPatchId][0]
     );
 
     const volScalarField& TFluid = fluidMeshRef_.lookupObject<volScalarField>("T");     
@@ -225,7 +225,9 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
         UFluid.boundaryField()[fluidBoundPatchId][0]
     );
     
-    numberDensities_=boundaryp/(mass*boundaryT*296.8);
+
+
+    numberDensities_=boundaryRho/mass;
     numberDensities_ /= cloud.nParticle();
     Info<< nl << "Virtual Number Density of inserted particles: "<<numberDensities_[0];
 
@@ -260,7 +262,7 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
                     mass
                 )
             );
-            Info<< nl << "Used Temp: "<<boundaryT;
+            Info<< nl << "Particle Boundary Temp: "<<boundaryT;
 
             // Dotting boundary velocity with the face unit normal
             // (which points out of the domain, so it must be
@@ -272,7 +274,7 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
                 (boundaryU & -patch.faceAreas()/mag(patch.faceAreas()))
               / mostProbableSpeed
             );
-            Info<< nl << "Used Velocity: "<<boundaryU;
+            Info<< nl << "Particle Boundary Velocity: "<<boundaryU;
 
             // From Bird eqn 4.22 -> gives equalibrium inflow we need non equalibrium
             
@@ -285,11 +287,11 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
                 )
                /(2.0*sqrtPi);
 
-            Info<< nl << "Delta T: "<<deltaT;
+            /*Info<< nl << "Delta T: "<<deltaT;
             Info<< nl << "mostProbableSpeed: "<<mostProbableSpeed;
             Info<< nl << "PFA: "<<pFA[i];
 
-            Info<< nl << "sCosTheta term: "<<sCosTheta;
+            Info<< nl << "sCosTheta term: "<<sCosTheta;*/
 
         }
 

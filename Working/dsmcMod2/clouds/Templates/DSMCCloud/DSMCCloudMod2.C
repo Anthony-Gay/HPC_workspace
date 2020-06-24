@@ -289,8 +289,8 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
         );
 
         scalar numCells=(mesh_.cells()).size();
-        scalar MFP=1.0/(diameter*numberDensity);
-        scalar KN=MFP/(xDim*numCells);
+        scalar MFP=1.0/(3.141592*pow(diameter/2,2)*numberDensity);
+        scalar KN=MFP/xDim;
         Info <<nl<< "Knudsen:"<<KN;
 
         if ((KN)>5)
