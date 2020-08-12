@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : setFields
-Date   : May 08 2020
-Time   : 01:43:15
+Date   : Jul 15 2020
+Time   : 01:18:36
 Host   : "DESKTOP-KF81SG4"
-PID    : 16816
+PID    : 26588
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube
 nProcs : 1
@@ -29,14 +29,6 @@ Setting field default values
     Setting internal values of volVectorField U
     Setting internal values of volScalarField T
     Setting internal values of volScalarField p
-Using dynamicCode for patch sides on field p at line 25 in "/home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube/0/p.boundaryField.sides"
-Creating new library in "dynamicCode/HPCFluid/platforms/linux64GccDPInt32Opt/lib/libHPCFluid_63ac19f166ab850d826a1946c60e72e3aaae4679.so"
-Invoking "wmake -s libso /home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube/dynamicCode/HPCFluid"
-wmake libso /home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube/dynamicCode/HPCFluid
-    ln: ./lnInclude
-    wmkdep: fixedValueFvPatchFieldTemplate.C
-    Ctoo: fixedValueFvPatchFieldTemplate.C
-    ld: /home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube/dynamicCode/HPCFluid/../platforms/linux64GccDPInt32Opt/lib/libHPCFluid_63ac19f166ab850d826a1946c60e72e3aaae4679.so
 
 Setting field region values
     Adding cells with center within boxes 1((0 -1 -1) (5 1 1))

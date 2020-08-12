@@ -1,0 +1,67 @@
+--------------------------------------------------------------------------
+WARNING: Linux kernel CMA support was requested via the
+btl_vader_single_copy_mechanism MCA variable, but CMA support is
+not available due to restrictive ptrace settings.
+
+The vader shared memory BTL will fall back on another single-copy
+mechanism if one is available. This may result in lower performance.
+
+  Local host: DESKTOP-KF81SG4
+--------------------------------------------------------------------------
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : dsmcInitialise -parallel
+Date   : Jun 26 2020
+Time   : 21:58:15
+Host   : "DESKTOP-KF81SG4"
+PID    : 32554
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/tutorials/tutorials/discreteMethods/dsmcFoam/wedge15Ma5
+nProcs : 4
+Slaves : 
+3
+(
+"DESKTOP-KF81SG4.32555"
+"DESKTOP-KF81SG4.32556"
+"DESKTOP-KF81SG4.32557"
+)
+
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Initialising dsmc for Time = 0
+
+
+Constructing constant properties for
+    N2
+    O2
+
+Initialising particles
+
+Total number of molecules added: 20984
+
+
+ClockTime = 0 s
+
+End
+
+Finalising parallel run
+[DESKTOP-KF81SG4:32549] 3 more processes have sent help message help-btl-vader.txt / cma-permission-denied
+[DESKTOP-KF81SG4:32549] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

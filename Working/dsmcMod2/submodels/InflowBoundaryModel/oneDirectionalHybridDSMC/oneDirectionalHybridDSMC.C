@@ -228,9 +228,12 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
 
 
     numberDensities_=boundaryRho/mass;
+    Info<< nl << "Particle Inflow BC: "<<endl;
+
+    Info<< nl << "Number Density of inserted particles: "<<numberDensities_;
+
     numberDensities_ /= cloud.nParticle();
     Info<< nl << "Virtual Number Density of inserted particles: "<<numberDensities_[0];
-
 //////////////////////////////////////////////////////////////////////
         
         label patchi = patches_;
@@ -276,22 +279,15 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
             );
             Info<< nl << "Particle Boundary Velocity: "<<boundaryU;
 
-            // From Bird eqn 4.22 -> gives equalibrium inflow we need non equalibrium
+            // From Bird eqn 4.22
             
-            // 
-            //numberDensities_[i]*mostProbableSpeed*deltaT;
+            
                pFA[i] +=mag(patch.faceAreas())*numberDensities_[i]*deltaT 
                *mostProbableSpeed
                *(
                    exp(-sqr(sCosTheta)) + sqrtPi*sCosTheta*(1 + erf(sCosTheta))
                 )
                /(2.0*sqrtPi);
-
-            /*Info<< nl << "Delta T: "<<deltaT;
-            Info<< nl << "mostProbableSpeed: "<<mostProbableSpeed;
-            Info<< nl << "PFA: "<<pFA[i];
-
-            Info<< nl << "sCosTheta term: "<<sCosTheta;*/
 
         }
 
@@ -476,7 +472,7 @@ void Foam::oneDirectionalHybridDSMC<CloudType>::inflow()
                     );
 
                     cloud.addNewParcel(p, celli, U, Ei, typeId);
-                    //Info<<"This is the cell in which injected particles are placed" << celli <<nl;
+                   // Info<<"This is the cell in which injected particles are placed" << celli <<nl;
                     particlesInserted++;
                 }
             }

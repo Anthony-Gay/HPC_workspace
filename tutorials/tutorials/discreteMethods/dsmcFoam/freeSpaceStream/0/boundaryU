@@ -23,19 +23,19 @@ boundaryField
     outlet
     {
         type            fixedValue;
-        value           uniform (1325 -352 823);
+        value           uniform (10 -10 10);//uniform (1325 -352 823);
     }
 
     inlet
     {
         type            fixedValue;
-        value           uniform (1325 -352 823);
+        value           uniform (0 0 0);//uniform (1325 -352 823);
     }
 
     sides
     {
         type            fixedValue;
-        value           uniform (1325 -352 823);
+        value           uniform (10 -10 10);//uniform (1325 -352 823);
     }
 }
 

@@ -1,0 +1,90 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : splitMeshRegions -cellZones -overwrite
+Date   : Jul 14 2020
+Time   : 01:30:55
+Host   : "DESKTOP-KF81SG4"
+PID    : 25566
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/tutorials/tutorials/heatTransfer/chtMultiRegionFoam/heatedDuct
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Creating single patch per inter-region interface.
+
+Trying to match regions to existing cell zones.
+
+
+Number of regions:3
+
+Writing region per cell file (for manual decomposition) to "/home/anthonygay1812/OpenFOAM/tutorials/tutorials/heatTransfer/chtMultiRegionFoam/heatedDuct/constant/cellToRegion"
+
+Writing region per cell as volScalarField to "/home/anthonygay1812/OpenFOAM/tutorials/tutorials/heatTransfer/chtMultiRegionFoam/heatedDuct/0/cellToRegion"
+
+Region	Cells
+------	-----
+0	16800
+1	67440
+2	40560
+
+Region	Zone	Name
+------	----	----
+0	1	heater
+1	2	metal
+2	0	fluid
+
+Sizes of interfaces between regions:
+
+Interface	Region	Region	Faces
+---------	------	------	-----
+0		0	1	3360
+1		1	2	15360
+
+Reading geometric fields
+
+Reading volScalarField cellToRegion
+
+
+Adding patches
+
+
+Adding patches
+
+For interface between region heater and metal added patches
+    8	heater_to_metal
+    9	metal_to_heater
+For interface between region metal and fluid added patches
+    10	metal_to_fluid
+    11	fluid_to_metal
+
+Region 0
+-------- 
+Creating mesh for region 0 heater
+Testing:"/home/anthonygay1812/OpenFOAM/tutorials/tutorials/heatTransfer/chtMultiRegionFoam/heatedDuct/system/heater/fvSchemes"
+Mapping fields
+Mapping field cellToRegion
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region0 points back to base mesh.
+Writing map faceRegionAddressing from region0 faces back to base mesh.
+Writing map cellRegionAddressing from region0 cells back to base mesh.
+Writing map boundaryRegionAddressing from region0 boundary back to base mesh.
+
+Region 1
+-------- 
+Creating mesh for region 1 metal
+Testing:"/home/anthonygay1812/OpenFOAM/tutorials/tutorials/heatTransfer/chtMultiRegionFoam/heatedDuct/system/metal/fvSchemes"

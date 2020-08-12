@@ -1,0 +1,78 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : blockMesh
+Date   : Jul 14 2020
+Time   : 01:30:22
+Host   : "DESKTOP-KF81SG4"
+PID    : 25449
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/tutorials/tutorials/heatTransfer/chtMultiRegionFoam/heatedDuct
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from
+    "/home/anthonygay1812/OpenFOAM/tutorials/tutorials/heatTransfer/chtMultiRegionFoam/heatedDuct/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+--> FOAM Warning : 
+    From function Foam::polyMesh::polyMesh(const Foam::IOobject&, Foam::pointField&&, const cellShapeList&, const faceListList&, const wordList&, const Foam::PtrList<Foam::dictionary>&, const Foam::word&, const Foam::word&, bool)
+    in file meshes/polyMesh/polyMeshFromShapeMesh.C at line 873
+    Found 6 undefined faces in mesh; adding to default patch.
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 0.001
+    Block 0 cell size :
+        i : 0.0025001 .. 0.0025001
+        j : 0.00250008 .. 0.00250008
+        k : 0.00250003 .. 0.00250003
+
+There are no merge patch pairs edges
+
+Adding cell zones
+    0	fluid
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (-1e-06 -0.010001 -1e-06) (0.050001 0.050001 0.150001)
+  nPoints: 32025
+  nCells: 28800
+  nFaces: 89520
+  nInternalFaces: 83280
+----------------
+Patches
+----------------
+  patch 0 (start: 83280 size: 6240) name: default
+
+End
+

@@ -1,1 +1,0 @@
-LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libHPCParticleT_20b915806a40ca86fbcd1ff056a9a8ac25b3fd27

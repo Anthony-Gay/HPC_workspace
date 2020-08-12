@@ -1,0 +1,51 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    location    "0.007";
+    object      fDMean;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    flow
+    {
+        type            calculated;
+        value           uniform (0 0 0);
+    }
+    obstacle
+    {
+        type            calculated;
+        value           nonuniform List<vector> 10((0.1358724679 -0.4191847279 0.003801161479) (0.1375198119 -0.4006427991 0.006616911972) (0.1373777283 -0.4253948187 -0.005023847118) (0.158881123 -0.4350430033 0.01251978953) (0.1472339546 -0.3891687315 0.002179831807) (0.1507920368 -0.4254813191 -0.00764902942) (0.1646064003 -0.3902043451 -0.02357887458) (0.1279652781 -0.4141794592 -0.007832734335) (0.1498346724 -0.3988527875 0.01110430148) (0.1520639201 -0.426074701 0.0009862457071));
+    }
+    frontAndBack
+    {
+        type            empty;
+    }
+    procBoundary0to1
+    {
+        type            processor;
+        value           uniform (0 0 0);
+    }
+    procBoundary0to2
+    {
+        type            processor;
+        value           uniform (0 0 0);
+    }
+}
+
+
+// ************************************************************************* //

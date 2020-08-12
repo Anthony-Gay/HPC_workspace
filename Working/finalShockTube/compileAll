@@ -2,8 +2,8 @@
 cd $HOME/OpenFOAM/Working/dsmcMod2
 wclean
 wmake libso
-#cd $HOME/OpenFOAM/Working/Hybrid
-#wclean
-#wmake 
+cd $HOME/OpenFOAM/Working/Hybrid
+wclean
+wmake 
 cd $HOME/OpenFOAM/Working/finalShockTube
 

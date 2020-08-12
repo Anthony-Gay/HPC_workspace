@@ -21,22 +21,22 @@ species
 
 numberDensities
 {
-    density1          9.08471e22;
-    density2          2.63556e22;
+    density1          2.1505E+22;//9.08471e19;
+    density2          2.6882E+21;//2.63556e19;
 };
 
 distributions
 {
     start1          0;
-    stop1           250;
-    start2          250;
-    stop2           500;
+    stop1           500;
+    start2          500;
+    stop2           1000;
 };
 
 temperature     
 {
-    temp1        900;
-    temp2        300;
+    temp1        0.0034;
+    temp2        0.0027;
 };
 
 velocity        (0 0 0);

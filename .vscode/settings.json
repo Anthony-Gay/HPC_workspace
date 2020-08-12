@@ -112,6 +112,8 @@
         "limits": "cpp",
         "sstream": "cpp",
         "physicoChemicalConstants.C": "cpp",
-        "fundamentalConstants.C": "cpp"
+        "fundamentalConstants.C": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp"
     }
 }

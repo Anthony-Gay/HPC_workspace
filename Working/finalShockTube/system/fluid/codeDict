@@ -83,7 +83,7 @@ HPCFluidP
     );
     
     const label fluidIdx=fluidMesh.nCells()-1;
-    const label particleIdx=0;
+    const label particleIdx=0;//1;
     const scalar w=0.4; 
     
     Info<< nl << "FLUID PRESSURE BC";
@@ -163,7 +163,7 @@ volScalarField translationalT
 
 
     const label fluidIdx=fluidMesh.nCells()-1;
-    const label particleIdx=0;
+    const label particleIdx=0;//1;
     const scalar w=0.4; 
     
      Info<< nl << "FLUID TEMP BC";
@@ -207,13 +207,15 @@ HPCFluidU
             );
 
     const label fluidIdx=fluidMesh.nCells()-1;
-    const label particleIdx=0;
+    const label particleIdx=0;//1;
     const scalar w=0.4; 
     
     Info<< nl << "FLUID VEL BC";
     Info<< nl << "Particle velocity: " << U[particleIdx];
-        Info<< nl << "Fluid velocity : " << UFluid[fluidIdx];
-
+    Info<< nl << "Fluid velocity : " << UFluid[fluidIdx];
+    Info<< nl << "Particle index: " << particleIdx;
+    Info<< nl << "Fluid index : " << fluidIdx;
+        Info<< nl << "Fluid Velocity : " << (1-w)*UFluidOld[fluidIdx]+w*(0.5*UFluid[fluidIdx]+0.5*U[particleIdx]);
     operator==((1-w)*UFluidOld[fluidIdx]+w*(0.5*UFluid[fluidIdx]+0.5*U[particleIdx])); 
 
   #};

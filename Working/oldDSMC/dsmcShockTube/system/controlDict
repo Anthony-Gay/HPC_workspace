@@ -23,13 +23,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         3.6e-3;
+endTime         0.25;
 
-deltaT          3e-6;
+deltaT          6.25e-4;
 
 writeControl    adjustableRunTime;
 
-writeInterval   3.6e-4;
+writeInterval   0.025;
 
 purgeWrite      0;
 
@@ -50,8 +50,8 @@ adjustTimeStep  yes;
 maxCo           0.2; // max currant number
 
 maxDeltaT       1;
-/*
-functions
+
+/*functions
 {
     fieldAverage1
     {
@@ -65,55 +65,64 @@ functions
             {
                 mean        on;
                 prime2Mean  off;
-                base        time;
+                base        iteration;
+                window      1;
             }
             rhoM
             {
                 mean        on;
                 prime2Mean  off;
-                base        time;
+                base        iteration;
+                window      1;
             }
             dsmcRhoN
             {
                 mean        on;
                 prime2Mean  off;
-                base        time;
+                base        iteration;
+                window      1;
             }
             momentum
             {
                 mean        on;
                 prime2Mean  off;
-                base        time;
+                base        iteration;
+                window      1;
             }
             linearKE
             {
                 mean        on;
                 prime2Mean  off;
-                base        time;
+                base        iteration;
+                window      1;
             }
             internalE
             {
                 mean        on;
                 prime2Mean  off;
-                base        time;
+                base        iteration;
+                window      1;
             }
             iDof
             {
                 mean        on;
                 prime2Mean  off;
-                base        time;
+                base        iteration;
+                window      1;
             }
             q
             {
                 mean        on;
                 prime2Mean  off;
-                base        time;
+                base        iteration;
+                window      1;
             }
             fD
             {
                 mean        on;
                 prime2Mean  off;
-                base        time;
+                base        iteration;
+                window      1;
             }
         );
     }
@@ -125,8 +134,8 @@ functions
         writeControl    writeTime;
     }
     
-}
-*/
+}*/
+
 libs
     (
         "libDSMC_mod.so"

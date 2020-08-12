@@ -167,7 +167,6 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
     {
         numberDensities[i] /= nParticle_;
     }
-    //Hardcoded temp for most probable maxwellian speed lines 282-296
 
     // Begin meshgrid population
     forAll(numberDensitiesList, i)
@@ -183,7 +182,8 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
             << "Distribution dict must have even pairs." << nl
             << abort(FatalError);
         }
-        
+        //Info<<"Start: "<<idxStart<<endl;
+                //Info<<"Start: "<<idxStop<<endl;
         for (Foam::label celli=idxStart; celli<idxStop; celli++) 
         {
             List<tetIndices> cellTets = polyMeshTetDecomposition::cellTetIndices
@@ -288,16 +288,17 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
             molDict.lookup("diameter")        
         );
 
-        scalar numCells=(mesh_.cells()).size();
-        scalar MFP=1.0/(3.141592*pow(diameter/2,2)*numberDensity);
+        //scalar numCells=(mesh_.cells()).size();
+        scalar MFP=1.0/(3.141592*pow(diameter,2)*numberDensity*nParticle_);
+        Info<<nl<<"MFP: "<<MFP;
         scalar KN=MFP/xDim;
         Info <<nl<< "Knudsen:"<<KN;
 
-        if ((KN)>5)
+        if ((KN)>10)
         {
             Info <<nl<< "Particle regime for cells "<< idxStart << " to "<< idxStop<<endl;
         }
-        else if ((KN)<5)
+        else if ((KN)<0.1)
         {
             Info <<nl<< "Fluid regime for cells "<< idxStart << " to "<< idxStop<<endl;
         }

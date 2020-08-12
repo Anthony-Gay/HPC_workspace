@@ -1,1 +1,0 @@
-LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libHPCFluidP_a6d23aedfcb9d8349035819c70b7760d0e9994dd

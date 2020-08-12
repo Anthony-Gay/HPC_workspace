@@ -15,13 +15,13 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains 4;
+/*numberOfSubdomains 4;
 
 method          simple;
 
 simpleCoeffs
 {
-    n               (4 1 1);
+    n               (2 1 1);
     delta           0.001;
 }
 
@@ -40,6 +40,41 @@ manualCoeffs
 distributed     no;
 
 roots           ( );
+*/
+numberOfSubdomains  4;
+method  simple;
 
+regions
+{
+    fluid
+    {
+        numberOfSubdomains  1;
+        method  simple;
+        
+            n   (1 1 1);
+            delta           0.001;
+        
+    }
 
+    particle
+    {
+        numberOfSubdomains  3;
+        method  simple;
+        
+            n               (3 1 1);
+            delta           0.001;
+        
+    }
+}
+
+/*numberOfSubdomains 3;
+
+method          hierarchical;
+
+hierarchicalCoeffs
+{
+    n           (3 1 1);
+    delta       0.001;
+    order       xyz;
+}*/
 // ************************************************************************* //

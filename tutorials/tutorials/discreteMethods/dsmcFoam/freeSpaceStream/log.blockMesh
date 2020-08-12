@@ -1,0 +1,73 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : blockMesh
+Date   : Jun 26 2020
+Time   : 21:30:32
+Host   : "DESKTOP-KF81SG4"
+PID    : 31182
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/tutorials/tutorials/discreteMethods/dsmcFoam/freeSpaceStream
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from
+    "/home/anthonygay1812/OpenFOAM/tutorials/tutorials/discreteMethods/dsmcFoam/freeSpaceStream/system/blockMeshDict"
+No non-linear block edges defined
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 0.01
+    Block 0 cell size :
+        i : 0.005
+        j : 0.005
+        k : 0.005
+
+There are no merge patch pairs edges
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (-0.05 -0.04 -0.04) (0.05 0.04 0.04)
+  nPoints: 6069
+  nCells: 5120
+  nFaces: 16256
+  nInternalFaces: 14464
+----------------
+Patches
+----------------
+  patch 0 (start: 14464 size: 256) name: outlet
+  patch 1 (start: 14720 size: 256) name: inlet
+  patch 2 (start: 14976 size: 1280) name: sides
+
+End
+

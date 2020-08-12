@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-1ff648926f77
 Exec   : postProcess -func sample
-Date   : May 08 2020
-Time   : 01:43:25
+Date   : Jul 15 2020
+Time   : 01:18:37
 Host   : "DESKTOP-KF81SG4"
-PID    : 17154
+PID    : 26592
 I/O    : uncollated
 Case   : /home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube
 nProcs : 1
@@ -29,14 +29,83 @@ Reading set description:
 Time = 0
 
 Reading fields:
-    volScalarFields: T pUsing dynamicCode for patch sides on field p at line 1030 in "/home/anthonygay1812/OpenFOAM/tutorials/tutorials/compressible/rhoCentralFoam/shockTube/0/p.boundaryField.sides"
-
+    volScalarFields: T p
 
 Executing functionObjects
 --> FOAM Warning : 
     From function Foam::label Foam::sampledSets::classifyFields()
     in file sampledSet/sampledSets/sampledSetsGrouping.C at line 140
     Cannot find registered field matching mag(U)
+
+Time = 0.00036
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
+
+Time = 0.00072
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
+
+Time = 0.00108
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
+
+Time = 0.00144
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
+
+Time = 0.0018
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
+
+Time = 0.00216
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
+
+Time = 0.00252
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
+
+Time = 0.00288
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
+
+Time = 0.00324
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
+
+Time = 0.0036
+
+Reading fields:
+    volScalarFields: mag(U) p T
+
+Executing functionObjects
 
 End
 

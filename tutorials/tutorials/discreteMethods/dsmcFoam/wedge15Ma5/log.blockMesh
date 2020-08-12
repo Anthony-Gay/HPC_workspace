@@ -1,0 +1,75 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : blockMesh
+Date   : Jun 26 2020
+Time   : 21:58:14
+Host   : "DESKTOP-KF81SG4"
+PID    : 32538
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/tutorials/tutorials/discreteMethods/dsmcFoam/wedge15Ma5
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from
+    "/home/anthonygay1812/OpenFOAM/tutorials/tutorials/discreteMethods/dsmcFoam/wedge15Ma5/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 1
+		Number of boundary faces : 10
+		Number of defined boundary faces : 10
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 0.007621 .. 0.007621
+        j : 0.0075 .. 0.0075
+        k : 0.0084
+    Block 1 cell size :
+        i : 0.007888804495 .. 0.007888804495 0.007875747587 .. 0.007875747587 0.007888804495 .. 0.007888804495 0.007875747587 .. 0.007875747587 
+        j : 0.0075 .. 0.0075 0.007448955679 .. 0.007448955679 0.0075 .. 0.0075 0.007448955679 .. 0.007448955679 
+        k : 0.0084
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (-0.15242 0 -0.0042) (0.3048 0.3 0.0042)
+  nPoints: 5002
+  nCells: 2400
+  nFaces: 9700
+  nInternalFaces: 4700
+----------------
+Patches
+----------------
+  patch 0 (start: 4700 size: 160) name: flow
+  patch 1 (start: 4860 size: 40) name: obstacle
+  patch 2 (start: 4900 size: 4800) name: frontAndBack
+
+End
+
