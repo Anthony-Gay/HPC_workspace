@@ -5,6 +5,6 @@ cd ${0%/*} || exit 1    # Run from this directory
 . $WM_PROJECT_DIR/bin/tools/CleanFunctions
 
 cleanCase
-rm -rf constant/fluid/polyMesh constant/particle/polyMesh 0/particle/lagrangian 0/particle/dsmcSigmaTcRMax 0/particle/uniform > /dev/null 2>&1
+rm -rf 0/fluid/cellToRegion 0/particle/cellToRegion 0/cellToRegion constant/fluid/polyMesh constant/particle/polyMesh 0/particle/lagrangian 0/particle/dsmcSigmaTcRMax 0/particle/uniform > /dev/null 2>&1
 
 #------------------------------------------------------------------------------

@@ -15,7 +15,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     Hybrid;
+application     hybridFoam;
 
 startFrom       startTime;
 
@@ -23,13 +23,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         1.44e-3;//3.6e-3;//1.44e-3;
+endTime         0.25;
 
-deltaT          6e-6;
+deltaT          6.25e-4;
 
 writeControl    adjustableRunTime;
 
-writeInterval   3.6e-4;
+writeInterval   0.025;
 
 purgeWrite      0;
 
@@ -60,7 +60,7 @@ maxDeltaT       1;
 
 
 functions
-{    
+{    /*
     fieldAverage1
     {
         type            fieldAverage;
@@ -142,7 +142,7 @@ dsmcFieldsMod1
         writeControl    writeTime;
         region              particle;
 
-    }
+    }*/
 }
 
 // ************************************************************************* //

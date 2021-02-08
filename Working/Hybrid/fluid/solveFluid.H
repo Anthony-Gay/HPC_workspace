@@ -182,6 +182,9 @@ surfaceScalarField sigmaDotU
     )
     & (a_pos*U_pos + a_neg*U_neg)
 );
+//Info<<"Line 185 reached"<<nl;
+//Info<<"PhiEp "<< phiEp<<nl;
+//Info<<"sigmaDotU "<< sigmaDotU<<nl;
 
 solve
 (
@@ -209,7 +212,6 @@ if (!inviscid)
     thermo.correct();
     rhoE = rho*(e + 0.5*magSqr(U));
 }
-
 p.ref() =
     rho()
     /psi();
@@ -217,7 +219,6 @@ p.correctBoundaryConditions();
 rho.boundaryFieldRef() == psi.boundaryField()*p.boundaryField();
 
 turbulence->correct();
-
 //runTime.write();
 
 // ************************************************************************* //

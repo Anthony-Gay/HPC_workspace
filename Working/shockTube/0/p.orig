@@ -16,19 +16,14 @@ FoamFile
 
 dimensions      [1 -1 -2 0 0 0 0];
 
-internalField   uniform 1;
+internalField   uniform 0.001;
 
 boundaryField
 {
     sides
     {
-        type            codedFixedValue;
-        value           $internalField;
-        redirectType    HPCFluid;
-        code
-  #{
-        operator==(min(10, 0.1));
-  #};
+        type            zeroGradient;
+    }
 
     //type            fixedValue;
     //value           uniform 1;

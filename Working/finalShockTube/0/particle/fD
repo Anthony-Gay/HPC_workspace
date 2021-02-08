@@ -21,14 +21,16 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-    DSMCBound
+    partBound
     {
         type            zeroGradient;//symmetry;//zeroGradient;
     }
 
-    DSMCSide
+    partSide
     {
-        type            symmetry;
+        type            symmetry;//symmetry;//symmetry;//symmetry;
+        
+
     }
 
     nullDims

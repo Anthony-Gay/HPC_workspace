@@ -17,11 +17,16 @@ HPCFluidP
 {
   code
   #{    
+        Info<< nl << "FLUID PRESSURE BC";
     const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
     const fvMesh& partMesh = db().parent().lookupObject<fvMesh>("particle");
 
     const volScalarField& pFluid = db().lookupObject<volScalarField>("p");     
-    const volScalarField& pFluidOld=pFluid.oldTime();
+    label fluidBoundPatchId=fluidMesh.boundaryMesh().findPatchID("fluidBound");
+    const scalar pFluidBoundaryOld
+    (
+        pFluid.oldTime().boundaryField()[fluidBoundPatchId][0]
+    );
 
     const volVectorField& momentum = partMesh.lookupObject<volVectorField>("momentum");
     const volScalarField& rhoN = partMesh.lookupObject<volScalarField>("rhoN");
@@ -29,10 +34,7 @@ HPCFluidP
     const volScalarField& linearKE = partMesh.lookupObject<volScalarField>("linearKE");
     const volScalarField& internalE = partMesh.lookupObject<volScalarField>("internalE");
     const volScalarField& iDof = partMesh.lookupObject<volScalarField>("iDof");
-
- 
-            
-
+    
   volVectorField U
     (
         IOobject
@@ -79,23 +81,18 @@ HPCFluidP
             partMesh,
             IOobject::NO_READ
         ),
-        physicoChemical::k.value()*rhoN*translationalT //https://courses.lumenlearning.com/physics/chapter/13-3-the-ideal-gas-law/
+        physicoChemical::k.value()*rhoN*translationalT 
     );
     
     const label fluidIdx=fluidMesh.nCells()-1;
-    const label particleIdx=0;//1;
+    const label particleIdx=0;
     const scalar w=0.4; 
     
-    Info<< nl << "FLUID PRESSURE BC";
-    Info<< nl << "Particle pressure formula 1: " << pParticle[particleIdx];
-    Info<< nl << "Particle pressure formula 2: " << physicoChemical::k.value()*rhoN[particleIdx]*translationalT[particleIdx];
-    Info<< nl << "Particle pressure from rhoM: " << rhoM[particleIdx]*overallT[particleIdx]*296.8;
-        Info<< nl << "Particle pressure from rhoM T_trans: " << rhoM[particleIdx]*translationalT[particleIdx]*296.8;
-    Info<< nl << "Particle overallT: " << overallT[particleIdx];
-    Info<< nl << "Particle TRans T: " << translationalT[particleIdx] << nl;
-  
+    Info<< nl << "Particle pressure: " << pParticle[particleIdx];
+    Info<< nl << "Fluid pressure: " << pFluid[fluidIdx] << endl;
 
-    operator==((1-w)*pFluidOld[fluidIdx]+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx])); 
+
+    operator==((1-w)*pFluidBoundaryOld+w*(0.5*pFluid[fluidIdx]+0.5*pParticle[particleIdx])); 
 
   #};
   
@@ -115,7 +112,11 @@ HPCFluidT
     const fvMesh& partMesh = db().parent().lookupObject<fvMesh>("particle");
 
     const volScalarField& TFluid = db().lookupObject<volScalarField>("T");     
-    const volScalarField& TFluidOld=TFluid.oldTime();
+    label fluidBoundPatchId=fluidMesh.boundaryMesh().findPatchID("fluidBound");
+    const scalar TFluidBoundaryOld
+    (
+        TFluid.oldTime().boundaryField()[fluidBoundPatchId][0]
+    );
 
     const volVectorField& momentum = partMesh.lookupObject<volVectorField>("momentum");
     const volScalarField& rhoN = partMesh.lookupObject<volScalarField>("rhoN");
@@ -163,60 +164,56 @@ volScalarField translationalT
 
 
     const label fluidIdx=fluidMesh.nCells()-1;
-    const label particleIdx=0;//1;
+    const label particleIdx=0;
     const scalar w=0.4; 
     
-     Info<< nl << "FLUID TEMP BC";
-    Info<< nl << "Particle overallT: " << overallT[particleIdx];
-    Info<< nl << "Particle TRans T: " << translationalT[particleIdx];
-    Info<< nl << "Fluid Temp: " << TFluid[fluidIdx] << nl;
-
-    operator==((1-w)*TFluidOld[fluidIdx]+w*(0.5*TFluid[fluidIdx]+0.5*translationalT[particleIdx])); 
-
+    operator==((1-w)*TFluidBoundaryOld+w*(0.5*TFluid[fluidIdx]+0.5*translationalT[particleIdx])); 
   #};
-  codeInclude
-#{
-  #include "constants.H"
-  using namespace Foam::constant;
-#};
+
+    codeInclude
+  #{
+    #include "constants.H"
+    using namespace Foam::constant;
+  #};
 }
 
 HPCFluidU
 {
   code
   #{    
+    
     const fvMesh& fluidMesh = db().parent().lookupObject<fvMesh>("fluid");
-    const fvMesh& partMesh = db().parent().lookupObject<fvMesh>("particle");
+    const fvMesh& partMesh = db().parent().lookupObject<fvMesh>("particle"); 
+    const volVectorField& fluidU = fluidMesh.lookupObject<volVectorField>("U"); 
+    label fluidBoundPatchId=fluidMesh.boundaryMesh().findPatchID("fluidBound");
+    const vector UFluidBoundaryOld
+    (
+        fluidU.oldTime().boundaryField()[fluidBoundPatchId][0]
+    );
 
-    const volVectorField& UFluid = db().lookupObject<volVectorField>("U");     
-    const volVectorField& UFluidOld=UFluid.oldTime();
-   
-    const volVectorField& momentum = partMesh.lookupObject<volVectorField>("momentum");
-    const volScalarField& rhoM = partMesh.lookupObject<volScalarField>("rhoM");
-
-    volVectorField U
+    const volVectorField& partMomentum = partMesh.lookupObject<volVectorField>("momentum");
+    const volScalarField& partRhoM = partMesh.lookupObject<volScalarField>("rhoM");
+    
+    volVectorField partU
             (
                 IOobject
                 (
-                    "U",
+                    "uPart",
                     partMesh.time().timeName(),
                     partMesh,
                     IOobject::NO_READ
                 ),
-                momentum/rhoM
+              partMomentum/partRhoM
             );
+    
 
     const label fluidIdx=fluidMesh.nCells()-1;
-    const label particleIdx=0;//1;
+    const label particleIdx=0;
     const scalar w=0.4; 
-    
-    Info<< nl << "FLUID VEL BC";
-    Info<< nl << "Particle velocity: " << U[particleIdx];
-    Info<< nl << "Fluid velocity : " << UFluid[fluidIdx];
-    Info<< nl << "Particle index: " << particleIdx;
-    Info<< nl << "Fluid index : " << fluidIdx;
-        Info<< nl << "Fluid Velocity : " << (1-w)*UFluidOld[fluidIdx]+w*(0.5*UFluid[fluidIdx]+0.5*U[particleIdx]);
-    operator==((1-w)*UFluidOld[fluidIdx]+w*(0.5*UFluid[fluidIdx]+0.5*U[particleIdx])); 
+    const vector partUCell=partU[particleIdx];
+    const vector partUX(partUCell.component(vector::X),0,0);
+
+    operator==((1-w)*UFluidBoundaryOld+w*(0.5*fluidU[fluidIdx]+0.5*partU[particleIdx])); 
 
   #};
 }

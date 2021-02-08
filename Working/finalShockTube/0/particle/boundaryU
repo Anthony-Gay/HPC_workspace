@@ -22,7 +22,7 @@ internalField   uniform (0 0 0);
 boundaryField
 {
      
-    DSMCBound
+    partBound
     {
         //type symmetry;
         type            codedFixedValue;
@@ -30,9 +30,11 @@ boundaryField
         redirectType    HPCParticleU;
     }
 
-    DSMCSide
+    partSide
     {
-        type            symmetry;
+        //type            zeroGradient;//symmetry;
+                type    symmetry;//symmetry;
+
     }
 
     nullDims

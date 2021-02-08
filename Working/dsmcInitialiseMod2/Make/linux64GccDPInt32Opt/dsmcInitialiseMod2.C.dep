@@ -1,7 +1,7 @@
 $(OBJECTS_DIR)/dsmcInitialiseMod2.C.dep: \
 dsmcInitialiseMod2.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvCFD.H \
-/home/anthonygay1812/OpenFOAM/Working/dsmcMod2/lnInclude/dsmcCloud.H \
+/home/anthonygay1812/OpenFOAM/Working/dsmcMod2/lnInclude/dsmcCloudMod2.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/setRootCase.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/createTime.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/createMesh.H \
@@ -793,7 +793,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IFstream.H \
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/surfaceLocation.H \
 
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvCFD.H :
-/home/anthonygay1812/OpenFOAM/Working/dsmcMod2/lnInclude/dsmcCloud.H :
+/home/anthonygay1812/OpenFOAM/Working/dsmcMod2/lnInclude/dsmcCloudMod2.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/setRootCase.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/createTime.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/createMesh.H :

@@ -114,6 +114,8 @@
         "physicoChemicalConstants.C": "cpp",
         "fundamentalConstants.C": "cpp",
         "cmath": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "WallInteractionModel.C": "cpp",
+        "HybridFoam.C": "cpp"
     }
 }

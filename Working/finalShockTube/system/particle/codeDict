@@ -12,14 +12,14 @@ FoamFile
     class       dictionary;
     object      codeDict;
 } 
-
+// WARNING THESE DO NOT WORK
 HPCParticleT
 {
   code
   #{    
     const fvMesh& fluidMeshRef = db().parent().lookupObject<fvMesh>("fluid");
     label fluidBoundPatchId=fluidMeshRef.boundaryMesh().findPatchID("fluidBound");
-    Info<<"HPCParticleT Has been accessed!!!!!!!!!!!!!!!" <<nl;
+    Info<<"HPCParticleT Has been accessed" <<nl;
     const volScalarField& TFluid = fluidMeshRef.lookupObject<volScalarField>("T");     
 
     operator==(TFluid.boundaryField()[fluidBoundPatchId][0]); 

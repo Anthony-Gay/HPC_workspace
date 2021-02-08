@@ -182,8 +182,7 @@ void Foam::DSMCCloudMod<ParcelType>::initialise
             << "Distribution dict must have even pairs." << nl
             << abort(FatalError);
         }
-        //Info<<"Start: "<<idxStart<<endl;
-                //Info<<"Start: "<<idxStop<<endl;
+
         for (Foam::label celli=idxStart; celli<idxStop; celli++) 
         {
             List<tetIndices> cellTets = polyMeshTetDecomposition::cellTetIndices

@@ -39,8 +39,8 @@ mixture
     }
     transport
     {
-        mu              0;
-        Pr              1;
+        mu              0;//Dynamic Viscocity
+        Pr              1;//Prandl
     }
 }
 

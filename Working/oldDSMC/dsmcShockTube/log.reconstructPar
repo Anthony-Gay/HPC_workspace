@@ -1,0 +1,450 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : reconstructPar
+Date   : Nov 09 2020
+Time   : 00:10:20
+Host   : "DESKTOP-KF81SG4"
+PID    : 2292
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/Working/oldDSMC/dsmcShockTube
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Reconstructing fields for mesh region0
+
+Time = 0.0025
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+Time = 0.005
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+Time = 0.0075
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+Time = 0.01
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+Time = 0.0125
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+Time = 0.015
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+Time = 0.0175
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+Time = 0.02
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+Time = 0.0225
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+Time = 0.025
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        iDof
+        internalE
+        dsmcRhoN
+        rhoM
+        q
+        linearKE
+        dsmcSigmaTcRMax
+        rhoN
+        boundaryT
+
+    Reconstructing volVectorFields
+
+        momentum
+        boundaryU
+        fD
+
+Reconstructing point fields
+
+No point fields
+
+Reconstructing lagrangian fields for cloud dsmc
+
+    Reconstructing lagrangian labelFields
+
+        origProcId
+        typeId
+        origId
+
+    Reconstructing lagrangian scalarFields
+
+        Ei
+
+    Reconstructing lagrangian vectorFields
+
+        U
+
+
+End
+

@@ -18,21 +18,36 @@ FoamFile
 
 defaultFieldValues
 (
-    volVectorFieldValue U (0 0 0)
-    volScalarFieldValue T 900
-    volScalarFieldValue p 0
+    volVectorFieldValue U (19.5975 0 0)
+    volScalarFieldValue T 0.258845
+    volScalarFieldValue p 0.460894
 );
 
 regions
+(
+    boxToCell
+    {
+        box (0.4 -1 -1) (0.6 1 1);
+            fieldValues
+            (
+                volVectorFieldValue U (-6.19633 0 0)
+                volScalarFieldValue T 2.5917176e-2
+                volScalarFieldValue p 0.046095
+            );
+    }
+);
+
+
+/*regions
 (
     zoneToCell
     {
         name "fluid";
             fieldValues
             (
-                volVectorFieldValue U (0 0 0)
-                volScalarFieldValue T 900
-                volScalarFieldValue p 1.13e2
+                volVectorFieldValue U (-6.19633 0 0)
+                volScalarFieldValue T 2.5917176e-2
+                volScalarFieldValue p 0.046095
             );
     }
-);
+);*/

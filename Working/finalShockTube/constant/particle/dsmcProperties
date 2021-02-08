@@ -19,7 +19,7 @@ FoamFile
 // General Properties
 // ~~~~~~~~~~~~~~~~~~
 
-nEquivalentParticles            4e17;//2e19;//1e18;
+nEquivalentParticles            2e16;
 
 
 // Wall Interaction Model
@@ -42,7 +42,7 @@ LarsenBorgnakkeVariableHardSphereCoeffs
 
 // Inflow Boundary Model
 // ~~~~~~~~~~~~~~~~~~~~~
-InflowBoundaryModel             oneDirectionalHybridDSMC; //none
+InflowBoundaryModel             oneDirectionalHybridDSMC;
 
 oneDirectionalHybridDSMCCoeffs
 {

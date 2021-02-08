@@ -41,9 +41,9 @@ laplacianSchemes
 interpolationSchemes
 {
     default         linear;
-    reconstruct(rho) vanAlbada;
-    reconstruct(U)  vanAlbadaV;
-    reconstruct(T)  vanAlbada;
+    reconstruct(rho) vanAlbada;//vanAlbada;//vanLeer;
+    reconstruct(U)  vanAlbadaV;//vanAlbadaV;//vanLeer;
+    reconstruct(T)  vanAlbada;//vanAlbada;//vanLeer;
 }
 
 snGradSchemes

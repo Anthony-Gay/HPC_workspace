@@ -21,36 +21,36 @@ vertices // places vertices in coordinate plane
 (
     //Fluid domain
     (0 0 0) //coordinates of vertex 0
-    (1 0 0) //1
-    (1 1 0) //2...etc
+    (0.2 0 0) //1
+    (0.2 1 0) //2...etc
     (0 1 0)
     (0 0 1)
-    (1 0 1)
-    (1 1 1)
+    (0.2 0 1)
+    (0.2 1 1)
     (0 1 1)
 
     //Particle domain
-    (1 0 0) //coordinates of vertex 8
-    (7 0 0) //9
-    (7 1 0) //10...etc
-    (1 1 0)
+    (0.2 0 0) //coordinates of vertex 8
+    (1 0 0) //9
+    (1 1 0) //10...etc
+    (0.2 1 0)
+    (0.2 0 1)
     (1 0 1)
-    (7 0 1)
-    (7 1 1)
     (1 1 1)
+    (0.2 1 1)
 );
 
 blocks
 (
-    hex (0 1 2 3 4 5 6 7) fluid (100 1 1) simpleGrading (1 1 1) // gives labels to vertices and #cells in each dim and there sizes?
-    hex (8 9 10 11 12 13 14 15) particle (600 1 1) simpleGrading (1 1 1) // gives labels to vertices and #cells in each dim and there sizes?
+    hex (0 1 2 3 4 5 6 7) fluid (200 1 1) simpleGrading (1 1 1) // gives labels to vertices and #cells in each dim and there sizes?
+    hex (8 9 10 11 12 13 14 15) particle (800 1 1) simpleGrading (1 1 1) // gives labels to vertices and #cells in each dim and there sizes?
 );
 
 boundary
 (
-    DSMCSide
+    partSide
     {
-        type symmetry; 
+        type symmetry;//zeroGradient; 
         faces
         (
             (9 10 14 13)
@@ -66,9 +66,9 @@ boundary
         );
     }
 
-     DSMCBound
+     partBound
     {
-        type patch;//symmetry;//patch; 
+        type patch;
         faces
         (
             (8 12 15 11)

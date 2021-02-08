@@ -1,0 +1,116 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : decomposePar
+Date   : Nov 08 2020
+Time   : 23:42:36
+Host   : "DESKTOP-KF81SG4"
+PID    : 2248
+I/O    : uncollated
+Case   : /home/anthonygay1812/OpenFOAM/Working/oldDSMC/dsmcShockTube
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Decomposing mesh region0
+
+Create mesh
+
+Calculating distribution of cells
+ Foam::decompositionMethod::New 
+{
+    numberOfSubdomains 4;
+    method          simple;
+    simpleCoeffs
+    {
+        n               ( 4 1 1 );
+        delta           0.001;
+    }
+    hierarchicalCoeffs
+    {
+        n               ( 1 1 1 );
+        delta           0.001;
+        order           xyz;
+    }
+    manualCoeffs
+    {
+        dataFile        "";
+    }
+    distributed     no;
+    roots           ( );
+}
+
+Selecting decompositionMethod simple
+
+Finished decomposition in 0 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 250
+    Number of faces shared with processor 1 = 1
+    Number of processor patches = 1
+    Number of processor faces = 1
+    Number of boundary faces = 1001
+
+Processor 1
+    Number of cells = 250
+    Number of faces shared with processor 0 = 1
+    Number of faces shared with processor 2 = 1
+    Number of processor patches = 2
+    Number of processor faces = 2
+    Number of boundary faces = 1000
+
+Processor 2
+    Number of cells = 250
+    Number of faces shared with processor 1 = 1
+    Number of faces shared with processor 3 = 1
+    Number of processor patches = 2
+    Number of processor faces = 2
+    Number of boundary faces = 1000
+
+Processor 3
+    Number of cells = 250
+    Number of faces shared with processor 2 = 1
+    Number of processor patches = 1
+    Number of processor faces = 1
+    Number of boundary faces = 1001
+
+Number of processor faces = 3
+Max number of cells = 250 (0% above average 250)
+Max number of processor patches = 2 (33.3333% above average 1.5)
+Max number of faces between processors = 2 (33.3333% above average 1.5)
+
+Time = 0
+Identified lagrangian data set: "dsmc"
+
+Processor 0: field transfer
+Detected additional non-decomposed files in "/home/anthonygay1812/OpenFOAM/Working/oldDSMC/dsmcShockTube/0/uniform"
+Processor 1: field transfer
+Detected additional non-decomposed files in "/home/anthonygay1812/OpenFOAM/Working/oldDSMC/dsmcShockTube/0/uniform"
+Processor 2: field transfer
+Detected additional non-decomposed files in "/home/anthonygay1812/OpenFOAM/Working/oldDSMC/dsmcShockTube/0/uniform"
+Processor 3: field transfer
+Detected additional non-decomposed files in "/home/anthonygay1812/OpenFOAM/Working/oldDSMC/dsmcShockTube/0/uniform"
+
+End
+
